@@ -1,0 +1,61 @@
+/* Gibson */
+
+@font-face {
+    font-family: 'GibsonRegular';
+    src: url('gibson-regular-webfont.eot');
+    src: url('gibson-regular-webfont.eot?#iefix') format('embedded-opentype'),
+url('gibson-regular-webfont.woff') format('woff'),
+url('gibson-regular-webfont.ttf') format('truetype'),
+url('gibson-regular-webfont.svg#gibsonregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'GibsonLight';
+  src: url('gibson-light-webfont.eot');
+  src: url('gibson-light-webfont.eot?#iefix') format('embedded-opentype'), url('gibson-light-webfont.woff') format('woff'), url('gibson-light-webfont.ttf') format('truetype'), url('gibson-light-webfont.svg#gibsonlight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'GibsonSemiBold';
+    src: url('gibson-semibold-webfont.eot');
+    src: url('gibson-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+url('gibson-semibold-webfont.woff') format('woff'),
+url('gibson-semibold-webfont.ttf') format('truetype'),
+url('gibson-semibold-webfont.svg#gibsonsemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gibson-Regular';
+    src: url('gibson-regular-webfont.eot');
+    src: url('gibson-regular-webfont.eot?#iefix') format('embedded-opentype'),
+url('gibson-regular-webfont.woff') format('woff'),
+url('gibson-regular-webfont.ttf') format('truetype'),
+url('gibson-regular-webfont.svg#gibsonregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gibson-Light';
+  src: url('gibson-light-webfont.eot');
+  src: url('gibson-light-webfont.eot?#iefix') format('embedded-opentype'), url('gibson-light-webfont.woff') format('woff'), url('gibson-light-webfont.ttf') format('truetype'), url('gibson-light-webfont.svg#gibsonlight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gibson-SemiBold';
+    src: url('gibson-semibold-webfont.eot');
+    src: url('gibson-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+url('gibson-semibold-webfont.woff') format('woff'),
+url('gibson-semibold-webfont.ttf') format('truetype'),
+url('gibson-semibold-webfont.svg#gibsonsemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

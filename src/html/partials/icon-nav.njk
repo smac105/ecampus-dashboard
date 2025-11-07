@@ -1,0 +1,9 @@
+{% from "partials/macros.njk" import navIcon %}
+{% set icons = [
+  { "slug": "class", "img": "fa-solid fa-user", "label": "Class", "url": "/class.html" },
+  { "slug": "store", "img": "fa-solid fa-store", "label": "Store", "url": "/store.html" },
+  { "slug": "library", "img": "fa-solid fa-book-open-reader", "label": "Library", "url": "/library.html" },
+  { "slug": "books", "img": "fa-solid fa-book", "label": "Books", "url": "/books.html" },
+  { "slug": "resources", "img": "fa-solid fa-lightbulb", "label": "Resources", "url": "/resources.html" }
+] %}
+{{ navIcon(icons, currentPage) }}

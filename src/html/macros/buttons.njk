@@ -1,0 +1,20 @@
+{# src/html/macros/buttons.njk #}
+{% macro linkarrow(text, class, url, arialabel) %}
+  <a href="{{ url }}" class="small-link {{ class }}" aria-label="{{ arialabel }}">
+    {{ text }}
+  </a>
+{% endmacro %}
+
+{% macro buttonmain(text, url='#') %}
+  <a href="{{ url }}" class="btn-main">
+    {{ text }}
+  </a>
+{% endmacro %}
+
+{% macro button(label, url, type, target, isDisabled=false) %}
+  <a href="{{ url }}" 
+     class="btn-main btn-{{ type }}{% if isDisabled %} disabled{% endif %}" target="{{ target }}" aria-label="{{ label }}"
+     {% if isDisabled %}aria-disabled="true"{% endif %}>
+    {{ label }}
+  </a>
+{% endmacro %}

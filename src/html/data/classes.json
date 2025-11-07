@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Class Name One",
+    "description": "Viverra at libero sit amet, ornare congue nisl. Nunc congue nisi ullamcorper, auctor nunc at, finibus urna. Etiam non metus massa. Maecenas consequat consectetur lorem, ut dignissim risus tristique sed. Proin lobortis urna in quam tempus vehicula. Maecenas diam magna.",
+    "credits": 3,
+    "inStock": true
+  },
+  {
+    "name": "Class Name Two",
+    "description": "Uctor nunc at, finibus urna. Etiam non metus massa. Maecenas consequat consectetur lorem, ut dignissim risus tristique sed. Proin lobortis urna in quam tempus vehicula. Maecenas diam magna, viverra at libero sit amet, ornare congue nisl. Praesent in odio dui.",
+    "credits": 3,
+    "inStock": false
+  },
+  {
+    "name": "Class Name Three",
+    "description": "Nunc congue nisi ullamcorper, auctor nunc at, finibus urna. Etiam non metus massa. Maecenas consequat consectetur lorem, ut dignissim risus tristique sed. Proin lobortis urna in quam tempus vehicula. Maecenas diam magna, viverra at libero sit amet, ornare congue nisl. Praesent in odio dui.",
+    "credits": 3,
+    "inStock": false
+  }
+]

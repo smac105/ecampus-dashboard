@@ -1,0 +1,557 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<div class="registration-flow">
+  <!-- Progress Tracker (Visible from Step 4 onwards) -->
+  <div class="progress-tracker" id="progressTracker" style="display: none;">
+    <div class="container">
+      <div class="progress-tracker__steps">
+        <div class="progress-step" data-step="4">
+          <div class="progress-step__circle">1</div>
+          <div class="progress-step__label">Choose Dates</div>
+        </div>
+        <div class="progress-step" data-step="5">
+          <div class="progress-step__circle">2</div>
+          <div class="progress-step__label">Review Cart</div>
+        </div>
+        <div class="progress-step" data-step="6">
+          <div class="progress-step__circle">3</div>
+          <div class="progress-step__label">Disclosures</div>
+        </div>
+        <div class="progress-step" data-step="7">
+          <div class="progress-step__circle">4</div>
+          <div class="progress-step__label">Payment</div>
+        </div>
+        <div class="progress-step" data-step="8">
+          <div class="progress-step__circle">5</div>
+          <div class="progress-step__label">Confirm</div>
+        </div>
+      </div>
+      <div class="progress-tracker__bar">
+        <div class="progress-tracker__bar-fill" id="progressBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 1: Choose Courses -->
+  <section class="reg-step" id="step1" data-step="1">
+    <div class="container">
+      <div class="reg-step__header">
+        <h1>Choose Courses for Registration</h1>
+        <p class="reg-step__instructions">Please select courses from your Academic Plan to begin registration</p>
+      </div>
+
+      <div class="academic-plan">
+        <div class="academic-plan__header">
+          <h2>Your Academic Plan</h2>
+        </div>
+        <div class="academic-plan__courses" id="academicPlanCourses">
+          <!-- Courses will be populated via JavaScript -->
+        </div>
+      </div>
+
+      <div class="reg-step__actions">
+        <button class="btn btn--primary btn--large" id="beginRegistration" disabled>
+          Begin Registration
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 2: Intended Payment -->
+  <section class="reg-step" id="step2" data-step="2" style="display: none;">
+    <div class="container">
+      <div class="reg-step__header">
+        <h1>Payment & Registration Options</h1>
+        <p class="reg-step__instructions">Let's check your payment and registration options - how do you intend to pay for your courses?</p>
+      </div>
+
+      <div class="selected-courses-summary">
+        <h2>Selected Courses</h2>
+        <div id="selectedCoursesList"></div>
+      </div>
+
+      <div class="payment-options">
+        <h3>Choose Your Intended Payment Method</h3>
+        <div class="payment-options__list">
+          <label class="payment-option">
+            <input type="radio" name="intendedPayment" value="financial-aid" />
+            <div class="payment-option__content">
+              <span class="payment-option__icon">📚</span>
+              <span class="payment-option__label">Financial Aid</span>
+            </div>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="intendedPayment" value="employer" />
+            <div class="payment-option__content">
+              <span class="payment-option__icon">🏢</span>
+              <span class="payment-option__label">Employer Payment</span>
+            </div>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="intendedPayment" value="self-pay" />
+            <div class="payment-option__content">
+              <span class="payment-option__icon">💳</span>
+              <span class="payment-option__label">Self Pay</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="reg-step__actions">
+        <button class="btn btn--secondary" onclick="navigateToStep(1)">Back</button>
+        <button class="btn btn--primary btn--large" id="addToCartStep2" disabled>
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 3: Academic Plan Detail -->
+  <section class="reg-step" id="step3" data-step="3" style="display: none;">
+    <div class="container">
+      <div class="reg-step__header">
+        <h1>Review Your Academic Plan</h1>
+      </div>
+
+      <!-- FSA Requirements -->
+      <div class="fsa-requirements">
+        <h2>FSA Requirements</h2>
+        <div class="fsa-requirements__content">
+          <div class="requirement-item">
+            <span class="requirement-item__icon">✓</span>
+            <span>Enrollment Status: <strong>Full-Time (12+ credits)</strong></span>
+          </div>
+          <div class="requirement-item">
+            <span class="requirement-item__icon">✓</span>
+            <span>Satisfactory Academic Progress: <strong>Met</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Academic Plan with Course Selection -->
+      <div class="academic-plan academic-plan--detailed">
+        <div class="academic-plan__courses" id="academicPlanDetailed">
+          <!-- Courses will be populated -->
+        </div>
+      </div>
+
+      <!-- Checklists -->
+      <div class="checklists">
+        <h3>Registration Checklist</h3>
+        <div class="checklist">
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span>Review course prerequisites</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span>Verify enrollment status requirements</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span>Confirm course sequence</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="reg-step__actions">
+        <button class="btn btn--secondary" onclick="navigateToStep(2)">Back</button>
+        <button class="btn btn--primary btn--large" onclick="navigateToStep(4)">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 4: Registration Cart - Choose Dates -->
+  <section class="reg-step" id="step4" data-step="4" style="display: none;">
+    <div class="container">
+      <div class="reg-step__header">
+        <h1>Choose Start Dates</h1>
+        <p class="reg-step__instructions">Select start dates for your courses</p>
+      </div>
+
+      <div class="cart-layout">
+        <div class="cart-main">
+          <!-- Balance Summary -->
+          <div class="balance-summary">
+            <h2>Balance Summary</h2>
+            <div class="balance-summary__items">
+              <div class="balance-item">
+                <span>Tuition (Student Demo Rate)</span>
+                <span class="balance-item__amount">$3,600.00</span>
+              </div>
+              <div class="balance-item balance-item--discount">
+                <span>Grant Applied</span>
+                <span class="balance-item__amount">-$1,200.00</span>
+              </div>
+              <div class="balance-item balance-item--total">
+                <span>Total Balance</span>
+                <span class="balance-item__amount">$2,400.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cart Items -->
+          <div class="cart-items">
+            <h2>Courses in Cart</h2>
+            <div id="cartCoursesList"></div>
+          </div>
+        </div>
+
+        <div class="cart-sidebar">
+          <!-- Date Picker Calendar -->
+          <div class="date-picker-card">
+            <h3>Available Start Dates</h3>
+            <div id="courseCalendar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reg-step__actions">
+        <button class="btn btn--secondary" onclick="navigateToStep(3)">Back</button>
+        <button class="btn btn--primary btn--large" onclick="navigateToStep(5)">
+          Confirm Dates
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 5: Review Cart -->
+  <section class="reg-step" id="step5" data-step="5" style="display: none;">
+    <div class="container">
+      <div class="reg-step__header">
+        <h1>Review Your Cart</h1>
+        <p class="reg-step__instructions">Review your course selections and ensure they meet FSA requirements</p>
+      </div>
+
+      <!-- FSA AY Registration Tracker -->
+      <div class="fsa-tracker">
+        <h2>FSA Academic Year Registration</h2>
+        <div class="credit-tracker">
+          <div class="credit-tracker__bar">
+            <div class="credit-tracker__fill" style="width: 80%"></div>
+          </div>
+          <div class="credit-tracker__labels">
+            <span>Part-Time: 6+ credits</span>
+            <span class="active">Full-Time: 12+ credits</span>
+          </div>
+          <div class="credit-tracker__current">
+            Current Registration: <strong>12 credits</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- B2B Specific Disclosures -->
+      <div class="b2b-disclosures" id="b2bDisclosures" style="display: none;">
+        <h3>Employer Partnership Information</h3>
+        <div class="disclosure-box">
+          <p>Your employer has specific requirements for course approval and reimbursement.</p>
+          <ul>
+            <li>Courses must align with approved degree program</li>
+            <li>Grade requirements may apply for reimbursement</li>
+            <li>Contact your HR department for specific policies</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cart Review -->
+      <div class="cart-review">
+        <div id="cartReviewList"></div>
+      </div>
+
+      <div class="fsa-guidelines">
+        <h3>FSA Guidelines</h3>
+        <div class="guideline-box">
+          <p><strong>Remember:</strong> Maintain satisfactory academic progress and enrollment status to continue receiving financial aid.</p>
+        </div>
+      </div>
+
+      <div class="reg-step__actions">
+        <button class="btn btn--secondary" onclick="navigateToStep(4)">Back</button>
+        <button class="btn btn--primary btn--large" onclick="navigateToStep(6)">
+          Confirm Cart
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 6: Review Disclosures -->
+  <section class="reg-step" id="step6" data-step="6" style="display: none;">
+    <div class="container">
+      <div class="reg-step__header">
+        <h1>Review Disclosures</h1>
+        <p class="reg-step__instructions">Please read and agree to the following disclosures</p>
+      </div>
+
+      <div class="disclosures-container">
+        <div class="disclosure-document">
+          <h3>Registration Agreement</h3>
+          <div class="disclosure-document__content">
+            <p>By registering for courses, you agree to the following terms and conditions:</p>
+            <ul>
+              <li>You are responsible for all tuition and fees</li>
+              <li>You understand the refund policy and withdrawal deadlines</li>
+              <li>You will maintain academic integrity standards</li>
+              <li>You authorize the release of academic records as needed</li>
+            </ul>
+          </div>
+          <label class="disclosure-checkbox">
+            <input type="checkbox" name="disclosure1" required />
+            <span>I have read and agree to the Registration Agreement</span>
+          </label>
+        </div>
+
+        <div class="disclosure-document">
+          <h3>Financial Responsibility</h3>
+          <div class="disclosure-document__content">
+            <p>You acknowledge financial responsibility for all registered courses until officially withdrawn according to university policy.</p>
+          </div>
+          <label class="disclosure-checkbox">
+            <input type="checkbox" name="disclosure2" required />
+            <span>I have read and agree to the Financial Responsibility statement</span>
+          </label>
+        </div>
+
+        <div class="disclosure-document" id="dynamicDisclosure" style="display: none;">
+          <h3>Additional Requirements</h3>
+          <div class="disclosure-document__content">
+            <p>Additional terms specific to your payment method or enrollment status.</p>
+          </div>
+          <label class="disclosure-checkbox">
+            <input type="checkbox" name="disclosure3" />
+            <span>I have read and agree to the Additional Requirements</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="reg-step__actions">
+        <button class="btn btn--secondary" onclick="navigateToStep(5)">Back</button>
+        <button class="btn btn--primary btn--large" id="agreeAndContinue" disabled>
+          Agree & Continue
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 7: Payment Selection -->
+  <section class="reg-step" id="step7" data-step="7" style="display: none;">
+    <div class="container">
+      <div class="reg-step__header">
+        <h1>Choose Your Payment Type</h1>
+        <p class="reg-step__instructions">Select and confirm your payment method(s)</p>
+      </div>
+
+      <!-- Balance -->
+      <div class="balance-summary balance-summary--large">
+        <div class="balance-summary__total">
+          <span>Total Due:</span>
+          <span class="amount">$2,400.00</span>
+        </div>
+      </div>
+
+      <!-- Payment Options Accordion -->
+      <div class="payment-accordion">
+        <div class="payment-accordion__item" data-payment="financial-aid">
+          <button class="payment-accordion__header">
+            <span class="payment-accordion__title">Financial Aid</span>
+            <span class="payment-accordion__icon">▼</span>
+          </button>
+          <div class="payment-accordion__content">
+            <div class="payment-checklist">
+              <label class="checklist-item">
+                <input type="checkbox" />
+                <span>Confirm FAFSA completion</span>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" />
+                <span>Verify award letter</span>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" />
+                <span>Accept financial aid package</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="payment-accordion__item" data-payment="employer">
+          <button class="payment-accordion__header">
+            <span class="payment-accordion__title">Employer Payment</span>
+            <span class="payment-accordion__icon">▼</span>
+          </button>
+          <div class="payment-accordion__content">
+            <!-- APEI Specific Content -->
+            <div class="apei-section" id="apeiSection" style="display: none;">
+              <h4>APEI Employee Verification</h4>
+              <div class="payment-checklist">
+                <label class="checklist-item">
+                  <input type="checkbox" id="confirmEmployeeStatus" />
+                  <span>I confirm my current employee status with APEI</span>
+                </label>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>I understand APEI tuition benefit policies</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- B2B Content -->
+            <div class="b2b-section" id="b2bSection">
+              <h4>Employer Payment Options</h4>
+              <p>Choose how your employer will handle payment:</p>
+              <div class="payment-type-selection">
+                <label class="payment-type-option">
+                  <input type="radio" name="b2bPaymentType" value="voucher" />
+                  <div class="payment-type-option__content">
+                    <strong>Employer Voucher</strong>
+                    <p>Employer pays directly</p>
+                  </div>
+                </label>
+                <label class="payment-type-option">
+                  <input type="radio" name="b2bPaymentType" value="self" />
+                  <div class="payment-type-option__content">
+                    <strong>Self Pay with Reimbursement</strong>
+                    <p>You pay now, seek reimbursement later</p>
+                  </div>
+                </label>
+              </div>
+              <div class="payment-checklist">
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>Courses approved by employer</span>
+                </label>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>Understand reimbursement requirements</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="payment-accordion__item" data-payment="self-pay">
+          <button class="payment-accordion__header">
+            <span class="payment-accordion__title">Self Pay</span>
+            <span class="payment-accordion__icon">▼</span>
+          </button>
+          <div class="payment-accordion__content">
+            <div class="payment-methods">
+              <label class="payment-method">
+                <input type="radio" name="selfPayMethod" value="credit-card" />
+                <span>Credit/Debit Card</span>
+              </label>
+              <label class="payment-method">
+                <input type="radio" name="selfPayMethod" value="payment-plan" />
+                <span>Payment Plan</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reg-step__actions">
+        <button class="btn btn--secondary" onclick="navigateToStep(6)">Back</button>
+        <button class="btn btn--primary btn--large" id="confirmPayment" disabled>
+          Confirm Payment
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 8: Confirm Shipping Address -->
+  <section class="reg-step" id="step8" data-step="8" style="display: none;">
+    <div class="container">
+      <div class="reg-step__header">
+        <h1>Confirm Shipping Address</h1>
+        <p class="reg-step__instructions">Please confirm or update your shipping address for course materials</p>
+      </div>
+
+      <div class="address-form">
+        <div class="address-form__current">
+          <h3>Current Address on File</h3>
+          <div class="address-display">
+            <p id="currentAddress"></p>
+          </div>
+        </div>
+
+        <div class="address-form__edit">
+          <h3>Update Address</h3>
+          <form id="shippingAddressForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="streetAddress">Street Address</label>
+                <input type="text" id="streetAddress" name="streetAddress" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required />
+              </div>
+              <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" required />
+              </div>
+              <div class="form-group">
+                <label for="zipCode">ZIP Code</label>
+                <input type="text" id="zipCode" name="zipCode" required />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="reg-step__actions">
+        <button class="btn btn--secondary" onclick="navigateToStep(7)">Back</button>
+        <button class="btn btn--primary btn--large" onclick="submitRegistration()">
+          Submit Registration
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Confirmation -->
+  <section class="reg-step reg-step--confirmation" id="confirmation" data-step="9" style="display: none;">
+    <div class="container">
+      <div class="confirmation-content">
+        <div class="confirmation-icon">✓</div>
+        <h1>Registration Successful!</h1>
+        <p class="confirmation-message">Your courses have been successfully registered.</p>
+        
+        <div class="confirmation-details">
+          <h3>Next Steps</h3>
+          <div id="conditionalInstructions">
+            <ul>
+              <li>Check your email for registration confirmation</li>
+              <li>Course materials will be shipped to your confirmed address</li>
+              <li>Access your courses in the student portal on the start date</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="confirmation-actions">
+          <a href="/dashboard" class="btn btn--primary">Go to Dashboard</a>
+          <a href="/courses" class="btn btn--secondary">View My Courses</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Course Selection Modal -->
+<div class="modal" id="courseModal">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close">&times;</button>
+    <div class="modal__body" id="courseModalBody">
+      <!-- Course details populated by JS -->
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/js/registration-flow.js"></script>
+{% endblock %}

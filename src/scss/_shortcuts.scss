@@ -1,0 +1,51 @@
+.shortcut-rail {
+	display: flex;
+	flex-direction: row;
+	// justify-content: space-between;
+	grid-gap: 20px;
+	padding: 20px 25px;
+	background: $gray-10;
+	margin-bottom: 25px;
+	.shortcut-item {
+		// width: 20%;
+		display: grid;
+		justify-items: center;
+		align-items: center;
+		// grid-gap: 5px;
+		grid-template-columns: 30px auto;
+		padding: 4px 10px 4px 4px;
+		border-radius: 9px;
+		background: $secondary;
+		span {
+			// width: 30px;
+			height: 30px;
+			// background: $secondary;
+			display: grid;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			i {
+				font-size: 14px;
+				color: $primary;
+			}
+		}
+		p {
+			font-size: 1.4rem;
+			text-align: center;
+			font-weight: 600;
+			margin-bottom: 0px;
+			// text-transform: uppercase;
+			font-family: $font-main;
+		}
+		&:hover {
+			cursor: pointer;
+			background: $apu-blue-active;
+			span {
+				// background: $wht;
+				i {
+					// color: $apu-blue-active;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,33 @@
+.profile-wrap {	
+	gap: 10px;
+	.profile-name {
+		font-family: $font-main;
+		span {
+			font-weight: 600;
+		}
+	}
+	.profile {
+		display: grid;
+		justify-content: center;
+		align-items: center;
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+		background: none;
+		border: 2px solid $blk;
+		.big-initial {
+			font-size: 22px;
+			font-weight: 600;
+			color: $blk;
+		}
+		&:hover {
+			background: $secondary;
+			cursor: pointer;
+			.big-initial {
+				font-size: 22px;
+				font-weight: 600;
+				color: $blk;
+			}
+		}
+	}
+}

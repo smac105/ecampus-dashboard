@@ -1,0 +1,14 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+	<h1>{{ about.title }}</h1>
+	<p class="lead">This page uses the uppercase filter in the header.</p>
+	<ul>
+	  {% for member in about.team %}
+	    <li>{{ member.name }} – {{ member.role }}</li>
+	  {% endfor %}
+	</ul>
+
+	<a href="{{ about.cta.url }}" class="btn">{{ about.cta.label }}</a>
+{% endblock %}

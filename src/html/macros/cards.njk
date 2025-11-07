@@ -1,0 +1,18 @@
+{% macro productCard(product) %}
+  {% if product.inStock %}
+    <div class="product-card">
+      <img src="{{ product.image }}" alt="{{ product.name }}">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      {% if product.price %}
+        <p class="price">${{ product.price | round(2) }}</p>
+      {% endif %}
+      <button>Add to Cart</button>
+    </div>
+  {% else %}
+    <div class="product-card out-of-stock">
+      <h3>{{ product.name }}</h3>
+      <p>Currently unavailable</p>
+    </div>
+  {% endif %}
+{% endmacro %}

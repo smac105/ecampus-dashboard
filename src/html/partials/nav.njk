@@ -1,0 +1,112 @@
+{% from "partials/macros.njk" import navMenu %}
+{% set navItems = [
+  { "icon": "house", "slug": "index", "label": "Home", "url": "/index.html" },
+  {
+  "icon": "bell-school", "slug": "my-academics", "label": "My Academics",
+  "mega": true,
+  "children": [
+    {
+		"links": [
+		{"label": "Course Management", "url": "/about/presidents-page/", "page": "Course Management" },
+	    { "label": "Degree Planner", "url": "/about/Degree Planner/", "page": "Degree Planner" },
+	    { "label": "Course Catalog", "url": "/about/mission/", "page": "Course Catalog" },
+	    { "label": "Transfer Credits", "url": "/about/transfer-credits/", "page": "Transfer Credits" }
+	    ]
+    }
+	]
+  },
+  { 
+  	"icon": "money-check-dollar", "slug": "my-finances", "label": "My Finances", 
+  	"mega": true,
+  	"children": [
+    {
+		"links": [
+		{ "label": "Catalog (Undergrad/Grad)", "url": "/about/presidents-page/", "page": "Catalog (Undergrad/Grad)" },
+	    { "label": "Journals", "url": "/about/journals/", "page": "Journals" },
+	    { "label": "Library", "url": "/about/Library/", "page": "Library" },
+	    { "label": "Observatory", "url": "/about/observatory/", "page": "Observatory" },
+	    { "label": "Center for Cyber Defense", "url": "/about/center-for-cyber-defense/", "page": "Center for Cyber Defense" }
+	    ]
+    }
+	]
+  },
+  { 
+  	"icon": "folder-open", "slug": "forms-and-documents", "label": "Forms & Documents", 
+  	"mega": true,
+  	"children": [
+    {
+		"links": [
+		{ "label": "Catalog (Undergrad/Grad)", "url": "/about/presidents-page/", "page": "Catalog (Undergrad/Grad)" },
+	    { "label": "Journals", "url": "/about/journals/", "page": "Journals" },
+	    { "label": "Library", "url": "/about/Library/", "page": "Library" },
+	    { "label": "Observatory", "url": "/about/observatory/", "page": "Observatory" },
+	    { "label": "Center for Cyber Defense", "url": "/about/center-for-cyber-defense/", "page": "Center for Cyber Defense" }
+	    ]
+    }
+	]
+  },
+  { 
+  	"icon": "user-doctor", "slug": "career-services", "label": "Career Services", 
+  	"mega": true,
+  	"children": [
+    {
+		"links": [
+		{ "label": "Catalog (Undergrad/Grad)", "url": "/about/presidents-page/", "page": "Catalog (Undergrad/Grad)" },
+	    { "label": "Journals", "url": "/about/journals/", "page": "Journals" },
+	    { "label": "Library", "url": "/about/Library/", "page": "Library" },
+	    { "label": "Observatory", "url": "/about/observatory/", "page": "Observatory" },
+	    { "label": "Center for Cyber Defense", "url": "/about/center-for-cyber-defense/", "page": "Center for Cyber Defense" }
+	    ]
+    }
+	]
+  },
+  { 
+  "icon": "school", "slug": "student-life", "label": "Student Life",
+  "mega": true,
+  "children": [
+    {
+		"links": [
+		{ "label": "Overview", "url": "/military/", "page": "Overview" },
+	    { "label": "Active Duty Servicemembers", "url": "/military/active-duty/", "page": "Active Duty Servicemembers" },
+	    { "label": "Veterans", "url": "/military/veterans/", "page": "Veterans" },
+	    { "label": "Spouses & Dependents", "url": "/military/spouses-dependents/", "page": "Spouses & Dependents" },
+	    { "label": "Credentialing Assistance", "url": "/military/credentialing-assistance/", "page": "Credentialing Assistance" },
+	    { "label": "Find Your Local Military Education Manager", "url": "https://www.amu.apus.edu/rep/", "page": "Find Your Local Military Education Manager" }
+		]
+	}
+	]
+  },
+ { 
+  "icon": "graduation-cap", "slug": "alumni", "label": "Alumni",
+  "mega": true,
+  "children": [
+    {
+		"links": [
+		{ "label": "Overview", "url": "/military/", "page": "Overview" },
+	    { "label": "Active Duty Servicemembers", "url": "/military/active-duty/", "page": "Active Duty Servicemembers" },
+	    { "label": "Veterans", "url": "/military/veterans/", "page": "Veterans" },
+	    { "label": "Spouses & Dependents", "url": "/military/spouses-dependents/", "page": "Spouses & Dependents" },
+	    { "label": "Credentialing Assistance", "url": "/military/credentialing-assistance/", "page": "Credentialing Assistance" },
+	    { "label": "Find Your Local Military Education Manager", "url": "https://www.amu.apus.edu/rep/", "page": "Find Your Local Military Education Manager" }
+		]
+	}
+	]
+  },
+  { 
+  "icon": "circle-info", "slug": "help-and-resources", "label": "Help & Resources",
+  "mega": true,
+  "children": [
+    {
+		"links": [
+		{ "label": "Overview", "url": "/military/", "page": "Overview" },
+	    { "label": "Active Duty Servicemembers", "url": "/military/active-duty/", "page": "Active Duty Servicemembers" },
+	    { "label": "Veterans", "url": "/military/veterans/", "page": "Veterans" },
+	    { "label": "Spouses & Dependents", "url": "/military/spouses-dependents/", "page": "Spouses & Dependents" },
+	    { "label": "Credentialing Assistance", "url": "/military/credentialing-assistance/", "page": "Credentialing Assistance" },
+	    { "label": "Find Your Local Military Education Manager", "url": "https://www.amu.apus.edu/rep/", "page": "Find Your Local Military Education Manager" }
+		]
+	}
+	]
+  }
+] %}
+{{ navMenu(navItems, currentPage) }}

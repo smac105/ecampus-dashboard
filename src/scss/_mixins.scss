@@ -1,0 +1,78 @@
+@mixin justify-center {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+@mixin white-box-apus {
+	box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+    background: white;
+    padding: 20px 25px;
+    padding: 2.0rem 2.5rem;
+    border-radius: $border-radius;
+    border-bottom: $white-box-border;
+}
+@mixin white-box-apu {
+	background: white;
+	padding: 20px 25px;
+	padding: 2.0rem 2.5rem;
+	border-radius: 4px;
+	box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+}
+@mixin space-between {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+// Progress bg colours
+$pg-default-bg: #EEE;
+// Progress bar bg colours
+$bar-default-bg: #3798d9;
+$bar-info-bg: #9575cd;
+$bar-danger-bg: #ef5350;
+$bar-success-bg: #66bb6a;
+$bar-warning-bg: #ffb74d;
+
+// ADDS A BROWSER PREFIX TO THE PROPERTY
+@mixin browser_prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+// KEYFRAMES
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+// ANIMATION
+@mixin animation($str) {
+  @include browser_prefix('animation', $str);
+}
+
+@mixin cssProgressGlowActive($name, $color) {
+  @include keyframes($name) {
+    0%, 100% {
+      box-shadow: 5px 0px 15px 0px #{$color};
+    }
+    45% {
+      box-shadow: 1px 0px 4px 0px #{$color};
+    }
+  }
+}

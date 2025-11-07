@@ -1,0 +1,50 @@
+$font-apu-alt: "Barlow Semi Condensed", "Helvetica Neue", Arial, sans-serif;
+$font-apu: "Barlow", "Helvetica Neue", Arial, sans-serif;
+
+// $font-main: "canada-type-gibson","Gibson","Helvetica Neue",Arial,sans-serif;
+$font-main: "Barlow", "Helvetica Neue", Arial, sans-serif;
+// font weights: 100,300,400,600,700
+
+// UTILITY COLORS
+$red: #E4193B;
+$green: #80c342;
+$orange: #F88A00;
+
+$primary: #041E42; // apus navy blue
+$primary-alt: #00599a;
+
+$secondary: #05C3DE; // apus aqua
+$secondary-alt: #03abc3;
+
+$primary-active: #163c70;
+$secondary-active: #31b3c6;
+
+// BRAND COLORS
+$amu-gold: #ffc600;
+$amu-blue: #00599a;
+
+$apu-blue: #00ffff;
+$apu-green: #00ff00;
+$apu-yellow: #ffff00;
+
+$blk: #000000;
+$wht: #ffffff;
+
+$gray-10: #f4f4f4;
+$gray-20: #d2d2d2;
+$gray-60: #d9d9d9;
+$gray-dk: #6d6d6d;
+
+// Root SCSS VARIABLES
+:root {
+  --primary: $primary;
+  --primary-alt: $primary-alt;
+  --secondary: $secondary;
+  --secondary-alt: $secondary-alt;
+}
+
+// SITE VARIABLES
+$mainlogoColor: $primary;
+$white-box-border: 6px solid $secondary;
+
+$border-radius: 0.4rem;

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ title or site.title }}</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	
+	<!-- font awesome 6.0 -->
+	<script src="https://kit.fontawesome.com/7e5f6c5917.js" crossorigin="anonymous"></script>
+
+	{% include "partials/head-apu.njk" %}
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+{% from "partials/macros.njk" import button, navIcon, navMenu, banner, productCard, classCard, cardGrid, image %}
+{# <div class="container-fluid">
+	
+</div> #}
+
+<div class="dashboard">
+	{# <div class="dashboard-nav"> #}
+		{% include "partials/nav.njk" %}
+	{# </div> #}
+	<div id="main" class="dashboard-app"> 
+		<div class="row">
+			{% include "partials/top-header.njk" %}
+		</div>
+		{# <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button> #}
+		<div class="row flex-nowrap">
+			{# {% include "partials/icon-nav.njk" %} #}
+			<main class="col main-wrap">
+			{% include "partials/header.njk" %}
+
+			{% block content %}{% endblock %}
+			</main>
+		</div>
+
+		{% include "partials/footer.njk" %}
+	</div>
+
+</body>
+</html>

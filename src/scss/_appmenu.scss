@@ -1,0 +1,54 @@
+
+.app-menu, .menu{
+    width: 300px;
+    border-radius: $border-radius;
+    border-bottom: $white-box-border;
+    position: absolute;
+    right: 40px;
+    top: 60px; 
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5); 
+    z-index: 100;
+    .app-menu-list{
+        list-style: none;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1.0rem;
+        .app-menu-item {
+            display: grid;
+            justify-content: center;
+            a {
+                text-align: center;
+                text-decoration: none;
+                color: $primary;
+                display: grid;
+                justify-items: center;
+                .app-menu-app{
+                    background: $primary;
+                    width: 52px;
+                    height: 52px;
+                    display: grid;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    padding: 1rem;
+                    border: none;
+                    margin-bottom: 10px;
+                    // border-radius: 3px;
+                    i {
+                        font-size: 24px;
+                        color: $wht;
+                    }
+                    &:hover {
+                        background: $secondary;
+                         i {
+                            font-size: 30px;
+                            color: $primary;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}

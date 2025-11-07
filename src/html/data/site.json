@@ -1,0 +1,11 @@
+{
+  "pages": {
+    "home": { "title": "Home - My Website" },
+    "about": { "title": "About Us" },
+    "contact": { "title": "Contact Us - My Website" },
+    "class": { "title": "Your Current Classes" }
+  },
+  "student": {
+    "name": "Jorge"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "courses": [
+    {
+      "id": "CS101",
+      "code": "CS101",
+      "title": "Introduction to Computer Science",
+      "credits": 3,
+      "description": "Fundamental concepts of computer science and programming",
+      "prerequisites": "None",
+      "available": true
+    }
+  ]
+}

@@ -1,0 +1,454 @@
+{# =======================
+   Buttons
+======================= #}
+{% macro button(label, url="#", type="primary", isDisabled=false) %}
+  <a href="{{ url }}" 
+     class="btn-main btn-{{ type }}{% if isDisabled %} disabled{% endif %}" 
+     {% if isDisabled %}aria-disabled="true"{% endif %}>
+    {{ label }}
+  </a>
+{% endmacro %}
+
+{# =======================
+  Top Navigation Menu
+======================= #}
+{% macro navTop(tops, currentPage) %}
+  <nav id="sidebarMenuSmall" class="top-nav-wrap">
+    <ul id="topmenu" class="mb-0">
+      {% for top in tops %}
+      <li class="{{ 'active' if top.slug == currentPage }}">
+        <a href="{{ top.url }}"><span class="top-wrap"><i class="{{ top.img }}"></i></span></a>
+        {% if top.count %}<span class="count">{{ top.count }}</span>{% endif %}
+      </li>
+      {% endfor %}
+      <li class="{{ 'active' if top.slug == currentPage }}">
+        <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" data-bs-parent="topnav-group" aria-expanded="false" aria-controls="collapseExample"><span class="top-wrap"><i class="fa-solid fa-grid"></i></span></a>
+      </li>
+    </ul>
+  </nav>
+{% endmacro %}
+
+{# =======================
+  App Menu
+======================= #}
+
+{% macro navApps(apps, currentPage) %}
+  <nav class="">
+    <ul class="app-menu-list mb-0">
+      {% for app in apps %}
+      <li class="app-menu-item {{ 'active' if app.slug == currentPage }}">
+        <a href="{{ app.url }}">
+        <span class="app-menu-app"><i class="{{ app.img }}"></i></span>
+        <p class="small-title mb-0">{{ app.label }}</p>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endmacro %}
+
+{# =======================
+  Icon Navigation Menu
+======================= #}
+{% macro navIcon(icons, currentPage) %}
+  <nav id="sidebarMenuSmall" class="icon-nav-wrap">
+    <ul id="iconmenu">
+      {% for icon in icons %}
+        <li class="{{ 'active' if icon.slug == currentPage }}">
+          <a href="{{ icon.url }}"><span class="icon-wrap"><i class="{{ icon.img }}"></i></span><br>{{ icon.label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+</nav>
+{% endmacro %}
+
+{# =======================
+   Navigation Menu
+======================= #}
+{% macro navMenu(items, currentPage) %}
+  <div>
+<div id="mySidebar" class="dashboard-nav">
+  {# <header>
+    <a href="#!" class="menu-toggle"><i class="fas fa-x"></i></a>
+    <a href="#" class="brand-logo"><i class="fas fa-anchor"></i> <span>BRAND</span></a>
+  </header> #}
+  {# <div class="nav-toggle-wrap">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-chevron-left"></i></a>
+  </div> #}
+  
+  <ul class="icon-nav-wrap">
+    <div class="nav-toggle-wrap">
+      {# <a href="#!" class="menu-toggle"><i class="fa-solid fa-chevron-left"></i></a> #}
+      <a class="closebtn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><i class="fa-solid fa-bars"></i></a>
+    </div>
+    {% for item in items %}
+        <li class=" {{ 'active' if item.slug == currentPage }}">
+          <a href="{{ item.url }}"  aria-label="{{ item.label }}"><i class="fa-regular fa-{{ item.icon }}"></i>
+            <p>{{ item.label }}</p>
+          </a>
+        </li>
+      {% endfor %}
+  </ul>    
+</div>
+
+
+<div class="offcanvas offcanvas-lg offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <div class="sm-logo-main"> 
+      <a href="index.html" aria-label="American Public University ECampus Home">
+        {# {{ image("logo-apus-global-icon.svg", "", "img-logo-main main-logo") }} #}
+        {% include "partials/apu-logo.njk" %}
+      </a>
+    </div>
+    <button type="button" class="btn-new-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-regular fa-xmark"></i></button>
+  </div>
+  <div class="offcanvas-body">
+    <nav class="dashboard-nav-list">
+      {% for item in items %}
+        <li class="dashboard-nav-item {% if item.children %}dropdown{% endif %}">
+          
+          {# Regular link if no children #}
+          {% if not item.children %}
+            <a 
+              class="{% if item.page == currentPage %}active{% endif %}" 
+              aria-label="{{ item.label }}"
+              href="{{ item.url }}">
+              <i class="fa-regular fa-{{ item.icon }}"></i> {{ item.label }}
+            </a>
+          
+          {# Dropdown OR Mega Menu #}
+          {% else %}
+            <a 
+              class=" dropdown-toggle {% if item.page == currentPage %}active{% endif %}" 
+              href="#" 
+              id="dropdown-{{ loop.index }}"
+              aria-label="{{ item.label }}" 
+              role="button" 
+              data-bs-toggle="dropdown" 
+              aria-expanded="false">
+              <i class="fa-regular fa-{{ item.icon }}"></i> {{ item.label }}
+            </a>
+
+            {# Mega Menu if item.mega is true #}
+            {% if item.mega %}
+              <div class="dropdown-menu collapse collapse-or" aria-labelledby="dropdown-{{ loop.index }}" data-bs-auto-close="outside">
+                <div class="dropdown-columns">
+                 {# <a 
+                  class="dropdown-reverse-toggle {% if item.page == currentPage %}active{% endif %}" 
+                  href="#" 
+                  id="dropdown-{{ loop.index }}"
+                  aria-label="{{ item.label }}" 
+                  role="button" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false">
+                  back
+                </a> #}
+                  {% for column in item.children %}
+                    <div class="drop-col">
+                      <ul class="list-unstyled">
+                        {% for link in column.links %}
+                          <li><a class="dropdown-item" aria-label="{{ link.label }}" href="{{ link.url }}">{{ link.label }}</a></li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            
+            {# Standard Dropdown #}
+            {% else %}
+              <ul class="dropdown-menu" aria-labelledby="dropdown-{{ loop.index }}">
+              {% for child in item.children %}
+                <li>
+                  <a 
+                    class="dropdown-item {% if child.page == currentPage %}active{% endif %}" 
+                    aria-label="{{ child.label }}"
+                    href="{{ child.url }}"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    {{ child.label }}
+                  </a>
+                </li>
+              {% endfor %}
+              </ul>
+          
+            {% endif %}
+          
+          {% endif %}
+        </li>
+      {% endfor %}
+      
+    </nav>
+  </div>
+</div>
+</div>
+{% endmacro %}
+
+
+
+   {#  <nav class="dashboard-nav-list">
+      <a href="#" class="dashboard-nav-item"><i class="fas fa-home"></i> Home </a>
+      <a href="#" class="dashboard-nav-item active"><i class="fas fa-tachometer-alt"></i> dashboard</a>
+      <a href="#" class="dashboard-nav-item"><i class="fas fa-file-upload"></i> Upload </a>
+      <div class="dashboard-nav-dropdown">
+          <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-photo-video"></i> Media </a>
+          <div class="dashboard-nav-dropdown-menu">
+            <a href="#" class="dashboard-nav-dropdown-item">All</a>
+            <a href="#" class="dashboard-nav-dropdown-item">Recent</a>
+            <a href="#" class="dashboard-nav-dropdown-item">Images</a>
+            <a href="#" class="dashboard-nav-dropdown-item">Video</a>
+          </div>
+        </div>
+        <div class="dashboard-nav-dropdown">
+          <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Users </a>
+          <div class="dashboard-nav-dropdown-menu">
+            <a href="#" class="dashboard-nav-dropdown-item">All</a>
+              <a href="#" class="dashboard-nav-dropdown-item">Subscribed</a>
+              <a href="#" class="dashboard-nav-dropdown-item">Non-subscribed</a>
+              <a href="#" class="dashboard-nav-dropdown-item">Banned</a>
+              <a href="#" class="dashboard-nav-dropdown-item">New</a>
+          </div>
+        </div>
+        <div class="dashboard-nav-dropdown">
+          <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-money-check-alt"></i> Payments </a>
+          <div class="dashboard-nav-dropdown-menu">
+            <a href="#" class="dashboard-nav-dropdown-item">All</a>
+            <a href="#" class="dashboard-nav-dropdown-item">Recent</a>
+            <a href="#" class="dashboard-nav-dropdown-item"> Projections</a>
+          </div>
+        </div>
+        <a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a>
+        <a href="#" class="dashboard-nav-item"><i class="fas fa-user"></i> Profile </a>
+      <div class="nav-item-divider"></div>
+      <a href="#" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
+        </nav>
+    </div> #}
+
+
+{# =======================
+   Banner Section
+======================= #}
+{% macro banner(title, subtitle="", image="", showButton=false, buttonText="", buttonUrl="#") %}
+  <section class="banner" style="{% if image %}background-image: url('{{ image }}');{% endif %}">
+    <div class="banner-content">
+      <h1>{{ title }}</h1>
+      {% if subtitle %}
+        <p>{{ subtitle }}</p>
+      {% endif %}
+      {% if showButton %}
+        {{ button(buttonText, buttonUrl, "secondary") }}
+      {% endif %}
+    </div>
+  </section>
+{% endmacro %}
+
+
+{# =======================
+   Class Card
+======================= #}
+{% macro classCard(class) %}
+<div class="class-card{% if not class.inStock %} class-full{% endif %}">
+    {# <img src="{{ product.image }}" alt="{{ product.name }}"> #}
+    <div>
+      <form>
+        <input type="checkbox" name="">
+      </form>
+    </div>
+    <div>
+      <p class="class-title">{{ class.name }} - <span class="credits">{{ class.credits }} Credits</span></h3>
+      {# <p>{{ class.description }}</p> #}
+    </div>
+    {# <span class="credits">{{ class.credits }} Credits</span> #}
+    
+    {% if not class.inStock %}
+        <div class="closed">
+          <p class="white mb-0">Course Full</p>
+        </div>
+       {#  <a href="#" class="arrow-link disabled" aria-label="Registration Closed" aria-disabled="true"> #}
+       <div class="btn-wrap-sm btn-class-right">
+        <p>Registration Closed</p>
+        </div>
+    {% else %}
+        <div class="open">
+          <p class="white mb-0">Course Open</p>
+        </div>
+        <div class="btn-wrap-sm btn-class-right">
+          <a href="#" class="btn-main btn-sm" aria-label="Register">Register</a>
+        </div>
+    {% endif %}
+</div>
+{% endmacro %}
+
+{# =======================
+   Product Card
+======================= #}
+{% macro productCard(product) %}
+<div class="product-card{% if not product.inStock %} out-of-stock{% endif %}">
+    {# <img src="{{ product.image }}" alt="{{ product.name }}"> #}
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <span class="price">${{ product.price }} Credits</span>
+    {% if not product.inStock %}
+        <span class="badge">Sold Out</span>
+    {% endif %}
+</div>
+{% endmacro %}
+
+{# =======================
+   Card Grid
+======================= #}
+{% macro cardGrid(items, renderCard) %}
+<div class="product-grid">
+    {% for item in items %}
+        {{ renderCard(item) }}
+    {% endfor %}
+</div>
+{% endmacro %}
+
+{# =======================
+  Images
+======================= #}
+{% macro image(src, alt="", className="", width="", height="", lazy=true, srcset="") %}
+  {# Ensure the base path — you can modify this for your build setup (e.g., /assets/images/) #}
+  {% set basePath = "./images/" %}
+  {% set fullSrc = basePath + src %}
+
+  <img
+    src="{{ fullSrc }}"
+    alt="{{ alt | escape }}"
+    {% if className %}class="{{ className }}"{% endif %}
+    {% if width %}width="{{ width }}"{% endif %}
+    {% if height %}height="{{ height }}"{% endif %}
+    {% if lazy %}loading="lazy"{% endif %}
+    {% if srcset %}srcset="{{ srcset }}"{% endif %}
+  >
+{% endmacro %}
+
+{# =======================
+   Shortcut Rail
+======================= #}
+{% macro shortcutRail(items, renderCard) %}
+<div class="product-grid">
+    {% for item in items %}
+        {{ renderCard(item) }}
+    {% endfor %}
+</div>
+{% endmacro %}
+
+{# =======================
+   Circle Progress "Bars"
+======================= #}
+{# {% macro progress(label, current, max, color="var(--primary)") %}
+  {% set fill = (current / max) * 100 %}
+  <div class="progress-circle-wrap">
+  <div class="progress-circle" style="--value: {{ fill / 100 }}; --color: {{ color }}">
+    <div class="progress-inner">
+      <span class="gauge-value">
+        {{ current | round(1) }}
+        {% if max != 100 %}{% endif %}
+      </span>
+    </div>
+  </div>
+  {% if label %}
+    <p class="gauge-label">{{ label }}</p>
+  {% endif %}
+  </div>
+{% endmacro %} #}
+
+{% macro progress(label, value, max, color, displayType="raw") %}
+  {# Normalize to a 0–1 fraction #}
+{% set percent = value / max %}
+<div class="progress-circle-wrap">
+  {% if displayType == "percent" %}
+  <div class="progress-circle" style="--value: {{ percent }}; --color: {{ color }};" data-label="{{ label }}">
+    <div class="progress-inner">
+    {# {% if displayType == "percent" %} #}
+      <span class="gauge-value">{{ (percent * 100) | round }}%</span>
+    </div>
+  </div>
+  {% if label %}
+    <p class="gauge-label">{{ label }}</p>
+  {% endif %}
+{% else %}
+  <div class="progress-circle circle-adj" style="--value: {{ percent }}; --color: {{ color }};" data-label="{{ label }}">
+    <div class="progress-inner">
+    {# {% if displayType == "percent" %} #}
+      <span class="gauge-value">{{ value }}</span>
+    </div>
+  </div>
+  {% if label %}
+    <p class="gauge-label">{{ label }}</p>
+  {% endif %}
+{% endif %}
+</div>
+{% endmacro %}
+
+{% macro progressLine(label, value, max, color, displayType="raw") %}
+  {% set percent = value / max %}
+
+  <div class="progress-line-wrapper" data-label="{{ label }}">
+    <div
+      class="progress-line"
+      style="--value: {{ percent }}; --color: {{ color }};"
+    >
+      <span class="progress-line__label" style="position: {{ percent }};">
+        {% if displayType == "percent" %}
+          {{ (percent * 100) | round }}%
+        {% else %}
+          {{ value }} / {{ max }}
+        {% endif %}
+      </span>
+    </div>
+  </div>
+{% endmacro %}
+
+{# =======================
+  Calendar Details
+======================= #}
+{# {% macro calendar(month, year, events) %}
+  {% set monthNames = [
+    'January','February','March','April','May','June',
+    'July','August','September','October','November','December'
+  ] %}
+  {% set daysInMonth = [31, (year % 4 == 0 ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] %}
+  {% set monthIndex = monthNames.indexOf(month) %}
+  {% set days = daysInMonth[monthIndex] %}
+  {% set firstWeekday = month | startDay(year) %}
+
+  <div class="calendar">
+    <div class="calendar-header">
+      <h3>{{ month }} {{ year }}</h3>
+    </div>
+
+    <div class="calendar-grid">
+      {% for day in ['M','T','W','T','F','S','S'] %}
+        <div class="calendar-day-label">{{ day }}</div>
+      {% endfor %}
+
+      {% for i in range(1, firstWeekday - 1) %}
+        <div class="calendar-day empty"></div>
+      {% endfor %}
+
+      {% for day in range(1, days + 1) %}
+        {% set event = events | selectattr("day", "equalto", day) | first %}
+        <div
+          class="calendar-day {{ event ? 'has-event' : '' }}"
+          style="{{ event ? 'background-color:' ~ event.color ~ ';' : '' }}"
+        >
+          <span>{{ day }}</span>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="calendar-events">
+      {% for event in events %}
+        <div class="calendar-event">
+          <span class="dot" style="background-color: {{ event.color }}"></span>
+          <span class="date">{{ event.day }} {{ month }}</span>
+          <span class="label">{{ event.label }}</span>
+          <span class="time">{{ event.time }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endmacro %} #}

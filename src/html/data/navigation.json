@@ -1,0 +1,7 @@
+[
+  { "slug": "home", "label": "Home", "url": "/" },
+  { "slug": "about", "label": "About", "url": "/about.html" },
+  { "slug": "myacademics", "label": "My Academics", "url": "/academics.html" },
+  { "slug": "myfinances", "label": "My Finances", "url": "/finances.html" },
+  { "slug": "contact", "label": "Contact", "url": "/contact.html" }
+]

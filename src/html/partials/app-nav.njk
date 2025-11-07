@@ -1,0 +1,7 @@
+{% from "partials/macros.njk" import navApps %}
+{% set appnav = [
+  { "slug": "info", "img": "fa-solid fa-question", "label": "Information", "url": "/info.html" },
+  { "slug": "events", "img": "fa-solid fa-calendar", "label": "Events", "url": "/events.html" },
+  { "slug": "store", "img": "fa-solid fa-cart-shopping", "label": "School Store", "url": "/store.html" }
+] %}
+{{ navApps(appnav, currentPage) }}

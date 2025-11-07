@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Class Name One",
+    "description": "A Brief Description Here",
+    "price": 3,
+    "image": "images/magic-ale.jpg",
+    "inStock": true
+  },
+  {
+    "name": "Class Name Two",
+    "description": "A Brief Description Here.",
+    "price": 3,
+    "image": "images/pumpkin-stout.jpg",
+    "inStock": false
+  }
+]

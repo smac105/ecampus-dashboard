@@ -1,0 +1,8 @@
+{% set fill = (item.current / item.max) * 100 %}
+
+<div class="progress-circle" style="--value: {{ fill / 100 }}; --color: {{ item.color }}">
+  <div class="progress-inner">
+    <span class="gauge-value">{{ item.current | round(1) }}{% if item.max != 100 %}/{{ item.max }}{% else %}%{% endif %}</span>
+  </div>
+  <p class="gauge-label">{{ item.label }}</p>
+</div>

@@ -1,0 +1,12 @@
+{
+  "title": "About Us Here",
+  "subtitle": "If this isn't the coolest site ever...",
+  "team": [
+    { "name": "Alice", "role": "Founder" },
+    { "name": "Bob", "role": "Head Brewer" }
+  ],
+  "cta": {
+    "label": "Contact Us",
+    "url": "/contact"
+  }
+}

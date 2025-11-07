@@ -1,0 +1,7 @@
+.alert {
+	padding: 20px 25px;
+	background: $apu-gradient;
+	display: grid;
+	grid-template-columns: auto 200px;
+	align-items: center;
+}

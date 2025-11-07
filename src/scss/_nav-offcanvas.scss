@@ -1,0 +1,23 @@
+.offcanvas-body {
+    overflow-y: auto;
+    background: $primary;
+}
+.offcanvas-header {
+    background: $secondary;
+    align-items: center;
+    .btn-new-close {
+        background: none;
+        font-family: "Font Awesome 6 Pro";
+        content: "\f061";
+        color: $wht;
+        font-size: 2.4rem;
+        padding: 10px;
+        border: none;
+    }
+    .sm-logo-main {
+        fill: $blk;
+        svg {
+            // top: 5px; commented out for APU Logo
+        }
+    }
+}

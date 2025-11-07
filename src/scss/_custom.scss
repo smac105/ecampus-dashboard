@@ -1,0 +1,65 @@
+#sidebarMenu {
+	min-height: 100vh;
+	background: #000 !important;
+}
+.gradient-bg {
+  background-color: #0ff;
+  background: linear-gradient(45deg, #ff0 50%, #0ff 100%);
+  color: #000;
+  padding: 0px 15px 0px 1000px;
+  margin-left: -1000px;
+}
+.black-bg-title {
+  background: #000;
+  padding: 0px 15px 0px 1000px;
+  margin-left: -1000px;
+}
+.white-box {
+	@include white-box-apus;
+}
+.space-between {
+	@include space-between;
+}
+.main-wrap {
+	padding: 5px 45px 55px 45px;
+  // background: $gray-10;
+}
+.small-title {
+  font-size: 1.4rem;
+  line-height: 1.0;
+  font-weight: 400;
+}
+.white {
+  color: $wht !important;
+}
+.gray {
+  color: $gray-20 !important;
+}
+.lead {
+  font-size: 2.0rem;
+  margin-bottom: 25px;
+}
+/* custom patterns and gradients */
+.gradient-bg {
+  background-color: #0ff;
+  background: linear-gradient(45deg, #ff0 50%, #0ff 100%);
+  color: #000;
+  // padding: 0px 15px 0px 1000px;
+  // margin-left: -1000px;
+}
+
+/* Breadcrumbs */
+
+.breadcrumbs {
+  font-size: 12px;
+  font-weight: 300;
+  /*color: #d2d2d2;*/
+}
+.breadcrumbs a {
+  /*color: #d2d2d2 !important;*/
+}
+@media (max-width: 991px) {
+  .main-wrap {
+    padding: 45px 50px 55px;
+  }
+}
