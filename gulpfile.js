@@ -127,12 +127,19 @@ function assets() {
     .pipe(dest(paths.assets.dest));
 }
 
+// Copy HTML Data (JSON files for JavaScript to fetch)
+function htmlData() {
+  return src(paths.data)
+    .pipe(dest('dist/html/data'));
+}
+
 // Serve & watch
 function serve() {
   browserSync.init({ server: { baseDir: 'dist' } });
   gulp.watch(paths.scss.watch, styles);
   gulp.watch(paths.js.src, scripts);
   gulp.watch([paths.html.watch, paths.data, paths.filters], html);
+  gulp.watch(paths.data, htmlData);
   gulp.watch(paths.images.src, images);
   gulp.watch(paths.video.src, video);
   gulp.watch(paths.assets.src, assets);
@@ -147,9 +154,10 @@ exports.images = images;
 exports.video = video;
 exports.assets = assets;
 exports.serve = serve;
+exports.htmlData = htmlData;
 
 exports.default = gulp.series(
   clean,
-  gulp.parallel(styles, scripts, html, images, video, assets),
+  gulp.parallel(styles, scripts, html, htmlData, images, video, assets),
   serve
 );

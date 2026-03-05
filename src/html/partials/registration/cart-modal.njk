@@ -1,0 +1,70 @@
+<!-- Registration Cart Modal -->
+<div class="modal fade" id="registrationCartModal" tabindex="-1" aria-labelledby="registrationCartModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title h3" id="registrationCartModalLabel">
+          <i class="fas fa-shopping-cart me-2"></i> Registration Cart
+        </h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Empty Cart State -->
+        <div id="emptyCartState" class="text-center py-5">
+          <i class="fas fa-shopping-cart" style="font-size: 60px; color: #d9d9d9;"></i>
+          <h4 class="h4 mt-4 mb-2">Your registration cart is empty</h4>
+          <p class="small-title gray-60">Start a new course registration to add courses to your cart</p>
+          <a href="/registration-flow.html" class="btn-main mt-3">
+            Start Registration
+          </a>
+        </div>
+
+        <!-- Pending Registration State -->
+        <div id="pendingCartState" style="display: none;">
+          <div class="alert" style="background: var(--apu-yellow-alt); border: 2px solid var(--apu-yellow); padding: 1.5rem;">
+            <p class="small-title mb-0">
+              <i class="fas fa-info-circle me-2"></i>
+              <strong>You have an incomplete registration in progress</strong>
+            </p>
+          </div>
+
+          <div class="white-box mb-4">
+            <h4 class="h4 mb-3">Selected Courses</h4>
+            <div id="cartCourseList">
+              <!-- Courses will be loaded here -->
+            </div>
+          </div>
+
+          <div class="white-box mb-4">
+            <div class="row">
+              <div class="col-6">
+                <p class="small-title gray-60 mb-1">Courses Selected</p>
+                <p class="h4 mb-0" id="cartCoursesCount">0</p>
+              </div>
+              <div class="col-6">
+                <p class="small-title gray-60 mb-1">Total Credits</p>
+                <p class="h4 mb-0" id="cartCreditsCount">0</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="white-box gradient-bg mb-4">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="h4 mb-0">Estimated Total</span>
+              <span class="h3 mb-0" id="cartTotalAmount">$0.00</span>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3 justify-content-end">
+            <button type="button" class="btn-secondary" id="clearCartBtn">
+              <i class="fas fa-trash me-2"></i> Clear Cart
+            </button>
+            <a href="/registration-flow.html" class="btn-main" id="resumeRegistrationBtn">
+              Resume Registration
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

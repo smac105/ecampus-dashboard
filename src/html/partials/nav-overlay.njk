@@ -1,0 +1,147 @@
+{% from "partials/macros.njk" import overlayMenu %}
+
+{# Navigation Items with descriptions for overlay menu #}
+{% set navItems = [
+  { "icon": "house", "slug": "home", "label": "Home", "url": "/index.html" },
+  {
+    "icon": "bell-school",
+    "slug": "academics",
+    "label": "My Academics",
+    "url": "/my-academics.html",
+    "description": "Manage your courses, plan your degree, and track your academic progress.",
+    "mega": true,
+    "children": [
+      {
+        "links": [
+          {"label": "Course Management", "url": "/course-management.html", "page": "Course Management" },
+          { "label": "Degree Planner", "url": "/degree-planner.html", "page": "Degree Planner" },
+          { "label": "Course Catalog", "url": "/course-catalog.html", "page": "Course Catalog" },
+          { "label": "Transfer Credits", "url": "/transfer-credits.html", "page": "Transfer Credits" }
+        ]
+      }
+    ]
+  },
+  {
+    "icon": "money-check-dollar",
+    "slug": "finances",
+    "label": "My Finances",
+    "url": "/my-finances.html",
+    "description": "View tuition, manage financial aid, set up payment plans, and access billing statements.",
+    "mega": true,
+    "children": [
+      {
+        "links": [
+          { "label": "Tuition & Fees", "url": "/tuition-and-fees.html", "page": "Tuition & Fees" },
+          { "label": "Financial Aid", "url": "/financial-aid.html", "page": "Financial Aid" },
+          { "label": "Payment Plans", "url": "/payment-plans.html", "page": "Payment Plans" },
+          { "label": "Billing Statement", "url": "/billing-statement.html", "page": "Billing Statement" }
+        ]
+      }
+    ]
+  },
+  {
+    "icon": "folder-open",
+    "slug": "forms",
+    "label": "Forms & Documents",
+    "url": "/forms-and-documents.html",
+    "description": "Access academic forms, financial documents, and important student resources.",
+    "mega": true,
+    "children": [
+      {
+        "links": [
+          { "label": "Academic Forms", "url": "/academic-forms.html", "page": "Academic Forms" },
+          { "label": "Financial Forms", "url": "/financial-forms.html", "page": "Financial Forms" },
+          { "label": "Official Documents", "url": "/official-documents.html", "page": "Official Documents" },
+          { "label": "Student Handbook", "url": "/student-handbook.html", "page": "Student Handbook" }
+        ]
+      }
+    ]
+  },
+  {
+    "icon": "user-doctor",
+    "slug": "career",
+    "label": "Career Services",
+    "url": "/career-services.html",
+    "description": "Explore career opportunities, build your resume, and connect with career counselors.",
+    "mega": true,
+    "children": [
+      {
+        "links": [
+          { "label": "Job Search", "url": "/job-search.html", "page": "Job Search" },
+          { "label": "Resume Builder", "url": "/resume-builder.html", "page": "Resume Builder" },
+          { "label": "Career Counseling", "url": "/career-counseling.html", "page": "Career Counseling" },
+          { "label": "Career Events", "url": "/career-events.html", "page": "Career Events" }
+        ]
+      }
+    ]
+  },
+  {
+    "icon": "school",
+    "slug": "student-life",
+    "label": "Student Life",
+    "url": "/student-life.html",
+    "description": "Get involved with student organizations, campus events, and wellness resources.",
+    "mega": true,
+    "hideForStages": ["prospective", "applicant"],
+    "children": [
+      {
+        "links": [
+          { "label": "Student Organizations", "url": "/student-organizations.html", "page": "Student Organizations" },
+          { "label": "Campus Events", "url": "/campus-events.html", "page": "Campus Events" },
+          { "label": "Wellness Resources", "url": "/wellness-resources.html", "page": "Wellness Resources" },
+          { "label": "Campus Resources", "url": "/campus-resources.html", "page": "Campus Resources" }
+        ]
+      }
+    ]
+  },
+  {
+    "icon": "graduation-cap",
+    "slug": "alumni",
+    "label": "Alumni",
+    "url": "/alumni.html",
+    "description": "Stay connected with your alumni network and access exclusive benefits and events.",
+    "mega": true,
+    "hideForStages": ["prospective", "applicant", "accepted"],
+    "children": [
+      {
+        "links": [
+          { "label": "Alumni Network", "url": "/alumni-network.html", "page": "Alumni Network" },
+          { "label": "Alumni Events", "url": "/alumni-events.html", "page": "Alumni Events" },
+          { "label": "Alumni Benefits", "url": "/alumni-benefits.html", "page": "Alumni Benefits" },
+          { "label": "Get Involved", "url": "/get-involved.html", "page": "Get Involved" }
+        ]
+      }
+    ]
+  },
+  {
+    "icon": "circle-info",
+    "slug": "help",
+    "label": "Help & Resources",
+    "url": "/help-and-resources.html",
+    "description": "Find answers to common questions and get technical support when you need it.",
+    "mega": true,
+    "children": [
+      {
+        "links": [
+          { "label": "FAQ", "url": "/faq.html", "page": "FAQ" },
+          { "label": "Technical Support", "url": "/technical-support.html", "page": "Technical Support" },
+          { "label": "Live Chat", "url": "/live-chat.html", "page": "Live Chat" },
+          { "label": "Contact Us", "url": "/contact-us.html", "page": "Contact Us" }
+        ]
+      }
+    ]
+  }
+] %}
+
+{# Quick Links for the sidebar #}
+{% set quickLinks = [
+  { "icon": "chalkboard", "label": "Classroom", "url": "/classroom.html" },
+  { "icon": "money-check-dollar", "label": "Tuition & Finances", "url": "/tuition-and-fees.html" },
+  { "icon": "book", "label": "Your Classes", "url": "/course-management.html" },
+  { "icon": "graduation-cap", "label": "Degree Planner", "url": "/degree-planner.html" },
+  { "icon": "calendar", "label": "Events", "url": "/events.html" },
+  { "icon": "cart-shopping", "label": "School Store", "url": "/store.html" },
+  { "icon": "envelope", "label": "Contact Support", "url": "/contact-us.html" }
+] %}
+
+{{ overlayMenu(navItems, quickLinks, currentPage) }}

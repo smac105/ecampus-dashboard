@@ -1,0 +1,87 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/student-organizations.html" class="shortcut-item">
+          <span><i class="fa-regular fa-users-rectangle"></i></span>
+          <p>Student Organizations</p>
+        </a>
+        <a href="/campus-events.html" class="shortcut-item">
+          <span><i class="fa-regular fa-calendar-star"></i></span>
+          <p>Campus Events</p>
+        </a>
+        <a href="/wellness-resources.html" class="shortcut-item">
+          <span><i class="fa-regular fa-heart"></i></span>
+          <p>Wellness Resources</p>
+        </a>
+        <a href="/campus-resources.html" class="shortcut-item">
+          <span><i class="fa-regular fa-building-columns"></i></span>
+          <p>Campus Resources</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="white-box mb-5">
+        <h1 class="h1 mb-4">Student Life</h1>
+        <p class="lead mb-4">Connect with your university community and explore campus resources.</p>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3"><i class="fa-regular fa-users-rectangle"></i> Student Organizations</h3>
+              <p>Join clubs and organizations that match your interests and career goals.</p>
+              <a href="#" class="btn-main btn-sm">View Organizations</a>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3"><i class="fa-regular fa-calendar-days"></i> Campus Events</h3>
+              <p>Stay updated on campus events, workshops, and social activities.</p>
+              <a href="#" class="btn-main btn-sm">Event Calendar</a>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3"><i class="fa-regular fa-heart"></i> Wellness Resources</h3>
+              <p>Access mental health support, counseling services, and wellness programs.</p>
+              <a href="#" class="btn-main btn-sm">View Resources</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Student Support Services</h3>
+              <ul>
+                <li><a href="#" class="text-primary">Academic Advising</a></li>
+                <li><a href="#" class="text-primary">Tutoring Services</a></li>
+                <li><a href="#" class="text-primary">Disability Services</a></li>
+                <li><a href="#" class="text-primary">Veterans Services</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Campus Resources</h3>
+              <ul>
+                <li><a href="#" class="text-primary">University Library</a></li>
+                <li><a href="#" class="text-primary">Writing Center</a></li>
+                <li><a href="#" class="text-primary">Technology Support</a></li>
+                <li><a href="#" class="text-primary">Campus Bookstore</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,234 @@
+{% extends "layouts/registration-layout.njk" %}
+{% import "partials/macros.njk" as buttons %}
+{% set exitButtonText = "Close Application" %}
+{% set exitButtonUrl = "/my-documents.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center mb-4">
+    <div class="col-9">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+          <li class="breadcrumb-item active" aria-current="page">View Application</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mb-5">
+    <div class="col-9">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h1 class="mb-2">Application Summary</h1>
+          <p class="lead mb-0">Application ID: <strong>APP-2025-123456</strong></p>
+        </div>
+        <div>
+          <p class="small-title">Application Status:</p>
+          <span class="badge bg-review" style="font-size: 1.4rem; padding: 0.8rem 1.5rem;">Submitted - Pending Review</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Status -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-9">
+      <div class="white-box">
+        <h4 class="mb-5">Application Status</h3>
+        <div class="row">
+          {# <div class="col-md-4 mb-3">
+            <p class="small-title gray-70 mb-1">Current Status</p>
+            <p class="mb-0 text-success fw-bold">Under Review</p>
+          </div> #}
+          <div class="col-md-8 mb-3">
+            <p class="small-title gray-70 mb-1">Program</p>
+            <p class="lead mb-4"><strong>Bachelor of Science - Computer Science</strong></p>
+            <p class="small-title gray-70 mb-1">Start Term</p>
+            <p class="lead mb-0"><strong>Fall 2026</strong></p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <p class="small-title gray-70 mb-1">Submission Date</p>
+            <p class="mb-4">January 15, 2026</p>
+          </div>
+          {# <div class="col-md-4 mb-3">
+            <p class="small-title gray-70 mb-1">Start Term</p>
+            <p class="lead mb-0"><strong>Fall 2026</strong></p>
+          </div> #}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Personal Information -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-9">
+      <div class="white-box">
+        <h4 class="mb-5">Personal Information</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <p class="small-title gray-70 mb-1">Full Name</p>
+            <p class="mb-0">John Michael Smith</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p class="small-title gray-70 mb-1">Email</p>
+            <p class="mb-0">john.smith@email.com</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p class="small-title gray-70 mb-1">Phone</p>
+            <p class="mb-0">(555) 123-4567</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p class="small-title gray-70 mb-1">Date of Birth</p>
+            <p class="mb-0">March 15, 1995</p>
+          </div>
+          <div class="col-12 mb-3">
+            <p class="small-title gray-70 mb-1">Address</p>
+            <p class="mb-0">123 Main Street, Apt 4B, Alexandria, VA 22314</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Education History -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-9">
+      <div class="white-box">
+        <h4 class="mb-5">Education History</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <p class="small-title gray-70 mb-1">High School</p>
+            <p class="mb-0">Washington High School, Falls Church, VA</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p class="small-title gray-70 mb-1">Graduation Year</p>
+            <p class="mb-0">2013</p>
+          </div>
+          <div class="col-12 mb-3">
+            <p class="small-title gray-70 mb-1">College/University</p>
+            <p class="mb-0">Northern Virginia Community College, Annandale, VA</p>
+            <p class="text-muted small">Completed 30 credits toward Associate Degree</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Military Background -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-9">
+      <div class="white-box">
+        <h4 class="mb-5">Military Background</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <p class="small-title gray-70 mb-1">Military Affiliation</p>
+            <p class="mb-0">Active Duty</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p class="small-title gray-70 mb-1">Branch of Service</p>
+            <p class="mb-0">Army</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p class="small-title gray-70 mb-1">Rank</p>
+            <p class="mb-0">E-5 (Sergeant)</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p class="small-title gray-70 mb-1">MOS</p>
+            <p class="mb-0">25B (Information Technology Specialist)</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p class="small-title gray-70 mb-1">Service Start Date</p>
+            <p class="mb-0">June 2015</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p class="small-title gray-70 mb-1">Tuition Assistance</p>
+            <p class="mb-0">Yes - Planning to use Military TA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Documents -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-9">
+      <div class="white-box">
+        <h4 class="mb-5">Uploaded Documents</h4>
+        <div class="document-list">
+          <div class="document-item mb-2">
+            <i class="fas fa-file-pdf text-danger me-2"></i>
+            <span>Official High School Transcript</span>
+            <span class="text-muted ms-2 small">(Uploaded Jan 15, 2025)</span>
+          </div>
+          <div class="document-item mb-2">
+            <i class="fas fa-file-pdf text-danger me-2"></i>
+            <span>NVCC Official Transcript</span>
+            <span class="text-muted ms-2 small">(Uploaded Jan 15, 2025)</span>
+          </div>
+          <div class="document-item mb-2">
+            <i class="fas fa-file-pdf text-danger me-2"></i>
+            <span>Government-Issued Photo ID (Driver's License)</span>
+            <span class="text-muted ms-2 small">(Uploaded Jan 15, 2025)</span>
+          </div>
+          <div class="document-item mb-2">
+            <i class="fas fa-file-pdf text-danger me-2"></i>
+            <span>DD Form 214 (Military Service Record)</span>
+            <span class="text-muted ms-2 small">(Uploaded Jan 15, 2025)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admissions Decision (Coming Soon) -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-9">
+      <div class="white-box" style="background: #f8f9fa; border-left: 4px solid #00ffff;">
+        <h3 class="mb-3">Next Steps</h3>
+        <p class="mb-3">Your application is currently under review by our admissions team. You will receive an admission decision via email within 5-7 business days.</p>
+        <div class="alert-exclamation alert-blue mb-0">
+          <i class="fas fa-info-circle me-2"></i>
+          <div>
+            <p class="mb-3"><strong>Track Your Status:</strong></p>
+            <p class="mb-0">Check your email regularly for updates. You can also contact our admissions office at <strong>1-877-468-6268</strong> or <strong>admissions@apus.edu</strong> for any questions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="row justify-content-center mb-5">
+    <div class="col-9">
+      <div class="d-flex gap-3">
+        <a href="/" class="btn-secondary">
+          <i class="fas fa-arrow-left me-2"></i> Back to Dashboard
+        </a>
+        <button onclick="window.print()" class="btn-secondary">
+          <i class="fas fa-print me-2"></i> Print Application
+        </button>
+        <a href="mailto:admissions@apus.edu" class="btn-main">
+          <i class="fas fa-envelope me-2"></i> Contact Admissions
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.document-item {
+  font-size: 1.4rem;
+  padding: 0.8rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.document-item:last-child {
+  border-bottom: none;
+}
+
+.document-item i {
+  font-size: 1.6rem;
+}
+</style>
+{% endblock %}

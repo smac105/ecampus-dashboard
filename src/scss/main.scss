@@ -10,6 +10,7 @@
 // Components
 @import "_nav.scss";
 @import "_nav-offcanvas.scss";
+@import "_nav-overlay.scss";
 @import "_appmenu.scss";
 @import "_footer.scss";
 @import "_search.scss";
@@ -20,9 +21,63 @@
 @import "_custom.scss";
 @import "_classes.scss";
 @import "_alerts.scss";
+@import "_forms.scss";
+@import "_modal.scss";
+@import "_tabs.scss"; 
+@import "_degree-finder.scss";
 
 // PAGE SPECIFIC STYLES
-// @import "_registration.scss";
+@import "_registration.scss";
+@import "_application.scss";
+
+// STUDENT STAGE STYLES
+@import "_news.scss";
 
 // Brand override variables
 @import "_brand-variables.scss";
+
+// Stage Switcher for Demo
+.stage-switcher-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  label {
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .stage-switcher {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    min-width: 180px;
+    
+    &:focus {
+      outline: none;
+      border-color: var(--apu-blue-active, #0066cc);
+    }
+  }
+}
+
+// Stage containers
+.stage-container {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+

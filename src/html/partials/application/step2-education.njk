@@ -1,0 +1,112 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="mb-5">
+        <h2 class="h2">Education History</h2>
+        <p class="lead">Tell us about your educational background</p>
+      </div>
+
+      <div class="white-box mb-4">
+        <h3 class="h4 mb-4">High School Information</h3>
+        <form id="educationForm">
+          <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+              <label for="highSchoolName" class="form-label">High School Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="highSchoolName" name="highSchoolName" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="highSchoolCity" class="form-label">City <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="highSchoolCity" name="highSchoolCity" required>
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+              <label for="highSchoolState" class="form-label">State <span class="text-danger">*</span></label>
+              <select class="form-control" id="highSchoolState" name="highSchoolState" required>
+                <option value="">Select State</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="CA">California</option>
+                <option value="FL">Florida</option>
+                <option value="NY">New York</option>
+                <option value="TX">Texas</option>
+              </select>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="graduationYear" class="form-label">Graduation Year <span class="text-danger">*</span></label>
+              <input type="number" class="form-control" id="graduationYear" name="graduationYear" min="1950" max="2030" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="gpa" class="form-label">GPA</label>
+              <input type="text" class="form-control" id="gpa" name="gpa" placeholder="3.5">
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="white-box">
+        <h3 class="h4 mb-4">College/University Information</h3>
+        <p class="mb-3">Have you attended any colleges or universities?</p>
+
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="radio" name="attendedCollege" id="attendedYes" value="yes">
+          <label class="form-check-label" for="attendedYes">
+            Yes, I have attended college
+          </label>
+        </div>
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="radio" name="attendedCollege" id="attendedNo" value="no" checked>
+          <label class="form-check-label" for="attendedNo">
+            No, I have not attended college
+          </label>
+        </div>
+
+        <div id="collegeDetails" style="display: none;">
+          <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+              <label for="collegeName" class="form-label">College/University Name</label>
+              <input type="text" class="form-control" id="collegeName" name="collegeName">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="collegeCity" class="form-label">City</label>
+              <input type="text" class="form-control" id="collegeCity" name="collegeCity">
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+              <label for="collegeState" class="form-label">State</label>
+              <select class="form-control" id="collegeState" name="collegeState">
+                <option value="">Select State</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="CA">California</option>
+                <option value="FL">Florida</option>
+                <option value="NY">New York</option>
+                <option value="TX">Texas</option>
+              </select>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="degreeEarned" class="form-label">Degree Earned</label>
+              <select class="form-control" id="degreeEarned" name="degreeEarned">
+                <option value="">Select Degree</option>
+                <option value="none">Some College (No Degree)</option>
+                <option value="associate">Associate's Degree</option>
+                <option value="bachelor">Bachelor's Degree</option>
+                <option value="master">Master's Degree</option>
+                <option value="doctorate">Doctorate</option>
+              </select>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="yearCompleted" class="form-label">Year Completed</label>
+              <input type="number" class="form-control" id="yearCompleted" name="yearCompleted" min="1950" max="2030">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

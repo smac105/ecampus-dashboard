@@ -1,0 +1,76 @@
+{% import "partials/macros.njk" as buttons %}
+
+{# Accepted Student Stage #}
+<div class="container">
+<div class="row">
+	<div class="col-lg-8 mb-5">
+		<!-- Welcome Message -->
+		<div class="intro-box">
+			<h1>Congratulations! You've Been Accepted</h1>
+			<p class="lead">Welcome to the APUS family! We're thrilled to have you join us. Complete the steps below to secure your enrollment and prepare for your first term.</p>
+		</div>
+
+		<!-- Next Steps -->
+		<div class="actions white-box">
+			<h4>Next Steps for Enrollment</h4>
+			<p>Complete these important steps to prepare for your first semester at APUS.</p>
+			{{ buttons.button('Complete Enrollment', '/enrollment', 'main') }}
+			{{ buttons.button('Financial Aid Info', '/financial-aid', 'secondary') }}
+		</div>
+	</div>
+
+	<div class="col-lg-4 mb-5">
+		<!-- Enrollment Steps Task List -->
+		<div class="actions black-bg mb-5">
+			<h4 class="mb-3">Enrollment Steps</h4>
+			<div class="task-list">
+				<div class="task-item">
+					<input type="checkbox" id="acc-task1" class="task-checkbox">
+					<label for="acc-task1">Accept Admission Offer</label>
+					<a href="/enrollment.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div class="task-item">
+					<input type="checkbox" id="acc-task2" class="task-checkbox">
+					<label for="acc-task2">Complete New Student Orientation</label>
+					<a href="/orientation.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div class="task-item">
+					<input type="checkbox" id="acc-task3" class="task-checkbox">
+					<label for="acc-task3">Set Up Student Email Account</label>
+					<a href="/student-resources.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div class="task-item">
+					<input type="checkbox" id="acc-task4" class="task-checkbox">
+					<label for="acc-task4">Register for First Term Courses</label>
+					<a href="/registration-flow.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div class="task-item">
+					<input type="checkbox" id="acc-task5" class="task-checkbox">
+					<label for="acc-task5">Complete Financial Aid Paperwork</label>
+					<a href="/financial-aid.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Important Dates -->
+		<div class="actions white-box mb-5">
+			<h4>Important Dates</h4>
+			<ul class="info-list">
+				<li><strong>Jan 15:</strong> Enrollment Deadline</li>
+				<li><strong>Jan 22:</strong> Orientation Session</li>
+				<li><strong>Feb 1:</strong> Classes Begin</li>
+				<li><strong>Feb 10:</strong> Last Day to Add/Drop</li>
+			</ul>
+		</div>
+
+		<!-- New Student Resources -->
+		<div class="actions white-box">
+			<h4>New Student Resources</h4>
+			<p class="info-text">
+				Access orientation materials and connect with your student success advisor.
+			</p>
+			{{ buttons.button('Start Orientation', '/orientation', 'main') }}
+		</div>
+	</div>
+</div>
+</div>

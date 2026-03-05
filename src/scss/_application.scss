@@ -1,0 +1,189 @@
+// =============================================
+// Application Flow Styles
+// =============================================
+
+// Shared Flow Checkbox Styles
+// ---------------------------------------------
+// Used in Application, Registration, and Orientation flows
+// Matches the task list checkbox styling
+
+.flow-checkbox,
+.form-check-input[type="checkbox"],
+.orientation-checkbox {
+  width: 24px !important;
+  height: 24px !important;
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: $secondary;
+  margin-top: 0 !important;
+}
+
+// Document Upload Styles (Step 4)
+// ---------------------------------------------
+
+.upload-area {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
+
+  &:hover {
+    border-color: #00ffff;
+    background: #f4f4f4;
+  }
+
+  &.dragging {
+    border-color: #00ffff;
+    background: #e8f9f9;
+  }
+
+  i.fa-cloud-upload-alt {
+    color: #00ffff;
+  }
+}
+
+.transcript-bypass-alert {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+
+  .form-check-label {
+    font-size: 1.4rem;
+  }
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #f4f4f4;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.file-item-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.file-item-icon {
+  font-size: 2rem;
+  color: #00ffff;
+}
+
+.file-item-name {
+  font-weight: 600;
+  color: #000;
+}
+
+.file-item-size {
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.file-item-remove {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+
+  &:hover {
+    color: #c82333;
+  }
+}
+
+// Review & Submit Styles (Step 5)
+// ---------------------------------------------
+
+.application-fee-alert {
+  background: #e8f9f9;
+  border: 1px solid #00ffff;
+}
+
+.success-icon {
+  animation: scaleIn 0.5s ease-out;
+
+  i.fa-check-circle {
+    color: #80c342;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.timeline-steps {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-step {
+  position: relative;
+  padding-bottom: 3rem;
+  padding-left: 4rem;
+
+  &:last-child {
+    padding-bottom: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 1.8rem;
+    top: 4rem;
+    width: 2px;
+    height: calc(100% - 2rem);
+    background: #e0e0e0;
+  }
+}
+
+.timeline-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: #00ffff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 2px 8px rgba(0, 255, 255, 0.3);
+}
+
+.timeline-content {
+  h4 {
+    font-weight: 600;
+    color: #000;
+  }
+
+  p {
+    color: #666;
+    font-size: 1.3rem;
+  }
+}
+
+.confirmation-info-list {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}

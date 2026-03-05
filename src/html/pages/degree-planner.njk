@@ -1,0 +1,70 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/course-management.html" class="shortcut-item">
+          <span><i class="fa-regular fa-list-check"></i></span>
+          <p>Course Management</p>
+        </a>
+        <a href="/degree-planner.html" class="shortcut-item">
+          <span><i class="fa-regular fa-map"></i></span>
+          <p>Degree Planner</p>
+        </a>
+        <a href="/course-catalog.html" class="shortcut-item">
+          <span><i class="fa-regular fa-book-bookmark"></i></span>
+          <p>Course Catalog</p>
+        </a>
+        <a href="/transfer-credits.html" class="shortcut-item">
+          <span><i class="fa-regular fa-arrow-right-arrow-left"></i></span>
+          <p>Transfer Credits</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="white-box mb-5">
+        <h1 class="h1 mb-4">Degree Planner</h1>
+        <p class="lead mb-4">Plan your academic path and track your progress toward graduation.</p>
+
+        <div class="row">
+          <div class="col-md-8 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Degree Requirements</h3>
+              <ul>
+                <li>General Education Requirements: 45 credits</li>
+                <li>Major Requirements: 60 credits</li>
+                <li>Electives: 15 credits</li>
+                <li>Total Required: 120 credits</li>
+              </ul>
+              <a href="#" class="btn-main btn-sm">View Full Requirements</a>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Progress Summary</h3>
+              <p><strong>Completed:</strong> 89 credits</p>
+              <p><strong>In Progress:</strong> 12 credits</p>
+              <p><strong>Remaining:</strong> 19 credits</p>
+              <p><strong>Expected Graduation:</strong> Spring 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Semester Planner</h3>
+              <p>Plan your upcoming semesters and ensure you're on track for graduation.</p>
+              <a href="#" class="btn-main btn-sm">Plan Semesters</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

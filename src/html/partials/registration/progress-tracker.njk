@@ -1,0 +1,70 @@
+<div class="white-box">
+  {# <div class="flex items-center justify-between mb-3">
+    <p class="">Registration Progress</p>
+    <p class="text-center small-title">
+      Step <span id="currentStepNumber">1</span> of <span id="totalSteps">5</span>
+    </p>
+  </div> #}
+
+  <!-- Progress Bar -->
+  <div class="mb-0">
+    {# <div class="absolute top-3.5 left-0 w-full h-0.5 bg-gray-200"></div> #}
+    <div id="progressBar" class="absolute transition-all duration-500"></div>
+
+    <div class="relative progress-tracker">
+      <div class="step-indicator" data-step="1">
+        <div class="step-circle active">
+          <span class="step-number">1</span>
+          <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <span class="step-label">Select Courses</span>
+        <div class="step-line"></div>
+      </div>
+
+      <div class="step-indicator" data-step="2">
+        <div class="step-circle">
+          <span class="step-number">2</span>
+          <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <span class="step-label">Review Cart</span>
+        <div class="step-line"></div>
+      </div>
+
+      <div class="step-indicator" data-step="3">
+        <div class="step-circle">
+          <span class="step-number">3</span>
+          <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <span class="step-label">Payment & Legal</span>
+        <div class="step-line"></div>
+      </div>
+
+      <div class="step-indicator" data-step="4">
+        <div class="step-circle">
+          <span class="step-number">4</span>
+          <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <span class="step-label">Details</span>
+        <div class="step-line"></div>
+      </div>
+
+      <div class="step-indicator" data-step="5">
+        <div class="step-circle">
+          <span class="step-number">5</span>
+          <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <span class="step-label">Confirmation</span>
+      </div>
+    </div>
+  </div>
+</div>

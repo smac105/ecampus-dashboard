@@ -1,0 +1,77 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/job-search.html" class="shortcut-item">
+          <span><i class="fa-regular fa-magnifying-glass"></i></span>
+          <p>Job Search</p>
+        </a>
+        <a href="/resume-builder.html" class="shortcut-item">
+          <span><i class="fa-regular fa-file-user"></i></span>
+          <p>Resume Builder</p>
+        </a>
+        <a href="/career-counseling.html" class="shortcut-item">
+          <span><i class="fa-regular fa-comments"></i></span>
+          <p>Career Counseling</p>
+        </a>
+        <a href="/career-events.html" class="shortcut-item">
+          <span><i class="fa-regular fa-calendar-days"></i></span>
+          <p>Career Events</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="white-box mb-5">
+        <h1 class="h1 mb-4">Resume Builder</h1>
+        <p class="lead mb-4">Create a professional resume with our easy-to-use builder.</p>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Create New Resume</h3>
+              <p>Start building your resume from scratch using our professional templates.</p>
+              <ul>
+                <li>Choose from multiple templates</li>
+                <li>Add your experience and education</li>
+                <li>Customize formatting and style</li>
+                <li>Download as PDF or Word document</li>
+              </ul>
+              <a href="#" class="btn-main btn-sm">Create Resume</a>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">My Resumes</h3>
+              <p>View and edit your saved resumes.</p>
+              <ul>
+                <li><a href="#" class="text-primary">Marketing Resume - Updated 2/1/25</a></li>
+                <li><a href="#" class="text-primary">Technical Resume - Updated 1/15/25</a></li>
+              </ul>
+              <a href="#" class="btn-main btn-sm">View All Resumes</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Resume Resources</h3>
+              <ul>
+                <li><a href="#" class="text-primary">Resume Writing Tips</a></li>
+                <li><a href="#" class="text-primary">Sample Resumes by Industry</a></li>
+                <li><a href="#" class="text-primary">Resume Review Service</a></li>
+                <li><a href="#" class="text-primary">Cover Letter Templates</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

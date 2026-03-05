@@ -1,13 +1,13 @@
 
 .app-menu, .menu{
-    width: 300px;
+    width: 370px;
     border-radius: $border-radius;
     border-bottom: $white-box-border;
     position: absolute;
     right: 40px;
-    top: 60px; 
+    top: 63px; 
     box-shadow: 0px 4px 10px rgba(0,0,0,0.5); 
-    z-index: 100;
+    z-index: 1000;
     .app-menu-list{
         list-style: none;
         padding: 2rem;
@@ -47,7 +47,6 @@
                         }
                     }
                 }
-                
             }
         }
     }

@@ -1,0 +1,90 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/faq.html" class="shortcut-item">
+          <span><i class="fa-regular fa-circle-question"></i></span>
+          <p>FAQ</p>
+        </a>
+        <a href="/technical-support.html" class="shortcut-item">
+          <span><i class="fa-regular fa-headset"></i></span>
+          <p>Technical Support</p>
+        </a>
+        <a href="/live-chat.html" class="shortcut-item">
+          <span><i class="fa-regular fa-messages"></i></span>
+          <p>Live Chat</p>
+        </a>
+        <a href="/contact-us.html" class="shortcut-item">
+          <span><i class="fa-regular fa-envelope"></i></span>
+          <p>Contact Us</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="white-box mb-5">
+        <h1 class="h1 mb-4">Live Chat Support</h1>
+        <p class="lead mb-4">Chat with a support representative for immediate assistance.</p>
+
+        <div class="row">
+          <div class="col-md-8 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Start a Chat</h3>
+              <p>Connect with a live support representative to get help with:</p>
+              <ul>
+                <li>Technical issues</li>
+                <li>Account access</li>
+                <li>General questions</li>
+                <li>Navigation assistance</li>
+              </ul>
+
+              <div class="alert alert-info mb-3">
+                <p class="mb-0"><strong>Chat Hours:</strong><br>
+                Monday - Friday: 8:00 AM - 8:00 PM EST<br>
+                Saturday: 10:00 AM - 4:00 PM EST<br>
+                Sunday: Closed</p>
+              </div>
+
+              <a href="#" class="btn-main btn-sm mb-3">Start Live Chat</a>
+
+              <p class="small-title gray-60">Average wait time: 2-3 minutes</p>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Chat Tips</h3>
+              <ul>
+                <li>Have your student ID ready</li>
+                <li>Be specific about your issue</li>
+                <li>Have relevant screenshots available</li>
+                <li>Note any error messages</li>
+              </ul>
+
+              <h3 class="h3 mb-3 mt-4">Alternative Support</h3>
+              <p>If chat is unavailable:</p>
+              <ul>
+                <li><a href="/technical-support.html" class="text-primary">Submit a ticket</a></li>
+                <li><a href="tel:1-800-555-TECH" class="text-primary">Call support</a></li>
+                <li><a href="/faq.html" class="text-primary">Browse FAQ</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Chat Transcript</h3>
+              <p>After your chat session, you'll receive a transcript via email for your records.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

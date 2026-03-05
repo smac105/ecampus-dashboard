@@ -1,0 +1,71 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/job-search.html" class="shortcut-item">
+          <span><i class="fa-regular fa-magnifying-glass"></i></span>
+          <p>Job Search</p>
+        </a>
+        <a href="/resume-builder.html" class="shortcut-item">
+          <span><i class="fa-regular fa-file-user"></i></span>
+          <p>Resume Builder</p>
+        </a>
+        <a href="/career-counseling.html" class="shortcut-item">
+          <span><i class="fa-regular fa-comments"></i></span>
+          <p>Career Counseling</p>
+        </a>
+        <a href="/career-events.html" class="shortcut-item">
+          <span><i class="fa-regular fa-calendar-days"></i></span>
+          <p>Career Events</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="white-box mb-5">
+        <h1 class="h1 mb-4">Job Search</h1>
+        <p class="lead mb-4">Search for job opportunities and connect with employers.</p>
+
+        <div class="row">
+          <div class="col-md-8 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Job Board</h3>
+              <p>Search thousands of job opportunities from employers seeking qualified candidates.</p>
+              <div class="mb-3">
+                <input type="text" class="form-control mb-2" placeholder="Search by job title or keyword">
+                <input type="text" class="form-control mb-2" placeholder="Location">
+                <a href="#" class="btn-main btn-sm">Search Jobs</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Quick Links</h3>
+              <ul>
+                <li><a href="#" class="text-primary">Saved Jobs</a></li>
+                <li><a href="#" class="text-primary">Job Applications</a></li>
+                <li><a href="#" class="text-primary">Job Alerts</a></li>
+                <li><a href="#" class="text-primary">Career Fairs</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Featured Jobs</h3>
+              <p>View featured job opportunities from top employers.</p>
+              <a href="#" class="btn-main btn-sm">View Featured Jobs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

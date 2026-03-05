@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="mb-5">
+        <h2 class="h2">Choose Courses</h2>
+        <p class="lead">Please choose courses for registration from your Academic Plan</p>
+      </div>
+
+      <!-- Academic Plan Overview -->
+      <div class="white-box mb-5">
+        <div class="mb-4">
+          <h3 class="h3">Academic Plan - Spring 2025</h3>
+          <p class="small-title">Select courses you want to register for</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-3">
+            <div class="white-box" style="background: #f4f4f4;">
+              <p class="small-title gray-60">Total Credits Selected</p>
+              <p class="h2 mb-0" id="totalCredits">0</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-3">
+            <div class="white-box" style="background: #f4f4f4;">
+              <p class="small-title gray-60">Courses Selected</p>
+              <p class="h2 mb-0" id="coursesSelected">0</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-3">
+            <div class="white-box" style="background: #f4f4f4;">
+              <p class="small-title gray-60">Status</p>
+              <p class="h2 mb-0" id="enrollmentStatus">Part-Time</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Available Courses -->
+      <div class="mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h3 class="h3 mb-0">Available Courses</h3>
+
+          <!-- Course Filters -->
+          <div class="course-filters">
+            <button class="course-filter-btn active" data-filter="all">All Available</button>
+            <button class="course-filter-btn" data-filter="core">Core Courses</button>
+            <button class="course-filter-btn" data-filter="electives">Electives</button>
+            <button class="course-filter-btn" data-filter="completed">Completed</button>
+          </div>
+        </div>
+        <div id="availableCoursesList">
+          <!-- Courses will be loaded here by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

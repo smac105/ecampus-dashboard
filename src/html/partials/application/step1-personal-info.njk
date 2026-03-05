@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="mb-5">
+        <h2 class="h2">Personal Information</h2>
+        <p class="lead">Please provide your basic information</p>
+      </div>
+
+      <div class="white-box">
+        <form id="personalInfoForm">
+          <!-- Name Information -->
+          <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+              <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="firstName" name="firstName" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="middleName" class="form-label">Middle Name</label>
+              <input type="text" class="form-control" id="middleName" name="middleName">
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="lastName" class="form-label">Last Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="lastName" name="lastName" required>
+            </div>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+              <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+          </div>
+
+          <!-- Date of Birth -->
+          <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+              <label for="dateOfBirth" class="form-label">Date of Birth <span class="text-danger">*</span></label>
+              <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="ssn" class="form-label">Social Security Number <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="ssn" name="ssn" placeholder="XXX-XX-XXXX" required>
+            </div>
+          </div>
+
+          <!-- Address -->
+          <h3 class="h4 mb-3">Mailing Address</h3>
+          <div class="row mb-4">
+            <div class="col-12 mb-3">
+              <label for="address1" class="form-label">Street Address <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="address1" name="address1" required>
+            </div>
+            <div class="col-12 mb-3">
+              <label for="address2" class="form-label">Apartment, Suite, etc.</label>
+              <input type="text" class="form-control" id="address2" name="address2">
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+              <label for="city" class="form-label">City <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="city" name="city" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="state" class="form-label">State <span class="text-danger">*</span></label>
+              <select class="form-control" id="state" name="state" required>
+                <option value="">Select State</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="CA">California</option>
+                <option value="FL">Florida</option>
+                <option value="NY">New York</option>
+                <option value="TX">Texas</option>
+                <!-- Add more states as needed -->
+              </select>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="zipCode" class="form-label">ZIP Code <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="zipCode" name="zipCode" required>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

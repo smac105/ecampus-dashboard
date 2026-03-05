@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Course Registration - undefined</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<!-- font awesome 6.0 -->
+	<script src="https://kit.fontawesome.com/7e5f6c5917.js" crossorigin="anonymous"></script>
+
+<!-- APU fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!-- Bootstrap JS (for modals if needed) -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+	<!-- Confetti JS -->
+	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+<body class="gray-body-bg">
+	<div class="registration-fullscreen">
+		<!-- Registration Header -->
+		<div class="registration-header-bar">
+			<div class="container-fluid">
+				<div class="d-flex justify-content-between align-items-center">
+					<div>
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 viewBox="0 0 630.5 226.8" style="enable-background:new 0 0 630.5 226.8;" xml:space="preserve" alt="American Public University" role="img" aria-labelledby="title  desc">
+   <title id="title">American Public University</title>
+   <desc id="desc">American Public University Logo</desc>
+		<style type="text/css">
+			.st0{fill:$primary;}
+		</style>
+		<g>
+			<path class="st0" d="M602,160.5v1.1c0,0.2,0,0.3-0.3,0.3h-4.9c0,0-0.1,0-0.1,0.1v15.7c0,0.2,0,0.3-0.3,0.3h-1.3
+				c-0.2,0-0.3,0-0.3-0.3V162c0,0,0-0.1-0.1-0.1H590c-0.2,0-0.3,0-0.3-0.3v-1.1c0-0.2,0-0.3,0.3-0.3h11.7
+				C601.9,160.2,602,160.2,602,160.5L602,160.5z"/>
+			<path class="st0" d="M617.2,160.2h1.3c0.2,0,0.3,0,0.3,0.3v17.1c0,0.2,0,0.3-0.3,0.3h-1.3c-0.2,0-0.3,0-0.3-0.3v-14c0,0,0,0,0-0.1
+				l0,0l-4.1,6.3c0,0.1-0.2,0.2-0.3,0.2h-0.7c-0.1,0-0.2,0-0.3-0.2l-4.1-6.3l0,0c0,0,0,0,0,0.1v13.9c0,0.2,0,0.3-0.3,0.3h-1.3
+				c-0.2,0-0.3,0-0.3-0.3v-17.1c0-0.2,0-0.3,0.3-0.3h1.3c0.1,0,0.2,0,0.3,0.2l4.7,7.2l0,0l0,0l4.7-7.2c0-0.1,0.2-0.2,0.3-0.2
+				L617.2,160.2z"/>
+		</g>
+		<g id="Gruppe_111">
+			<path id="Pfad_250" class="st0" d="M33.7,86.4c2.4,1.5,4.3,3.7,5.5,6.3c1.3,2.9,2,6,2,9.2c0,5.2-1.4,9.3-4.2,12.4
+				s-6.4,4.7-10.9,4.7h-6.3c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1v22.2c0,0.3-0.1,0.5-0.3,0.7c-0.2,0.2-0.4,0.3-0.7,0.3H8.6
+				c-0.3,0-0.5-0.1-0.7-0.3s-0.3-0.4-0.3-0.7V85.1c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h16.8c2.9,0,5.7,0.7,8.2,2.3
+				 M27.8,107.8c1.1-1.4,1.6-3.2,1.6-5.6s-0.5-4.4-1.6-5.8c-1-1.4-2.6-2.1-4.3-2.1h-3.7c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1v14.7
+				c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h3.7C25.2,109.8,26.8,109.1,27.8,107.8"/>
+		</g>
+		<g id="Gruppe_112">
+			<path id="Pfad_251" class="st0" d="M50.9,138.5c-3-3.1-4.5-7.3-4.5-12.6V85.1c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3h9.8
+				c0.3,0,0.5,0,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7v42c0,1.6,0.4,3.1,1.3,4.3c0.8,1.1,2.1,1.7,3.5,1.7s2.6-0.6,3.5-1.7
+				c0.9-1.3,1.4-2.8,1.3-4.3v-42c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h9.8c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7
+				v40.8c0,5.2-1.5,9.4-4.5,12.6c-3,3.1-7,4.7-12,4.7s-9-1.6-12.1-4.7"/>
+		</g>
+		<g id="Gruppe_113">
+			<path id="Pfad_252" class="st0" d="M114.9,138.4c-3.1,2.8-7.1,4.2-12.1,4.2H87c-0.3,0-0.5-0.1-0.7-0.3s-0.3-0.4-0.3-0.7V85.2
+				c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h13.9c5.6,0,9.9,1.3,13.1,4c3.1,2.7,4.7,6.6,4.7,11.9c0,5.5-1.9,9.5-5.7,12
+				c-0.2,0.2-0.3,0.3,0,0.5c4.4,3.1,6.6,7.7,6.6,13.8s-1.6,9.2-4.7,11.9 M97.8,94.7v13.1c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h3
+				c1.9,0,3.4-0.6,4.4-1.8c1.1-1.2,1.6-2.9,1.6-5c0-2.3-0.5-4-1.5-5.3c-1-1.2-2.5-1.8-4.5-1.8h-3c-0.2,0-0.4,0.1-0.4,0.3
+				C97.8,94.6,97.8,94.6,97.8,94.7 M106.2,130.4c1.1-1.3,1.6-3.2,1.6-5.7s-0.5-4.4-1.6-5.8c-1-1.4-2.6-2.2-4.3-2.2h-3.8
+				c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1v14.8c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h3.7c1.7,0,3.3-0.7,4.3-2"/>
+		</g>
+		<g id="Gruppe_114">
+			<path id="Pfad_253" class="st0" d="M125.5,142.3c-0.2-0.2-0.3-0.4-0.3-0.7V85.2c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h9.8
+				c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7v46.9c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h17.5c0.5,0,1,0.4,1,1l0,0v8.1
+				c0,0.6-0.4,1-1,1l0,0h-28.7C125.9,142.6,125.7,142.5,125.5,142.3"/>
+		</g>
+		<g id="Gruppe_115">
+			<path id="Pfad_254" class="st0" d="M161,142.3c-0.2-0.2-0.3-0.4-0.3-0.7V85.2c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3h9.8
+				c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7v56.4c0,0.6-0.4,1-1,1l0,0h-9.8C161.4,142.6,161.2,142.5,161,142.3"/>
+		</g>
+		<g id="Gruppe_116">
+			<path id="Pfad_255" class="st0" d="M183.6,138.8c-3-3-4.5-7-4.5-12v-27c0-4.9,1.5-8.9,4.5-11.8s7-4.4,12.1-4.4s9.1,1.5,12.1,4.4
+				s4.5,6.9,4.5,11.8v0.9c0,0.3-0.1,0.5-0.3,0.7s-0.4,0.3-0.7,0.3l-9.8,0.4c-0.7,0-1-0.3-1-0.9V99c0-1.4-0.4-2.8-1.3-3.9
+				c-0.9-1-2.2-1.6-3.6-1.5c-1.3,0-2.6,0.5-3.5,1.5c-0.9,1.1-1.4,2.5-1.3,3.9v28.8c0,1.4,0.4,2.8,1.3,3.9c0.9,1,2.2,1.5,3.5,1.5
+				c1.4,0,2.7-0.5,3.6-1.5c0.9-1.1,1.4-2.5,1.3-3.9v-2.3c0-0.5,0.4-1,1-1l0,0l9.8,0.4c0.6,0,1,0.4,1,1l0,0v0.8c0,5-1.5,9-4.6,12
+				s-7.1,4.5-12.1,4.5s-9-1.5-12.1-4.5"/>
+		</g>
+		<g id="Gruppe_153">
+			<g id="Gruppe_117">
+				<path id="Pfad_256" class="st0" d="M12.1,214.6c-3-3.1-4.5-7.3-4.5-12.6v-40.8c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h9.8
+					c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v42c0,1.6,0.4,3.1,1.3,4.3c0.8,1.1,2.1,1.7,3.5,1.7s2.6-0.6,3.5-1.7
+					c0.9-1.3,1.4-2.8,1.3-4.3v-42c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h9.8c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7V202
+					c0,5.2-1.5,9.4-4.5,12.6c-3,3.1-7,4.7-12,4.7S15.3,217.7,12.1,214.6"/>
+			</g>
+			<g id="Gruppe_118">
+				<path id="Pfad_257" class="st0" d="M71.9,160.5c0.2-0.2,0.4-0.3,0.7-0.3h9.7c0.3,0,0.5,0,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7v56.4
+					c0,0.6-0.4,1-1,1h-11c-0.5,0-1-0.3-1.1-0.8l-10.3-32.3c0-0.2-0.2-0.2-0.3-0.2s-0.2,0.2-0.2,0.3v32c0,0.3,0,0.5-0.2,0.7
+					s-0.4,0.3-0.7,0.3h-9.7c-0.3,0-0.5-0.1-0.7-0.3s-0.3-0.4-0.3-0.7v-56.4c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3h10.9
+					c0.5,0,1,0.3,1.1,0.8l10.4,32.3c0,0.2,0.2,0.2,0.3,0.2c0.1,0,0.2-0.2,0.2-0.3v-32C71.7,160.9,71.7,160.7,71.9,160.5"/>
+			</g>
+			<g id="Gruppe_119">
+				<path id="Pfad_258" class="st0" d="M90.9,218.3c-0.2-0.2-0.3-0.4-0.3-0.7v-56.4c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3
+					h9.8c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v56.4c0,0.6-0.4,1-1,1l0,0h-9.8C91.3,218.6,91.1,218.5,90.9,218.3"/>
+			</g>
+			<g id="Gruppe_120">
+				<path id="Pfad_259" class="st0" d="M120,217.7l-11.9-56.4V161c0-0.5,0.2-0.7,0.8-0.8h10.8c0.5,0,1,0.3,1.1,0.8c0,0,0,0,0,0.1
+					l5.8,36.7c0,0.2,0.1,0.3,0.3,0.3s0.2-0.1,0.3-0.3l5.6-36.7c0-0.5,0.4-0.9,1-0.9c0,0,0,0,0.1,0h10.4c0.7,0,1,0.4,0.8,1.1l-12,56.4
+					c0,0.6-0.5,1-1.1,0.9l0,0h-10.8c-0.5,0-1-0.4-1.1-0.9l0,0"/>
+			</g>
+			<g id="Gruppe_121">
+				<path id="Pfad_260" class="st0" d="M180.8,170c-0.2,0.2-0.4,0.3-0.7,0.3h-17.4c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1v13.2
+					c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h10c0.5,0,1,0.4,1,1l0,0v8.1c0,0.6-0.4,1-1,1l0,0h-10c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1
+					v13.3c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h17.4c0.5,0,1,0.4,1,1l0,0v8.1c0,0.6-0.4,1-1,1l0,0h-28.6c-0.3,0-0.5-0.1-0.7-0.3
+					s-0.3-0.4-0.3-0.7v-56.4c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3h28.6c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v8.1
+					C181.1,169.6,181,169.8,180.8,170"/>
+			</g>
+			<g id="Gruppe_122">
+				<path id="Pfad_261" class="st0" d="M208.9,217.8l-6.4-23c-0.1-0.2-0.2-0.3-0.4-0.3h-2.8c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1
+					v22.8c0,0.6-0.4,1-1,1l0,0h-9.8c-0.3,0-0.5-0.1-0.7-0.3s-0.3-0.4-0.3-0.7v-56.4c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3H205
+					c2.9,0,5.7,0.7,8.2,2.2c2.4,1.5,4.3,3.7,5.5,6.2c1.3,2.9,2,6,2,9.2c0,3-0.6,6-1.9,8.7c-1.2,2.4-3,4.4-5.2,5.8
+					c-0.1,0-0.2,0.1-0.3,0.2c0,0,0,0.2,0,0.3l7.7,24.6v0.3c0,0.6-0.2,0.8-0.8,0.8h-10c-0.5,0-1-0.3-1.2-0.8 M198.8,170.7V185
+					c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h3.8c1.7,0,3.2-0.7,4.2-2c1.1-1.4,1.6-3.2,1.6-5.5s-0.5-4.2-1.6-5.5c-1-1.3-2.6-2.1-4.2-2
+					h-3.8C199,170.4,198.8,170.5,198.8,170.7c0,0,0,0,0,0.1"/>
+			</g>
+			<g id="Gruppe_123">
+				<path id="Pfad_262" class="st0" d="M233.1,217.4c-2.4-1.2-4.3-3.1-5.7-5.4c-1.4-2.4-2.1-5.2-2-8v-2.4c0-0.3,0.1-0.5,0.3-0.7
+					s0.4-0.3,0.7-0.3h9.6c0.5,0,1,0.4,1,1l0,0v1.8c0,1.5,0.4,3,1.3,4.2c0.8,1,2,1.6,3.3,1.6s2.5-0.5,3.3-1.5c0.9-1.1,1.4-2.5,1.3-3.9
+					c0-1.6-0.6-3.1-1.7-4.3c-1.1-1.2-3.3-3-6.5-5.3c-2.3-1.7-4.6-3.4-6.8-5.3c-1.8-1.6-3.3-3.6-4.4-5.8c-1.3-2.4-1.9-5.2-1.8-7.9
+					c0-4.7,1.5-8.5,4.4-11.3s6.8-4.3,11.7-4.3s8.8,1.5,11.8,4.4s4.5,6.8,4.5,11.6v2c0,0.3-0.1,0.5-0.3,0.7c-0.2,0.2-0.4,0.3-0.7,0.3
+					h-9.6c-0.3,0-0.5,0-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7v-2.3c0-1.5-0.4-3-1.3-4.1c-0.8-1-2.1-1.6-3.4-1.5c-1.2,0-2.4,0.5-3.2,1.5
+					s-1.3,2.3-1.3,4c0,1.6,0.5,3.2,1.6,4.4c1.1,1.3,3.1,3.1,6.3,5.3c3.4,2.6,6,4.6,7.8,6.2c1.7,1.5,3.1,3.3,4.1,5.3
+					c1,2.1,1.5,4.5,1.5,6.9c0,4.9-1.5,8.8-4.5,11.7s-7,4.3-11.8,4.3C238.6,219.3,235.7,218.7,233.1,217.4"/>
+			</g>
+			<g id="Gruppe_124">
+				<path id="Pfad_263" class="st0" d="M263.9,218.3c-0.2-0.2-0.3-0.4-0.3-0.7v-56.4c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3
+					h9.8c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v56.4c0,0.6-0.4,1-1,1l0,0h-9.8C264.3,218.6,264.1,218.5,263.9,218.3"/>
+			</g>
+			<g id="Gruppe_125">
+				<path id="Pfad_264" class="st0" d="M315.9,160.5c0.2,0.2,0.3,0.4,0.3,0.7v8.1c0,0.5-0.4,1-1,1l0,0h-10.4c-0.2,0-0.4,0.1-0.4,0.3
+					c0,0,0,0,0,0.1v46.9c0,0.6-0.4,1-1,1l0,0h-9.8c-0.3,0-0.5-0.1-0.7-0.3s-0.3-0.4-0.3-0.7v-46.9c0-0.2-0.1-0.4-0.3-0.4
+					c0,0,0,0-0.1,0h-10c-0.3,0-0.5,0-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7v-8.1c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h33
+					C315.5,160.2,315.7,160.2,315.9,160.5"/>
+			</g>
+			<g id="Gruppe_126">
+				<path id="Pfad_265" class="st0" d="M332.3,218.3c-0.2-0.2-0.3-0.4-0.3-0.7v-22.2l-11.8-34c0-0.1,0-0.3,0-0.4
+					c0-0.5,0.3-0.7,0.9-0.7h10.3c0.5,0,1,0.3,1.2,0.8l5.2,19.9c0,0.2,0.1,0.3,0.3,0.3s0.2,0,0.3-0.3l5.2-19.9c0.1-0.5,0.6-0.9,1.2-0.8
+					h10.3c0.3,0,0.6,0,0.8,0.3s0.2,0.6,0,0.9l-11.8,34v0.5v21.7c0,0.5-0.4,1-1,1l0,0h-9.8c-0.3,0-0.5,0-0.7-0.3"/>
+			</g>
+		</g>
+		<g id="Gruppe_151">
+			<g id="Gruppe_103">
+				<path id="Pfad_242" class="st0" d="M31.2,65.6l-1.3-8c0-0.3-0.2-0.4-0.5-0.4H18.8c-0.3,0-0.5,0.1-0.5,0.4l-1.3,8
+					c0,0.5-0.4,0.9-1,0.9c0,0,0,0-0.1,0H6.1c-0.7,0-1-0.4-0.8-1.1L17.5,9.1c0-0.5,0.5-1,1.1-0.9l0,0h11.3c0.6,0,1,0.4,1.1,0.9l0,0
+					l12.2,56.4v0.3c0,0.5-0.2,0.8-0.8,0.8h-10c-0.5,0-1-0.3-1.1-0.8c0,0,0,0,0-0.1 M20.3,48.1h7.5c0.3,0,0.4-0.1,0.3-0.4l-3.9-22.8
+					c0-0.2-0.1-0.3-0.2-0.3s-0.2,0-0.3,0.3l-3.8,22.8c0,0.3,0.1,0.4,0.3,0.4"/>
+			</g>
+			<g id="Gruppe_104">
+				<path id="Pfad_243" class="st0" d="M75.9,8.2h9.7c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v56.4c0,0.6-0.4,1-1,1l0,0h-9.8
+					c-0.6,0-1-0.4-1-1l0,0V28.1c0-0.2,0-0.3-0.2-0.3s-0.2,0-0.3,0.3l-6.5,11.5c-0.3,0.4-0.5,0.7-0.7,0.7s-0.4-0.2-0.7-0.7l-6.5-11.5
+					c-0.1-0.2-0.2-0.3-0.3-0.3s-0.2,0.1-0.2,0.3v37.5c0,0.3-0.1,0.5-0.3,0.7s-0.4,0.3-0.7,0.3h-9.8c-0.3,0-0.5-0.1-0.7-0.3
+					c-0.2-0.2-0.3-0.4-0.3-0.7V9.2c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3h9.6c0.5,0,1,0.2,1.3,0.7l7.4,13.3c0.2,0.2,0.3,0.2,0.5,0
+					l7.2-13.3C74.8,8.4,75.3,8.2,75.9,8.2"/>
+			</g>
+			<g id="Gruppe_105">
+				<path id="Pfad_244" class="st0" d="M124,18c-0.2,0.2-0.4,0.3-0.7,0.3h-17.4c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1v13.2
+					c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h10c0.5,0,1,0.4,1,1l0,0v8.1c0,0.6-0.4,1-1,1l0,0h-10c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1
+					v13.3c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h17.4c0.5,0,1,0.4,1,1l0,0v8.1c0,0.6-0.4,1-1,1l0,0H94.7c-0.3,0-0.5-0.1-0.7-0.3
+					c-0.2-0.2-0.3-0.4-0.3-0.7V9.2c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h28.6c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v8.1
+					C124.3,17.6,124.2,17.8,124,18"/>
+			</g>
+			<g id="Gruppe_106">
+				<path id="Pfad_245" class="st0" d="M152.1,65.7l-6.4-23c-0.1-0.2-0.2-0.3-0.4-0.3h-2.8c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1v22.8
+					c0,0.6-0.4,1-1,1l0,0h-9.8c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7V9.2c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3h16.8
+					c2.9,0,5.7,0.7,8.2,2.2c2.4,1.5,4.3,3.7,5.5,6.2c1.3,2.9,2,6,2,9.2c0,3-0.6,6-1.9,8.7c-1.2,2.4-3,4.4-5.2,5.8
+					c-0.1,0-0.2,0.1-0.3,0.2c0,0,0,0.2,0,0.3l7.7,24.6v0.3c0,0.6-0.2,0.8-0.8,0.8h-10C152.8,66.5,152.3,66.2,152.1,65.7 M142,18.7V33
+					c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h3.8c1.7,0,3.2-0.7,4.2-2c1.1-1.4,1.6-3.2,1.6-5.5s-0.5-4.2-1.6-5.5c-1-1.3-2.6-2.1-4.2-2
+					h-3.8C142.2,18.4,142,18.5,142,18.7c0,0,0,0,0,0.1"/>
+			</g>
+			<g id="Gruppe_107">
+				<path id="Pfad_246" class="st0" d="M169.8,66.2c-0.2-0.2-0.3-0.4-0.3-0.7V9.2c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3h9.8
+					c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v56.4c0,0.6-0.4,1-1,1l0,0h-9.8C170.2,66.6,170,66.5,169.8,66.2"/>
+			</g>
+			<g id="Gruppe_108">
+				<path id="Pfad_247" class="st0" d="M192.4,62.7c-3-3-4.5-7-4.5-12v-27c0-4.9,1.5-8.9,4.5-11.8s7-4.4,12.1-4.4s9.1,1.5,12.1,4.4
+					s4.5,6.9,4.5,11.8v0.9c0,0.3-0.1,0.5-0.3,0.7s-0.4,0.3-0.7,0.3l-9.8,0.4c-0.7,0-1-0.3-1-0.9v-2.2c0-1.4-0.4-2.8-1.3-3.9
+					c-0.9-1-2.2-1.6-3.6-1.5c-1.3,0-2.6,0.5-3.5,1.5c-0.9,1.1-1.4,2.5-1.3,3.9v28.8c0,1.4,0.4,2.8,1.3,3.9c0.9,1,2.2,1.5,3.5,1.5
+					c1.4,0,2.7-0.5,3.6-1.5c0.9-1.1,1.4-2.5,1.3-3.9v-2.3c0-0.5,0.4-1,1-1l0,0l9.8,0.4c0.6,0,1,0.4,1,1l0,0v0.8c0,5-1.5,9-4.6,12
+					s-7.1,4.5-12.1,4.5s-9-1.5-12.1-4.5"/>
+			</g>
+			<g id="Gruppe_109">
+				<path id="Pfad_248" class="st0" d="M250,65.6l-1.3-8c0-0.3-0.2-0.4-0.5-0.4h-10.6c-0.3,0-0.5,0.1-0.5,0.4l-1.3,8
+					c0,0.5-0.4,0.9-1,0.9c0,0,0,0-0.1,0h-9.8c-0.7,0-1-0.4-0.8-1.1L236.4,9c0-0.5,0.5-1,1.1-0.9l0,0h11.3c0.6,0,1,0.4,1.1,0.9l0,0
+					l12.2,56.4v0.3c0,0.5-0.2,0.8-0.8,0.8h-10c-0.5,0-1-0.3-1.1-0.8c0,0,0,0,0-0.1 M239.1,48.1h7.5c0.3,0,0.4-0.1,0.3-0.4L243,24.9
+					c0-0.2-0.1-0.3-0.2-0.3s-0.2,0-0.3,0.3l-3.8,22.8C238.7,48,238.8,48.1,239.1,48.1"/>
+			</g>
+			<g id="Gruppe_110">
+				<path id="Pfad_249" class="st0" d="M290.9,8.4c0.2-0.2,0.4-0.3,0.7-0.3h9.7c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v56.4
+					c0,0.6-0.4,1-1,1h-11c-0.5,0-1-0.3-1.1-0.8l-10.3-32.3c0-0.2-0.2-0.2-0.3-0.2c-0.1,0-0.2,0.2-0.2,0.3v32c0,0.3,0,0.5-0.2,0.7
+					s-0.4,0.3-0.7,0.3h-9.7c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7V9.2c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h10.9
+					c0.5,0,1,0.3,1.1,0.8l10.4,32.3c0,0.2,0.2,0.2,0.3,0.2c0.1,0,0.2-0.2,0.2-0.3v-32c0-0.3,0-0.5,0.2-0.7"/>
+			</g>
+		</g>
+		<path class="st0" d="M315.1,66.5h113.7l0,0h96.3c0.5,0,0.9-0.3,1-0.7L545,9.5c0.2-0.7-0.3-1.4-1-1.4H315.1c-0.6,0-1.1,0.5-1.1,1.1
+			v56.3C314,66.1,314.5,66.6,315.1,66.5L315.1,66.5z"/>
+		<path class="st0" d="M225.2,142.6h274.5c0.5,0,0.9-0.3,1-0.7l4.1-12.3c0.1-0.4,0-0.9-0.4-1.2l-62.5-44c-0.2-0.1-0.4-0.2-0.6-0.2
+			H225.2c-0.6,0-1.1,0.5-1.1,1.1v56.3c0,0.6,0.5,1.1,1.1,1.1L225.2,142.6z"/>
+		<path class="st0" d="M493.1,160.2H368.5c-0.6,0-1.1,0.5-1.1,1.1v56.3c0,0.6,0.5,1.1,1.1,1.1h105.7c0.5,0,0.9-0.3,1-0.7l18.9-56.3
+			c0.2-0.7-0.3-1.4-1-1.4V160.2z"/>
+		<path class="st0" d="M570.5,160.3l-80,56.4c-0.8,0.6-0.4,1.9,0.6,1.9h80c0.6,0,1.1-0.5,1.1-1.1v-56.4
+			C572.2,160.2,571.2,159.8,570.5,160.3L570.5,160.3z"/>
+		</svg>					</div>
+					<a href="/index.html" class="close-btn" id="exitRegistration">
+						<i class="fas fa-times"></i> Exit Application
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Registration Content -->
+		<div class="registration-content">
+<div class="registration-flow">
+  <!-- Application Title -->
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="text-center">
+          <h1 class="h1 mb-2">Student Application</h1>
+          <p class="lead mb-0">Complete your application to APUS</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mb-5">
+  <!-- Progress Tracker -->
+<div class="white-box">
+  <!-- Progress Bar -->
+  <div class="mb-0">
+    <div id="appProgressBar" class="absolute transition-all duration-500"></div>
+
+    <div class="relative progress-tracker">
+      <div class="step-indicator" data-step="1">
+        <div class="step-circle active">
+          <span class="step-number">1</span>
+          <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <span class="step-label">Personal Info</span>
+        <div class="step-line"></div>
+      </div>
+
+      <div class="step-indicator" data-step="2">
+        <div class="step-circle">
+          <span class="step-number">2</span>
+          <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <span class="step-label">Education</span>
+        <div class="step-line"></div>
+      </div>
+
+      <div class="step-indicator" data-step="3">
+        <div class="step-circle">
+          <span class="step-number">3</span>
+          <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <span class="step-label">Military</span>
+        <div class="step-line"></div>
+      </div>
+
+      <div class="step-indicator" data-step="4">
+        <div class="step-circle">
+          <span class="step-number">4</span>
+          <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <span class="step-label">Documents</span>
+        <div class="step-line"></div>
+      </div>
+
+      <div class="step-indicator" data-step="5">
+        <div class="step-circle">
+          <span class="step-number">5</span>
+          <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <span class="step-label">Review & Submit</span>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  <!-- Step Content - All steps pre-rendered, shown/hidden by JavaScript -->
+  <div id="appStep1" class="step-container">
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="mb-5">
+        <h2 class="h2">Personal Information</h2>
+        <p class="lead">Please provide your basic information</p>
+      </div>
+
+      <div class="white-box">
+        <form id="personalInfoForm">
+          <!-- Name Information -->
+          <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+              <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="firstName" name="firstName" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="middleName" class="form-label">Middle Name</label>
+              <input type="text" class="form-control" id="middleName" name="middleName">
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="lastName" class="form-label">Last Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="lastName" name="lastName" required>
+            </div>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+              <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+          </div>
+
+          <!-- Date of Birth -->
+          <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+              <label for="dateOfBirth" class="form-label">Date of Birth <span class="text-danger">*</span></label>
+              <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="ssn" class="form-label">Social Security Number <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="ssn" name="ssn" placeholder="XXX-XX-XXXX" required>
+            </div>
+          </div>
+
+          <!-- Address -->
+          <h3 class="h4 mb-3">Mailing Address</h3>
+          <div class="row mb-4">
+            <div class="col-12 mb-3">
+              <label for="address1" class="form-label">Street Address <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="address1" name="address1" required>
+            </div>
+            <div class="col-12 mb-3">
+              <label for="address2" class="form-label">Apartment, Suite, etc.</label>
+              <input type="text" class="form-control" id="address2" name="address2">
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+              <label for="city" class="form-label">City <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="city" name="city" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="state" class="form-label">State <span class="text-danger">*</span></label>
+              <select class="form-control" id="state" name="state" required>
+                <option value="">Select State</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="CA">California</option>
+                <option value="FL">Florida</option>
+                <option value="NY">New York</option>
+                <option value="TX">Texas</option>
+                <!-- Add more states as needed -->
+              </select>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="zipCode" class="form-label">ZIP Code <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="zipCode" name="zipCode" required>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div id="appStep2" class="step-container" style="display: none;">
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="mb-5">
+        <h2 class="h2">Education History</h2>
+        <p class="lead">Tell us about your educational background</p>
+      </div>
+
+      <div class="white-box mb-4">
+        <h3 class="h4 mb-4">High School Information</h3>
+        <form id="educationForm">
+          <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+              <label for="highSchoolName" class="form-label">High School Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="highSchoolName" name="highSchoolName" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="highSchoolCity" class="form-label">City <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="highSchoolCity" name="highSchoolCity" required>
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+              <label for="highSchoolState" class="form-label">State <span class="text-danger">*</span></label>
+              <select class="form-control" id="highSchoolState" name="highSchoolState" required>
+                <option value="">Select State</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="CA">California</option>
+                <option value="FL">Florida</option>
+                <option value="NY">New York</option>
+                <option value="TX">Texas</option>
+              </select>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="graduationYear" class="form-label">Graduation Year <span class="text-danger">*</span></label>
+              <input type="number" class="form-control" id="graduationYear" name="graduationYear" min="1950" max="2030" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="gpa" class="form-label">GPA</label>
+              <input type="text" class="form-control" id="gpa" name="gpa" placeholder="3.5">
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="white-box">
+        <h3 class="h4 mb-4">College/University Information</h3>
+        <p class="mb-3">Have you attended any colleges or universities?</p>
+
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="radio" name="attendedCollege" id="attendedYes" value="yes">
+          <label class="form-check-label" for="attendedYes">
+            Yes, I have attended college
+          </label>
+        </div>
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="radio" name="attendedCollege" id="attendedNo" value="no" checked>
+          <label class="form-check-label" for="attendedNo">
+            No, I have not attended college
+          </label>
+        </div>
+
+        <div id="collegeDetails" style="display: none;">
+          <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+              <label for="collegeName" class="form-label">College/University Name</label>
+              <input type="text" class="form-control" id="collegeName" name="collegeName">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="collegeCity" class="form-label">City</label>
+              <input type="text" class="form-control" id="collegeCity" name="collegeCity">
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+              <label for="collegeState" class="form-label">State</label>
+              <select class="form-control" id="collegeState" name="collegeState">
+                <option value="">Select State</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="CA">California</option>
+                <option value="FL">Florida</option>
+                <option value="NY">New York</option>
+                <option value="TX">Texas</option>
+              </select>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="degreeEarned" class="form-label">Degree Earned</label>
+              <select class="form-control" id="degreeEarned" name="degreeEarned">
+                <option value="">Select Degree</option>
+                <option value="none">Some College (No Degree)</option>
+                <option value="associate">Associate's Degree</option>
+                <option value="bachelor">Bachelor's Degree</option>
+                <option value="master">Master's Degree</option>
+                <option value="doctorate">Doctorate</option>
+              </select>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="yearCompleted" class="form-label">Year Completed</label>
+              <input type="number" class="form-control" id="yearCompleted" name="yearCompleted" min="1950" max="2030">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div id="appStep3" class="step-container" style="display: none;">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="white-box">
+        <h2 class="h2 mb-4">Military Background</h2>
+
+        <p class="mb-4">APUS is proud to serve military members, veterans, and their families. Please share your military background information below.</p>
+
+        <form id="militaryForm">
+          <!-- Military Affiliation -->
+          <div class="mb-4">
+            <label for="militaryAffiliation" class="form-label">Military Affiliation <span class="text-danger">*</span></label>
+            <select class="form-control" id="militaryAffiliation" name="militaryAffiliation" required>
+              <option value="">Select your affiliation...</option>
+              <option value="none">No Military Affiliation</option>
+              <option value="active-duty">Active Duty</option>
+              <option value="veteran">Veteran</option>
+              <option value="reserve">Reserve</option>
+              <option value="national-guard">National Guard</option>
+              <option value="spouse">Military Spouse</option>
+              <option value="dependent">Military Dependent</option>
+            </select>
+          </div>
+
+          <!-- Branch of Service (shown if not "none") -->
+          <div id="branchSection" class="mb-4" style="display: none;">
+            <label for="branchOfService" class="form-label">Branch of Service <span class="text-danger">*</span></label>
+            <select class="form-control" id="branchOfService" name="branchOfService">
+              <option value="">Select branch...</option>
+              <option value="army">Army</option>
+              <option value="navy">Navy</option>
+              <option value="air-force">Air Force</option>
+              <option value="marines">Marines</option>
+              <option value="coast-guard">Coast Guard</option>
+              <option value="space-force">Space Force</option>
+            </select>
+          </div>
+
+          <!-- Rank (shown if active duty, veteran, reserve, or national guard) -->
+          <div id="rankSection" class="mb-4" style="display: none;">
+            <label for="rank" class="form-label">Rank/Pay Grade</label>
+            <input type="text" class="form-control" id="rank" name="rank" placeholder="E.g., E-5, O-3, W-2">
+            <small class="form-text text-muted">Optional - Enter your current or highest rank achieved</small>
+          </div>
+
+          <!-- Service Dates (shown if active duty, veteran, reserve, or national guard) -->
+          <div id="serviceDatesSection" style="display: none;">
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <label for="serviceStartDate" class="form-label">Service Start Date</label>
+                <input type="date" class="form-control" id="serviceStartDate" name="serviceStartDate">
+              </div>
+              <div class="col-md-6">
+                <label for="serviceEndDate" class="form-label">Service End Date</label>
+                <input type="date" class="form-control" id="serviceEndDate" name="serviceEndDate">
+                <small class="form-text text-muted">Leave blank if currently serving</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- MOS/Rating/AFSC -->
+          <div id="mosSection" class="mb-4" style="display: none;">
+            <label for="mos" class="form-label">MOS/Rating/AFSC</label>
+            <input type="text" class="form-control" id="mos" name="mos" placeholder="E.g., 11B, BM, 2A6X1">
+            <small class="form-text text-muted">Optional - Your Military Occupational Specialty</small>
+          </div>
+
+          <!-- Veteran Benefits -->
+          <div id="benefitsSection" class="mb-4" style="display: none;">
+            <label class="form-label">Are you planning to use veteran education benefits?</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="veteranBenefits" id="benefits-yes" value="yes">
+              <label class="form-check-label" for="benefits-yes">
+                Yes - I plan to use GI Bill or other VA education benefits
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="veteranBenefits" id="benefits-no" value="no">
+              <label class="form-check-label" for="benefits-no">
+                No - I will not be using veteran education benefits
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="veteranBenefits" id="benefits-unsure" value="unsure" checked>
+              <label class="form-check-label" for="benefits-unsure">
+                I'm not sure yet
+              </label>
+            </div>
+          </div>
+
+          <!-- Tuition Assistance (for active duty) -->
+          <div id="taSection" class="mb-4" style="display: none;">
+            <label class="form-label">Will you be using Military Tuition Assistance (TA)?</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="tuitionAssistance" id="ta-yes" value="yes">
+              <label class="form-check-label" for="ta-yes">
+                Yes - I plan to use Tuition Assistance
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="tuitionAssistance" id="ta-no" value="no">
+              <label class="form-check-label" for="ta-no">
+                No - I will not be using Tuition Assistance
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="tuitionAssistance" id="ta-unsure" value="unsure" checked>
+              <label class="form-check-label" for="ta-unsure">
+                I'm not sure yet
+              </label>
+            </div>
+          </div>
+
+          <!-- Additional Information -->
+          <div class="mb-4">
+            <label for="militaryNotes" class="form-label">Additional Information (Optional)</label>
+            <textarea class="form-control" id="militaryNotes" name="militaryNotes" rows="3" placeholder="Any additional military background information you'd like to share..."></textarea>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <!-- Info Alert -->
+      <div class="white-box-border alert-alt alert-info">
+        <p><i class="fas fa-info-circle me-2"></i> <strong>Why we ask:</strong></p>
+        <p>This information helps us better serve military-affiliated students and connect you with appropriate benefits and resources. All information is confidential and used solely for educational purposes.</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div id="appStep4" class="step-container" style="display: none;">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="mb-5">
+        <h2 class="h2">Required Documents</h2>
+        <p class="lead">Upload your supporting documents</p>
+      </div>
+
+      <!-- Official Transcripts -->
+      <div class="white-box mb-4">
+        <h3 class="h4 mb-3">Official Transcripts <span class="text-danger">*</span></h3>
+        <p class="mb-4">Upload official transcripts from all high schools and colleges attended. Transcripts must be official and include a signature or seal.</p>
+
+        <div class="upload-area" id="transcriptUpload">
+          <div class="upload-placeholder">
+            <i class="fas fa-cloud-upload-alt fa-3x mb-3"></i>
+            <p class="mb-2"><strong>Click to upload or drag and drop</strong></p>
+            <p class="small-title mb-0">PDF, JPG, or PNG (Max 10MB)</p>
+          </div>
+          <input type="file" id="transcriptFile" name="transcriptFile" accept=".pdf,.jpg,.jpeg,.png" style="display: none;">
+        </div>
+        <div id="transcriptFileList" class="mt-3"></div>
+
+        <!-- Bypass Option -->
+        <div class="alert alert-warning transcript-bypass-alert mt-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="transcriptBypass" name="transcriptBypass">
+            <label class="form-check-label mb-4" for="transcriptBypass">
+              <strong>I acknowledge that I will need my official transcripts to complete the application process, but choose to upload them at a later date.</strong>
+            </label>
+            <p class="small"><i class="fas fa-info-circle me-1"></i><strong>Note:</strong> Your application will remain incomplete until official transcripts are received. You can upload them through your applicant portal after submission.</p>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- ID Document -->
+      <div class="white-box mb-4">
+        <h3 class="h4 mb-3">Government-Issued Photo ID <span class="text-danger">*</span></h3>
+        <p class="mb-4">Upload a copy of your driver's license, state ID, or passport.</p>
+
+        <div class="upload-area" id="idUpload">
+          <div class="upload-placeholder">
+            <i class="fas fa-cloud-upload-alt fa-3x mb-3"></i>
+            <p class="mb-2"><strong>Click to upload or drag and drop</strong></p>
+            <p class="small-title mb-0">PDF, JPG, or PNG (Max 5MB)</p>
+          </div>
+          <input type="file" id="idFile" name="idFile" accept=".pdf,.jpg,.jpeg,.png" style="display: none;">
+        </div>
+        <div id="idFileList" class="mt-3"></div>
+      </div>
+
+      <!-- Additional Documents (Optional) -->
+      <div class="white-box">
+        <h3 class="h4 mb-3">Additional Documents <span class="text-muted">(Optional)</span></h3>
+        <p class="mb-4">Upload any additional supporting documents such as letters of recommendation, resume, or military records.</p>
+
+        <div class="upload-area" id="additionalUpload">
+          <div class="upload-placeholder">
+            <i class="fas fa-cloud-upload-alt fa-3x mb-3"></i>
+            <p class="mb-2"><strong>Click to upload or drag and drop</strong></p>
+            <p class="small-title mb-0">PDF, JPG, PNG, or DOCX (Max 10MB)</p>
+          </div>
+          <input type="file" id="additionalFile" name="additionalFile" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" multiple style="display: none;">
+        </div>
+        <div id="additionalFileList" class="mt-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div id="appStep5" class="step-container" style="display: none;">
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <!-- Review Section (shown initially) -->
+      <div id="reviewSection">
+        <div class="mb-5">
+          <h2 class="h2">Review Your Application</h2>
+          <p class="lead">Please review all information before submitting</p>
+        </div>
+
+        <!-- Personal Information Summary -->
+        <div class="white-box mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h4 mb-0">Personal Information</h3>
+            <button class="arrow-link" onclick="goToAppStep(1)">
+              <i class="fas fa-edit"></i> Edit
+            </button>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Full Name</p>
+              <p class="mb-0" id="reviewName">-</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Email</p>
+              <p class="mb-0" id="reviewEmail">-</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Phone</p>
+              <p class="mb-0" id="reviewPhone">-</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Date of Birth</p>
+              <p class="mb-0" id="reviewDOB">-</p>
+            </div>
+            <div class="col-12 mb-3">
+              <p class="small-title mb-1">Address</p>
+              <p class="mb-0" id="reviewAddress">-</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Summary -->
+        <div class="white-box mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h4 mb-0">Education History</h3>
+            <button class="arrow-link" onclick="goToAppStep(2)">
+              <i class="fas fa-edit"></i> Edit
+            </button>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">High School</p>
+              <p class="mb-0" id="reviewHighSchool">-</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Graduation Year</p>
+              <p class="mb-0" id="reviewGradYear">-</p>
+            </div>
+            <div class="col-12 mb-3" id="reviewCollegeSection" style="display: none;">
+              <p class="small-title mb-1">College/University</p>
+              <p class="mb-0" id="reviewCollege">-</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Military Background Summary -->
+        <div class="white-box mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h4 mb-0">Military Background</h3>
+            <button class="arrow-link" onclick="goToAppStep(3)">
+              <i class="fas fa-edit"></i> Edit
+            </button>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Military Affiliation</p>
+              <p class="mb-0" id="reviewMilitaryAffiliation">-</p>
+            </div>
+            <div class="col-md-6 mb-3" id="reviewBranchSection" style="display: none;">
+              <p class="small-title mb-1">Branch of Service</p>
+              <p class="mb-0" id="reviewBranch">-</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Documents Summary -->
+        <div class="white-box mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h4 mb-0">Uploaded Documents</h3>
+            <button class="arrow-link" onclick="goToAppStep(4)">
+              <i class="fas fa-edit"></i> Edit
+            </button>
+          </div>
+          <div id="reviewDocuments">
+            <p class="text-muted">No documents uploaded</p>
+          </div>
+        </div>
+
+        <!-- Program Selection -->
+        <div class="white-box mb-4">
+          <h3 class="h4 mb-3">Program of Interest <span class="text-danger">*</span></h3>
+          <p class="mb-4">Select the program you wish to apply for</p>
+
+          <div class="form-group mb-4">
+            <label for="programSelect" class="form-label">Degree Program</label>
+            <select class="form-control" id="programSelect" name="programSelect" required>
+              <option value="">Select a Program</option>
+              <option value="ba-cs">Bachelor of Arts - Computer Science</option>
+              <option value="bs-cs">Bachelor of Science - Computer Science</option>
+              <option value="ba-bus">Bachelor of Arts - Business Administration</option>
+              <option value="bs-cyber">Bachelor of Science - Cybersecurity</option>
+              <option value="ma-ed">Master of Arts - Education</option>
+              <option value="ms-cs">Master of Science - Computer Science</option>
+              <option value="mba">Master of Business Administration (MBA)</option>
+            </select>
+          </div>
+
+          <div class="form-group mb-4">
+            <label for="startTerm" class="form-label">Intended Start Term <span class="text-danger">*</span></label>
+            <select class="form-control" id="startTerm" name="startTerm" required>
+              <option value="">Select Term</option>
+              <option value="spring-2025">Spring 2025</option>
+              <option value="summer-2025">Summer 2025</option>
+              <option value="fall-2025">Fall 2025</option>
+              <option value="spring-2026">Spring 2026</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Certifications and Agreements -->
+        <div class="white-box">
+          <h3 class="h4 mb-4">Certifications & Agreements</h3>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="certifyAccurate" name="certifyAccurate" required>
+            <label class="form-check-label" for="certifyAccurate">
+              <strong>I certify that all information provided in this application is accurate and complete.</strong>
+            </label>
+          </div>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="agreeTerms" name="agreeTerms" required>
+            <label class="form-check-label" for="agreeTerms">
+              I have read and agree to the <a href="#" class="arrow-link">Terms and Conditions</a> and <a href="#" class="arrow-link">Privacy Policy</a>.
+            </label>
+          </div>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="authorizeRecords" name="authorizeRecords" required>
+            <label class="form-check-label" for="authorizeRecords">
+              I authorize APUS to obtain my academic records from previous institutions.
+            </label>
+          </div>
+
+          <div class="alert alert-info application-fee-alert mt-4">
+            <p class="mb-0"><i class="fas fa-info-circle"></i> <strong>Application Fee:</strong> A non-refundable application fee of $50 will be charged upon submission.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Confirmation Section (shown after submit) -->
+      <div id="confirmationSection" style="display: none;">
+        <div class="text-center mb-5">
+          <div class="success-icon mb-4">
+            <i class="fas fa-check-circle fa-5x"></i>
+          </div>
+          <h1 class="h1 mb-3">Application Submitted Successfully!</h1>
+          <p class="lead">Thank you for applying to American Public University System</p>
+        </div>
+
+        <div class="white-box mb-4">
+          <h3 class="h4 mb-4">Application Details</h3>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Application ID</p>
+              <p class="mb-0"><strong id="confirmApplicationId">APP-2025-000123</strong></p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Submission Date</p>
+              <p class="mb-0" id="confirmSubmissionDate">-</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Program Applied</p>
+              <p class="mb-0" id="confirmProgram">-</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Start Term</p>
+              <p class="mb-0" id="confirmStartTerm">-</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-box mb-4">
+          <h3 class="h4 mb-4">What Happens Next?</h3>
+          <div class="timeline-steps">
+            <div class="timeline-step">
+              <div class="timeline-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="timeline-content">
+                <h4 class="h5 mb-2">Confirmation Email</h4>
+                <p class="mb-0">You will receive a confirmation email within 24 hours with your application details and next steps.</p>
+              </div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <div class="timeline-content">
+                <h4 class="h5 mb-2">Application Review</h4>
+                <p class="mb-0">Our admissions team will review your application within 2-3 business days.</p>
+              </div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-icon">
+                <i class="fas fa-clipboard-check"></i>
+              </div>
+              <div class="timeline-content">
+                <h4 class="h5 mb-2">Admission Decision</h4>
+                <p class="mb-0">You'll receive your admission decision via email within 5-7 business days.</p>
+              </div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="timeline-content">
+                <h4 class="h5 mb-2">Enrollment</h4>
+                <p class="mb-0">If accepted, you'll receive enrollment instructions and can begin registering for classes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-box mb-4">
+          <h3 class="h4 mb-4">Important Information</h3>
+          <ul class="confirmation-info-list">
+            <li>Check your email regularly for updates on your application status</li>
+            <li>You can track your application status by logging into your applicant portal</li>
+            <li>If you have questions, contact our admissions office at <strong>1-877-468-6268</strong> or <strong>admissions@apus.edu</strong></li>
+            <li>Application fee payment confirmation will be sent to your email</li>
+          </ul>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="/index.html" class="btn-main me-3">
+            Return to Dashboard
+          </a>
+          <button onclick="window.print()" class="btn-secondary">
+            <i class="fas fa-print"></i> Print Confirmation
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="container">
+    <div class="row mt-4 mb-5">
+      <div class="col-12">
+        <div class="d-flex justify-content-between step-navigation" id="appStepNavigation">
+          <button id="appBackBtn" class="btn-secondary back-btn" style="display: none;">
+            Back
+          </button>
+          <button id="appNextBtn" class="btn-main ms-auto">
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Reset Button (Development Only) -->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <button id="resetApplicationBtn" class="arrow-link reset">
+          Reset Application
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+		</div>
+	</div>
+
+	<!-- Exit Confirmation Modal -->
+
+<div class="modal fade" id="exitConfirmationModal" tabindex="-1" aria-labelledby="exitConfirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+        <h3 class="modal-title h3" id="exitConfirmationModalLabel">Save Your Progress?</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body" style="padding: 2rem 2.5rem;">
+        <p class="lead mb-4">Your selected courses and registration progress will be saved to your cart.</p>
+        <p class="small-title gray-60 mb-0">You can resume your registration anytime by clicking the cart icon in the top navigation.</p>
+      </div>
+
+      <div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem; gap: 1rem;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="min-width: 140px;">
+          Stay Here
+        </button>
+        <button type="button" class="btn btn-main" id="confirmExitBtn" style="min-width: 140px;">
+          Exit & Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<!-- Confetti Utility -->
+	<script src="/js/confetti-util.js"></script>
+
+<script src="/js/application.js"></script>
+</body>
+</html>

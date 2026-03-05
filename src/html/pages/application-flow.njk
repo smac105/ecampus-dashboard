@@ -1,0 +1,70 @@
+{% extends "layouts/registration-layout.njk" %}
+{% set exitButtonText = "Exit Application" %}
+
+{% block content %}
+<div class="registration-flow">
+  <!-- Application Title -->
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="text-center">
+          <h1 class="h1 mb-2">Student Application</h1>
+          <p class="lead mb-0">Complete your application to APUS</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mb-5">
+  <!-- Progress Tracker -->
+  {% include "partials/application/progress-tracker.njk" %}
+  </div>
+  <!-- Step Content - All steps pre-rendered, shown/hidden by JavaScript -->
+  <div id="appStep1" class="step-container">
+    {% include "partials/application/step1-personal-info.njk" %}
+  </div>
+
+  <div id="appStep2" class="step-container" style="display: none;">
+    {% include "partials/application/step2-education.njk" %}
+  </div>
+
+  <div id="appStep3" class="step-container" style="display: none;">
+    {% include "partials/application/step3-military.njk" %}
+  </div>
+
+  <div id="appStep4" class="step-container" style="display: none;">
+    {% include "partials/application/step4-documents.njk" %}
+  </div>
+
+  <div id="appStep5" class="step-container" style="display: none;">
+    {% include "partials/application/step5-review-submit.njk" %}
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="container">
+    <div class="row mt-4 mb-5">
+      <div class="col-12">
+        <div class="d-flex justify-content-between step-navigation" id="appStepNavigation">
+          <button id="appBackBtn" class="btn-secondary back-btn" style="display: none;">
+            Back
+          </button>
+          <button id="appNextBtn" class="btn-main ms-auto">
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Reset Button (Development Only) -->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <button id="resetApplicationBtn" class="arrow-link reset">
+          Reset Application
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/js/application.js"></script>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% import "partials/macros.njk" as buttons %}
+
+{# Alumni Student Stage #}
+<div class="container">
+<div class="row">
+	<div class="col-lg-8 mb-5">
+		<!-- Welcome Message -->
+		<div class="alert-box">
+			{% if site.student.name %}
+			  <h1>Welcome back, {{ site.student.name }}!</h1>
+			  <p class="lead">Congratulations on your graduation! Stay connected with the APUS alumni network, access career resources, and continue your lifelong learning journey.</p>
+			{% else %}
+			  <h1>Welcome, Alumni!</h1>
+			  <p class="lead">Congratulations on your graduation! Stay connected with the APUS alumni network, access career resources, and continue your lifelong learning journey.</p>
+			{% endif %}
+		</div>
+
+		<!-- Alumni Resources -->
+		<div class="actions white-box">
+			<h4>Alumni Resources</h4>
+			<p>Stay connected with APUS and access exclusive alumni benefits and career services.</p>
+			{{ buttons.button('Career Services', '/career', 'main') }}
+			{{ buttons.button('Alumni Network', '/alumni', 'secondary') }}
+		</div>
+	</div>
+
+	<div class="col-lg-4 mb-5">
+		<!-- Alumni Resources Task List -->
+		<div class="actions black-bg mb-5">
+			<h4 class="mb-3">Alumni Resources</h4>
+			<div class="task-list">
+				<div class="task-item">
+					<input type="checkbox" id="alum-task1" class="task-checkbox">
+					<label for="alum-task1">Join Alumni Network</label>
+					<a href="/alumni.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div class="task-item">
+					<input type="checkbox" id="alum-task2" class="task-checkbox">
+					<label for="alum-task2">Update LinkedIn Profile</label>
+					<a href="https://linkedin.com" target="_blank" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div class="task-item">
+					<input type="checkbox" id="alum-task3" class="task-checkbox">
+					<label for="alum-task3">Explore Career Services</label>
+					<a href="/career.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div class="task-item">
+					<input type="checkbox" id="alum-task4" class="task-checkbox">
+					<label for="alum-task4">Request Official Transcripts</label>
+					<a href="/student-resources.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div class="task-item">
+					<input type="checkbox" id="alum-task5" class="task-checkbox">
+					<label for="alum-task5">Attend Alumni Networking Event</label>
+					<a href="/alumni.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Alumni Benefits -->
+		<div class="actions white-box mb-5">
+			<h4>Alumni Benefits</h4>
+			<ul class="info-list">
+				<li>Lifetime Career Services</li>
+				<li>Exclusive Networking Events</li>
+				<li>Continuing Education Discounts</li>
+				<li>Library Access</li>
+				<li>Alumni Directory Access</li>
+			</ul>
+		</div>
+
+		<!-- Upcoming Events -->
+		<div class="actions white-box">
+			<h4>Upcoming Alumni Events</h4>
+			<p class="info-text mb-sm">
+				Stay connected with fellow alumni and attend exclusive networking events.
+			</p>
+			<ul class="text-sm">
+				<li><strong>Jan 20:</strong> Virtual Networking Happy Hour</li>
+				<li><strong>Feb 5:</strong> Career Development Workshop</li>
+				<li><strong>Mar 12:</strong> Alumni Reunion (Virtual)</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</div>

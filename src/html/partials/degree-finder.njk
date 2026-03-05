@@ -1,0 +1,128 @@
+<div class="explore-cards-grid bgc-gray-light" id="explore-programs-areas-of-study">
+	<p class="small-title ">Find Your Degree:</p>
+	<form id="formPrograms" class="find-your-degree">
+		<div class="fyd-wrap radio-group text-center">
+			<div class="fyd-item radio" onclick="showSavings();">
+                <div class="fyd-content">
+                    <p>Bachelor's</p>
+                </div>
+            </div>
+            <div class="fyd-item radio" onclick="showSavings();">
+                <div class="fyd-content">
+                    <p>Master's</p>
+                </div>
+            </div>
+            <div class="fyd-item radio" onclick="showSavings();">
+                <div class="fyd-content">
+                    <p>Doctoral</p>
+                </div>
+            </div>
+            <div class="fyd-item radio" onclick="showSavings();">
+                <div class="fyd-content">
+                    <p>Certificate</p>
+                </div>
+            </div>
+        </div>
+    </form> 
+    <div class="dropdown-wrap">
+	    <div id="ifYesSavings" style="display: none;" class="form-group form-select-group mb-4">
+            <label class="label-select  mb-2" for="find-degree-wizard" aria-label="Select your preferred area of study"><!-- What are you interested in studying? --> Select an Area of Study</label>
+            <select name="dbType" id="dbType" class="form-select form-control form-control-full" name="find-degree-wizard">
+                <option value="all" selected="selected">Select Area of Study</option>
+              	<option value="#">Information Technology</option>
+              	<option value="#">Homeland Security</option>
+                <option value="#">Engineering</option>
+                <option value="#">Education</option>
+                <option value="programs">Business & Management</option>
+                <option value="#">Arts & Humanities</option>
+                <option value="#">Science & Math</option>
+                <option value="#">Nursing & Health Sciences</option>
+                <option value="#">Technology</option>
+                <option value="#">Intelligence</option>
+                <option value="#">Public Safety</option>
+                <option value="#">Security & Global Studies</option>
+            </select>
+        </div>
+            
+        <div id="programsType" style="display: none;" class="mb-4">
+        	<label class="label-select  mb-2" for="find-degree-wizard" aria-label="Select your preferred area of study">Select Specialization</label>
+            <select name="dbSpecial" id="dbSpecial" class="form-select form-control form-control-full" name="find-degree-wizard">
+                <option value="all" selected="selected">Select Specialization</option>
+              	<option value="specializations">Accounting - Master of Science</option>
+				<option value="specializations">Applied Business Analytics - Master of Science</option>
+                <option value="specializations">Business Administration - Master of Business Administration</option>
+                <option value="specializations">Entrepreneurship - Master of Arts</option>
+                <option value="specializations">Human Resource Management - Master of Arts</option>
+                <option value="specializations">Management - Master of Arts</option>
+                <option value="specializations">Reverse Logistics Management - Master of Arts</option>
+                <option value="specializations">Security Management - Master of Arts</option>
+                <option value="specializations">Sports Management - Master of Science</option>
+                <option value="specializations">Supply Chain Management - Master of Arts</option>
+                <option value="specializations">Transportation and Logistics Management - Master of Arts</option>
+            </select>
+        </div>
+        <div id="programsSpecial" style="display: none;" class="areas-of-study-button">
+        	<button href="#" class="btn-main btn-apu-primary mt-4 mb-4">Explore Your Program</button>
+        </div>
+    </div>
+    
+    <!-- <div id="reset" style="display: none;">
+    	<p><a class="small-link " onclick="resetForm();">Reset Form <i class="fa-solid fa-rotate-left"></i></a></p>
+	</div> -->
+</div>
+<script type="text/javascript">
+	function showSavings(){
+	  document.getElementById('ifYesSavings').style.display ='block';
+	  $(this).addClass('selected');
+	  document.getElementById('reset').style.display ='block';
+	}
+	function hideSavings(){
+	  document.getElementById('ifYesSavings').style.display = 'none';
+	}
+	function showPrograms(){
+	  document.getElementById('ifYesProgram').style.display ='block';
+	}
+	function hideCredit(){
+	  document.getElementById('ifYesProgram').style.display = 'none';
+	}
+
+	$('#dbType').on('change',function(){
+	    if( $(this).val()==="programs"){
+	    $("#programsType").show();
+	    // $("#formPrograms").hide();
+	    }
+	    else{
+	    $("#programsType").hide();
+	    }
+	});
+	$('#dbSpecial').on('change',function(){
+	    if( $(this).val()==="specializations"){
+	    $("#programsSpecial").show();
+	    // $("#formPrograms").hide();
+	    }
+	    else{
+	    $("#programsSpecial").hide();
+	    }
+	});
+	function yesnoCheck() {
+	    if (document.getElementById('yesCheck').checked) {
+	        document.getElementById('ifYes').style = 'display:block';
+	        document.getElementById('ifNo').style = 'display:none';
+	    }
+	    else if (document.getElementById('noCheck').checked) {
+	        document.getElementById('ifNo').style = 'display:block';
+	        document.getElementById('ifYes').style = 'display:none';
+	    } 
+	}
+
+	function JustYesAgain() {
+	    if (document.getElementById('yesCheck2').checked) {
+	        document.getElementById('ifYes2').style = 'display:block';
+	        document.getElementById('ifNo2').style = 'display:none';
+	    }
+	    else if (document.getElementById('noCheck2').checked) {
+	        document.getElementById('ifYes2').style = 'display:none';
+	    } 
+	}
+
+</script>

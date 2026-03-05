@@ -1,0 +1,172 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="text-center mb-5">
+        <div class="success-icon mb-4">
+          <i class="fas fa-check-circle fa-5x" style="color: #80c342;"></i>
+        </div>
+        <h1 class="h1 mb-3">Application Submitted Successfully!</h1>
+        <p class="lead">Thank you for applying to American Public University System</p>
+      </div>
+
+      <div class="white-box mb-4">
+        <h3 class="h4 mb-4">Application Details</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <p class="small-title mb-1">Application ID</p>
+            <p class="mb-0"><strong id="confirmApplicationId">APP-2025-000123</strong></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p class="small-title mb-1">Submission Date</p>
+            <p class="mb-0" id="confirmSubmissionDate">-</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p class="small-title mb-1">Program Applied</p>
+            <p class="mb-0" id="confirmProgram">-</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p class="small-title mb-1">Start Term</p>
+            <p class="mb-0" id="confirmStartTerm">-</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="white-box mb-4">
+        <h3 class="h4 mb-4">What Happens Next?</h3>
+        <div class="timeline-steps">
+          <div class="timeline-step">
+            <div class="timeline-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="timeline-content">
+              <h4 class="h5 mb-2">Confirmation Email</h4>
+              <p class="mb-0">You will receive a confirmation email within 24 hours with your application details and next steps.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <div class="timeline-content">
+              <h4 class="h5 mb-2">Application Review</h4>
+              <p class="mb-0">Our admissions team will review your application within 2-3 business days.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-icon">
+              <i class="fas fa-clipboard-check"></i>
+            </div>
+            <div class="timeline-content">
+              <h4 class="h5 mb-2">Admission Decision</h4>
+              <p class="mb-0">You'll receive your admission decision via email within 5-7 business days.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="timeline-content">
+              <h4 class="h5 mb-2">Enrollment</h4>
+              <p class="mb-0">If accepted, you'll receive enrollment instructions and can begin registering for classes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="white-box mb-4">
+        <h3 class="h4 mb-4">Important Information</h3>
+        <ul style="font-size: 1.4rem; line-height: 1.8;">
+          <li>Check your email regularly for updates on your application status</li>
+          <li>You can track your application status by logging into your applicant portal</li>
+          <li>If you have questions, contact our admissions office at <strong>1-877-468-6268</strong> or <strong>admissions@apus.edu</strong></li>
+          <li>Application fee payment confirmation will be sent to your email</li>
+        </ul>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="/index.html" class="btn-main me-3">
+          Return to Dashboard
+        </a>
+        <button onclick="window.print()" class="btn-secondary">
+          <i class="fas fa-print"></i> Print Confirmation
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.success-icon {
+  animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.timeline-steps {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-step {
+  position: relative;
+  padding-bottom: 3rem;
+  padding-left: 4rem;
+}
+
+.timeline-step:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-step::before {
+  content: '';
+  position: absolute;
+  left: 1.8rem;
+  top: 4rem;
+  width: 2px;
+  height: calc(100% - 2rem);
+  background: #e0e0e0;
+}
+
+.timeline-step:last-child::before {
+  display: none;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: #00ffff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 2px 8px rgba(0, 255, 255, 0.3);
+}
+
+.timeline-content h4 {
+  font-weight: 600;
+  color: #000;
+}
+
+.timeline-content p {
+  color: #666;
+  font-size: 1.3rem;
+}
+</style>

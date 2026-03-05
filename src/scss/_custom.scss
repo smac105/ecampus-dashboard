@@ -1,3 +1,51 @@
+/* COLOR UTILITIES */
+.red { color: $red; }//rgb (228,25,59)
+.green { color: $green; } //rgb (128,195,66)
+.orange { color: $orange; } //rgb (248,138,0)
+.yellow { color: $yellow; } //rgb (210,210,3)
+.blue { color: $blue; }
+
+.blk { color: $blk; }
+.wht, .white { color: $wht; }
+
+.gray-10 { color: $gray-10; }
+.gray-20, .gray { color: $gray-20; }
+.gray-60 { color: $gray-60; }
+.gray-70 { color: $gray-70; }
+.gray-90 { color: $gray-90; }
+.gray-dk { color: $gray-dk; }
+
+/* BRAND COLORS */
+.apu-blue { color: $apu-blue; }
+.apu-blue-alt { color: $apu-blue-alt; }
+.apu-blue-active { color: $apu-blue-active; }
+
+.apu-green { color: $apu-green; }
+.apu-green-alt { color: $apu-green-alt; }
+.apu-green-active { color: $apu-green-active; }
+
+.apu-yellow { color: $apu-yellow; }
+.apu-yellow-alt { color: $apu-yellow-alt; }
+.apu-yellow-active { color: $apu-yellow-active; }
+
+/* MAIN LAYOUT */
+.row-main-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  padding-top: 20px;
+}
+@media (max-width: 991px) {
+  .row-main-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
+}
+.right-divider {
+  border-left: 2px solid #d9d9d9;
+  padding-left: 20px;
+}
 #sidebarMenu {
 	min-height: 100vh;
 	background: #000 !important;
@@ -7,33 +55,53 @@
   background: linear-gradient(45deg, #ff0 50%, #0ff 100%);
   color: #000;
   padding: 0px 15px 0px 1000px;
-  margin-left: -1000px;
 }
 .black-bg-title {
   background: #000;
   padding: 0px 15px 0px 1000px;
-  margin-left: -1000px;
 }
 .white-box {
 	@include white-box-apus;
+}
+.white-box-nopad {
+  @include white-box-apus-nopad;
+}
+.white-box-flatbottom {
+  border-radius: 9px 9px 0px 0px;
+  margin-bottom: 0px;
+  box-shadow: none;
+}
+.primary-flattop {
+  border-radius: 0px 0px 9px 9px;
+  background: rgba(0,255,255,0.15);
+  box-shadow: none;
+  // border: 2px solid $apu-blue-active;
+}
+.white-box-border {
+  @include white-box-apus-border;
 }
 .space-between {
 	@include space-between;
 }
 .main-wrap {
-	padding: 5px 45px 55px 45px;
+	// padding: 5px 45px 55px 45px;
   // background: $gray-10;
 }
 .small-title {
   font-size: 1.4rem;
   line-height: 1.0;
-  font-weight: 400;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-.white {
-  color: $wht !important;
-}
-.gray {
-  color: $gray-20 !important;
+.title-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .title-wrap-content {
+    display: grid;
+    align-items: center;
+  }
 }
 .lead {
   font-size: 2.0rem;
@@ -45,7 +113,539 @@
   background: linear-gradient(45deg, #ff0 50%, #0ff 100%);
   color: #000;
   // padding: 0px 15px 0px 1000px;
-  // margin-left: -1000px;
+  
+}
+/* Advisor title */
+.advisor-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  border-bottom: 1px solid $gray-10;
+  padding-bottom: 9px;
+  margin-bottom: 9px;
+}
+.advisor-initial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(2,197,2,0.15);
+  color: $apu-green-active;
+  border: 2px solid $apu-green-active;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Badge Styling - Profile badges */
+.profile-badge {
+  border-radius: 20px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: $gray-10;
+  border: 1px solid $gray-20;
+  color: $primary;
+  transition: all 0.2s ease;
+
+  i {
+    color: $apu-blue-active;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &:hover {
+    background-color: $apu-blue-active;
+    color: $wht;
+    border-color: $apu-blue-active;
+
+    i {
+      color: $wht;
+    }
+  }
+}
+
+/* Black background box */
+.black-bg {
+  background: $primary;
+  color: $wht;
+  padding: 2.0rem 2.5rem;
+  border-radius: 0;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $wht;
+  }
+
+  p {
+    color: $wht;
+  }
+
+  a {
+    color: $secondary;
+
+    &:hover {
+      color: $apu-blue-alt;
+    }
+  }
+}
+
+/* Task List Styling */
+.task-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  .task-filter-btn {
+    background: transparent;
+    color: $wht;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 14px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 0;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: $secondary;
+    }
+
+    &.active {
+      background: $secondary;
+      color: $primary;
+      border-color: $secondary;
+    }
+  }
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  // gap: 12px;
+
+  .task-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    font-weight: 600;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &.hidden {
+      display: none;
+    }
+
+    .task-checkbox {
+      width: 24px;
+      height: 24px;
+      cursor: auto;
+      flex-shrink: 0;
+      accent-color: $secondary;
+      border-radius: 50%;
+    }
+
+    label {
+      font-size: 1.6rem;
+      // color: $wht;
+      cursor: auto;
+      margin: 0;
+      flex: 1;
+      user-select: none;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+
+    .task-link {
+      color: $secondary;
+      font-size: 1.4rem;
+      padding: 0.5rem;
+      transition: all 0.2s ease;
+      opacity: 0.7;
+      text-decoration: none;
+      flex-shrink: 0;
+
+      &:hover {
+        opacity: 1;
+        transform: translateX(3px);
+        color: $wht;
+      }
+
+      i {
+        display: block;
+      }
+    }
+
+    input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      // opacity: 0.6;
+    }
+  }
+}
+
+.intro-box {
+  padding-top: 0px;
+  padding-bottom: 35px;
+}
+.intro-box-prospective {
+  padding: 40px 45px 50px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.5), rgba(0,0,0,0.75)), url('../images/intro-apu-bg.jpg') no-repeat right center fixed;
+  border-radius: 20px;
+  border: 2px solid $apu-blue;
+  color: $wht;
+}
+/* Applicant Sequential Task List - Prominent Styling */
+.applicant-todo-prominent {
+  // border: 2px solid $secondary;
+  // box-shadow: 0 4px 12px rgba(0, 255, 255, 0.2);
+
+  h4 {
+    font-size: 2.0rem;
+    font-weight: 600;
+  }
+
+  .applicant-sequential-list {
+    // Override the general task-list checkbox rule
+    input[type="checkbox"]:checked + label {
+      text-decoration: line-through !important;
+      color: $gray-70;
+    }
+
+    .task-item {
+      position: relative;
+      padding: 1.0rem 0;
+      margin-bottom: 0.5rem;
+
+      // Reset strikethrough for all labels by default
+      label {
+        text-decoration: none !important;
+        color: $primary;
+      }
+
+      &.task-completed {
+        // Hide the real checkbox
+        .task-checkbox,
+        input[type="checkbox"] {
+          display: none;
+        }
+
+        label {
+          position: relative;
+          padding-left: 3.6rem;
+          text-decoration: none !important;
+          color: $green !important;
+          cursor: default;
+
+          // Create custom checkbox using ::before
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2.4rem;
+            height: 2.4rem;
+            border: 2px solid $green;
+            border-radius: 3px;
+            background-color: $green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          // Create checkmark using ::after
+          &::after {
+            font-family: "Font Awesome 6 Pro";
+            content: '\f00c'; // Unicode checkmark
+            position: absolute;
+            left: 0.4rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 1;
+          }
+        }
+      }
+
+      &.task-next-step {
+        background: linear-gradient(90deg, rgba(0, 255, 255, 0.15) 0%, rgba(0, 255, 255, 0.05) 100%);
+        border-left: 4px solid $secondary;
+        padding-left: 1.5rem;
+        margin-left: -1.5rem;
+        padding-right: 1.5rem;
+        margin-right: -1.5rem;
+        padding-top: 2.5rem;
+
+        .next-step-badge {
+          position: absolute;
+          top: 0.5rem;
+          left: 1.5rem;
+          background: $secondary;
+          color: $primary;
+          font-size: 1.0rem;
+          font-weight: 700;
+          padding: 0.3rem 0.8rem;
+          border-radius: 3px;
+          letter-spacing: 0.5px;
+        }
+
+        label {
+          font-size: 1.8rem;
+          font-weight: 600;
+          text-decoration: none !important;
+          color: $primary;
+        }
+
+        .task-checkbox {
+          transform: scale(1.2);
+          accent-color: $secondary;
+        }
+
+        .task-link {
+          color: $secondary;
+          opacity: 1;
+          transform: scale(1.1);
+
+          &:hover {
+            color: $gray-dk;
+          }
+        }
+      }
+
+      &.task-locked {
+        opacity: 1;
+
+        label {
+          text-decoration: none !important;
+          color: $primary;
+          cursor: not-allowed;
+        }
+
+        .task-checkbox {
+          cursor: not-allowed;
+          opacity: 0.4;
+        }
+
+        .task-link-disabled {
+          opacity: 0.3;
+          cursor: not-allowed;
+          pointer-events: none;
+        }
+      }
+
+      // Task Button Styling
+      .task-btn {
+        // padding: 0.6rem 1.2rem;
+        // font-size: 1.3rem;
+        // font-weight: 600;
+        // text-decoration: none;
+        // border-radius: 0;
+        // transition: all 0.2s ease;
+        // display: inline-block;
+        // text-align: center;
+        // white-space: nowrap;
+        // cursor: pointer;
+
+        &:hover:not(.task-btn-disabled) {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        &.task-btn-disabled {
+          opacity: 0.9;
+          cursor: not-allowed;
+          pointer-events: none;
+          background: $gray-20 !important;
+          color: $gray-dk !important;
+          border-color: $gray-20 !important;
+        }
+      }
+    }
+    .task-item-disclaimer {
+      border-radius: $border-radius;
+      background: $gray-10;
+      padding: 15px;
+      .disclaimer {
+        font-size: 1.4rem;
+        font-style: italic;
+        font-weight: 600;
+        color: $gray-70;
+        a {
+          color: $apu-blue-active;
+        }
+      }
+    }
+    .task-item-disabled {
+      label {
+        color: $gray-70;
+      }
+    }
+  }
+
+  /* Accordion Styling */
+  &.accordion {
+    .accordion-item {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      background-color: transparent;
+
+      &:last-child {
+        border-bottom: 1px solid #ccc;
+      }
+    }
+
+    .accordion-header {
+      margin-bottom: 0;
+    }
+
+    .accordion-button {
+      background-color: transparent;
+      color: $primary;
+      font-family: $font-main;
+      font-size: 2.0rem;
+      font-weight: 600;
+      padding: 1.5rem 0;
+      box-shadow: none;
+
+      &:not(.collapsed) {
+        background-color: transparent;
+        color: $primary;
+        box-shadow: none;
+
+        // Open state - use $apu-blue-active (#00CCCC)
+        &::after {
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2300CCCC'%3e%3cpath d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/%3e%3cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3e%3c/svg%3e");
+          transform: rotate(-45deg);
+        }
+      }
+
+      &:focus {
+        border-color: transparent;
+        box-shadow: none;
+      }
+
+      // Closed state - use $apu-blue-alt (#B3F5F5)
+      &::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2300ffff'%3e%3cpath d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/%3e%3cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3e%3c/svg%3e");
+        background-size: 2.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        transition: transform 0.2s ease;
+      }
+    }
+
+    .accordion-body {
+      padding: 1.5rem 0 2rem 0;
+    }
+
+    .accordion-collapse {
+      border: none;
+    }
+  }
+}
+
+/* Stage Content - Hidden by default, shown by JavaScript */
+.stage-content {
+  display: none;
+
+  // &[data-stage="prospective"],
+  &[data-stage="enrolled"] {
+    display: block;
+  }
+}
+
+/* Demo Mode Toggle Styles */
+.demo-mode-toggle {
+  background: #2c2c2c;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #444;
+
+  .demo-mode-label {
+    color: $wht;
+    font-weight: 600;
+    margin-right: 1.5rem;
+    font-size: 1.3rem;
+
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .stage-switcher {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.3rem;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background: $wht;
+    cursor: pointer;
+    min-width: 200px;
+  }
+}
+
+/* Typography Utilities */
+.text-advisor {
+  line-height: 1.5;
+  span{
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+.text-sm {
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
+.text-base {
+  font-size: 1.4rem;
+  line-height: 1.7;
+}
+
+.text-lg {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
+.mb-sm {
+  margin-bottom: 1.5rem;
+}
+
+/* Info Box Styles */
+.info-text {
+  font-size: 1.4rem;
+  line-height: 1.7;
+}
+
+.info-list {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
+.info-list-sm {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-top: 1.5rem;
 }
 
 /* Breadcrumbs */
@@ -60,6 +660,263 @@
 }
 @media (max-width: 991px) {
   .main-wrap {
-    padding: 45px 50px 55px;
+    padding: 45px 20px 55px;
+  }
+}
+
+/* Student Orientation Checklist */
+.orientation-checklist {
+  .checklist-progress {
+    padding-top: 1.5rem;
+    border-top: 1px solid $gray-20;
+
+    .progress-text {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $primary;
+    }
+
+    .progress {
+      border-radius: 0;
+      background: $gray-10;
+
+      .progress-bar {
+        transition: width 0.3s ease;
+        background-color: $secondary !important;
+      }
+    }
+  }
+}
+
+/* My Documents - Document Status Overview */
+.document-stat {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  // background: $gray-10;
+  border-radius: 4px;
+  position: relative;
+  .stat-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 2.4rem;
+
+    &.required {
+      background: rgba(228, 25, 59, 0.1);
+      color: $red;
+    }
+
+    &.pending {
+      background: rgba(248, 138, 0, 0.1);
+      color: $orange;
+    }
+
+    &.completed {
+      background: rgba(128, 195, 66, 0.1);
+      color: $green;
+    }
+  }
+
+  .stat-info {
+    .stat-number {
+      font-size: 4.4rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.0rem;
+      color: $primary;
+    }
+
+    .stat-label {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0;
+      color: $gray-dk;
+    }
+  }
+}
+.stat-pending {
+  background: rgba(248, 138, 0, 0.1);
+}
+.stat-completed {
+  background: rgba(128, 195, 66, 0.1);
+}
+.stat-outstanding {
+  background: rgba(228, 25, 59, 0.1);
+}
+.orange-pending {
+  border-left: 4px solid $orange;
+}
+.green-completed {
+  border-left: 4px solid $green;
+}
+.red-required {
+  border-left: 4px solid $red;
+  background: rgba(228, 25, 59, 0.1) !important;
+}
+.stat-label-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1px 6px 1px 9px;
+  border-radius: 0px 0px 0px 9px;
+  p {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 0px;
+  }
+}
+
+/* My Documents - Document List */
+.document-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .document-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 2rem;
+    background: $gray-10;
+    border-radius: 4px;
+    border-left: 4px solid $gray-20;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(0, 255, 255, 0.05);
+      border-left-color: $apu-blue-active;
+    }
+
+    .document-info {
+      flex: 1;
+
+      .document-title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: $primary;
+      }
+
+      .document-meta {
+        font-size: 1.4rem;
+        margin-bottom: 0;
+        color: $gray-dk;
+      }
+    }
+
+    .document-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: 1.5rem;
+      flex-shrink: 0;
+    }
+  }
+}
+
+/* Document Status Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 20px;
+  white-space: nowrap;
+
+  i {
+    font-size: 1.4rem;
+  }
+
+  &.badge-required {
+    background: rgba(228, 25, 59, 0.1);
+    color: $red;
+    border: 1px solid rgba(228, 25, 59, 0.3);
+  }
+
+  &.badge-pending {
+    background: rgba(248, 138, 0, 0.1);
+    color: $orange;
+    border: 1px solid rgba(248, 138, 0, 0.3);
+  }
+
+  &.badge-completed {
+    background: rgba(128, 195, 66, 0.1);
+    color: $green;
+    border: 1px solid rgba(128, 195, 66, 0.3);
+  }
+
+  &.badge-disabled {
+    background: rgba(0, 0, 0, 0.05);
+    color: $gray-60;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  &.bg-success {
+    background-color: $green;
+  }
+  &.bg-review {
+    background-color: $orange;
+  }
+}
+
+/* Disabled Document Section */
+.document-section-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  position: relative;
+
+  .document-item-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    &:hover {
+      background: $gray-10;
+      border-left-color: $gray-20;
+    }
+
+    .document-title {
+      color: $gray-60;
+    }
+
+    .document-meta {
+      color: $gray-60;
+    }
+  }
+}
+// Custom checkbox styling now handled in .task-completed section above
+// Real checkboxes are hidden and replaced with ::before/::after pseudo-elements
+/* Responsive adjustments for document items */
+@media (max-width: 768px) {
+  .document-item {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 1.5rem;
+
+    .document-actions {
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch !important;
+
+      .badge {
+        justify-content: center;
+      }
+
+      .btn-sm {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  .document-stat {
+    justify-content: center;
   }
 }

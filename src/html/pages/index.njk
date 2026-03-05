@@ -1,77 +1,48 @@
 {% extends "layouts/base.njk" %}
-{% from "partials/macros.njk" import productCard %}
-{% import "partials/macros.njk" as buttons %}
-{% import "partials/macros.njk" as cards %}
-{% import "partials/macros.njk" as grids %}
-{% import "macros/buttons.njk" as buttons %}
+
 {% block content %}
 
-	<div class="alert">
-		{% include "partials/alerts.njk" %}
-	</div>
-	<div class="row">
-		{# {{ grids.shortcutRail(classes, cards.classCard) }} #}
-		{% include "partials/shortcuts.njk" %}
-		{# <div class="shortcut-rail">
-			<div class="shortcut-item">
-				<span><i class="fa-regular fa-chalkboard-user"></i></span>
-				<p>My Classroom</p>
-			</div>
-			<div class="shortcut-item">
-				<span><i class="fa-regular fa-book-open"></i></span>
-				<p>Apus Library</p>
-			</div>
-			<div class="shortcut-item">
-				<span><i class="fa-regular fa-graduation-cap"></i></span>
-				<p>Career Link</p>
-			</div>
-			<div class="shortcut-item">
-				<span><i class="fa-regular fa-school"></i></span>
-				<p>Campus Store</p>
-			</div>
-			<div class="shortcut-item">
-				<span><i class="fa-regular fa-book"></i></span>
-				<p>Book Store</p>
-			</div>
-		</div> #}
+<div class="container">
+
+	{% include "partials/alerts.njk" %}
+
+</div>
+	{# Stage Switcher for Demo #}
+	<div class="stage-switcher-container">
+		<label for="stageSwitcher">Student Journey Stage:</label>
+		<select id="stageSwitcher" class="stage-switcher">
+			<option value="prospective">Prospective Student</option>
+			<option value="applicant" selected>Applicant</option>
+			<option value="accepted">Accepted Student</option>
+			<option value="enrolled">Enrolled Student</option>
+			<option value="returning">Returning Student</option>
+			<option value="alumni">Alumni</option>
+		</select>
 	</div>
 
-	<div class="row">
-		<div class="col-lg-8 mb-5">
-			<div class="alert-box">
-				{% if site.student.name %}
-				  <h1>Welcome back, {{ site.student.name }}!</h1>
-				  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus elementum nisl. Nam fermentum commodo justo in malesuada. Morbi consectetur mauris nisi, nec consequat sem porttitor et. Praesent suscipit felis id eros pharetra consectetur. Praesent in mi luctus, rhoncus augue nec, dapibus justo. </p>
-				{% else %}
-				  <h1>Welcome, student!</h1>
-				  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus elementum nisl. Nam fermentum commodo justo in malesuada. Morbi consectetur mauris nisi, nec consequat sem porttitor et. Praesent suscipit felis id eros pharetra consectetur. Praesent in mi luctus, rhoncus augue nec, dapibus justo. </p>
-				{% endif %}
-			</div>
-			<div class="actions white-box">
-			<h4>Current Classes</h4>
-				<p>This is the intro paragraph of the home page dashboard that tells you information.</p>
-				
-				{{ grids.cardGrid(classes, cards.classCard) }}
-				{{ buttons.button('View All Classes', '/contact', 'main') }}
-				{# {{ buttons.button('Learn More', '/about', 'secondary') }} #}
-			</div>
-		</div>
-		<div class="col-lg-4 mb-5">
-			<div class="actions white-box mb-5">
-				<h4>Program Overview</h4>
-				{% from "partials/macros.njk" import progress, progressLine %}
-				<section class="progress-circles">
-				  {{ progress("Current GPA", 3.6, 4.0, "var(--apu-blue-active)", "raw") }}
-				  {{ progress("Credits Earned", 90, 120, "var(--apu-blue-active)", "raw") }}
-				</section>
-				<h4 class="mb-3">Overall Program Progress</h4>
-				<section class="progress-overall">
-					{{ progressLine("Overall Progress", 70, 100, "var(--apu-blue-active)", "percent") }}
-				</section>
-			</div>
-			<div class="actions white-box">
-		  		{% include "partials/calendar.njk" %}
-	  		</div>
-		</div>
+	{# Load all stage layouts with data attributes #}
+	<div class="stage-container" data-stage="prospective">
+		{% include "partials/stages/prospective.njk" %}
 	</div>
+
+	<div class="stage-container active" data-stage="applicant">
+		{% include "partials/stages/applicant.njk" %}
+	</div>
+
+	<div class="stage-container" data-stage="accepted">
+		{% include "partials/stages/accepted.njk" %}
+	</div>
+
+	<div class="stage-container" data-stage="enrolled">
+		{% include "partials/stages/enrolled.njk" %}
+	</div>
+
+	<div class="stage-container" data-stage="returning">
+		{% include "partials/stages/returning.njk" %}
+	</div>
+
+	<div class="stage-container" data-stage="alumni">
+		{% include "partials/stages/alumni.njk" %}
+	</div>
+
 {% endblock %}

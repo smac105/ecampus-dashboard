@@ -1,0 +1,73 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/course-management.html" class="shortcut-item">
+          <span><i class="fa-regular fa-list-check"></i></span>
+          <p>Course Management</p>
+        </a>
+        <a href="/degree-planner.html" class="shortcut-item">
+          <span><i class="fa-regular fa-map"></i></span>
+          <p>Degree Planner</p>
+        </a>
+        <a href="/course-catalog.html" class="shortcut-item">
+          <span><i class="fa-regular fa-book-bookmark"></i></span>
+          <p>Course Catalog</p>
+        </a>
+        <a href="/transfer-credits.html" class="shortcut-item">
+          <span><i class="fa-regular fa-arrow-right-arrow-left"></i></span>
+          <p>Transfer Credits</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="white-box mb-5">
+        <h1 class="h1 mb-4">Transfer Credits</h1>
+        <p class="lead mb-4">Submit and track transfer credits from previous institutions.</p>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Submit Transfer Credits</h3>
+              <p>Request evaluation of credits from previous institutions.</p>
+              <ul>
+                <li>Upload official transcripts</li>
+                <li>Submit course descriptions</li>
+                <li>Track evaluation status</li>
+              </ul>
+              <a href="#" class="btn-main btn-sm">Submit Request</a>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Transfer Credit Status</h3>
+              <p>View the status of your transfer credit evaluations.</p>
+              <ul>
+                <li>Pending evaluations</li>
+                <li>Approved credits</li>
+                <li>Denied credits</li>
+              </ul>
+              <a href="#" class="btn-main btn-sm">Check Status</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Transfer Credit Policies</h3>
+              <p>Review our transfer credit policies, maximum credit limits, and evaluation criteria.</p>
+              <a href="#" class="btn-main btn-sm">View Policies</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

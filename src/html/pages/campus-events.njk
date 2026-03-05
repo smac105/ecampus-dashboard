@@ -1,0 +1,87 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <div class="container">
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/student-profile.html" class="shortcut-item">
+          <span><i class="fa-regular fa-user"></i></span>
+          <p>Student Profile</p>
+        </a>
+        <a href="/student-organizations.html" class="shortcut-item">
+          <span><i class="fa-regular fa-users-rectangle"></i></span>
+          <p>Student Organizations</p>
+        </a>
+        <a href="/campus-events.html" class="shortcut-item active">
+          <span><i class="fa-regular fa-calendar-star"></i></span>
+          <p>Campus Events</p>
+        </a>
+        <a href="/wellness-resources.html" class="shortcut-item">
+          <span><i class="fa-regular fa-heart"></i></span>
+          <p>Wellness Resources</p>
+        </a>
+        <a href="/campus-resources.html" class="shortcut-item">
+          <span><i class="fa-regular fa-building-columns"></i></span>
+          <p>Campus Resources</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="mb-5">
+        <h1 class="mb-4">Campus Events</h1>
+        <p class="lead mb-4">Stay updated on upcoming campus events and activities.</p>
+
+        <div class="row">
+          <div class="col-12 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Upcoming Events</h3>
+
+              <div class="mb-4">
+                <h4 class="h4">Spring Semester Welcome Event</h4>
+                <p><strong>Date:</strong> March 1, 2025 | 6:00 PM - 8:00 PM EST</p>
+                <p>Join us for a virtual welcome event to kick off the spring semester. Meet fellow students and learn about campus resources.</p>
+                <a href="#" class="btn-main btn-sm">Register</a>
+              </div>
+
+              <div class="mb-4">
+                <h4 class="h4">Guest Speaker Series: Leadership in the Digital Age</h4>
+                <p><strong>Date:</strong> March 12, 2025 | 7:00 PM - 8:30 PM EST</p>
+                <p>Hear from industry leaders about navigating careers in our digital world.</p>
+                <a href="#" class="btn-main btn-sm">Register</a>
+              </div>
+
+              <div class="mb-4">
+                <h4 class="h4">Student Art Exhibition</h4>
+                <p><strong>Date:</strong> March 18-25, 2025 | Virtual Gallery</p>
+                <p>Showcase of student artwork and creative projects from across all programs.</p>
+                <a href="#" class="btn-main btn-sm">View Gallery</a>
+              </div>
+
+              <div class="mb-4">
+                <h4 class="h4">Wellness Week</h4>
+                <p><strong>Date:</strong> March 22-26, 2025</p>
+                <p>A week dedicated to physical and mental health with workshops, fitness classes, and wellness resources.</p>
+                <a href="#" class="btn-main btn-sm">View Schedule</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Event Calendar</h3>
+              <p>View the full academic calendar with all campus events.</p>
+              <a href="#" class="btn-main btn-sm">View Calendar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+{% endblock %}

@@ -32,7 +32,7 @@
 /* SEARCH BAR STYLES */
 .dynamic-search {
     position: absolute;
-    width: 45px;
+    width: 39px;
     height: 56px;
     background: rgba(245,245,245,0.0);
     overflow: hidden;
@@ -65,7 +65,8 @@
     box-shadow: 0px 4px 20px rgba(0,0,0,0.15);
     /*border-radius: 28px;*/
     transition: 0.5s;
-    border-radius: 0px 0px 0px 6px;
+    // border-radius: 0px 0px 0px 6px;
+    border-radius: 0px;
 }
 .dynamic-search.active input {
     background: rgba(255,255,255,1.0);
@@ -95,8 +96,9 @@
     transition: 0.5s;
 
     top: 0px;
-    left: -1px;
-    border-radius: 6px 0px 0px 6px;
+    left: 0px;
+    // border-radius: 6px 0px 0px 6px;
+    border-radius: 0px;
 }
 
 .search-icon:before {
@@ -107,7 +109,7 @@
     width: 16px;
     height: 16px;
     background: transparent;
-    border: 2px solid $primary;
+    border: 3px solid $primary;
     border-radius: 50%;
     transition: 0.5s;
     /*border: 3px solid rgba(0,30,97,0.25);*/
@@ -120,7 +122,7 @@
     width: 12px;
     height: 12px;
     background: transparent;
-    border-left: 2px solid $primary;
+    border-left: 3px solid $primary;
     transform: rotate(-45deg);
     transition: 0.5s;
     /*border-left: 3px solid rgba(0,30,97,0.25);*/
@@ -136,7 +138,8 @@
 }
 
 .dynamic-search.active .search-icon {
-    background: #C0205D;
+    background: $apu-blue-active;
+    cursor: pointer;
 }
 .dynamic-search.active .search-icon:before {
     position: absolute;
@@ -144,10 +147,10 @@
     top: 9px;
     left: 13px;
     width: 20px;
-    height: 30px;
+    height: 26px;
     background: transparent;
     border: none;
-    border-right: 2px solid white;
+    border-right: 3px solid white;
     border-radius: 0;
     transition: 0.5s;
     transform: rotate(45deg);
@@ -158,11 +161,17 @@
     top: 9px;
     left: 26px;
     width: 20px;
-    height: 30px;
+    height: 26px;
     background: transparent;
-    border-left: 2px solid white;
+    border-left: 3px solid white;
     transform: rotate(-45deg);
     transition: 0.5s;
+}
+.search-icon-alt:before {
+    border: 3px solid $wht;
+}
+.search-icon-alt:after {
+    border-left: 3px solid $wht;
 }
 
 /* APUS */
@@ -183,7 +192,22 @@
     border-radius: 0rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
-
+@media (max-width: 768px) {
+    .search-icon-alt:before {
+        border: 3px solid $blk;
+    }
+    .search-icon-alt:after {
+        border-left: 3px solid $blk;
+    }
+// }
+// @media (max-width: 600px) {
+    .dynamic-search.active {
+        width: calc(100vw - 3vw);
+        input {
+            width: 100%;
+        }
+    }
+}
 /* APU */
 // .input-group .form-control {
 //     display: block;

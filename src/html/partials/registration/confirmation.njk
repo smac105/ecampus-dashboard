@@ -1,0 +1,73 @@
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="text-center py-5">
+        <!-- Success Icon -->
+        <div class="mb-5">
+          <div class="d-inline-flex align-items-center justify-content-center" style="width: 120px; height: 120px; background: #80c34220; border: 4px solid #80c342; border-radius: 50%;">
+            <i class="fas fa-check" style="font-size: 60px; color: #80c342;"></i>
+          </div>
+        </div>
+
+        <h2 class="h1 mb-3">Registration Complete!</h2>
+        <p class="lead mb-5">Your course registration has been successfully submitted.</p>
+         <div class="confirmation mb-5">
+          <p class="small-title mb-0">
+            <strong>A confirmation email has been sent to your university email address.</strong>
+          </p>
+        </div>
+
+        <div class="white-box text-start mb-5">
+          <h3 class="h3 mb-4">Registration Summary</h3>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between">
+              <span class="small-title gray-60">Confirmation Number</span>
+              <span class="h4 mb-0" id="confirmationNumber">REG-2025-001234</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between">
+              <span class="small-title gray-60">Semester</span>
+              <span class="h4 mb-0">Spring 2025</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between">
+              <span class="small-title gray-60">Courses Registered</span>
+              <span class="h4 mb-0" id="confirmationCourses">0</span>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="d-flex justify-content-between">
+              <span class="small-title gray-60">Total Credits</span>
+              <span class="h4 mb-0" id="confirmationCredits">0</span>
+            </div>
+          </div>
+          <div class="white-box gradient-bg">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="h3 mb-0">Total Amount</span>
+              <span class="h2 mb-0" id="confirmationTotal">$0.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="/index.html" class="btn-main">
+            Return to Dashboard
+          </a>
+          <button onclick="window.print()" class="btn-secondary">
+            Print Confirmation
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function resetRegistration() {
+    if (confirm('Are you sure you want to start a new registration? This will clear your current registration data.')) {
+      localStorage.removeItem('registrationState');
+      window.location.href = '/registration-flow.html';
+    }
+  }
+</script>

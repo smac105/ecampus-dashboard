@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="mb-5">
+        <h2 class="h2">Payment Selection</h2>
+        <p class="lead">Enter your payment information</p>
+      </div>
+
+      <div class="white-box">
+        <div id="paymentForm">
+          <!-- Payment form will be loaded based on selected method -->
+          <div class="mb-4">
+            <label class="form-label h4">Cardholder Name</label>
+            <input type="text" class="form-control form-control-lg" placeholder="John Doe">
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label h4">Card Number</label>
+            <input type="text" class="form-control form-control-lg" placeholder="1234 5678 9012 3456">
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-6 mb-3 mb-md-0">
+              <label class="form-label h4">Expiration Date</label>
+              <input type="text" class="form-control form-control-lg" placeholder="MM/YY">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label h4">CVV</label>
+              <input type="text" class="form-control form-control-lg" placeholder="123">
+            </div>
+          </div>
+
+          <div class="white-box gradient-bg">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="h3 mb-0">Amount to Charge</span>
+              <span class="h2 mb-0" id="paymentAmount">$0.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

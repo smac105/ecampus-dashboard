@@ -1,0 +1,87 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/job-search.html" class="shortcut-item">
+          <span><i class="fa-regular fa-magnifying-glass"></i></span>
+          <p>Job Search</p>
+        </a>
+        <a href="/resume-builder.html" class="shortcut-item">
+          <span><i class="fa-regular fa-file-user"></i></span>
+          <p>Resume Builder</p>
+        </a>
+        <a href="/career-counseling.html" class="shortcut-item">
+          <span><i class="fa-regular fa-comments"></i></span>
+          <p>Career Counseling</p>
+        </a>
+        <a href="/career-events.html" class="shortcut-item">
+          <span><i class="fa-regular fa-calendar-days"></i></span>
+          <p>Career Events</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="white-box mb-5">
+        <h1 class="h1 mb-4">Career Services</h1>
+        <p class="lead mb-4">Explore career resources, job opportunities, and professional development tools.</p>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3"><i class="fa-regular fa-briefcase"></i> Job Search</h3>
+              <p>Access our job board and find opportunities that match your skills and interests.</p>
+              <a href="#" class="btn-main btn-sm">Search Jobs</a>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3"><i class="fa-regular fa-file-user"></i> Resume Builder</h3>
+              <p>Create and optimize your resume with our professional resume building tools.</p>
+              <a href="#" class="btn-main btn-sm">Build Resume</a>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3"><i class="fa-regular fa-users"></i> Career Counseling</h3>
+              <p>Schedule one-on-one sessions with our career counselors for personalized guidance.</p>
+              <a href="#" class="btn-main btn-sm">Book Session</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Upcoming Career Events</h3>
+              <ul>
+                <li>Virtual Career Fair - March 15, 2025</li>
+                <li>Resume Workshop - March 20, 2025</li>
+                <li>Interview Skills Seminar - March 25, 2025</li>
+                <li>Networking Mixer - April 5, 2025</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Career Resources</h3>
+              <ul>
+                <li><a href="#" class="text-primary">Interview Preparation Guide</a></li>
+                <li><a href="#" class="text-primary">Salary Negotiation Tips</a></li>
+                <li><a href="#" class="text-primary">Professional Networking Guide</a></li>
+                <li><a href="#" class="text-primary">Career Assessment Tools</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

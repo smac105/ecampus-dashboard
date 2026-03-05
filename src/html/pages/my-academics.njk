@@ -1,6 +1,35 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-  <h1>{{ title }}</h1>
-  <p>This page uses the uppercase filter in the header.</p>
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/course-management.html" class="shortcut-item">
+          <span><i class="fa-regular fa-list-check"></i></span>
+          <p>Course Management</p>
+        </a>
+        <a href="/degree-planner.html" class="shortcut-item">
+          <span><i class="fa-regular fa-map"></i></span>
+          <p>Degree Planner</p>
+        </a>
+        <a href="/course-catalog.html" class="shortcut-item">
+          <span><i class="fa-regular fa-book-bookmark"></i></span>
+          <p>Course Catalog</p>
+        </a>
+        <a href="/transfer-credits.html" class="shortcut-item">
+          <span><i class="fa-regular fa-arrow-right-arrow-left"></i></span>
+          <p>Transfer Credits</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="white-box">
+        <h1 class="h1 mb-4">My Academics</h1>
+        <p class="lead">Manage your academic journey and track your progress.</p>
+      </div>
+    </div>
+  </div>
 {% endblock %}

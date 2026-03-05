@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="mb-5">
+        <h2 class="h2">Review Cart & Academic Plan</h2>
+        <p class="lead">Review your course selections and degree progress</p>
+      </div>
+
+      <!-- Degree Progress -->
+      {% from "partials/macros.njk" import progressLine, progress %}
+      <div class="white-box mb-5">
+        <h3 class="h3 mb-4">Degree Progress</h3>
+        <section class="progress-overall">
+          {{ progressLine("Credits Completed", 89, 120, "var(--apu-blue-active)", "raw") }}
+        </section>
+      </div>
+
+      <!-- Requirements Status -->
+      <div class="white-box mb-5">
+        <h3 class="h3 mb-4">Requirements Status</h3>
+        <section class="progress-circles">
+          {{ progress("General Education", 100, 100, "var(--green)", "percent") }}
+          {{ progress("Major Requirements", 75, 100, "var(--orange)", "percent") }}
+          {{ progress("Electives", 0, 100, "var(--gray-60)", "percent") }}
+        </section>
+      </div>
+
+      <!-- Selected Courses Cart -->
+      <div class="white-box">
+        <div class="mb-4">
+          <h3 class="h3">Selected Courses</h3>
+        </div>
+        <div id="cartCoursesList" class="mb-4">
+          <!-- Cart items will be loaded here -->
+        </div>
+        <div class="white-box gradient-bg">
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="h3 mb-0">Total Tuition</span>
+            <span class="h2 mb-0" id="cartTotal">$0.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,107 @@
+{% import "partials/macros.njk" as buttons %}
+{% from "partials/macros.njk" import image %}
+
+<section id="hp-recent-posts">
+	<div class="container">
+		<div class="title-wrap mb-5">
+			<h2 class="white">APUS In Action</h2>
+			<span>
+				{{ buttons.linkarrow('View All Articles', 'white', 'https://www.apus.edu/about/presidents-page/#presidentfernandesinthemedia', 'Link to full News page with all articles') }}
+			</span>
+		</div>
+		<div class="row hp-recent-posts-wrap">
+			<div class="vertical">
+				<article class="hp-main-featured">
+					<header class="item-header">
+						{{ image("news-great-place-to-work-image.webp", "APUS Great places to work", "img-post") }}
+						<div class="overlay">
+							<div class="item-content">
+								<a href="#" target="_blank" aria-label="Link to article title"><h3>APUS Earns Great Place to Work® Certification</h3></a>
+								<p>Rising Levels of Employee Engagement and Satisfaction Tell a Compelling Story: The University’s Workplace Culture Isn’t Just Strong, it’s Flourishing </p>
+								{{ buttons.linkarrow('Read More', 'white', '#', 'Read the full article here') }}
+							</div>
+						</div>
+					</header>
+				</article>
+			</div>
+			<div class="vertical">
+				<div class="hp-recent-additional">
+					<div class="articles-wrap">
+						
+						<article class="item">
+							<header class="item-header">
+								<a href="#" target="_blank" aria-label="Link to article title">
+									{{ image("news-cecu-fernandes.webp", "CECU Podcast - Episode 89: The Future of Education is Digital", "img-post") }}
+								</a>
+							</header> 
+							<div class="item-content">
+								<p class="lead">The Future of Education is Digital</p>
+								{{ buttons.linkarrow('Read More', 'white', 'https://career.org/web/Multimedia/Podcasts/Episode-89--The-Future-of-Education-is-Digital.aspx', 'Read the full article here') }}
+							</div>
+						</article>
+					
+ 					
+	 					<article class="item">
+							<header class="item-header">
+								<a href="#" target="_blank" aria-label="Link to article title">
+									{{ image("news-forbes-apus-in-action.webp", "Forbes - Reflections On Life’s Infinite Paths—And How To Create Your Own Opportunities", "img-post") }}
+								</a>
+							</header> 
+							<div class="item-content">
+								<p class="lead">Reflections On Life’s Infinite Paths—And How To Create Your Own Opportunities</p>
+								{{ buttons.linkarrow('Read More', 'white', 'https://www.forbes.com/councils/forbesbusinesscouncil/2025/04/04/reflections-on-lifes-infinite-paths-and-how-to-create-your-own-opportunities/', 'Read the full article here') }}
+							</div>
+						</article>
+					
+					
+						<article class="item">
+							<header class="item-header">
+								<a href="#" target="_blank" aria-label="Link to article title">
+									{{ image("news-global-impact-report.webp", "APUS Global Impact Report", "img-post") }}
+								</a>
+							</header> 
+							<div class="item-content">
+								<p class="lead">Global Impact Report 2024</p>
+								{{ buttons.linkarrow('Read More', 'white', 'https://www.apus.edu/about/presidents-page/#globalimpactreport', 'Read the full article here') }}
+							</div>
+						</article>
+						
+					</div>
+				</div>
+			</div><!-- col-md-6 -->
+		</div>
+		<hr>
+		<div class="title-wrap mb-5">
+			<h2 class="white">In the News</h2>
+			<span>
+				{{ buttons.linkarrow('View All Press', 'white', 'https://www.apus.edu/newsroom/', 'Link to full Press Release page with all articles') }}
+			</span>
+		</div>
+		<div class="row">
+			<div class="vertical">
+			<div class="press-wrap">
+				<article class="item">
+					<div class="item-content">
+						<h4 class="white mb-3"><a href="https://www.apus.edu/newsroom/press-releases/2025/2025-10-31-apus-to-host-sport-united-virtual-conference-november-6-7/" target="_blank">APUS to Host “Sport United: The Future is Now” Virtual Conference on November 6-7</a></h4>
+						{{ buttons.linkarrow('Read More', 'white', '#', 'Read the full press release here') }}
+					</div>
+				</article>
+			
+				<article class="item">
+					<div class="item-content">
+						<h4 class="white mb-3"><a href="https://www.apus.edu/newsroom/press-releases/2025/2025-10-13-apus-to-host-free-virtual-conference-on-ai-and-the-future-of-education-on-oct-16-17/" target="_blank">APUS to Host Free Virtual Conference on AI and the Future of Education on Oct. 16-17</a></h4>
+						{{ buttons.linkarrow('Read More', 'white', '#', 'Read the full press release here') }}
+					</div>
+				</article>
+			
+				<article class="item">
+					<div class="item-content">
+						<h4 class="white mb-3"><a href="https://www.apus.edu/newsroom/press-releases/2025/2025-10-02-apus-honors-top-scholars-for-academic-excellence/" target="_blank">APUS Honors Top Scholars for Academic Excellence</a></h4>
+						{{ buttons.linkarrow('Read More', 'white', '#', 'Read the full press release here') }}
+					</div>
+				</article>
+			</div>
+			</div>
+		</div>
+	</div>	
+</section>

@@ -1,0 +1,88 @@
+{% import "partials/macros.njk" as buttons %}
+<div class="container">
+{# Prospective Student Stage #}
+	<div class="row">
+		<div class="col-lg-12 mb-5">
+			<!-- Welcome Message -->
+			<div class="intro-box intro-box-prospective">
+				<h1 class="large-heading white">Discover Your Future at APUS</h1>
+				<p class="lead mb-5">Welcome! We're excited you're considering APUS for your educational journey. Explore our programs, learn about our flexible online learning format, and discover how we can help you achieve your academic goals.</p>
+				<h2 class="mb-3"><strong>Explore Our Programs</strong></h2>
+				<p class="mb-5">Browse our wide range of degree programs designed for working professionals and military members.</p>
+				{% include "partials/degree-finder.njk" %}
+				{{ buttons.button('View All Programs', '/programs', 'main') }}
+				{{ buttons.button('Request Information', '/contact', 'secondary') }}
+			</div>
+
+			<!-- Explore Programs -->
+			{# <div class="actions white-box">
+				
+				
+				
+			</div> #}
+		</div>
+	</div>
+</div>
+
+{# <div class="container">
+	<div class="row justify-content-center">
+		<div class="col-lg-6 mb-5">
+			<!-- Getting Started Task List -->
+			<div class="actions black-bg mb-5">
+				<h4 class="mb-3">Getting Started</h4>
+				<div class="task-list">
+					<div class="task-item">
+						<input type="checkbox" id="prosp-task1" class="task-checkbox">
+						<label for="prosp-task1">Explore Degree Programs</label>
+						<a href="/programs.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="prosp-task2" class="task-checkbox">
+						<label for="prosp-task2">Review Tuition & Financial Aid</label>
+						<a href="/financial-aid.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="prosp-task3" class="task-checkbox">
+						<label for="prosp-task3">Schedule a Call with Advisor</label>
+						<a href="/contact.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="prosp-task4" class="task-checkbox">
+						<label for="prosp-task4">Take a Virtual Campus Tour</label>
+						<a href="/campus-tour.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="prosp-task5" class="task-checkbox">
+						<label for="prosp-task5">Start Your Application</label>
+						<a href="/application-flow.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Why Choose APUS -->
+			<div class="actions white-box mb-5">
+				<h4>Why Choose APUS?</h4>
+				<ul class="info-list">
+					<li>100% Online, Flexible Learning</li>
+					<li>Affordable Tuition Rates</li>
+					<li>Military-Friendly Programs</li>
+					<li>Accredited Programs</li>
+					<li>Career-Focused Curriculum</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-lg-6 mb-5">
+			<!-- Get Started CTA -->
+			<div class="actions white-box">
+				<h4>Ready to Get Started?</h4>
+				<p class="info-text">
+					Contact our admissions team to learn more about APUS and start your application today.
+				</p>
+				{{ buttons.button('Contact Admissions', '/contact', 'main') }}
+			</div>
+		</div>
+	</div>
+</div> #}
+{# <div class="row justify-content-center"> #}
+	{% include "partials/stages/prospective/news.njk" %}
+{# </div> #}

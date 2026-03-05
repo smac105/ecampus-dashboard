@@ -1,0 +1,71 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/course-management.html" class="shortcut-item">
+          <span><i class="fa-regular fa-list-check"></i></span>
+          <p>Course Management</p>
+        </a>
+        <a href="/degree-planner.html" class="shortcut-item">
+          <span><i class="fa-regular fa-map"></i></span>
+          <p>Degree Planner</p>
+        </a>
+        <a href="/course-catalog.html" class="shortcut-item">
+          <span><i class="fa-regular fa-book-bookmark"></i></span>
+          <p>Course Catalog</p>
+        </a>
+        <a href="/transfer-credits.html" class="shortcut-item">
+          <span><i class="fa-regular fa-arrow-right-arrow-left"></i></span>
+          <p>Transfer Credits</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="white-box mb-5">
+        <h1 class="h1 mb-4">Course Management</h1>
+        <p class="lead mb-4">Manage your current courses, view schedules, and track assignments.</p>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Current Courses</h3>
+              <p>View and manage your currently enrolled courses, access course materials, and track your progress.</p>
+              <a href="#" class="btn-main btn-sm">View Courses</a>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Course Schedule</h3>
+              <p>View your class schedule, meeting times, and important course dates.</p>
+              <a href="#" class="btn-main btn-sm">View Schedule</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Assignments & Grades</h3>
+              <p>Track upcoming assignments, view submissions, and check your grades.</p>
+              <a href="#" class="btn-main btn-sm">View Assignments</a>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Course History</h3>
+              <p>Access previously completed courses and view your academic history.</p>
+              <a href="#" class="btn-main btn-sm">View History</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

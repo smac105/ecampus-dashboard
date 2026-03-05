@@ -1,0 +1,130 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="white-box">
+        <h2 class="h2 mb-4">Military Background</h2>
+
+        <p class="mb-4">APUS is proud to serve military members, veterans, and their families. Please share your military background information below.</p>
+
+        <form id="militaryForm">
+          <!-- Military Affiliation -->
+          <div class="mb-4">
+            <label for="militaryAffiliation" class="form-label">Military Affiliation <span class="text-danger">*</span></label>
+            <select class="form-control" id="militaryAffiliation" name="militaryAffiliation" required>
+              <option value="">Select your affiliation...</option>
+              <option value="none">No Military Affiliation</option>
+              <option value="active-duty">Active Duty</option>
+              <option value="veteran">Veteran</option>
+              <option value="reserve">Reserve</option>
+              <option value="national-guard">National Guard</option>
+              <option value="spouse">Military Spouse</option>
+              <option value="dependent">Military Dependent</option>
+            </select>
+          </div>
+
+          <!-- Branch of Service (shown if not "none") -->
+          <div id="branchSection" class="mb-4" style="display: none;">
+            <label for="branchOfService" class="form-label">Branch of Service <span class="text-danger">*</span></label>
+            <select class="form-control" id="branchOfService" name="branchOfService">
+              <option value="">Select branch...</option>
+              <option value="army">Army</option>
+              <option value="navy">Navy</option>
+              <option value="air-force">Air Force</option>
+              <option value="marines">Marines</option>
+              <option value="coast-guard">Coast Guard</option>
+              <option value="space-force">Space Force</option>
+            </select>
+          </div>
+
+          <!-- Rank (shown if active duty, veteran, reserve, or national guard) -->
+          <div id="rankSection" class="mb-4" style="display: none;">
+            <label for="rank" class="form-label">Rank/Pay Grade</label>
+            <input type="text" class="form-control" id="rank" name="rank" placeholder="E.g., E-5, O-3, W-2">
+            <small class="form-text text-muted">Optional - Enter your current or highest rank achieved</small>
+          </div>
+
+          <!-- Service Dates (shown if active duty, veteran, reserve, or national guard) -->
+          <div id="serviceDatesSection" style="display: none;">
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <label for="serviceStartDate" class="form-label">Service Start Date</label>
+                <input type="date" class="form-control" id="serviceStartDate" name="serviceStartDate">
+              </div>
+              <div class="col-md-6">
+                <label for="serviceEndDate" class="form-label">Service End Date</label>
+                <input type="date" class="form-control" id="serviceEndDate" name="serviceEndDate">
+                <small class="form-text text-muted">Leave blank if currently serving</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- MOS/Rating/AFSC -->
+          <div id="mosSection" class="mb-4" style="display: none;">
+            <label for="mos" class="form-label">MOS/Rating/AFSC</label>
+            <input type="text" class="form-control" id="mos" name="mos" placeholder="E.g., 11B, BM, 2A6X1">
+            <small class="form-text text-muted">Optional - Your Military Occupational Specialty</small>
+          </div>
+
+          <!-- Veteran Benefits -->
+          <div id="benefitsSection" class="mb-4" style="display: none;">
+            <label class="form-label">Are you planning to use veteran education benefits?</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="veteranBenefits" id="benefits-yes" value="yes">
+              <label class="form-check-label" for="benefits-yes">
+                Yes - I plan to use GI Bill or other VA education benefits
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="veteranBenefits" id="benefits-no" value="no">
+              <label class="form-check-label" for="benefits-no">
+                No - I will not be using veteran education benefits
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="veteranBenefits" id="benefits-unsure" value="unsure" checked>
+              <label class="form-check-label" for="benefits-unsure">
+                I'm not sure yet
+              </label>
+            </div>
+          </div>
+
+          <!-- Tuition Assistance (for active duty) -->
+          <div id="taSection" class="mb-4" style="display: none;">
+            <label class="form-label">Will you be using Military Tuition Assistance (TA)?</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="tuitionAssistance" id="ta-yes" value="yes">
+              <label class="form-check-label" for="ta-yes">
+                Yes - I plan to use Tuition Assistance
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="tuitionAssistance" id="ta-no" value="no">
+              <label class="form-check-label" for="ta-no">
+                No - I will not be using Tuition Assistance
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="tuitionAssistance" id="ta-unsure" value="unsure" checked>
+              <label class="form-check-label" for="ta-unsure">
+                I'm not sure yet
+              </label>
+            </div>
+          </div>
+
+          <!-- Additional Information -->
+          <div class="mb-4">
+            <label for="militaryNotes" class="form-label">Additional Information (Optional)</label>
+            <textarea class="form-control" id="militaryNotes" name="militaryNotes" rows="3" placeholder="Any additional military background information you'd like to share..."></textarea>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <!-- Info Alert -->
+      <div class="white-box-border alert-alt alert-info">
+        <p><i class="fas fa-info-circle me-2"></i> <strong>Why we ask:</strong></p>
+        <p>This information helps us better serve military-affiliated students and connect you with appropriate benefits and resources. All information is confidential and used solely for educational purposes.</p>
+      </div>
+    </div>
+  </div>
+</div>

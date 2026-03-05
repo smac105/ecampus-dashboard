@@ -1,0 +1,93 @@
+{% extends "layouts/registration-layout.njk" %}
+{% set exitButtonText = "Exit Student Profile" %}
+{% set exitButtonUrl = "/index.html" %}
+
+{% block content %}
+  <div class="container">
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/student-profile.html" class="shortcut-item">
+          <span><i class="fa-regular fa-user"></i></span>
+          <p>Student Profile</p>
+        </a>
+        {# <a href="/student-organizations.html" class="shortcut-item">
+          <span><i class="fa-regular fa-users-rectangle"></i></span>
+          <p>Student Organizations</p>
+        </a> #}
+        <a href="/my-documents.html" class="shortcut-item">
+          <span><i class="fa-regular fa-file-lines"></i></span>
+          <p>My Documents</p>
+        </a>
+        <a href="/wellness-resources.html" class="shortcut-item active">
+          <span><i class="fa-regular fa-heart"></i></span>
+          <p>Wellness Resources</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="mb-5">
+        <h1 class="mb-4">Wellness Resources</h1>
+        <p class="lead mb-4">Access mental health, physical wellness, and support services.</p>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Counseling Services</h3>
+              <p>Free, confidential counseling services for all students.</p>
+              <ul>
+                <li>Individual counseling sessions</li>
+                <li>Group therapy options</li>
+                <li>Crisis intervention</li>
+                <li>24/7 crisis hotline: 1-800-273-8255</li>
+              </ul>
+              <a href="#" class="btn-main btn-sm">Schedule Appointment</a>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Wellness Programs</h3>
+              <p>Programs and workshops to support your overall wellbeing.</p>
+              <ul>
+                <li>Stress management workshops</li>
+                <li>Mindfulness and meditation</li>
+                <li>Sleep health resources</li>
+                <li>Nutrition counseling</li>
+              </ul>
+              <a href="#" class="btn-main btn-sm">View Programs</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Mental Health Resources</h3>
+              <ul>
+                <li><a href="#" class="text-primary">Self-Help Resources</a></li>
+                <li><a href="#" class="text-primary">Mental Health Screening Tools</a></li>
+                <li><a href="#" class="text-primary">Support Groups</a></li>
+                <li><a href="#" class="text-primary">Crisis Resources</a></li>
+                <li><a href="#" class="text-primary">Referral Services</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Emergency Contacts</h3>
+              <p><strong>National Suicide Prevention Lifeline:</strong><br>1-800-273-8255</p>
+              <p><strong>Crisis Text Line:</strong><br>Text HOME to 741741</p>
+              <p><strong>Campus Counseling Services:</strong><br>1-800-555-HELP</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,53 @@
+.form-control {
+  display: block;
+  /*padding: .375rem 1.0rem .375rem 1.5rem;*/
+  padding: 14px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333333;
+  background: #fff !important;
+  background-clip: padding-box;
+  border: 1px solid #000;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 6px !important;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  border: 2px solid $apu-blue-alt !important;
+}
+.form-label {
+  margin-bottom: .5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.selected {
+  animation-name: opacityAnimation 1s linear;
+  animation-duration: 1s; /* Firefox requires this to apply the animation */
+}
+@keyframes opacityAnimation {
+  from {
+    opacity: 0.0;
+  }
+  to {
+    opacity: 1.0;
+  }
+}
+.form-control-full {
+  display: block;
+  padding: .375rem 2.0rem .375rem 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.5;
+  color: #333333;
+  background-color: #fff;
+  background-clip: padding-box;
+  /*border: 1px solid #000;*/
+  border: 2px solid #0ff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 4px;
+  /*border-radius: 4.0rem;*/
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}

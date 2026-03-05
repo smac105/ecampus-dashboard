@@ -1,0 +1,111 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <div class="container">
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/student-profile.html" class="shortcut-item">
+          <span><i class="fa-regular fa-user"></i></span>
+          <p>Student Profile</p>
+        </a>
+        <a href="/student-organizations.html" class="shortcut-item">
+          <span><i class="fa-regular fa-users-rectangle"></i></span>
+          <p>Student Organizations</p>
+        </a>
+        <a href="/campus-events.html" class="shortcut-item">
+          <span><i class="fa-regular fa-calendar-star"></i></span>
+          <p>Campus Events</p>
+        </a>
+        <a href="/wellness-resources.html" class="shortcut-item">
+          <span><i class="fa-regular fa-heart"></i></span>
+          <p>Wellness Resources</p>
+        </a>
+        <a href="/campus-resources.html" class="shortcut-item active">
+          <span><i class="fa-regular fa-building-columns"></i></span>
+          <p>Campus Resources</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="mb-5">
+        <h1 class="mb-4">Campus Resources</h1>
+        <p class="lead mb-4">Access library services, technology support, and academic resources.</p>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3"><i class="fa-regular fa-book"></i> University Library</h3>
+              <p>Access millions of resources including books, journals, and databases.</p>
+              <ul>
+                <li>Online library catalog</li>
+                <li>Research databases</li>
+                <li>E-books and journals</li>
+                <li>Librarian assistance</li>
+              </ul>
+              <a href="#" class="btn-main btn-sm">Visit Library</a>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3"><i class="fa-regular fa-pen"></i> Writing Center</h3>
+              <p>Get help with writing assignments, papers, and projects.</p>
+              <ul>
+                <li>One-on-one tutoring</li>
+                <li>Essay review services</li>
+                <li>Citation help</li>
+                <li>Writing workshops</li>
+              </ul>
+              <a href="#" class="btn-main btn-sm">Schedule Session</a>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3"><i class="fa-regular fa-laptop"></i> Technology Support</h3>
+              <p>Get technical assistance and access technology resources.</p>
+              <ul>
+                <li>IT Help Desk</li>
+                <li>Software downloads</li>
+                <li>Email and login support</li>
+                <li>System requirements</li>
+              </ul>
+              <a href="#" class="btn-main btn-sm">Get Support</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3"><i class="fa-regular fa-users"></i> Tutoring Services</h3>
+              <p>Free tutoring in various subjects.</p>
+              <a href="#" class="btn-main btn-sm">Find a Tutor</a>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3"><i class="fa-regular fa-shopping-cart"></i> Campus Bookstore</h3>
+              <p>Purchase textbooks and course materials.</p>
+              <a href="#" class="btn-main btn-sm">Shop Bookstore</a>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3"><i class="fa-regular fa-universal-access"></i> Disability Services</h3>
+              <p>Request academic accommodations.</p>
+              <a href="#" class="btn-main btn-sm">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+{% endblock %}

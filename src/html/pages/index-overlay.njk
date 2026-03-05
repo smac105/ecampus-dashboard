@@ -1,0 +1,496 @@
+{% extends "layouts/base.njk" %}
+{% from "partials/macros.njk" import productCard %}
+{% import "partials/macros.njk" as buttons %}
+{% import "partials/macros.njk" as cards %}
+{% import "partials/macros.njk" as grids %}
+
+{# Set default student stage - can be changed via dropdown for demo purposes #}
+{% set studentStage = "enrolled" %}
+
+{% block content %}
+
+	<div class="alert">
+		{% include "partials/alerts.njk" %}
+	</div>
+
+	<div class="row">
+		<div class="col-lg-8 mb-5">
+			<!-- Prospective Student Welcome -->
+			<div class="alert-box stage-content" data-stage="prospective">
+				<h1>Discover Your Future at APUS</h1>
+				<p class="lead">Welcome! We're excited you're considering APUS for your educational journey. Explore our programs, learn about our flexible online learning format, and discover how we can help you achieve your academic goals.</p>
+			</div>
+
+			<!-- Applicant Welcome -->
+			<div class="alert-box stage-content" data-stage="applicant">
+				<h1>Your Application is In Progress</h1>
+				<p class="lead">Thank you for starting your application to APUS! Complete the remaining steps below to finish your application. Our admissions team is here to help if you have any questions. While you are awaiting a decision on your application, continue to gather items needed in order to enroll in classes.</p>
+			</div>
+
+			<!-- Accepted Student Welcome -->
+			<div class="alert-box stage-content" data-stage="accepted">
+				<h1>Congratulations! You've Been Accepted</h1>
+				<p class="lead">Welcome to the APUS family! We're thrilled to have you join us. Complete the steps below to secure your enrollment and prepare for your first term.</p>
+			</div>
+
+			<!-- Enrolled Student Welcome -->
+			<div class="alert-box stage-content" data-stage="enrolled">
+				{% if site.student.name %}
+				  <h1>Welcome back, {{ site.student.name }}!</h1>
+				  <p class="lead">Stay on track with your courses and upcoming deadlines. Check your task list and course progress below.</p>
+				{% else %}
+				  <h1>Welcome back, student!</h1>
+				  <p class="lead">Stay on track with your courses and upcoming deadlines. Check your task list and course progress below.</p>
+				{% endif %}
+			</div>
+
+			<!-- Returning Student Welcome -->
+			<div class="alert-box stage-content" data-stage="returning">
+				{% if site.student.name %}
+				  <h1>Welcome back, {{ site.student.name }}!</h1>
+				  <p class="lead">Ready to continue your education? Register for upcoming courses and pick up where you left off. We're here to support your return to APUS.</p>
+				{% else %}
+				  <h1>Welcome back!</h1>
+				  <p class="lead">Ready to continue your education? Register for upcoming courses and pick up where you left off. We're here to support your return to APUS.</p>
+				{% endif %}
+			</div>
+
+			<!-- Alumni Welcome -->
+			<div class="alert-box stage-content" data-stage="alumni">
+				{% if site.student.name %}
+				  <h1>Welcome back, {{ site.student.name }}!</h1>
+				  <p class="lead">Congratulations on your graduation! Stay connected with the APUS alumni network, access career resources, and continue your lifelong learning journey.</p>
+				{% else %}
+				  <h1>Welcome, Alumni!</h1>
+				  <p class="lead">Congratulations on your graduation! Stay connected with the APUS alumni network, access career resources, and continue your lifelong learning journey.</p>
+				{% endif %}
+			</div>
+
+			<!-- Prospective Student Content -->
+			<div class="actions white-box stage-content" data-stage="prospective">
+				<h4>Explore Our Programs</h4>
+				<p>Browse our wide range of degree programs designed for working professionals and military members.</p>
+				{{ buttons.button('View All Programs', '/programs', 'main') }}
+				{{ buttons.button('Request Information', '/contact', 'secondary') }}
+			</div>
+
+			<!-- Applicant Content -->
+			<div class="actions white-box-border stage-content" data-stage="applicant">
+				<h4>Continue your application process:</h4>
+				<p>Finish your application to start your journey at APUS. We're here to help every step of the way.</p>
+				{# {{ buttons.button('Continue Application', '/application-flow.html', 'main') }}
+				{{ buttons.button('Contact Admissions', '/contact', 'secondary') }} #}
+				<!-- Applicant Task List -->
+				<div class="actions mb-5 stage-content applicant-todo-prominent" data-stage="applicant">
+					<h4 class="mb-3">Enrollment To Do List</h4>
+					<div class="task-list applicant-sequential-list">
+						<div class="task-item task-completed" data-task-id="app-submitted">
+							<input type="checkbox" id="app-task1" class="task-checkbox" checked disabled>
+							<label for="app-task1">Application Submitted</label>
+							<a href="/view-application.html" class="btn-secondary btn-sm task-btn">View Application</a>
+						</div>
+						<div class="task-item task-next-step" data-task-id="student-orientation">
+							<div class="next-step-badge">NEXT STEP</div>
+							<input type="checkbox" id="app-task2" class="task-checkbox">
+							<label for="app-task2">Student Orientation</label>
+							<a href="/student-rights-flow.html" class="btn-main btn-sm task-btn">Start Orientation</a>
+						</div>
+						<div class="task-item task-locked" data-task-id="id-verification">
+							<input type="checkbox" id="app-task3" class="task-checkbox" disabled>
+							<label for="app-task3">ID Verification</label>
+							<a href="https://verify.example.com" target="_blank" class="btn-secondary btn-sm task-btn task-btn-disabled" disabled>Verify ID</a>
+						</div>
+						<div class="task-item task-locked" data-task-id="transfer-credit">
+							<input type="checkbox" id="app-task4" class="task-checkbox" disabled>
+							<label for="app-task4">Transfer Credit Evaluation</label>
+							<a href="/transfer-credit.html" class="btn-secondary btn-sm task-btn task-btn-disabled">View Status</a>
+						</div>
+						<div class="task-item task-locked" data-task-id="enroll-classes">
+							<input type="checkbox" id="app-task5" class="task-checkbox" disabled>
+							<label for="app-task5">Enroll in Classes</label>
+							<a href="/registration-flow.html" class="btn-main btn-sm task-btn task-btn-disabled">Register Now</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Accepted Student Content -->
+			<div class="actions white-box stage-content" data-stage="accepted">
+				<h4>Next Steps for Enrollment</h4>
+				<p>Complete these important steps to prepare for your first semester at APUS.</p>
+				{{ buttons.button('Complete Enrollment', '/enrollment', 'main') }}
+				{{ buttons.button('Financial Aid Info', '/financial-aid', 'secondary') }}
+			</div>
+
+			<!-- Enrolled Student Content -->
+			<div class="actions white-box stage-content" data-stage="enrolled">
+				<h4>Current Classes</h4>
+				<p>This is the intro paragraph of the home page dashboard that tells you information.</p>
+
+				{{ grids.cardGrid(classes, cards.classCard) }}
+				{{ buttons.button('View All Classes', '/contact', 'main') }}
+			</div>
+
+			<!-- Returning Student Content -->
+			<div class="actions white-box stage-content" data-stage="returning">
+				<h4>Register for Upcoming Courses</h4>
+				<p>Welcome back! Register for the upcoming term and continue your academic journey.</p>
+				{{ buttons.button('View Course Catalog', '/courses', 'main') }}
+				{{ buttons.button('Meet with Advisor', '/advising', 'secondary') }}
+			</div>
+
+			<!-- Alumni Content -->
+			<div class="actions white-box stage-content" data-stage="alumni">
+				<h4>Alumni Resources</h4>
+				<p>Stay connected with APUS and access exclusive alumni benefits and career services.</p>
+				{{ buttons.button('Career Services', '/career', 'main') }}
+				{{ buttons.button('Alumni Network', '/alumni', 'secondary') }}
+			</div>
+		</div>
+		<div class="col-lg-4 mb-5">
+			<!-- Prospective Student Task List -->
+			<div class="actions black-bg mb-5 stage-content" data-stage="prospective">
+				<h4 class="mb-3">Getting Started</h4>
+				<div class="task-list">
+					<div class="task-item">
+						<input type="checkbox" id="prosp-task1" class="task-checkbox">
+						<label for="prosp-task1">Explore Degree Programs</label>
+						<a href="/programs.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="prosp-task2" class="task-checkbox">
+						<label for="prosp-task2">Review Tuition & Financial Aid</label>
+						<a href="/financial-aid.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="prosp-task3" class="task-checkbox">
+						<label for="prosp-task3">Schedule a Call with Advisor</label>
+						<a href="/contact.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="prosp-task4" class="task-checkbox">
+						<label for="prosp-task4">Take a Virtual Campus Tour</label>
+						<a href="/campus-tour.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="prosp-task5" class="task-checkbox">
+						<label for="prosp-task5">Start Your Application</label>
+						<a href="/application-flow.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+				</div>
+			</div>
+
+			{# <!-- Applicant Task List -->
+			<div class="actions black-bg mb-5 stage-content applicant-todo-prominent" data-stage="applicant">
+				<h4 class="mb-3">Enrollment To Do List</h4>
+				<div class="task-list applicant-sequential-list">
+					<div class="task-item task-completed">
+						<input type="checkbox" id="app-task1" class="task-checkbox" checked disabled>
+						<label for="app-task1">Application Submitted</label>
+						<a href="/application-flow.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item task-next-step">
+						<div class="next-step-badge">NEXT STEP</div>
+						<input type="checkbox" id="app-task2" class="task-checkbox">
+						<label for="app-task2">Student Rights and Responsibilities</label>
+						<a href="/student-rights.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item task-locked">
+						<input type="checkbox" id="app-task3" class="task-checkbox" disabled>
+						<label for="app-task3">Complete New Student Orientation</label>
+						<a href="/orientation.html" class="task-link task-link-disabled"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item task-locked">
+						<input type="checkbox" id="app-task4" class="task-checkbox" disabled>
+						<label for="app-task4">Set Up Financial Aid</label>
+						<a href="/financial-aid.html" class="task-link task-link-disabled"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item task-locked">
+						<input type="checkbox" id="app-task5" class="task-checkbox" disabled>
+						<label for="app-task5">Register for First Term Courses</label>
+						<a href="/registration-flow.html" class="task-link task-link-disabled"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item task-locked">
+						<input type="checkbox" id="app-task6" class="task-checkbox" disabled>
+						<label for="app-task6">Review Course Materials</label>
+						<a href="/student-resources.html" class="task-link task-link-disabled"><i class="fas fa-chevron-right"></i></a>
+					</div>
+				</div>
+			</div> #}
+
+			<!-- Accepted Student Task List -->
+			<div class="actions black-bg mb-5 stage-content" data-stage="accepted">
+				<h4 class="mb-3">Enrollment Steps</h4>
+				<div class="task-list">
+					<div class="task-item">
+						<input type="checkbox" id="acc-task1" class="task-checkbox">
+						<label for="acc-task1">Accept Admission Offer</label>
+						<a href="/enrollment.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="acc-task2" class="task-checkbox">
+						<label for="acc-task2">Complete New Student Orientation</label>
+						<a href="/orientation.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="acc-task3" class="task-checkbox">
+						<label for="acc-task3">Set Up Student Email Account</label>
+						<a href="/student-resources.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="acc-task4" class="task-checkbox">
+						<label for="acc-task4">Register for First Term Courses</label>
+						<a href="/registration-flow.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="acc-task5" class="task-checkbox">
+						<label for="acc-task5">Complete Financial Aid Paperwork</label>
+						<a href="/financial-aid.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Enrolled Student Task List -->
+			<div class="actions black-bg mb-5 stage-content" data-stage="enrolled">
+				<h4 class="mb-3">Task List</h4>
+
+				<!-- Task Filters -->
+				<div class="task-filters mb-3">
+					<button class="task-filter-btn active" data-filter="all">All</button>
+					<button class="task-filter-btn" data-filter="classroom">Classroom</button>
+					<button class="task-filter-btn" data-filter="registration">Registration</button>
+					<button class="task-filter-btn" data-filter="finance">Finance</button>
+				</div>
+
+				<div class="task-list">
+					<div class="task-item" data-category="classroom">
+						<input type="checkbox" id="task1" class="task-checkbox">
+						<label for="task1">Complete Module 5 Quiz</label>
+						<a href="/class.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item" data-category="classroom">
+						<input type="checkbox" id="task2" class="task-checkbox">
+						<label for="task2">Submit Project Proposal</label>
+						<a href="/class.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item" data-category="classroom">
+						<input type="checkbox" id="task3" class="task-checkbox" checked>
+						<label for="task3">Review Course Materials</label>
+						<a href="/class.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item" data-category="classroom">
+						<input type="checkbox" id="task4" class="task-checkbox">
+						<label for="task4">Attend Virtual Office Hours</label>
+						<a href="/class.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item" data-category="registration">
+						<input type="checkbox" id="task5" class="task-checkbox">
+						<label for="task5">Register for Spring Courses</label>
+						<a href="/registration-flow.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item" data-category="registration">
+						<input type="checkbox" id="task6" class="task-checkbox">
+						<label for="task6">Complete Advising Appointment</label>
+						<a href="/my-academics.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item" data-category="finance">
+						<input type="checkbox" id="task7" class="task-checkbox">
+						<label for="task7">Review Financial Aid Status</label>
+						<a href="/my-finances.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item" data-category="finance">
+						<input type="checkbox" id="task8" class="task-checkbox">
+						<label for="task8">Make Tuition Payment</label>
+						<a href="/my-finances.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Returning Student Task List -->
+			<div class="actions black-bg mb-5 stage-content" data-stage="returning">
+				<h4 class="mb-3">Return Checklist</h4>
+				<div class="task-list">
+					<div class="task-item">
+						<input type="checkbox" id="ret-task1" class="task-checkbox">
+						<label for="ret-task1">Reactivate Student Account</label>
+						<a href="/student-resources.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="ret-task2" class="task-checkbox">
+						<label for="ret-task2">Meet with Academic Advisor</label>
+						<a href="/my-academics.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="ret-task3" class="task-checkbox">
+						<label for="ret-task3">Review Degree Requirements</label>
+						<a href="/student-profile.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="ret-task4" class="task-checkbox">
+						<label for="ret-task4">Update Financial Aid Information</label>
+						<a href="/my-finances.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="ret-task5" class="task-checkbox">
+						<label for="ret-task5">Register for Upcoming Term</label>
+						<a href="/registration-flow.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Alumni Task List -->
+			<div class="actions black-bg mb-5 stage-content" data-stage="alumni">
+				<h4 class="mb-3">Alumni Resources</h4>
+				<div class="task-list">
+					<div class="task-item">
+						<input type="checkbox" id="alum-task1" class="task-checkbox">
+						<label for="alum-task1">Join Alumni Network</label>
+						<a href="/alumni.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="alum-task2" class="task-checkbox">
+						<label for="alum-task2">Update LinkedIn Profile</label>
+						<a href="https://linkedin.com" target="_blank" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="alum-task3" class="task-checkbox">
+						<label for="alum-task3">Explore Career Services</label>
+						<a href="/career.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="alum-task4" class="task-checkbox">
+						<label for="alum-task4">Request Official Transcripts</label>
+						<a href="/student-resources.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+					<div class="task-item">
+						<input type="checkbox" id="alum-task5" class="task-checkbox">
+						<label for="alum-task5">Attend Alumni Networking Event</label>
+						<a href="/alumni.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Prospective Student Info -->
+			<div class="actions white-box mb-5 stage-content" data-stage="prospective">
+				<h4>Why Choose APUS?</h4>
+				<ul class="info-list">
+					<li>100% Online, Flexible Learning</li>
+					<li>Affordable Tuition Rates</li>
+					<li>Military-Friendly Programs</li>
+					<li>Accredited Programs</li>
+					<li>Career-Focused Curriculum</li>
+				</ul>
+			</div>
+
+			<!-- Applicant Info -->
+			<div class="actions white-box mb-5 stage-content" data-stage="applicant">
+				<h4>Application Support</h4>
+				<p class="info-text mb-sm">Need help with your application?</p>
+				<p class="text-sm">
+					<strong>Admissions Office</strong><br>
+					Phone: 1-877-468-6268<br>
+					Email: admissions@apus.edu<br>
+					Hours: Mon-Fri 8am-8pm EST
+				</p>
+			</div>
+
+			<!-- Accepted Student Info -->
+			<div class="actions white-box mb-5 stage-content" data-stage="accepted">
+				<h4>Important Dates</h4>
+				<ul class="info-list">
+					<li><strong>Jan 15:</strong> Enrollment Deadline</li>
+					<li><strong>Jan 22:</strong> Orientation Session</li>
+					<li><strong>Feb 1:</strong> Classes Begin</li>
+					<li><strong>Feb 10:</strong> Last Day to Add/Drop</li>
+				</ul>
+			</div>
+
+			<!-- Enrolled Student Progress -->
+			<div class="actions white-box mb-5 stage-content" data-stage="enrolled">
+				<h4>Program Overview</h4>
+				{% from "partials/macros.njk" import progress, progressLine %}
+				<section class="progress-circles">
+				  {{ progress("Current GPA", 3.6, 4.0, "var(--apu-blue-active)", "raw") }}
+				  {{ progress("Credits Earned", 90, 120, "var(--apu-blue-active)", "raw") }}
+				</section>
+				<h4 class="mb-3">Overall Program Progress</h4>
+				<section class="progress-overall">
+					{{ progressLine("Overall Progress", 70, 100, "var(--apu-blue-active)", "percent") }}
+				</section>
+			</div>
+
+			<!-- Returning Student Info -->
+			<div class="actions white-box mb-5 stage-content" data-stage="returning">
+				<h4>Welcome Back!</h4>
+				<p class="info-text">
+					We're glad you're returning to APUS. Your previous coursework has been saved, and you can pick up where you left off.
+				</p>
+				<ul class="info-list-sm">
+					<li><strong>Previous Credits:</strong> 45</li>
+					<li><strong>Previous GPA:</strong> 3.5</li>
+					<li><strong>Last Attended:</strong> Fall 2023</li>
+				</ul>
+			</div>
+
+			<!-- Alumni Info -->
+			<div class="actions white-box mb-5 stage-content" data-stage="alumni">
+				<h4>Alumni Benefits</h4>
+				<ul class="info-list">
+					<li>Lifetime Career Services</li>
+					<li>Exclusive Networking Events</li>
+					<li>Continuing Education Discounts</li>
+					<li>Library Access</li>
+					<li>Alumni Directory Access</li>
+				</ul>
+			</div>
+
+			<!-- Prospective/Applicant/Accepted: No Calendar -->
+			<div class="actions white-box stage-content" data-stage="prospective">
+				<h4>Ready to Get Started?</h4>
+				<p class="info-text">
+					Contact our admissions team to learn more about APUS and start your application today.
+				</p>
+				{{ buttons.button('Contact Admissions', '/contact', 'main') }}
+			</div>
+
+			<div class="actions white-box stage-content" data-stage="applicant">
+				<h4>Questions?</h4>
+				<p class="info-text">
+					Our admissions team is here to help you complete your application.
+				</p>
+				{{ buttons.button('Get Help', '/contact', 'main') }}
+			</div>
+
+			<div class="actions white-box stage-content" data-stage="accepted">
+				<h4>New Student Resources</h4>
+				<p class="info-text">
+					Access orientation materials and connect with your student success advisor.
+				</p>
+				{{ buttons.button('Start Orientation', '/orientation', 'main') }}
+			</div>
+
+			<!-- Enrolled/Returning: Calendar -->
+			<div class="actions white-box stage-content" data-stage="enrolled">
+		  		{% include "partials/calendar.njk" %}
+	  		</div>
+
+			<div class="actions white-box stage-content" data-stage="returning">
+		  		{% include "partials/calendar.njk" %}
+	  		</div>
+
+			<!-- Alumni: Events Calendar -->
+			<div class="actions white-box stage-content" data-stage="alumni">
+				<h4>Upcoming Alumni Events</h4>
+				<p class="info-text mb-sm">
+					Stay connected with fellow alumni and attend exclusive networking events.
+				</p>
+				<ul class="text-sm">
+					<li><strong>Jan 20:</strong> Virtual Networking Happy Hour</li>
+					<li><strong>Feb 5:</strong> Career Development Workshop</li>
+					<li><strong>Mar 12:</strong> Alumni Reunion (Virtual)</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+{% endblock %}

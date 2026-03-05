@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="mb-5">
+        <h2 class="h2">Payment Method & Disclosures</h2>
+        <p class="lead">Select your payment method and review required disclosures</p>
+      </div>
+
+      <!-- Payment Method Selection -->
+      <div class="white-box mb-5">
+        <h3 class="h3 mb-4">Select Payment Method</h3>
+        <div class="payment-option mb-3">
+          <label class="white-box d-flex align-items-start" style="cursor: pointer; background: #f4f4f4;">
+            <input type="radio" name="paymentMethod" value="financial-aid" class="mt-1 me-3" checked>
+            <div class="flex-fill">
+              <p class="h4 mb-2">Financial Aid</p>
+              <p class="small-title mb-0">Use your financial aid to cover tuition costs</p>
+            </div>
+          </label>
+        </div>
+
+        <div class="payment-option mb-3">
+          <label class="white-box d-flex align-items-start" style="cursor: pointer; background: #f4f4f4;">
+            <input type="radio" name="paymentMethod" value="out-of-pocket" class="mt-1 me-3">
+            <div class="flex-fill">
+              <p class="h4 mb-2">Out of Pocket</p>
+              <p class="small-title mb-0">Pay directly with credit/debit card or bank transfer</p>
+            </div>
+          </label>
+        </div>
+
+        <div class="payment-option mb-3">
+          <label class="white-box d-flex align-items-start" style="cursor: pointer; background: #f4f4f4;">
+            <input type="radio" name="paymentMethod" value="employer" class="mt-1 me-3">
+            <div class="flex-fill">
+              <p class="h4 mb-2">Employer Reimbursement</p>
+              <p class="small-title mb-0">Your employer will reimburse tuition costs</p>
+            </div>
+          </label>
+        </div>
+
+        <div class="payment-option mb-0">
+          <label class="white-box d-flex align-items-start" style="cursor: pointer; background: #f4f4f4;">
+            <input type="radio" name="paymentMethod" value="payment-plan" class="mt-1 me-3">
+            <div class="flex-fill">
+              <p class="h4 mb-2">Payment Plan</p>
+              <p class="small-title mb-0">Split payments over multiple installments</p>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Disclosures -->
+      <div class="white-box mb-5">
+        <h3 class="h3 mb-4">Required Disclosures</h3>
+        <label class="d-flex align-items-start mb-4">
+          <input type="checkbox" id="disclosure1" class="mt-1 me-3" required>
+          <div class="flex-fill">
+            <p class="h4 mb-2">Academic Integrity Policy</p>
+            <p class="small-title mb-0">I have read and agree to abide by the university's academic integrity policy.</p>
+          </div>
+        </label>
+
+        <label class="d-flex align-items-start mb-4">
+          <input type="checkbox" id="disclosure2" class="mt-1 me-3" required>
+          <div class="flex-fill">
+            <p class="h4 mb-2">Refund Policy</p>
+            <p class="small-title mb-0">I understand the refund policy and deadline for dropping courses with a full refund.</p>
+          </div>
+        </label>
+
+        <label class="d-flex align-items-start mb-4">
+          <input type="checkbox" id="disclosure3" class="mt-1 me-3" required>
+          <div class="flex-fill">
+            <p class="h4 mb-2">Financial Responsibility</p>
+            <p class="small-title mb-0">I acknowledge my financial responsibility for all registered courses.</p>
+          </div>
+        </label>
+
+        <label class="d-flex align-items-start mb-0">
+          <input type="checkbox" id="disclosure4" class="mt-1 me-3" required>
+          <div class="flex-fill">
+            <p class="h4 mb-2">Data Privacy</p>
+            <p class="small-title mb-0">I consent to the collection and use of my data as described in the privacy policy.</p>
+          </div>
+        </label>
+      </div>
+
+      <div class="alert" style="background: var(--apu-yellow-alt); border: 2px solid var(--apu-yellow); padding: 2rem;">
+        <p class="small-title mb-0"><strong>Important:</strong> All disclosures must be accepted to continue with registration.</p>
+      </div>
+    </div>
+  </div>
+</div>

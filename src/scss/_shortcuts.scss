@@ -3,9 +3,10 @@
 	flex-direction: row;
 	// justify-content: space-between;
 	grid-gap: 20px;
-	padding: 20px 25px;
+	padding: 10px 5px 30px;
 	background: $gray-10;
 	margin-bottom: 25px;
+	border-bottom: 2px solid $gray-60;
 	.shortcut-item {
 		// width: 20%;
 		display: grid;
@@ -15,7 +16,14 @@
 		grid-template-columns: 30px auto;
 		padding: 4px 10px 4px 4px;
 		border-radius: 9px;
-		background: $secondary;
+		background: $apu-blue-active;
+		text-decoration: none;
+		color: inherit;
+		&:link,
+		&:visited {
+			text-decoration: none;
+			color: inherit;
+		}
 		span {
 			// width: 30px;
 			height: 30px;
@@ -36,15 +44,27 @@
 			margin-bottom: 0px;
 			// text-transform: uppercase;
 			font-family: $font-main;
+			color: $primary;
 		}
 		&:hover {
 			cursor: pointer;
-			background: $apu-blue-active;
+			background: $apu-green;
 			span {
 				// background: $wht;
 				i {
 					// color: $apu-blue-active;
 				}
+			}
+		}
+		&.active {
+			background: $apu-blue;
+			span {
+				i {
+					color: $primary;
+				}
+			}
+			p {
+				color: $primary;
 			}
 		}
 	}

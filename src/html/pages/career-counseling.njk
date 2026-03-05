@@ -1,0 +1,72 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/job-search.html" class="shortcut-item">
+          <span><i class="fa-regular fa-magnifying-glass"></i></span>
+          <p>Job Search</p>
+        </a>
+        <a href="/resume-builder.html" class="shortcut-item">
+          <span><i class="fa-regular fa-file-user"></i></span>
+          <p>Resume Builder</p>
+        </a>
+        <a href="/career-counseling.html" class="shortcut-item">
+          <span><i class="fa-regular fa-comments"></i></span>
+          <p>Career Counseling</p>
+        </a>
+        <a href="/career-events.html" class="shortcut-item">
+          <span><i class="fa-regular fa-calendar-days"></i></span>
+          <p>Career Events</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="white-box mb-5">
+        <h1 class="h1 mb-4">Career Counseling</h1>
+        <p class="lead mb-4">Get personalized career guidance from our professional counselors.</p>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Schedule Appointment</h3>
+              <p>Book a one-on-one session with a career counselor.</p>
+              <ul>
+                <li>Career exploration and planning</li>
+                <li>Resume and cover letter review</li>
+                <li>Interview preparation</li>
+                <li>Job search strategies</li>
+              </ul>
+              <a href="#" class="btn-main btn-sm">Book Appointment</a>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Upcoming Appointments</h3>
+              <p><strong>Next Appointment:</strong></p>
+              <p>Career Planning Session<br>
+              March 10, 2025 at 2:00 PM<br>
+              With: Sarah Johnson, Career Counselor</p>
+              <a href="#" class="btn-main btn-sm">View All Appointments</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Career Assessment Tools</h3>
+              <p>Take career assessments to identify your strengths, interests, and ideal career paths.</p>
+              <a href="#" class="btn-main btn-sm">Take Assessment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

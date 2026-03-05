@@ -1,0 +1,71 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/course-management.html" class="shortcut-item">
+          <span><i class="fa-regular fa-list-check"></i></span>
+          <p>Course Management</p>
+        </a>
+        <a href="/degree-planner.html" class="shortcut-item">
+          <span><i class="fa-regular fa-map"></i></span>
+          <p>Degree Planner</p>
+        </a>
+        <a href="/course-catalog.html" class="shortcut-item">
+          <span><i class="fa-regular fa-book-bookmark"></i></span>
+          <p>Course Catalog</p>
+        </a>
+        <a href="/transfer-credits.html" class="shortcut-item">
+          <span><i class="fa-regular fa-arrow-right-arrow-left"></i></span>
+          <p>Transfer Credits</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="white-box mb-5">
+        <h1 class="h1 mb-4">Course Catalog</h1>
+        <p class="lead mb-4">Browse available courses and plan your academic schedule.</p>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Search Courses</h3>
+              <p>Search by course code, title, instructor, or department.</p>
+              <a href="#" class="btn-main btn-sm">Search Catalog</a>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Browse by Department</h3>
+              <p>Explore courses organized by academic department.</p>
+              <a href="#" class="btn-main btn-sm">Browse Departments</a>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Upcoming Courses</h3>
+              <p>View courses available in upcoming semesters.</p>
+              <a href="#" class="btn-main btn-sm">View Upcoming</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="white-box">
+              <h3 class="h3 mb-3">Course Descriptions</h3>
+              <p>View detailed course descriptions, prerequisites, and credit hours for all available courses.</p>
+              <a href="#" class="btn-main btn-sm">View Full Catalog</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

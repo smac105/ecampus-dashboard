@@ -1,0 +1,381 @@
+{% extends "layouts/registration-layout.njk" %}
+{% set exitButtonText = "Exit Student Profile" %}
+{% set exitButtonUrl = "/index.html" %}
+{% from "partials/macros.njk" import progress, progressLine %}
+
+{% block content %}
+  <div class="container">
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/student-profile.html" class="shortcut-item active">
+          <span><i class="fa-regular fa-user"></i></span>
+          <p>Student Profile</p>
+        </a>
+        {# <a href="/student-organizations.html" class="shortcut-item">
+          <span><i class="fa-regular fa-users-rectangle"></i></span>
+          <p>Student Organizations</p>
+        </a> #}
+        <a href="/my-documents.html" class="shortcut-item">
+          <span><i class="fa-regular fa-file-lines"></i></span>
+          <p>My Documents</p>
+        </a>
+        <a href="/wellness-resources.html" class="shortcut-item">
+          <span><i class="fa-regular fa-heart"></i></span>
+          <p>Wellness Resources</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="white-box main-profile-banner-header mb-4">
+        <div>
+          <div class="profile-header-banner">
+            <div class="text-center mb-3 mb-md-0">
+              <div class="profile-picture-large">
+                <p class="big-initial-large">J</p>
+              </div>
+              <a class="arrow-link mt-2">
+                <i class="fa-regular fa-camera"></i> Change Photo
+              </a>
+            </div>
+            <div class="">
+              <h1 class="h1 mb-2">Jorge Martinez</h1>
+              <div class="profile-meta-info">
+                <p class="mb-1"><i class="fa-regular fa-id-card"></i> <strong>Student ID:</strong> 24768</p>
+                <p class="mb-1"><i class="fa-regular fa-graduation-cap"></i> <strong>Major:</strong> Computer Science, B.S.</p>
+                <p class="mb-1"><i class="fa-regular fa-location-dot"></i> <strong>Location:</strong> San Diego, California</p>
+                <p class="mb-1"><i class="fa-regular fa-calendar-check"></i> <strong>Expected Graduation:</strong> May 2028</p>
+                <p class="mb-0"><i class="fa-regular fa-envelope"></i> <strong>Email:</strong> jmartinez@student.apus.edu</p>
+              </div>
+            </div>
+            
+          </div>
+          <hr>
+          <!-- About Section -->
+          <div class="mb-4">
+            <div class="section-header-with-edit">
+              <h2 class="h2 mb-3">About Me</h2>
+              <a href="#" class="arrow-link" data-bs-toggle="modal" data-bs-target="#editAboutModal">
+                Edit
+              </a>
+            </div>
+            <p>Passionate computer science student with a strong interest in artificial intelligence and machine learning. Currently maintaining a 3.8 GPA while actively participating in the Computer Science Club and serving as a peer tutor for introductory programming courses. Looking forward to pursuing a career in software development with a focus on AI applications.</p>
+          </div>
+        </div>
+        <!-- Academic Progress -->
+        <div class="black-box mb-4">
+          <h3 class="h3 mb-3">Academic Progress</h3>
+          <div class="progress-info mb-3">
+            <p class="mb-2"><strong>Credits Completed:</strong> 0 / 120</p>
+            <div class="progress-overall">
+              <div class="progress-line-wrapper">
+                <div class="progress-line" style="--value: 0.0; --color: var(--apu-blue-active);">
+                  <span class="progress-line__label progress-badge">0%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <section class="progress-circles">
+              {{ progress("Current GPA", "N/A", 4.0, "var(--apu-blue-active)", "raw") }}
+              {{ progress("Credits This Semester", "N/A", 15, "var(--apu-blue-active)", "raw") }}
+              {{ progress("Semesters Remaining", 8, 8, "var(--apu-yellow)", "raw") }}
+            </section>
+            <div class="text-center">
+              <a href="/degree-planner.html" class="btn-secondary mt-3">Plan Your Degree</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-7 mb-4">
+
+      <!-- Career Interests -->
+      <div class="white-box mb-4">
+        <div class="section-header-with-edit">
+          <h2 class="h2 mb-3">Career Interests</h2>
+          <a href="#" class="arrow-link" data-bs-toggle="modal" data-bs-target="#editCareerModal">
+            Edit
+          </a>
+        </div>
+        <div class="career-interests-tags">
+        <p><em>Add Career Interests to your profile. Let others know what you would like to pursue upon graduating.</em></p>
+          {# <span class="profile-badge"><i class="fa-regular fa-briefcase"></i> Software Engineer</span>
+          <span class="profile-badge"><i class="fa-regular fa-briefcase"></i> AI/ML Engineer</span>
+          <span class="profile-badge"><i class="fa-regular fa-briefcase"></i> Data Scientist</span>
+          <span class="profile-badge"><i class="fa-regular fa-briefcase"></i> Full Stack Developer</span>
+          <span class="profile-badge"><i class="fa-regular fa-briefcase"></i> Research & Development</span> #}
+        </div>
+      </div>
+
+      <!-- Desired Industries -->
+      <div class="white-box mb-4">
+        <div class="section-header-with-edit">
+          <h2 class="h2 mb-3">Desired Industries</h2>
+          <a href="#" class="arrow-link" data-bs-toggle="modal" data-bs-target="#editIndustriesModal">
+            Edit
+          </a>
+        </div>
+        <div class="career-interests-tags">
+          <span class="profile-badge"><i class="fa-regular fa-building"></i> Technology</span>
+          {# <span class="profile-badge"><i class="fa-regular fa-building"></i> Healthcare Tech</span>
+          <span class="profile-badge"><i class="fa-regular fa-building"></i> Financial Services</span>
+          <span class="profile-badge"><i class="fa-regular fa-building"></i> Cybersecurity</span>
+          <span class="profile-badge"><i class="fa-regular fa-building"></i> Gaming & Entertainment</span> #}
+        </div>
+      </div>
+
+      <!-- Skills & Expertise -->
+      <div class="white-box mb-4">
+        <div class="section-header-with-edit">
+          <h2 class="h2 mb-3">Skills & Expertise</h2>
+          <a href="#" class="arrow-link" data-bs-toggle="modal" data-bs-target="#editSkillsModal">
+            Edit
+          </a>
+        </div>
+        <div class="skills-wrap">
+        <p><em>Add Skills to your profile.</em></p>
+          {# <span class="profile-badge">Python</span>
+          <span class="profile-badge">Java</span>
+          <span class="profile-badge">JavaScript</span>
+          <span class="profile-badge">React</span>
+          <span class="profile-badge">Machine Learning</span>
+          <span class="profile-badge">Data Analysis</span>
+          <span class="profile-badge">SQL</span>
+          <span class="profile-badge">Git</span> #}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+      <!-- Student Organizations -->
+      <div class="white-box mb-4">
+        <h3 class="h3 mb-3">My Organizations</h3>
+        <div class="organization-list">
+          {# <div class="organization-item mb-3">
+            <div class="org-icon">
+              <i class="fa-regular fa-users"></i>
+            </div>
+            <div class="org-info">
+              <h4 class="h5 mb-0">Computer Science Club</h4>
+              <p class="small-text mb-0 text-muted">Member since 2023</p>
+            </div>
+          </div>
+          <div class="organization-item mb-3">
+            <div class="org-icon">
+              <i class="fa-regular fa-users"></i>
+            </div>
+            <div class="org-info">
+              <h4 class="h5 mb-0">AI & ML Study Group</h4>
+              <p class="small-text mb-0 text-muted">President</p>
+            </div>
+          </div>
+          <div class="organization-item mb-3">
+            <div class="org-icon">
+              <i class="fa-regular fa-users"></i>
+            </div>
+            <div class="org-info">
+              <h4 class="h5 mb-0">Peer Tutoring Program</h4>
+              <p class="small-text mb-0 text-muted">Volunteer Tutor</p>
+            </div>
+          </div> #}
+        </div>
+        <a href="/student-organizations.html" class="btn-secondary btn-small">
+          <i class="fa-regular fa-plus"></i> Join Organizations
+        </a>
+      </div>
+
+      <!-- Contact Preferences -->
+      <div class="white-box mb-4">
+        <h3 class="h3 mb-3">Contact Preferences</h3>
+        <div class="contact-prefs">
+          <p class="mb-2"><strong>Visibility:</strong></p>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="visibility" id="visibilityPublic" checked>
+            <label class="form-check-label" for="visibilityPublic">
+              Public - Visible to all students
+            </label>
+          </div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="visibility" id="visibilityLimited">
+            <label class="form-check-label" for="visibilityLimited">
+              Limited - Visible to organizations only
+            </label>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" name="visibility" id="visibilityPrivate">
+            <label class="form-check-label" for="visibilityPrivate">
+              Private - Not visible to other students
+            </label>
+          </div>
+          <button class="btn-main">Save Preferences</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Edit About Modal -->
+  <div class="modal fade" id="editAboutModal" tabindex="-1" aria-labelledby="editAboutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+          <h3 class="modal-title h3" id="editAboutModalLabel">Edit About Me</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="padding: 2rem 2.5rem;">
+          <div class="mb-3">
+            <label for="aboutText" class="form-label">Tell other students about yourself:</label>
+            <textarea class="form-control" id="aboutText" rows="5">Passionate computer science student with a strong interest in artificial intelligence and machine learning. Currently maintaining a 3.8 GPA while actively participating in the Computer Science Club and serving as a peer tutor for introductory programming courses. Looking forward to pursuing a career in software development with a focus on AI applications.</textarea>
+            <div class="form-text">Share your academic interests, goals, and what you're passionate about.</div>
+          </div>
+        </div>
+        <div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem; gap: 1rem;">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="min-width: 140px;">Cancel</button>
+          <button type="button" class="btn btn-main" data-bs-dismiss="modal" style="min-width: 140px;">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Career Interests Modal -->
+  <div class="modal fade" id="editCareerModal" tabindex="-1" aria-labelledby="editCareerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+          <h3 class="modal-title h3" id="editCareerModalLabel">Edit Career Interests</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="padding: 2rem 2.5rem;">
+          <p>Select your career interests to help connect with relevant opportunities:</p>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="" id="careerSoftware" checked>
+                <label class="form-check-label" for="careerSoftware">Software Engineer</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="" id="careerAI" checked>
+                <label class="form-check-label" for="careerAI">AI/ML Engineer</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="" id="careerData" checked>
+                <label class="form-check-label" for="careerData">Data Scientist</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="" id="careerFullStack" checked>
+                <label class="form-check-label" for="careerFullStack">Full Stack Developer</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="" id="careerRD" checked>
+                <label class="form-check-label" for="careerRD">Research & Development</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="" id="careerDevOps">
+                <label class="form-check-label" for="careerDevOps">DevOps Engineer</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem; gap: 1rem;">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="min-width: 140px;">Cancel</button>
+          <button type="button" class="btn btn-main" data-bs-dismiss="modal" style="min-width: 140px;">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Industries Modal -->
+  <div class="modal fade" id="editIndustriesModal" tabindex="-1" aria-labelledby="editIndustriesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+          <h3 class="modal-title h3" id="editIndustriesModalLabel">Edit Desired Industries</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="padding: 2rem 2.5rem;">
+          <p>Select industries you're interested in working in:</p>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="" id="indTech" checked>
+                <label class="form-check-label" for="indTech">Technology</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="" id="indHealthcare" checked>
+                <label class="form-check-label" for="indHealthcare">Healthcare Tech</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="" id="indFinance" checked>
+                <label class="form-check-label" for="indFinance">Financial Services</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="" id="indCyber" checked>
+                <label class="form-check-label" for="indCyber">Cybersecurity</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="" id="indGaming" checked>
+                <label class="form-check-label" for="indGaming">Gaming & Entertainment</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="" id="indEcommerce">
+                <label class="form-check-label" for="indEcommerce">E-commerce</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem; gap: 1rem;">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="min-width: 140px;">Cancel</button>
+          <button type="button" class="btn btn-main" data-bs-dismiss="modal" style="min-width: 140px;">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Skills Modal -->
+  <div class="modal fade" id="editSkillsModal" tabindex="-1" aria-labelledby="editSkillsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+          <h3 class="modal-title h3" id="editSkillsModalLabel">Edit Skills & Expertise</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="padding: 2rem 2.5rem;">
+          <div class="mb-3">
+            <label for="addSkill" class="form-label">Add a skill:</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="addSkill" placeholder="e.g., Python, Project Management">
+              <button class="btn btn-main" type="button">Add</button>
+            </div>
+          </div>
+          <div class="current-skills">
+            <p class="mb-2"><strong>Current Skills:</strong></p>
+            <div class="skills-wrap">
+              <span class="profile-badge">Python <i class="fa-solid fa-times"></i></span>
+              <span class="profile-badge">Java <i class="fa-solid fa-times"></i></span>
+              <span class="profile-badge">JavaScript <i class="fa-solid fa-times"></i></span>
+              <span class="profile-badge">React <i class="fa-solid fa-times"></i></span>
+              <span class="profile-badge">Machine Learning <i class="fa-solid fa-times"></i></span>
+              <span class="profile-badge">Data Analysis <i class="fa-solid fa-times"></i></span>
+              <span class="profile-badge">SQL <i class="fa-solid fa-times"></i></span>
+              <span class="profile-badge">Git <i class="fa-solid fa-times"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem; gap: 1rem;">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="min-width: 140px;">Close</button>
+          <button type="button" class="btn btn-main" data-bs-dismiss="modal" style="min-width: 140px;">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

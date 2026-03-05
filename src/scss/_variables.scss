@@ -6,9 +6,11 @@ $font-main: "Barlow", "Helvetica Neue", Arial, sans-serif;
 // font weights: 100,300,400,600,700
 
 // UTILITY COLORS
-$red: #E4193B;
-$green: #80c342;
-$orange: #F88A00;
+$red: #E4193B;	//rgb (228,25,59)
+$green: #80c342; //rgb (128,195,66)
+$orange: #F88A00; //rgb (248,138,0)
+$yellow: #D2D203; //rgb (210,210,3)
+$blue: #0581c0;
 
 $primary: #041E42; // apus navy blue
 $primary-alt: #00599a;
@@ -24,8 +26,16 @@ $amu-gold: #ffc600;
 $amu-blue: #00599a;
 
 $apu-blue: #00ffff;
+$apu-blue-alt: #B3F5F5;
+$apu-blue-active: #00CCCC;
+
 $apu-green: #00ff00;
+$apu-green-alt: #B2FFB2;
+$apu-green-active: #02C502;
+
 $apu-yellow: #ffff00;
+$apu-yellow-alt: #ffffb2;
+$apu-yellow-active: #D2D203;
 
 $blk: #000000;
 $wht: #ffffff;
@@ -37,10 +47,22 @@ $gray-dk: #6d6d6d;
 
 // Root SCSS VARIABLES
 :root {
-  --primary: $primary;
-  --primary-alt: $primary-alt;
-  --secondary: $secondary;
-  --secondary-alt: $secondary-alt;
+	--primary: $primary;
+	--primary-alt: $primary-alt;
+	--secondary: $secondary;
+	--secondary-alt: $secondary-alt;
+
+	--white: #{$wht};
+	--gray-10: #{$gray-10};
+	--gray-20: #{$gray-20};
+	--gray-60: #{$gray-60};
+	--gray-dk: #{$gray-dk};
+
+	--red: #{$red};	
+	--green: #{$green}; 
+	--orange: #{$orange};
+	--yellow: #{$yellow};
+	--blue: #{$blue};
 }
 
 // SITE VARIABLES

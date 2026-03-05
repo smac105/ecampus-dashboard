@@ -1,0 +1,308 @@
+{% extends "layouts/base-basic.njk" %}
+
+{% block content %}
+  <div class="container">
+    
+    <div class="row row-main-layout">
+      <div class="mb-5">
+        <h1 class="mb-2">Forms & Documents</h1>
+          <p class="lead mb-4">Access all your important forms and academic documents in one place.</p>
+      </div>
+      <div class="right-divider mb-5">
+        <p>If you would like to see your Documents and statuses, visit the "My Documents" section of the Student Profile.</p>
+        <a class="btn-main" href="/my-documents.html">My Documents</a>
+      </div>
+    </div>
+
+    <div class="row row-main-layout">
+      <div class="mb-5">
+
+        <!-- Tabbed Navigation -->
+        <div class="document-tabs mb-4">
+          <a href="#academic-forms" class="tab-link active" data-tab="academic-forms">Academic Forms</a>
+          <a href="#financial-forms" class="tab-link" data-tab="financial-forms">Financial Forms</a>
+          <a href="#official-documents" class="tab-link" data-tab="official-documents">Official Documents</a>
+          <a href="#student-resources" class="tab-link" data-tab="student-resources">Student Resources</a>
+        </div>
+
+        <!-- Tab Content: Academic Forms -->
+        <div class="tab-content active" id="academic-forms">
+          <div class="white-box">
+            <h3 class="mb-4">Academic Forms</h3>
+            <div class="document-list">
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Registration Forms</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Add/Drop Form</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Course Withdrawal Form</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Grade Appeal Form</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Leave of Absence Request</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Content: Financial Forms -->
+        <div class="tab-content" id="financial-forms">
+          <div class="white-box">
+            <h3 class="mb-4">Financial Forms</h3>
+            <div class="document-list">
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Financial Aid Application</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Scholarship Application</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Payment Plan Enrollment Form</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Tuition Assistance Request</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Military Tuition Assistance Form</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Content: Official Documents -->
+        <div class="tab-content" id="official-documents">
+          <div class="white-box">
+            <h3 class="mb-4">Official Documents</h3>
+            <div class="document-list">
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Official Transcript Request Form</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Degree Verification Request</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Enrollment Verification Request</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Diploma Replacement Request</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Name Change Request Form</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Content: Student Resources -->
+        <div class="tab-content" id="student-resources">
+          <div class="white-box">
+            <h3 class="mb-4">Student Resources</h3>
+            <div class="document-list">
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Student Handbook</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Academic Calendar 2025-2026</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Course Catalog</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Academic Policies & Procedures</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-file-pdf text-danger me-3"></i>
+                  <p class="mb-0"><strong>Student Code of Conduct</strong></p>
+                </div>
+                <a href="#" class="btn-link-primary">
+                  <i class="fa-solid fa-download me-1"></i> Download PDF
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-5">
+        <!-- Application Support -->
+        <div class="white-box-nopad">
+          <div class="actions white-box white-box-flatbottom">
+            <h3>Are you having trouble finding a document?</h3>
+            <p class="mb-sm">Contact your dedicated enrollment advisor today, They are here to support you every step of the way.</p>
+            <div class="advisor-wrap">
+              <div class="advisor-initial">
+                <span class="big-initial"><strong>S</strong></span>
+              </div>
+              <div>
+                <p class="text-advisor mb-2"><span>Stephanie Lastname</span><br>
+                <em>Admissions Officer</em></p>
+              </div>
+            </div>
+            <div>
+              <p class="mb-0"><i class="fa-solid fa-phone apu-blue-active"></i> <a href="tel:1-877-468-6268">1-877-468-6268</a><br>
+              <i class="fa-solid fa-envelope apu-blue-active"></i> <a href="mailto:Stephanie.Lastname@apus.edu">Stephanie.Lastname@apus.edu</a><br>
+              <i class="fa-solid fa-clock apu-blue-active"></i> Mon-Fri 8am-8pm EST</p>
+            </div>
+          </div>
+
+          <!-- Questions CTA -->
+          <div class="actions white-box primary-flattop mb-5">
+            <h4><i class="fa-solid fa-comment"></i> Just Need a Quick Answer?</h4>
+            <p class="">
+              Our chat team is here to answer any questions you may have as you work through your enrollment requirements.
+            </p>
+            {{ buttons.button('Chat Now', '#', 'secondary') }}
+          </div>
+        </div>
+
+        <!-- Calendar -->
+        {# <div class="actions white-box">
+            {% include "partials/calendar.njk" %}
+        </div> #}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tab switching functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabLinks = document.querySelectorAll('.tab-link');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          // Remove active class from all tabs and contents
+          tabLinks.forEach(l => l.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+
+          // Add active class to clicked tab
+          this.classList.add('active');
+
+          // Show corresponding content
+          const tabId = this.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+    });
+  </script>
+{% endblock %}

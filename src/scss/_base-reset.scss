@@ -5,8 +5,8 @@ body, .p {
   /*font-family: $font-apu-alt;*/
   font-family: $font-main;
   font-weight: 400;
-  font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 16px;
+  font-size: 1.6rem;
 
   -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -28,6 +28,7 @@ ul {
 p {
   font-size: 16px;
   font-size: 1.6rem;
+  margin-bottom: 2.0rem;
 }
 
 dt {
@@ -65,11 +66,11 @@ strong {
 /* Links
 --------------------------------------------- */
 a {
-  color: $secondary;
+  color: $apu-blue-active;
 }
 
 a:visited {
-  color: $secondary-active;
+  color: $secondary;
 }
 
 a:hover,

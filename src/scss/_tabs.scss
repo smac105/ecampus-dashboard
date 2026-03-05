@@ -1,0 +1,43 @@
+/* Document Tabs Styling */
+    .document-tabs {
+      display: flex;
+      gap: 3rem;
+      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 3rem;
+    }
+
+    .tab-link {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #666;
+      text-decoration: none;
+      padding-bottom: 1rem;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+      position: relative;
+      bottom: -2px;
+    &:hover {
+      color: #000;
+    }
+  }
+
+    .tab-link.active {
+      font-weight: 700;
+      color: #000;
+      border-bottom: 3px solid #00CCCC;
+    }
+
+    /* Tab Content */
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Document List Items */
+
+    .document-list .document-item i.fa-file-pdf {
+      font-size: 2rem;
+    }

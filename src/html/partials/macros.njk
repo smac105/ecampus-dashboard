@@ -2,10 +2,22 @@
    Buttons
 ======================= #}
 {% macro button(label, url="#", type="primary", isDisabled=false) %}
-  <a href="{{ url }}" 
-     class="btn-main btn-{{ type }}{% if isDisabled %} disabled{% endif %}" 
+  <a href="{{ url }}"
+     class="btn-main btn-{{ type }}{% if isDisabled %} disabled{% endif %}"
      {% if isDisabled %}aria-disabled="true"{% endif %}>
     {{ label }}
+  </a>
+{% endmacro %}
+
+{% macro linkarrow(text, class, url, arialabel) %}
+  <a href="{{ url }}" class="small-link {{ class }}" aria-label="{{ arialabel }}">
+    {{ text }}
+  </a>
+{% endmacro %}
+
+{% macro buttonmain(text, url='#') %}
+  <a href="{{ url }}" class="btn-main">
+    {{ text }}
   </a>
 {% endmacro %}
 
@@ -17,13 +29,19 @@
     <ul id="topmenu" class="mb-0">
       {% for top in tops %}
       <li class="{{ 'active' if top.slug == currentPage }}">
-        <a href="{{ top.url }}"><span class="top-wrap"><i class="{{ top.img }}"></i></span></a>
-        {% if top.count %}<span class="count">{{ top.count }}</span>{% endif %}
+        <a href="{{ top.url }}" data-slug="{{ top.slug }}">
+          <span class="top-wrap"><i class="{{ top.img }}"></i></span>
+        </a>
+        {% if top.slug == 'cart' %}
+          <span class="count" data-cart-badge style="display: none;">0</span>
+        {% elif top.count %}
+          <span class="count {{ top.slug }}">{{ top.count }}</span>
+        {% endif %}
       </li>
       {% endfor %}
-      <li class="{{ 'active' if top.slug == currentPage }}">
-        <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" data-bs-parent="topnav-group" aria-expanded="false" aria-controls="collapseExample"><span class="top-wrap"><i class="fa-solid fa-grid"></i></span></a>
-      </li>
+      {# <li class="{{ 'active' if top.slug == currentPage }}">
+        <a href="#collapseExample" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseExample"><span class="top-wrap"><i class="fa-solid fa-grid"></i></span></a>
+      </li> #}
     </ul>
   </nav>
 {% endmacro %}
@@ -82,7 +100,7 @@
       <a class="closebtn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><i class="fa-solid fa-bars"></i></a>
     </div>
     {% for item in items %}
-        <li class=" {{ 'active' if item.slug == currentPage }}">
+        <li class=" {{ 'active' if item.slug == currentPage }} nav-item-stage"{% if item.hideForStages %} data-hide-for-stages="{{ item.hideForStages | join(',') }}"{% endif %}>
           <a href="{{ item.url }}"  aria-label="{{ item.label }}"><i class="fa-regular fa-{{ item.icon }}"></i>
             <p>{{ item.label }}</p>
           </a>
@@ -105,26 +123,26 @@
   <div class="offcanvas-body">
     <nav class="dashboard-nav-list">
       {% for item in items %}
-        <li class="dashboard-nav-item {% if item.children %}dropdown{% endif %}">
-          
+        <li class="dashboard-nav-item {% if item.children %}dropdown{% endif %} nav-item-stage"{% if item.hideForStages %} data-hide-for-stages="{{ item.hideForStages | join(',') }}"{% endif %}>
+
           {# Regular link if no children #}
           {% if not item.children %}
-            <a 
-              class="{% if item.page == currentPage %}active{% endif %}" 
+            <a
+              class="{% if item.page == currentPage %}active{% endif %}"
               aria-label="{{ item.label }}"
               href="{{ item.url }}">
               <i class="fa-regular fa-{{ item.icon }}"></i> {{ item.label }}
             </a>
-          
+
           {# Dropdown OR Mega Menu #}
           {% else %}
-            <a 
-              class=" dropdown-toggle {% if item.page == currentPage %}active{% endif %}" 
-              href="#" 
+            <a
+              class=" dropdown-toggle {% if item.page == currentPage %}active{% endif %}"
+              href="#"
               id="dropdown-{{ loop.index }}"
-              aria-label="{{ item.label }}" 
-              role="button" 
-              data-bs-toggle="dropdown" 
+              aria-label="{{ item.label }}"
+              role="button"
+              data-bs-toggle="dropdown"
               aria-expanded="false">
               <i class="fa-regular fa-{{ item.icon }}"></i> {{ item.label }}
             </a>
@@ -226,6 +244,88 @@
 
 
 {# =======================
+   Overlay Navigation Menu
+======================= #}
+{% macro overlayMenu(items, quickLinks, currentPage) %}
+<div class="overlay-menu" id="overlayMenu">
+	<div class="overlay-menu-content">
+		<div class="container">
+			<!-- Search Bar (Mobile only) -->
+			<div class="overlay-menu-search-mobile">
+				{% include "partials/search-alt.njk" %}
+			</div>
+
+			<!-- Main Navigation Column (slides left on mobile) -->
+			<div class="overlay-menu-sections">
+				{% for item in items %}
+					{% if not item.children %}
+						<!-- Single Link Item (like Home) -->
+						<div class="overlay-menu-item overlay-menu-item-single">
+							<a href="{{ item.url }}" class="overlay-menu-link">
+								<i class="fa-solid fa-{{ item.icon }}"></i>
+								<span>{{ item.label }}</span>
+							</a>
+						</div>
+					{% else %}
+						<!-- Section with Dropdown -->
+						<div class="overlay-menu-section" data-section="{{ item.slug }}">
+							<button class="overlay-menu-title" data-section="{{ item.slug }}">
+								<span class="title-content">
+									<i class="fa-solid fa-{{ item.icon }}"></i> {{ item.label }}
+								</span>
+								<i class="fa-solid fa-chevron-right toggle-icon"></i>
+							</button>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+
+			<!-- Dropdowns Container (outside of sections, not affected by slide-left transform) -->
+			<div class="overlay-menu-dropdowns">
+				{% for item in items %}
+					{% if item.children %}
+						<div class="overlay-menu-dropdown" data-dropdown="{{ item.slug }}">
+							<button class="dropdown-back-button">
+								<i class="fa-solid fa-arrow-left"></i>
+								<span>Back</span>
+							</button>
+							<a href="{{ item.url }}" class="dropdown-overview-link">
+								<i class="fa-solid fa-{{ item.icon }}"></i> {{ item.label }}
+							</a>
+							{% if item.description %}
+								<p class="dropdown-description">{{ item.description }}</p>
+							{% endif %}
+							<ul class="overlay-menu-links">
+								{% for column in item.children %}
+									{% for link in column.links %}
+										<li><a href="{{ link.url }}">{{ link.label }}</a></li>
+									{% endfor %}
+								{% endfor %}
+							</ul>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+
+			<!-- Quick Links Sidebar -->
+			{% if quickLinks %}
+			<div class="overlay-menu-sidebar">
+				<h4 class="overlay-sidebar-title">Quick Links</h4>
+				<ul class="overlay-sidebar-links">
+					{% for link in quickLinks %}
+						<li><a href="{{ link.url }}"><i class="fa-solid fa-{{ link.icon }}"></i> {{ link.label }}</a></li>
+					{% endfor %}
+				</ul>
+				<div class="right-ql-gradient"></div>
+				<div class="left-ql-gradient"></div>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
+{% endmacro %}
+
+{# =======================
    Banner Section
 ======================= #}
 {% macro banner(title, subtitle="", image="", showButton=false, buttonText="", buttonUrl="#") %}
@@ -247,36 +347,65 @@
    Class Card
 ======================= #}
 {% macro classCard(class) %}
-<div class="class-card{% if not class.inStock %} class-full{% endif %}">
-    {# <img src="{{ product.image }}" alt="{{ product.name }}"> #}
-    <div>
-      <form>
-        <input type="checkbox" name="">
-      </form>
-    </div>
-    <div>
-      <p class="class-title">{{ class.name }} - <span class="credits">{{ class.credits }} Credits</span></h3>
-      {# <p>{{ class.description }}</p> #}
-    </div>
-    {# <span class="credits">{{ class.credits }} Credits</span> #}
-    
-    {% if not class.inStock %}
-        <div class="closed">
-          <p class="white mb-0">Course Full</p>
-        </div>
-       {#  <a href="#" class="arrow-link disabled" aria-label="Registration Closed" aria-disabled="true"> #}
-       <div class="btn-wrap-sm btn-class-right">
-        <p>Registration Closed</p>
-        </div>
-    {% else %}
-        <div class="open">
-          <p class="white mb-0">Course Open</p>
-        </div>
-        <div class="btn-wrap-sm btn-class-right">
-          <a href="#" class="btn-main btn-sm" aria-label="Register">Register</a>
-        </div>
+  {# Check if this is an enrolled class (has currentGrade) or a registration class (has inStock) #}
+  {% if class.currentGrade %}
+    {# Determine grade color class based on letter grade #}
+    {% set gradeColor = "grade-green" %}
+    {% set gradeLetter = class.currentGrade | first %}
+    {% if gradeLetter == "B" %}
+      {% set gradeColor = "grade-yellow" %}
+    {% elif gradeLetter == "C" %}
+      {% set gradeColor = "grade-orange" %}
+    {% elif gradeLetter == "D" or gradeLetter == "F" %}
+      {% set gradeColor = "grade-red" %}
     {% endif %}
-</div>
+
+    {# Enrolled Class Card #}
+    <div class="class-card enrolled-class">
+      <div>
+        <p class="class-title">{{ class.courseCode }} - {{ class.courseName }}</p>
+        <p class="small-title gray-60 mb-2">{{ class.instructor }}</p>
+        <div class="d-flex align-items-center gap-3 mb-2">
+          <span class="badge {{ gradeColor }}">Grade: {{ class.currentGrade }}</span>
+        </div>
+        <div class="progress" style="height: 5px;">
+          <div class="progress-bar {{ gradeColor }}" role="progressbar" style="width: {{ class.progress }}%;" aria-valuenow="{{ class.progress }}" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <p class="small-title gray-60 mt-1 mb-0">{{ class.progress }}% Complete</p>
+      </div>
+      <div class="btn-wrap-sm btn-class-right">
+        <a href="{{ class.classroomUrl }}" class="btn-main btn-sm" aria-label="Enter Classroom for {{ class.courseName }}">Enter Classroom</a>
+      </div>
+    </div>
+  {% else %}
+    {# Registration Class Card #}
+    <div class="class-card{% if not class.inStock %} class-full{% endif %}">
+      <div>
+        <form>
+          <input type="checkbox" name="">
+        </form>
+      </div>
+      <div>
+        <p class="class-title">{{ class.name }} - <span class="credits">{{ class.credits }} Credits</span></p>
+      </div>
+
+      {% if not class.inStock %}
+          <div class="closed">
+            <p class="white mb-0">Course Full</p>
+          </div>
+         <div class="btn-wrap-sm btn-class-right">
+          <p>Registration Closed</p>
+          </div>
+      {% else %}
+          <div class="open">
+            <p class="white mb-0">Course Open</p>
+          </div>
+          <div class="btn-wrap-sm btn-class-right">
+            <a href="#" class="btn-main btn-sm" aria-label="Register">Register</a>
+          </div>
+      {% endif %}
+    </div>
+  {% endif %}
 {% endmacro %}
 
 {# =======================
@@ -391,7 +520,7 @@
       class="progress-line"
       style="--value: {{ percent }}; --color: {{ color }};"
     >
-      <span class="progress-line__label" style="position: {{ percent }};">
+      <span class="progress-line__label progress-badge" style="position: {{ percent }};">
         {% if displayType == "percent" %}
           {{ (percent * 100) | round }}%
         {% else %}

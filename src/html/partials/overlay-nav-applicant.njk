@@ -1,0 +1,35 @@
+<nav class="overlay-nav overlay-nav-applicant">
+	<div class="container-fluid">
+		<div class="overlay-nav-content">
+			<!-- Logo Section -->
+			<div class="overlay-nav-logo">
+				<a href="/index.html" aria-label="American Public University ECampus Home">
+					{% include "partials/apu-logo-wht.njk" %}
+				</a>
+			</div>
+
+			<!-- Right Side: Icons & User Profile (Simplified for Applicant) -->
+			<div class="overlay-nav-actions">
+				<!-- Quick Access Icons (Alerts & Messages only) -->
+				<div class="overlay-nav-icons">
+					{% include "partials/top-nav-applicant.njk" %}
+				</div>
+
+				<!-- Vertical Divider -->
+				<div class="overlay-nav-divider"></div>
+
+				<!-- User Profile with Initial -->
+				<div class="overlay-nav-user">
+					{% include "partials/profile.njk" %}
+					<span class="user-info">
+						<span class="user-name">Jorge</span>
+						<span class="user-id">ID: 24768</span>
+					</span>
+					<a href="#collapseProfile" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseProfile" class="profile-initial">
+						<span class="big-initial">J</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

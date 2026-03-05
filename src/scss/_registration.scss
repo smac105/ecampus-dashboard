@@ -1,0 +1,382 @@
+/* Full screen registration layout */
+.gray-body-bg {
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.registration-fullscreen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.registration-content {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+.registration-header-bar {
+  background: #000;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.registration-header-bar .close-btn {
+  background: none;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.registration-header-bar .close-btn:hover {
+  background: #00ffff;
+  color: #000;
+}
+
+.registration-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3.2rem 2.4rem;
+}
+
+.registration-header {
+  background: white;
+  border-bottom: 1px solid $secondary;
+  padding: 1.6rem 2.4rem;
+  margin: -3.2rem -2.4rem 3.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+.hidden {
+  display: none;
+}
+/* Progress Tracker */
+
+.progress-tracker {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  // margin-bottom: 2.4rem;
+  .step-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+  }
+
+  .step-line {
+    position: absolute;
+    top: 2.1rem;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: $gray-60;
+    z-index: 5;
+    transition: background-color 0.3s ease;
+
+    &.completed {
+      background-color: $green;
+    }
+  }
+
+  .step-indicator:last-child .step-line {
+    display: none;
+  }
+
+  .step-circle {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+    border: 2px solid $gray-60;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s ease;
+
+    &.active {
+      border-color: $green;
+      background: white;
+
+      .step-number {
+        color: $green;
+        font-weight: 600;
+      }
+    }
+
+    &.completed {
+      border-color: $green;
+      background: $green;
+
+      .step-check {
+        color: white;
+      }
+    }
+  }
+
+  .step-number {
+    font-size: 2.2rem;
+    color: $gray-60;
+  }
+
+  .step-check {
+    width: 2.0rem;
+    height: 2.0rem;
+  }
+
+  .step-label {
+    margin-top: 0.4rem;
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 80px;
+    line-height: 1.0;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $gray-dk;
+
+    &.active {
+      color: $green;
+      font-weight: 500;
+    }
+  }
+
+  /* Step Content */
+  .step-content {
+    margin-bottom: 3.2rem;
+  }
+}
+
+/* Course Item */
+.course-item {
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.course-checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+.selected-course {
+  border: 2px solid var(--apu-blue) !important;
+  background: var(--apu-blue-alt) !important;
+}
+
+/* Payment Options */
+.payment-option {
+  input[type="radio"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+  }
+
+  label {
+    &:has(input:checked) {
+      border-color: $green;
+      background-color: #eff6ff;
+    }
+  }
+}
+
+/* Navigation Buttons */
+.step-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.6rem;
+  margin-top: 3.2rem;
+  padding-top: 3.2rem;
+  border-top: 1px solid $secondary;
+}
+
+
+/* Form Inputs */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select,
+textarea {
+  &:focus {
+    outline: none;
+    border-color: $green;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+}
+
+/* Checkboxes */
+input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid $gray-60;
+  cursor: pointer;
+
+  &:checked {
+    background-color: $green;
+    border-color: $green;
+  }
+
+  &:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+  }
+}
+
+/* Radio buttons */
+input[type="radio"] {
+  border-radius: 9999px;
+  border: 1px solid $gray-60;
+  cursor: pointer;
+
+  &:checked {
+    background-color: $green;
+    border-color: $green;
+  }
+
+  &:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .registration-container {
+    padding: 1.6rem;
+  }
+
+  .step-label {
+    font-size: 1.0rem;
+    // max-width: 60px;
+    color: $primary;
+  }
+
+  .step-circle {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .step-number {
+    font-size: 0.625rem;
+  }
+
+  .step-check {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Confirmation Success Icon Animation */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* Step Container */
+
+.step-container {
+  display: block;
+  width: 100%;
+
+}
+.step-content {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Course Filters */
+.course-filters {
+  display: flex;
+  gap: 10px;
+
+  .course-filter-btn {
+    background: $wht;
+    color: $primary;
+    border: 2px solid $gray-60;
+    padding: 8px 18px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 0;
+
+    &:hover {
+      background: $gray-10;
+      border-color: $primary;
+    }
+
+    &.active {
+      background: $primary;
+      color: $wht;
+      border-color: $primary;
+    }
+  }
+}
+
+.course-card.hidden {
+  display: none;
+}
+
+/* Course Type Pills */
+.course-type-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  &.course-type-core {
+    background: $primary;
+    color: $wht;
+  }
+
+  &.course-type-elective {
+    background: $apu-blue-active;
+    color: $wht;
+  }
+}

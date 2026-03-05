@@ -181,6 +181,16 @@
         //     z-index: 99;
         // }
     }
+
+    /* Badge-style label */
+    .progress-badge {
+        width: auto;
+        height: auto;
+        border-radius: 8px;
+        padding: 0.6rem 1.2rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
 }
 
 @keyframes fill {

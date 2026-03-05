@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="mb-5">
+        <h2 class="h2">Required Documents</h2>
+        <p class="lead">Upload your supporting documents</p>
+      </div>
+
+      <!-- Official Transcripts -->
+      <div class="white-box mb-4">
+        <h3 class="h4 mb-3">Official Transcripts <span class="text-danger">*</span></h3>
+        <p class="mb-4">Upload official transcripts from all high schools and colleges attended. Transcripts must be official and include a signature or seal.</p>
+
+        <div class="upload-area" id="transcriptUpload">
+          <div class="upload-placeholder">
+            <i class="fas fa-cloud-upload-alt fa-3x mb-3"></i>
+            <p class="mb-2"><strong>Click to upload or drag and drop</strong></p>
+            <p class="small-title mb-0">PDF, JPG, or PNG (Max 10MB)</p>
+          </div>
+          <input type="file" id="transcriptFile" name="transcriptFile" accept=".pdf,.jpg,.jpeg,.png" style="display: none;">
+        </div>
+        <div id="transcriptFileList" class="mt-3"></div>
+
+        <!-- Bypass Option -->
+        <div class="alert alert-warning transcript-bypass-alert mt-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="transcriptBypass" name="transcriptBypass">
+            <label class="form-check-label mb-4" for="transcriptBypass">
+              <strong>I acknowledge that I will need my official transcripts to complete the application process, but choose to upload them at a later date.</strong>
+            </label>
+            <p class="small"><i class="fas fa-info-circle me-1"></i><strong>Note:</strong> Your application will remain incomplete until official transcripts are received. You can upload them through your applicant portal after submission.</p>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- ID Document -->
+      <div class="white-box mb-4">
+        <h3 class="h4 mb-3">Government-Issued Photo ID <span class="text-danger">*</span></h3>
+        <p class="mb-4">Upload a copy of your driver's license, state ID, or passport.</p>
+
+        <div class="upload-area" id="idUpload">
+          <div class="upload-placeholder">
+            <i class="fas fa-cloud-upload-alt fa-3x mb-3"></i>
+            <p class="mb-2"><strong>Click to upload or drag and drop</strong></p>
+            <p class="small-title mb-0">PDF, JPG, or PNG (Max 5MB)</p>
+          </div>
+          <input type="file" id="idFile" name="idFile" accept=".pdf,.jpg,.jpeg,.png" style="display: none;">
+        </div>
+        <div id="idFileList" class="mt-3"></div>
+      </div>
+
+      <!-- Additional Documents (Optional) -->
+      <div class="white-box">
+        <h3 class="h4 mb-3">Additional Documents <span class="text-muted">(Optional)</span></h3>
+        <p class="mb-4">Upload any additional supporting documents such as letters of recommendation, resume, or military records.</p>
+
+        <div class="upload-area" id="additionalUpload">
+          <div class="upload-placeholder">
+            <i class="fas fa-cloud-upload-alt fa-3x mb-3"></i>
+            <p class="mb-2"><strong>Click to upload or drag and drop</strong></p>
+            <p class="small-title mb-0">PDF, JPG, PNG, or DOCX (Max 10MB)</p>
+          </div>
+          <input type="file" id="additionalFile" name="additionalFile" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" multiple style="display: none;">
+        </div>
+        <div id="additionalFileList" class="mt-3"></div>
+      </div>
+    </div>
+  </div>
+</div>

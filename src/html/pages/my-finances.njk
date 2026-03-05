@@ -1,6 +1,35 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-  <h1>{{ site.finances }}</h1>
-  <p>This page uses the uppercase filter in the header.</p>
+  <div class="row">
+    <div class="shortcut-wrap">
+      <div class="shortcut-rail">
+        <a href="/tuition-and-fees.html" class="shortcut-item">
+          <span><i class="fa-regular fa-money-bill-wave"></i></span>
+          <p>Tuition & Fees</p>
+        </a>
+        <a href="/financial-aid.html" class="shortcut-item">
+          <span><i class="fa-regular fa-hand-holding-dollar"></i></span>
+          <p>Financial Aid</p>
+        </a>
+        <a href="/payment-plans.html" class="shortcut-item">
+          <span><i class="fa-regular fa-credit-card"></i></span>
+          <p>Payment Plans</p>
+        </a>
+        <a href="/billing-statement.html" class="shortcut-item">
+          <span><i class="fa-regular fa-file-invoice-dollar"></i></span>
+          <p>Billing Statement</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="white-box">
+        <h1 class="h1 mb-4">My Finances</h1>
+        <p class="lead">View and manage your financial information.</p>
+      </div>
+    </div>
+  </div>
 {% endblock %}

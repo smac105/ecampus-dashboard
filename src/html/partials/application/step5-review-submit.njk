@@ -1,0 +1,260 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <!-- Review Section (shown initially) -->
+      <div id="reviewSection">
+        <div class="mb-5">
+          <h2 class="h2">Review Your Application</h2>
+          <p class="lead">Please review all information before submitting</p>
+        </div>
+
+        <!-- Personal Information Summary -->
+        <div class="white-box mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h4 mb-0">Personal Information</h3>
+            <button class="arrow-link" onclick="goToAppStep(1)">
+              <i class="fas fa-edit"></i> Edit
+            </button>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Full Name</p>
+              <p class="mb-0" id="reviewName">-</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Email</p>
+              <p class="mb-0" id="reviewEmail">-</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Phone</p>
+              <p class="mb-0" id="reviewPhone">-</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Date of Birth</p>
+              <p class="mb-0" id="reviewDOB">-</p>
+            </div>
+            <div class="col-12 mb-3">
+              <p class="small-title mb-1">Address</p>
+              <p class="mb-0" id="reviewAddress">-</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Summary -->
+        <div class="white-box mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h4 mb-0">Education History</h3>
+            <button class="arrow-link" onclick="goToAppStep(2)">
+              <i class="fas fa-edit"></i> Edit
+            </button>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">High School</p>
+              <p class="mb-0" id="reviewHighSchool">-</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Graduation Year</p>
+              <p class="mb-0" id="reviewGradYear">-</p>
+            </div>
+            <div class="col-12 mb-3" id="reviewCollegeSection" style="display: none;">
+              <p class="small-title mb-1">College/University</p>
+              <p class="mb-0" id="reviewCollege">-</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Military Background Summary -->
+        <div class="white-box mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h4 mb-0">Military Background</h3>
+            <button class="arrow-link" onclick="goToAppStep(3)">
+              <i class="fas fa-edit"></i> Edit
+            </button>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Military Affiliation</p>
+              <p class="mb-0" id="reviewMilitaryAffiliation">-</p>
+            </div>
+            <div class="col-md-6 mb-3" id="reviewBranchSection" style="display: none;">
+              <p class="small-title mb-1">Branch of Service</p>
+              <p class="mb-0" id="reviewBranch">-</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Documents Summary -->
+        <div class="white-box mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h4 mb-0">Uploaded Documents</h3>
+            <button class="arrow-link" onclick="goToAppStep(4)">
+              <i class="fas fa-edit"></i> Edit
+            </button>
+          </div>
+          <div id="reviewDocuments">
+            <p class="text-muted">No documents uploaded</p>
+          </div>
+        </div>
+
+        <!-- Program Selection -->
+        <div class="white-box mb-4">
+          <h3 class="h4 mb-3">Program of Interest <span class="text-danger">*</span></h3>
+          <p class="mb-4">Select the program you wish to apply for</p>
+
+          <div class="form-group mb-4">
+            <label for="programSelect" class="form-label">Degree Program</label>
+            <select class="form-control" id="programSelect" name="programSelect" required>
+              <option value="">Select a Program</option>
+              <option value="ba-cs">Bachelor of Arts - Computer Science</option>
+              <option value="bs-cs">Bachelor of Science - Computer Science</option>
+              <option value="ba-bus">Bachelor of Arts - Business Administration</option>
+              <option value="bs-cyber">Bachelor of Science - Cybersecurity</option>
+              <option value="ma-ed">Master of Arts - Education</option>
+              <option value="ms-cs">Master of Science - Computer Science</option>
+              <option value="mba">Master of Business Administration (MBA)</option>
+            </select>
+          </div>
+
+          <div class="form-group mb-4">
+            <label for="startTerm" class="form-label">Intended Start Term <span class="text-danger">*</span></label>
+            <select class="form-control" id="startTerm" name="startTerm" required>
+              <option value="">Select Term</option>
+              <option value="spring-2025">Spring 2025</option>
+              <option value="summer-2025">Summer 2025</option>
+              <option value="fall-2025">Fall 2025</option>
+              <option value="spring-2026">Spring 2026</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Certifications and Agreements -->
+        <div class="white-box">
+          <h3 class="h4 mb-4">Certifications & Agreements</h3>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="certifyAccurate" name="certifyAccurate" required>
+            <label class="form-check-label" for="certifyAccurate">
+              <strong>I certify that all information provided in this application is accurate and complete.</strong>
+            </label>
+          </div>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="agreeTerms" name="agreeTerms" required>
+            <label class="form-check-label" for="agreeTerms">
+              I have read and agree to the <a href="#" class="arrow-link">Terms and Conditions</a> and <a href="#" class="arrow-link">Privacy Policy</a>.
+            </label>
+          </div>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="authorizeRecords" name="authorizeRecords" required>
+            <label class="form-check-label" for="authorizeRecords">
+              I authorize APUS to obtain my academic records from previous institutions.
+            </label>
+          </div>
+
+          <div class="alert alert-info application-fee-alert mt-4">
+            <p class="mb-0"><i class="fas fa-info-circle"></i> <strong>Application Fee:</strong> A non-refundable application fee of $50 will be charged upon submission.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Confirmation Section (shown after submit) -->
+      <div id="confirmationSection" style="display: none;">
+        <div class="text-center mb-5">
+          <div class="success-icon mb-4">
+            <i class="fas fa-check-circle fa-5x"></i>
+          </div>
+          <h1 class="h1 mb-3">Application Submitted Successfully!</h1>
+          <p class="lead">Thank you for applying to American Public University System</p>
+        </div>
+
+        <div class="white-box mb-4">
+          <h3 class="h4 mb-4">Application Details</h3>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Application ID</p>
+              <p class="mb-0"><strong id="confirmApplicationId">APP-2025-000123</strong></p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Submission Date</p>
+              <p class="mb-0" id="confirmSubmissionDate">-</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Program Applied</p>
+              <p class="mb-0" id="confirmProgram">-</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <p class="small-title mb-1">Start Term</p>
+              <p class="mb-0" id="confirmStartTerm">-</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-box mb-4">
+          <h3 class="h4 mb-4">What Happens Next?</h3>
+          <div class="timeline-steps">
+            <div class="timeline-step">
+              <div class="timeline-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="timeline-content">
+                <h4 class="h5 mb-2">Confirmation Email</h4>
+                <p class="mb-0">You will receive a confirmation email within 24 hours with your application details and next steps.</p>
+              </div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <div class="timeline-content">
+                <h4 class="h5 mb-2">Application Review</h4>
+                <p class="mb-0">Our admissions team will review your application within 2-3 business days.</p>
+              </div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-icon">
+                <i class="fas fa-clipboard-check"></i>
+              </div>
+              <div class="timeline-content">
+                <h4 class="h5 mb-2">Admission Decision</h4>
+                <p class="mb-0">You'll receive your admission decision via email within 5-7 business days.</p>
+              </div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="timeline-content">
+                <h4 class="h5 mb-2">Enrollment</h4>
+                <p class="mb-0">If accepted, you'll receive enrollment instructions and can begin registering for classes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-box mb-4">
+          <h3 class="h4 mb-4">Important Information</h3>
+          <ul class="confirmation-info-list">
+            <li>Check your email regularly for updates on your application status</li>
+            <li>You can track your application status by logging into your applicant portal</li>
+            <li>If you have questions, contact our admissions office at <strong>1-877-468-6268</strong> or <strong>admissions@apus.edu</strong></li>
+            <li>Application fee payment confirmation will be sent to your email</li>
+          </ul>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="/index.html" class="btn-main me-3">
+            Return to Dashboard
+          </a>
+          <button onclick="window.print()" class="btn-secondary">
+            <i class="fas fa-print"></i> Print Confirmation
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

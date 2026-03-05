@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Course Registration - undefined</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<!-- font awesome 6.0 -->
+	<script src="https://kit.fontawesome.com/7e5f6c5917.js" crossorigin="anonymous"></script>
+
+<!-- APU fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!-- Bootstrap JS (for modals if needed) -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+	<!-- Confetti JS -->
+	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+<body class="gray-body-bg">
+	<div class="registration-fullscreen">
+		<!-- Registration Header -->
+		<div class="registration-header-bar">
+			<div class="container-fluid">
+				<div class="d-flex justify-content-between align-items-center">
+					<div>
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 viewBox="0 0 630.5 226.8" style="enable-background:new 0 0 630.5 226.8;" xml:space="preserve" alt="American Public University" role="img" aria-labelledby="title  desc">
+   <title id="title">American Public University</title>
+   <desc id="desc">American Public University Logo</desc>
+		<style type="text/css">
+			.st0{fill:$primary;}
+		</style>
+		<g>
+			<path class="st0" d="M602,160.5v1.1c0,0.2,0,0.3-0.3,0.3h-4.9c0,0-0.1,0-0.1,0.1v15.7c0,0.2,0,0.3-0.3,0.3h-1.3
+				c-0.2,0-0.3,0-0.3-0.3V162c0,0,0-0.1-0.1-0.1H590c-0.2,0-0.3,0-0.3-0.3v-1.1c0-0.2,0-0.3,0.3-0.3h11.7
+				C601.9,160.2,602,160.2,602,160.5L602,160.5z"/>
+			<path class="st0" d="M617.2,160.2h1.3c0.2,0,0.3,0,0.3,0.3v17.1c0,0.2,0,0.3-0.3,0.3h-1.3c-0.2,0-0.3,0-0.3-0.3v-14c0,0,0,0,0-0.1
+				l0,0l-4.1,6.3c0,0.1-0.2,0.2-0.3,0.2h-0.7c-0.1,0-0.2,0-0.3-0.2l-4.1-6.3l0,0c0,0,0,0,0,0.1v13.9c0,0.2,0,0.3-0.3,0.3h-1.3
+				c-0.2,0-0.3,0-0.3-0.3v-17.1c0-0.2,0-0.3,0.3-0.3h1.3c0.1,0,0.2,0,0.3,0.2l4.7,7.2l0,0l0,0l4.7-7.2c0-0.1,0.2-0.2,0.3-0.2
+				L617.2,160.2z"/>
+		</g>
+		<g id="Gruppe_111">
+			<path id="Pfad_250" class="st0" d="M33.7,86.4c2.4,1.5,4.3,3.7,5.5,6.3c1.3,2.9,2,6,2,9.2c0,5.2-1.4,9.3-4.2,12.4
+				s-6.4,4.7-10.9,4.7h-6.3c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1v22.2c0,0.3-0.1,0.5-0.3,0.7c-0.2,0.2-0.4,0.3-0.7,0.3H8.6
+				c-0.3,0-0.5-0.1-0.7-0.3s-0.3-0.4-0.3-0.7V85.1c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h16.8c2.9,0,5.7,0.7,8.2,2.3
+				 M27.8,107.8c1.1-1.4,1.6-3.2,1.6-5.6s-0.5-4.4-1.6-5.8c-1-1.4-2.6-2.1-4.3-2.1h-3.7c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1v14.7
+				c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h3.7C25.2,109.8,26.8,109.1,27.8,107.8"/>
+		</g>
+		<g id="Gruppe_112">
+			<path id="Pfad_251" class="st0" d="M50.9,138.5c-3-3.1-4.5-7.3-4.5-12.6V85.1c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3h9.8
+				c0.3,0,0.5,0,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7v42c0,1.6,0.4,3.1,1.3,4.3c0.8,1.1,2.1,1.7,3.5,1.7s2.6-0.6,3.5-1.7
+				c0.9-1.3,1.4-2.8,1.3-4.3v-42c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h9.8c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7
+				v40.8c0,5.2-1.5,9.4-4.5,12.6c-3,3.1-7,4.7-12,4.7s-9-1.6-12.1-4.7"/>
+		</g>
+		<g id="Gruppe_113">
+			<path id="Pfad_252" class="st0" d="M114.9,138.4c-3.1,2.8-7.1,4.2-12.1,4.2H87c-0.3,0-0.5-0.1-0.7-0.3s-0.3-0.4-0.3-0.7V85.2
+				c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h13.9c5.6,0,9.9,1.3,13.1,4c3.1,2.7,4.7,6.6,4.7,11.9c0,5.5-1.9,9.5-5.7,12
+				c-0.2,0.2-0.3,0.3,0,0.5c4.4,3.1,6.6,7.7,6.6,13.8s-1.6,9.2-4.7,11.9 M97.8,94.7v13.1c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h3
+				c1.9,0,3.4-0.6,4.4-1.8c1.1-1.2,1.6-2.9,1.6-5c0-2.3-0.5-4-1.5-5.3c-1-1.2-2.5-1.8-4.5-1.8h-3c-0.2,0-0.4,0.1-0.4,0.3
+				C97.8,94.6,97.8,94.6,97.8,94.7 M106.2,130.4c1.1-1.3,1.6-3.2,1.6-5.7s-0.5-4.4-1.6-5.8c-1-1.4-2.6-2.2-4.3-2.2h-3.8
+				c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1v14.8c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h3.7c1.7,0,3.3-0.7,4.3-2"/>
+		</g>
+		<g id="Gruppe_114">
+			<path id="Pfad_253" class="st0" d="M125.5,142.3c-0.2-0.2-0.3-0.4-0.3-0.7V85.2c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h9.8
+				c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7v46.9c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h17.5c0.5,0,1,0.4,1,1l0,0v8.1
+				c0,0.6-0.4,1-1,1l0,0h-28.7C125.9,142.6,125.7,142.5,125.5,142.3"/>
+		</g>
+		<g id="Gruppe_115">
+			<path id="Pfad_254" class="st0" d="M161,142.3c-0.2-0.2-0.3-0.4-0.3-0.7V85.2c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3h9.8
+				c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7v56.4c0,0.6-0.4,1-1,1l0,0h-9.8C161.4,142.6,161.2,142.5,161,142.3"/>
+		</g>
+		<g id="Gruppe_116">
+			<path id="Pfad_255" class="st0" d="M183.6,138.8c-3-3-4.5-7-4.5-12v-27c0-4.9,1.5-8.9,4.5-11.8s7-4.4,12.1-4.4s9.1,1.5,12.1,4.4
+				s4.5,6.9,4.5,11.8v0.9c0,0.3-0.1,0.5-0.3,0.7s-0.4,0.3-0.7,0.3l-9.8,0.4c-0.7,0-1-0.3-1-0.9V99c0-1.4-0.4-2.8-1.3-3.9
+				c-0.9-1-2.2-1.6-3.6-1.5c-1.3,0-2.6,0.5-3.5,1.5c-0.9,1.1-1.4,2.5-1.3,3.9v28.8c0,1.4,0.4,2.8,1.3,3.9c0.9,1,2.2,1.5,3.5,1.5
+				c1.4,0,2.7-0.5,3.6-1.5c0.9-1.1,1.4-2.5,1.3-3.9v-2.3c0-0.5,0.4-1,1-1l0,0l9.8,0.4c0.6,0,1,0.4,1,1l0,0v0.8c0,5-1.5,9-4.6,12
+				s-7.1,4.5-12.1,4.5s-9-1.5-12.1-4.5"/>
+		</g>
+		<g id="Gruppe_153">
+			<g id="Gruppe_117">
+				<path id="Pfad_256" class="st0" d="M12.1,214.6c-3-3.1-4.5-7.3-4.5-12.6v-40.8c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h9.8
+					c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v42c0,1.6,0.4,3.1,1.3,4.3c0.8,1.1,2.1,1.7,3.5,1.7s2.6-0.6,3.5-1.7
+					c0.9-1.3,1.4-2.8,1.3-4.3v-42c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h9.8c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7V202
+					c0,5.2-1.5,9.4-4.5,12.6c-3,3.1-7,4.7-12,4.7S15.3,217.7,12.1,214.6"/>
+			</g>
+			<g id="Gruppe_118">
+				<path id="Pfad_257" class="st0" d="M71.9,160.5c0.2-0.2,0.4-0.3,0.7-0.3h9.7c0.3,0,0.5,0,0.7,0.3c0.2,0.2,0.3,0.4,0.3,0.7v56.4
+					c0,0.6-0.4,1-1,1h-11c-0.5,0-1-0.3-1.1-0.8l-10.3-32.3c0-0.2-0.2-0.2-0.3-0.2s-0.2,0.2-0.2,0.3v32c0,0.3,0,0.5-0.2,0.7
+					s-0.4,0.3-0.7,0.3h-9.7c-0.3,0-0.5-0.1-0.7-0.3s-0.3-0.4-0.3-0.7v-56.4c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3h10.9
+					c0.5,0,1,0.3,1.1,0.8l10.4,32.3c0,0.2,0.2,0.2,0.3,0.2c0.1,0,0.2-0.2,0.2-0.3v-32C71.7,160.9,71.7,160.7,71.9,160.5"/>
+			</g>
+			<g id="Gruppe_119">
+				<path id="Pfad_258" class="st0" d="M90.9,218.3c-0.2-0.2-0.3-0.4-0.3-0.7v-56.4c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3
+					h9.8c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v56.4c0,0.6-0.4,1-1,1l0,0h-9.8C91.3,218.6,91.1,218.5,90.9,218.3"/>
+			</g>
+			<g id="Gruppe_120">
+				<path id="Pfad_259" class="st0" d="M120,217.7l-11.9-56.4V161c0-0.5,0.2-0.7,0.8-0.8h10.8c0.5,0,1,0.3,1.1,0.8c0,0,0,0,0,0.1
+					l5.8,36.7c0,0.2,0.1,0.3,0.3,0.3s0.2-0.1,0.3-0.3l5.6-36.7c0-0.5,0.4-0.9,1-0.9c0,0,0,0,0.1,0h10.4c0.7,0,1,0.4,0.8,1.1l-12,56.4
+					c0,0.6-0.5,1-1.1,0.9l0,0h-10.8c-0.5,0-1-0.4-1.1-0.9l0,0"/>
+			</g>
+			<g id="Gruppe_121">
+				<path id="Pfad_260" class="st0" d="M180.8,170c-0.2,0.2-0.4,0.3-0.7,0.3h-17.4c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1v13.2
+					c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h10c0.5,0,1,0.4,1,1l0,0v8.1c0,0.6-0.4,1-1,1l0,0h-10c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1
+					v13.3c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h17.4c0.5,0,1,0.4,1,1l0,0v8.1c0,0.6-0.4,1-1,1l0,0h-28.6c-0.3,0-0.5-0.1-0.7-0.3
+					s-0.3-0.4-0.3-0.7v-56.4c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3h28.6c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v8.1
+					C181.1,169.6,181,169.8,180.8,170"/>
+			</g>
+			<g id="Gruppe_122">
+				<path id="Pfad_261" class="st0" d="M208.9,217.8l-6.4-23c-0.1-0.2-0.2-0.3-0.4-0.3h-2.8c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1
+					v22.8c0,0.6-0.4,1-1,1l0,0h-9.8c-0.3,0-0.5-0.1-0.7-0.3s-0.3-0.4-0.3-0.7v-56.4c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3H205
+					c2.9,0,5.7,0.7,8.2,2.2c2.4,1.5,4.3,3.7,5.5,6.2c1.3,2.9,2,6,2,9.2c0,3-0.6,6-1.9,8.7c-1.2,2.4-3,4.4-5.2,5.8
+					c-0.1,0-0.2,0.1-0.3,0.2c0,0,0,0.2,0,0.3l7.7,24.6v0.3c0,0.6-0.2,0.8-0.8,0.8h-10c-0.5,0-1-0.3-1.2-0.8 M198.8,170.7V185
+					c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h3.8c1.7,0,3.2-0.7,4.2-2c1.1-1.4,1.6-3.2,1.6-5.5s-0.5-4.2-1.6-5.5c-1-1.3-2.6-2.1-4.2-2
+					h-3.8C199,170.4,198.8,170.5,198.8,170.7c0,0,0,0,0,0.1"/>
+			</g>
+			<g id="Gruppe_123">
+				<path id="Pfad_262" class="st0" d="M233.1,217.4c-2.4-1.2-4.3-3.1-5.7-5.4c-1.4-2.4-2.1-5.2-2-8v-2.4c0-0.3,0.1-0.5,0.3-0.7
+					s0.4-0.3,0.7-0.3h9.6c0.5,0,1,0.4,1,1l0,0v1.8c0,1.5,0.4,3,1.3,4.2c0.8,1,2,1.6,3.3,1.6s2.5-0.5,3.3-1.5c0.9-1.1,1.4-2.5,1.3-3.9
+					c0-1.6-0.6-3.1-1.7-4.3c-1.1-1.2-3.3-3-6.5-5.3c-2.3-1.7-4.6-3.4-6.8-5.3c-1.8-1.6-3.3-3.6-4.4-5.8c-1.3-2.4-1.9-5.2-1.8-7.9
+					c0-4.7,1.5-8.5,4.4-11.3s6.8-4.3,11.7-4.3s8.8,1.5,11.8,4.4s4.5,6.8,4.5,11.6v2c0,0.3-0.1,0.5-0.3,0.7c-0.2,0.2-0.4,0.3-0.7,0.3
+					h-9.6c-0.3,0-0.5,0-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7v-2.3c0-1.5-0.4-3-1.3-4.1c-0.8-1-2.1-1.6-3.4-1.5c-1.2,0-2.4,0.5-3.2,1.5
+					s-1.3,2.3-1.3,4c0,1.6,0.5,3.2,1.6,4.4c1.1,1.3,3.1,3.1,6.3,5.3c3.4,2.6,6,4.6,7.8,6.2c1.7,1.5,3.1,3.3,4.1,5.3
+					c1,2.1,1.5,4.5,1.5,6.9c0,4.9-1.5,8.8-4.5,11.7s-7,4.3-11.8,4.3C238.6,219.3,235.7,218.7,233.1,217.4"/>
+			</g>
+			<g id="Gruppe_124">
+				<path id="Pfad_263" class="st0" d="M263.9,218.3c-0.2-0.2-0.3-0.4-0.3-0.7v-56.4c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3
+					h9.8c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v56.4c0,0.6-0.4,1-1,1l0,0h-9.8C264.3,218.6,264.1,218.5,263.9,218.3"/>
+			</g>
+			<g id="Gruppe_125">
+				<path id="Pfad_264" class="st0" d="M315.9,160.5c0.2,0.2,0.3,0.4,0.3,0.7v8.1c0,0.5-0.4,1-1,1l0,0h-10.4c-0.2,0-0.4,0.1-0.4,0.3
+					c0,0,0,0,0,0.1v46.9c0,0.6-0.4,1-1,1l0,0h-9.8c-0.3,0-0.5-0.1-0.7-0.3s-0.3-0.4-0.3-0.7v-46.9c0-0.2-0.1-0.4-0.3-0.4
+					c0,0,0,0-0.1,0h-10c-0.3,0-0.5,0-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7v-8.1c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h33
+					C315.5,160.2,315.7,160.2,315.9,160.5"/>
+			</g>
+			<g id="Gruppe_126">
+				<path id="Pfad_265" class="st0" d="M332.3,218.3c-0.2-0.2-0.3-0.4-0.3-0.7v-22.2l-11.8-34c0-0.1,0-0.3,0-0.4
+					c0-0.5,0.3-0.7,0.9-0.7h10.3c0.5,0,1,0.3,1.2,0.8l5.2,19.9c0,0.2,0.1,0.3,0.3,0.3s0.2,0,0.3-0.3l5.2-19.9c0.1-0.5,0.6-0.9,1.2-0.8
+					h10.3c0.3,0,0.6,0,0.8,0.3s0.2,0.6,0,0.9l-11.8,34v0.5v21.7c0,0.5-0.4,1-1,1l0,0h-9.8c-0.3,0-0.5,0-0.7-0.3"/>
+			</g>
+		</g>
+		<g id="Gruppe_151">
+			<g id="Gruppe_103">
+				<path id="Pfad_242" class="st0" d="M31.2,65.6l-1.3-8c0-0.3-0.2-0.4-0.5-0.4H18.8c-0.3,0-0.5,0.1-0.5,0.4l-1.3,8
+					c0,0.5-0.4,0.9-1,0.9c0,0,0,0-0.1,0H6.1c-0.7,0-1-0.4-0.8-1.1L17.5,9.1c0-0.5,0.5-1,1.1-0.9l0,0h11.3c0.6,0,1,0.4,1.1,0.9l0,0
+					l12.2,56.4v0.3c0,0.5-0.2,0.8-0.8,0.8h-10c-0.5,0-1-0.3-1.1-0.8c0,0,0,0,0-0.1 M20.3,48.1h7.5c0.3,0,0.4-0.1,0.3-0.4l-3.9-22.8
+					c0-0.2-0.1-0.3-0.2-0.3s-0.2,0-0.3,0.3l-3.8,22.8c0,0.3,0.1,0.4,0.3,0.4"/>
+			</g>
+			<g id="Gruppe_104">
+				<path id="Pfad_243" class="st0" d="M75.9,8.2h9.7c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v56.4c0,0.6-0.4,1-1,1l0,0h-9.8
+					c-0.6,0-1-0.4-1-1l0,0V28.1c0-0.2,0-0.3-0.2-0.3s-0.2,0-0.3,0.3l-6.5,11.5c-0.3,0.4-0.5,0.7-0.7,0.7s-0.4-0.2-0.7-0.7l-6.5-11.5
+					c-0.1-0.2-0.2-0.3-0.3-0.3s-0.2,0.1-0.2,0.3v37.5c0,0.3-0.1,0.5-0.3,0.7s-0.4,0.3-0.7,0.3h-9.8c-0.3,0-0.5-0.1-0.7-0.3
+					c-0.2-0.2-0.3-0.4-0.3-0.7V9.2c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3h9.6c0.5,0,1,0.2,1.3,0.7l7.4,13.3c0.2,0.2,0.3,0.2,0.5,0
+					l7.2-13.3C74.8,8.4,75.3,8.2,75.9,8.2"/>
+			</g>
+			<g id="Gruppe_105">
+				<path id="Pfad_244" class="st0" d="M124,18c-0.2,0.2-0.4,0.3-0.7,0.3h-17.4c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1v13.2
+					c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h10c0.5,0,1,0.4,1,1l0,0v8.1c0,0.6-0.4,1-1,1l0,0h-10c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1
+					v13.3c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h17.4c0.5,0,1,0.4,1,1l0,0v8.1c0,0.6-0.4,1-1,1l0,0H94.7c-0.3,0-0.5-0.1-0.7-0.3
+					c-0.2-0.2-0.3-0.4-0.3-0.7V9.2c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h28.6c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v8.1
+					C124.3,17.6,124.2,17.8,124,18"/>
+			</g>
+			<g id="Gruppe_106">
+				<path id="Pfad_245" class="st0" d="M152.1,65.7l-6.4-23c-0.1-0.2-0.2-0.3-0.4-0.3h-2.8c-0.2,0-0.4,0.1-0.4,0.3c0,0,0,0,0,0.1v22.8
+					c0,0.6-0.4,1-1,1l0,0h-9.8c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7V9.2c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3h16.8
+					c2.9,0,5.7,0.7,8.2,2.2c2.4,1.5,4.3,3.7,5.5,6.2c1.3,2.9,2,6,2,9.2c0,3-0.6,6-1.9,8.7c-1.2,2.4-3,4.4-5.2,5.8
+					c-0.1,0-0.2,0.1-0.3,0.2c0,0,0,0.2,0,0.3l7.7,24.6v0.3c0,0.6-0.2,0.8-0.8,0.8h-10C152.8,66.5,152.3,66.2,152.1,65.7 M142,18.7V33
+					c0,0.2,0.1,0.4,0.3,0.4c0,0,0,0,0.1,0h3.8c1.7,0,3.2-0.7,4.2-2c1.1-1.4,1.6-3.2,1.6-5.5s-0.5-4.2-1.6-5.5c-1-1.3-2.6-2.1-4.2-2
+					h-3.8C142.2,18.4,142,18.5,142,18.7c0,0,0,0,0,0.1"/>
+			</g>
+			<g id="Gruppe_107">
+				<path id="Pfad_246" class="st0" d="M169.8,66.2c-0.2-0.2-0.3-0.4-0.3-0.7V9.2c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3h9.8
+					c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v56.4c0,0.6-0.4,1-1,1l0,0h-9.8C170.2,66.6,170,66.5,169.8,66.2"/>
+			</g>
+			<g id="Gruppe_108">
+				<path id="Pfad_247" class="st0" d="M192.4,62.7c-3-3-4.5-7-4.5-12v-27c0-4.9,1.5-8.9,4.5-11.8s7-4.4,12.1-4.4s9.1,1.5,12.1,4.4
+					s4.5,6.9,4.5,11.8v0.9c0,0.3-0.1,0.5-0.3,0.7s-0.4,0.3-0.7,0.3l-9.8,0.4c-0.7,0-1-0.3-1-0.9v-2.2c0-1.4-0.4-2.8-1.3-3.9
+					c-0.9-1-2.2-1.6-3.6-1.5c-1.3,0-2.6,0.5-3.5,1.5c-0.9,1.1-1.4,2.5-1.3,3.9v28.8c0,1.4,0.4,2.8,1.3,3.9c0.9,1,2.2,1.5,3.5,1.5
+					c1.4,0,2.7-0.5,3.6-1.5c0.9-1.1,1.4-2.5,1.3-3.9v-2.3c0-0.5,0.4-1,1-1l0,0l9.8,0.4c0.6,0,1,0.4,1,1l0,0v0.8c0,5-1.5,9-4.6,12
+					s-7.1,4.5-12.1,4.5s-9-1.5-12.1-4.5"/>
+			</g>
+			<g id="Gruppe_109">
+				<path id="Pfad_248" class="st0" d="M250,65.6l-1.3-8c0-0.3-0.2-0.4-0.5-0.4h-10.6c-0.3,0-0.5,0.1-0.5,0.4l-1.3,8
+					c0,0.5-0.4,0.9-1,0.9c0,0,0,0-0.1,0h-9.8c-0.7,0-1-0.4-0.8-1.1L236.4,9c0-0.5,0.5-1,1.1-0.9l0,0h11.3c0.6,0,1,0.4,1.1,0.9l0,0
+					l12.2,56.4v0.3c0,0.5-0.2,0.8-0.8,0.8h-10c-0.5,0-1-0.3-1.1-0.8c0,0,0,0,0-0.1 M239.1,48.1h7.5c0.3,0,0.4-0.1,0.3-0.4L243,24.9
+					c0-0.2-0.1-0.3-0.2-0.3s-0.2,0-0.3,0.3l-3.8,22.8C238.7,48,238.8,48.1,239.1,48.1"/>
+			</g>
+			<g id="Gruppe_110">
+				<path id="Pfad_249" class="st0" d="M290.9,8.4c0.2-0.2,0.4-0.3,0.7-0.3h9.7c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7v56.4
+					c0,0.6-0.4,1-1,1h-11c-0.5,0-1-0.3-1.1-0.8l-10.3-32.3c0-0.2-0.2-0.2-0.3-0.2c-0.1,0-0.2,0.2-0.2,0.3v32c0,0.3,0,0.5-0.2,0.7
+					s-0.4,0.3-0.7,0.3h-9.7c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7V9.2c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.4-0.3,0.7-0.3h10.9
+					c0.5,0,1,0.3,1.1,0.8l10.4,32.3c0,0.2,0.2,0.2,0.3,0.2c0.1,0,0.2-0.2,0.2-0.3v-32c0-0.3,0-0.5,0.2-0.7"/>
+			</g>
+		</g>
+		<path class="st0" d="M315.1,66.5h113.7l0,0h96.3c0.5,0,0.9-0.3,1-0.7L545,9.5c0.2-0.7-0.3-1.4-1-1.4H315.1c-0.6,0-1.1,0.5-1.1,1.1
+			v56.3C314,66.1,314.5,66.6,315.1,66.5L315.1,66.5z"/>
+		<path class="st0" d="M225.2,142.6h274.5c0.5,0,0.9-0.3,1-0.7l4.1-12.3c0.1-0.4,0-0.9-0.4-1.2l-62.5-44c-0.2-0.1-0.4-0.2-0.6-0.2
+			H225.2c-0.6,0-1.1,0.5-1.1,1.1v56.3c0,0.6,0.5,1.1,1.1,1.1L225.2,142.6z"/>
+		<path class="st0" d="M493.1,160.2H368.5c-0.6,0-1.1,0.5-1.1,1.1v56.3c0,0.6,0.5,1.1,1.1,1.1h105.7c0.5,0,0.9-0.3,1-0.7l18.9-56.3
+			c0.2-0.7-0.3-1.4-1-1.4V160.2z"/>
+		<path class="st0" d="M570.5,160.3l-80,56.4c-0.8,0.6-0.4,1.9,0.6,1.9h80c0.6,0,1.1-0.5,1.1-1.1v-56.4
+			C572.2,160.2,571.2,159.8,570.5,160.3L570.5,160.3z"/>
+		</svg>					</div>
+					<a href="/index.html" class="close-btn" id="exitRegistration">
+						<i class="fas fa-times"></i> Exit Registration
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Registration Content -->
+		<div class="registration-content">
+<div class="registration-flow student-rights-flow">
+	
+
+	<!-- Progress Tracker -->
+	<div class="container mb-5">
+<div class="white-box">
+  
+
+  <!-- Progress Bar -->
+  <div class="mb-0">
+    
+    <div id="progressBar" class="absolute transition-all duration-500"></div>
+
+    <div class="relative progress-tracker">
+      <div class="step-indicator" data-step="1">
+        <div class="step-circle active">
+          <span class="step-number">1</span>
+          <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <span class="step-label">Introduction</span>
+        <div class="step-line"></div>
+      </div>
+
+      <div class="step-indicator" data-step="2">
+        <div class="step-circle">
+          <span class="step-number">2</span>
+          <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <span class="step-label">Academic Policies</span>
+        <div class="step-line"></div>
+      </div>
+
+      <div class="step-indicator" data-step="3">
+        <div class="step-circle">
+          <span class="step-number">3</span>
+          <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <span class="step-label">Student Conduct</span>
+        <div class="step-line"></div>
+      </div>
+
+      <div class="step-indicator" data-step="4">
+        <div class="step-circle">
+          <span class="step-number">4</span>
+          <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <span class="step-label">Privacy Rights</span>
+        <div class="step-line"></div>
+      </div>
+
+      <div class="step-indicator" data-step="5">
+        <div class="step-circle">
+          <span class="step-number">5</span>
+          <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <span class="step-label">Acknowledgment</span>
+      </div>
+    </div>
+  </div>
+</div>
+	</div>
+
+	<!-- Step 1: Introduction -->
+	<div id="rightsStep1" class="step-container">
+		<div class="container">
+			<div class="row row-main-layout">
+				
+				<div class="mb-5">
+					<div class="white-box pb-5">
+						<h1 class="mb-4">Congratulations on Completing Your Application, Jorge!</h1>
+						<h2>Welcome to Student Orientation</h2>
+
+						<div class="info-content">
+							<p class="lead">As a member of the American Public University System community, you have certain rights and responsibilities that are essential to maintaining an environment conducive to learning and personal growth.</p>
+
+							<h3>This orientation will cover:</h3>
+
+							<ul>
+								<li><strong>Academic Policies</strong> - Understanding academic integrity, grading policies, and student academic rights</li>
+								<li><strong>Student Code of Conduct</strong> - Expected behavior and community standards</li>
+								<li><strong>Privacy Rights (FERPA)</strong> - How your educational records are protected</li>
+								<li><strong>Your Acknowledgment</strong> - Confirming your understanding and agreement</li>
+							</ul>
+							<div class="alert-alt alert-exclamation alert-blue mt-4">
+								<i class="fas fa-info-circle blue me-2"></i>
+								<div>
+									<p class="mb-0"><em><strong>Note: You must complete all items in the student orientation before proceeding.</em></strong></em></p>
+								</div>
+							</div>
+							<p class="lead"><strong>Estimated time to complete orientation: 15-30 minutes</strong></p>
+							
+							<button id="beginOrientationBtn" class="btn-main">Begin Orientation</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="mb-5">
+					<div class="actions white-box">
+						<h3>Contact Your Enrollment Advisor</h3>
+						<p class="mb-sm">Contact your dedicated enrollment advisor today if you get stuck. They are here to support you every step of the way.</p>
+						<div class="advisor-wrap">
+							<div class="advisor-initial">
+								<span class="big-initial"><strong>S</strong></span>
+							</div>
+							<div>
+								<p class="text-advisor mb-2"><span>Stephanie Lastname</span><br>
+								<em>Admissions Officer</em></p>
+							</div>
+						</div>
+						<div>
+							<p class="mb-0"><i class="fa-solid fa-phone apu-blue-active"></i> <a href="tel:1-877-468-6268">1-877-468-6268</a><br>
+							<i class="fa-solid fa-envelope apu-blue-active"></i> <a href="mailto:Stephanie.Lastname@apus.edu">Stephanie.Lastname@apus.edu</a><br>
+							<i class="fa-solid fa-clock apu-blue-active"></i> Mon-Fri 8am-8pm EST</p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Step 2: Academic Policies -->
+	<div id="rightsStep2" class="step-container" style="display: none;">
+		<div class="container">
+			<div class="row row-main-layout">
+				<div>
+					<div class="white-box">
+						<h2 class="h2 mb-4">Academic Policies</h2>
+
+						<div class="policy-section mb-5">
+							<h3 class="mb-3">Academic Integrity</h3>
+							<p class="lead">APUS is committed to maintaining the highest standards of academic integrity. All students are expected to:</p>
+							<ul class="info-list">
+								<li>Submit original work and properly cite all sources</li>
+								<li>Avoid plagiarism, cheating, and unauthorized collaboration</li>
+								<li>Uphold honest and ethical academic practices in all coursework</li>
+								<li>Report suspected violations of academic integrity</li>
+							</ul>
+
+							<div class="alert alert-warning mt-3">
+								<i class="fas fa-exclamation-triangle me-2"></i>
+								Violations of academic integrity may result in course failure, suspension, or dismissal from the university.
+							</div>
+						</div>
+
+						<div class="policy-section mb-5">
+							<h3 class="h3 mb-3">Grading and Assessment</h3>
+							<p>Students have the right to:</p>
+							<ul class="info-list">
+								<li>Receive clear grading criteria and assignment expectations</li>
+								<li>Timely feedback on assignments and assessments</li>
+								<li>Appeal grades through the proper academic channels</li>
+								<li>Access course materials and resources necessary for success</li>
+							</ul>
+						</div>
+
+						<div class="policy-section">
+							<h3 class="h3 mb-3">Attendance and Participation</h3>
+							<p>Regular participation in online coursework is required. Students are expected to:</p>
+							<ul class="info-list">
+								<li>Log in to their courses regularly (at least 3 times per week recommended)</li>
+								<li>Complete assignments by posted deadlines</li>
+								<li>Participate in discussion forums and collaborative activities</li>
+								<li>Communicate with instructors regarding absences or extensions</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="white-box-border orientation-checklist">
+					<h3 class="mb-4">Student Orientation Checklist</h3>
+					<p class="text-sm mb-4">Complete all items below to proceed:</p>
+
+					<div class="task-list applicant-sequential-list">
+						<div class="task-item" data-task-id="check-responsibilities">
+							<input type="checkbox" id="check-responsibilities" class="task-checkbox" disabled>
+							<label for="check-responsibilities">Student Responsibilities</label>
+						</div>
+						<div class="task-item" data-task-id="check-tuition">
+							<input type="checkbox" id="check-tuition" class="task-checkbox" disabled>
+							<label for="check-tuition">Tuition & Fees</label>
+						</div>
+						<div class="task-item" data-task-id="check-census">
+							<input type="checkbox" id="check-census" class="task-checkbox" disabled>
+							<label for="check-census">Census Survey</label>
+						</div>
+						<div class="task-item" data-task-id="check-profile">
+							<input type="checkbox" id="check-profile" class="task-checkbox" disabled>
+							<label for="check-profile">Complete Your Profile</label>
+						</div>
+						<div class="task-item" data-task-id="check-info">
+							<input type="checkbox" id="check-info" class="task-checkbox" disabled>
+							<label for="check-info">Additional Information For Students</label>
+						</div>
+						<div class="task-item" data-task-id="check-agreement">
+							<input type="checkbox" id="check-agreement" class="task-checkbox" disabled>
+							<label for="check-agreement">Student Enrollment Agreement</label>
+						</div>
+						<div class="task-item" data-task-id="check-ecampus">
+							<input type="checkbox" id="check-ecampus" class="task-checkbox" disabled>
+							<label for="check-ecampus">eCampus Login</label>
+						</div>
+					</div>
+
+					<div class="checklist-progress mt-4">
+						<div class="progress-text mb-2">
+							<span id="checklistProgress">0 of 7</span> completed
+						</div>
+						<div class="progress" style="height: 8px;">
+							<div id="checklistProgressBar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Step 3: Student Code of Conduct -->
+	<div id="rightsStep3" class="step-container" style="display: none;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1">
+					<div class="white-box">
+						<h2 class="h2 mb-4">Student Code of Conduct</h2>
+
+						<div class="policy-section mb-5">
+							<h3 class="h3 mb-3">Community Standards</h3>
+							<p>As a member of the APUS community, you are expected to:</p>
+							<ul class="info-list">
+								<li>Treat all community members with respect and dignity</li>
+								<li>Engage in civil discourse, even when opinions differ</li>
+								<li>Refrain from harassment, discrimination, or intimidation</li>
+								<li>Use university resources responsibly and ethically</li>
+								<li>Comply with all federal, state, and local laws</li>
+							</ul>
+						</div>
+
+						<div class="policy-section mb-5">
+							<h3 class="h3 mb-3">Prohibited Conduct</h3>
+							<p>The following behaviors are strictly prohibited:</p>
+							<ul class="info-list">
+								<li>Academic dishonesty in any form</li>
+								<li>Harassment or discrimination based on protected characteristics</li>
+								<li>Threats, violence, or intimidation of any kind</li>
+								<li>Disruption of university operations or learning environment</li>
+								<li>Unauthorized access to university systems or data</li>
+								<li>Misuse of university technology or resources</li>
+							</ul>
+						</div>
+
+						<div class="policy-section">
+							<h3 class="h3 mb-3">Disciplinary Procedures</h3>
+							<p>Students accused of policy violations have the right to:</p>
+							<ul class="info-list">
+								<li>Written notice of alleged violations</li>
+								<li>A fair and impartial hearing process</li>
+								<li>Present evidence and witnesses on their behalf</li>
+								<li>Appeal decisions through established procedures</li>
+							</ul>
+
+							<p class=" mt-3">Sanctions for violations may include warning, probation, suspension, or dismissal, depending on the severity of the infraction.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Step 4: Privacy Rights (FERPA) -->
+	<div id="rightsStep4" class="step-container" style="display: none;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1">
+					<div class="white-box">
+						<h2 class="h2 mb-4">Privacy Rights - FERPA</h2>
+
+						<div class="policy-section mb-5">
+							<h3 class="h3 mb-3">What is FERPA?</h3>
+							<p>The Family Educational Rights and Privacy Act (FERPA) is a federal law that protects the privacy of your education records. APUS is committed to protecting your privacy in accordance with FERPA regulations.</p>
+						</div>
+
+						<div class="policy-section mb-5">
+							<h3 class="h3 mb-3">Your Rights Under FERPA</h3>
+							<p>You have the right to:</p>
+							<ul class="info-list">
+								<li><strong>Inspect and Review:</strong> Access your educational records within 45 days of a request</li>
+								<li><strong>Request Amendment:</strong> Request corrections to records you believe are inaccurate or misleading</li>
+								<li><strong>Consent to Disclosure:</strong> Control disclosure of personally identifiable information from your records</li>
+								<li><strong>File Complaints:</strong> File a complaint with the U.S. Department of Education concerning alleged failures to comply with FERPA</li>
+							</ul>
+						</div>
+
+						<div class="policy-section mb-5">
+							<h3 class="h3 mb-3">Directory Information</h3>
+							<p>APUS may disclose "directory information" without your consent unless you request otherwise. Directory information includes:</p>
+							<ul class="info-list-sm">
+								<li>Name, address, telephone number, email address</li>
+								<li>Dates of attendance, enrollment status</li>
+								<li>Degrees, honors, and awards received</li>
+								<li>Most recent educational institution attended</li>
+							</ul>
+
+							<p class=" mt-3">You may request to withhold directory information by contacting the Registrar's Office.</p>
+						</div>
+
+						<div class="policy-section">
+							<h3 class="h3 mb-3">When Information May Be Disclosed</h3>
+							<p>APUS may disclose education records without consent to:</p>
+							<ul class="info-list-sm">
+								<li>School officials with legitimate educational interest</li>
+								<li>Other schools to which you are transferring</li>
+								<li>Authorized representatives for audit or evaluation purposes</li>
+								<li>Parties in connection with financial aid</li>
+								<li>Organizations conducting studies for or on behalf of the school</li>
+								<li>Accrediting organizations</li>
+								<li>Comply with judicial orders or lawfully issued subpoenas</li>
+								<li>Appropriate officials in health or safety emergencies</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Step 5: Acknowledgment -->
+	<div id="rightsStep5" class="step-container" style="display: none;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2">
+					<div class="white-box">
+						<h2 class="h2 mb-4">Acknowledgment and Agreement</h2>
+
+						<div class="info-content mb-5">
+							<p>By checking the boxes below, you acknowledge that you have read, understood, and agree to abide by the policies outlined in this review.</p>
+						</div>
+
+						<form id="rightsAcknowledgmentForm">
+							<div class="form-check mb-4 p-4" style="background: #f5f5f5; border-left: 4px solid #000;">
+								<input class="form-check-input" type="checkbox" id="ackAcademic" required>
+								<label class="form-check-label ms-3" for="ackAcademic" style="font-size: 1.5rem;">
+									<strong>Academic Policies:</strong> I understand and agree to uphold APUS academic integrity standards, grading policies, and attendance expectations.
+								</label>
+							</div>
+
+							<div class="form-check mb-4 p-4" style="background: #f5f5f5; border-left: 4px solid #000;">
+								<input class="form-check-input" type="checkbox" id="ackConduct" required>
+								<label class="form-check-label ms-3" for="ackConduct" style="font-size: 1.5rem;">
+									<strong>Student Code of Conduct:</strong> I agree to abide by the APUS Student Code of Conduct and understand the consequences of policy violations.
+								</label>
+							</div>
+
+							<div class="form-check mb-4 p-4" style="background: #f5f5f5; border-left: 4px solid #000;">
+								<input class="form-check-input" type="checkbox" id="ackFERPA" required>
+								<label class="form-check-label ms-3" for="ackFERPA" style="font-size: 1.5rem;">
+									<strong>Privacy Rights (FERPA):</strong> I understand my rights under FERPA and how APUS protects and may disclose my educational records.
+								</label>
+							</div>
+
+							<div class="form-check mb-5 p-4" style="background: #f5f5f5; border-left: 4px solid #000;">
+								<input class="form-check-input" type="checkbox" id="ackResponsibility" required>
+								<label class="form-check-label ms-3" for="ackResponsibility" style="font-size: 1.5rem;">
+									<strong>Personal Responsibility:</strong> I take full responsibility for understanding and complying with all university policies, and I will seek clarification when needed.
+								</label>
+							</div>
+
+							<div class="alert alert-info">
+								<i class="fas fa-info-circle me-2"></i>
+								Your acknowledgment will be recorded with a timestamp and associated with your student record.
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Confirmation Page -->
+	<div id="rightsConfirmation" class="step-container" style="display: none;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2">
+					<div class="white-box text-center">
+						<div class="confirmation-icon mb-4">
+							<i class="fas fa-check-circle" style="font-size: 8rem; color: #00ffff;"></i>
+						</div>
+
+						<h2 class="h2 mb-4">Acknowledgment Complete!</h2>
+
+						<p class=" mb-4">Thank you for reviewing and acknowledging the APUS Student Rights and Responsibilities. Your acknowledgment has been recorded.</p>
+
+						<div class="confirmation-details p-4 mb-5" style="background: #f5f5f5; text-align: left;">
+							<p class="mb-2"><strong>Date Completed:</strong> <span id="completionDate"></span></p>
+							<p class="mb-2"><strong>Time:</strong> <span id="completionTime"></span></p>
+							<p class="mb-0"><strong>Status:</strong> <span class="text-success fw-bold">Acknowledged</span></p>
+						</div>
+
+						<div class="btn-wrap">
+							<a href="/index.html" class="btn-main">Return to Dashboard</a>
+							<a href="#" id="downloadReceipt" class="btn-secondary ms-3">Download Receipt</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Navigation Buttons -->
+	<div class="container">
+		<div class="row mt-4 mb-5">
+			<div class="col-12">
+				<div class="d-flex justify-content-between step-navigation">
+					<button id="rightsBackBtn" class="btn-secondary back-btn" style="visibility: hidden;">Back</button>
+					<button id="rightsNextBtn" class="btn-main ms-auto">Next</button>
+				</div>
+			</div>
+		</div>
+		<div class="row mb-5">
+			<div class="col-12 text-center">
+				<button id="resetOrientationBtn" class="arrow-link reset">Reset Orientation</button>
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+	</div>
+
+	<!-- Exit Confirmation Modal -->
+
+<div class="modal fade" id="exitConfirmationModal" tabindex="-1" aria-labelledby="exitConfirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+        <h3 class="modal-title h3" id="exitConfirmationModalLabel">Save Your Progress?</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body" style="padding: 2rem 2.5rem;">
+        <p class="lead mb-4">Your selected courses and registration progress will be saved to your cart.</p>
+        <p class="small-title gray-60 mb-0">You can resume your registration anytime by clicking the cart icon in the top navigation.</p>
+      </div>
+
+      <div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem; gap: 1rem;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="min-width: 140px;">
+          Stay Here
+        </button>
+        <button type="button" class="btn btn-main" id="confirmExitBtn" style="min-width: 140px;">
+          Exit & Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<!-- Confetti Utility -->
+	<script src="/js/confetti-util.js"></script>
+
+<script src="/js/student-rights.js"></script>
+</body>
+</html>

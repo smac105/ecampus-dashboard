@@ -2,108 +2,101 @@
 {% set navItems = [
   { "icon": "house", "slug": "index", "label": "Home", "url": "/index.html" },
   {
-  "icon": "bell-school", "slug": "my-academics", "label": "My Academics",
+  "icon": "bell-school", "slug": "my-academics", "label": "My Academics", "url": "/my-academics.html",
   "mega": true,
   "children": [
     {
 		"links": [
-		{"label": "Course Management", "url": "/about/presidents-page/", "page": "Course Management" },
-	    { "label": "Degree Planner", "url": "/about/Degree Planner/", "page": "Degree Planner" },
-	    { "label": "Course Catalog", "url": "/about/mission/", "page": "Course Catalog" },
-	    { "label": "Transfer Credits", "url": "/about/transfer-credits/", "page": "Transfer Credits" }
+		{"label": "Course Management", "url": "/course-management.html", "page": "Course Management" },
+	    { "label": "Degree Planner", "url": "/degree-planner.html", "page": "Degree Planner" },
+	    { "label": "Course Catalog", "url": "/course-catalog.html", "page": "Course Catalog" },
+	    { "label": "Transfer Credits", "url": "/transfer-credits.html", "page": "Transfer Credits" }
 	    ]
     }
 	]
   },
-  { 
-  	"icon": "money-check-dollar", "slug": "my-finances", "label": "My Finances", 
+  {
+  	"icon": "money-check-dollar", "slug": "my-finances", "label": "My Finances", "url": "/my-finances.html",
   	"mega": true,
   	"children": [
     {
 		"links": [
-		{ "label": "Catalog (Undergrad/Grad)", "url": "/about/presidents-page/", "page": "Catalog (Undergrad/Grad)" },
-	    { "label": "Journals", "url": "/about/journals/", "page": "Journals" },
-	    { "label": "Library", "url": "/about/Library/", "page": "Library" },
-	    { "label": "Observatory", "url": "/about/observatory/", "page": "Observatory" },
-	    { "label": "Center for Cyber Defense", "url": "/about/center-for-cyber-defense/", "page": "Center for Cyber Defense" }
+		{ "label": "Tuition & Fees", "url": "/tuition-and-fees.html", "page": "Tuition & Fees" },
+	    { "label": "Financial Aid", "url": "/financial-aid.html", "page": "Financial Aid" },
+	    { "label": "Payment Plans", "url": "/payment-plans.html", "page": "Payment Plans" },
+	    { "label": "Billing Statement", "url": "/billing-statement.html", "page": "Billing Statement" }
 	    ]
     }
 	]
   },
-  { 
-  	"icon": "folder-open", "slug": "forms-and-documents", "label": "Forms & Documents", 
+  {
+  	"icon": "folder-open", "slug": "forms-and-documents", "label": "Forms & Documents", "url": "/forms-and-documents.html",
   	"mega": true,
   	"children": [
     {
 		"links": [
-		{ "label": "Catalog (Undergrad/Grad)", "url": "/about/presidents-page/", "page": "Catalog (Undergrad/Grad)" },
-	    { "label": "Journals", "url": "/about/journals/", "page": "Journals" },
-	    { "label": "Library", "url": "/about/Library/", "page": "Library" },
-	    { "label": "Observatory", "url": "/about/observatory/", "page": "Observatory" },
-	    { "label": "Center for Cyber Defense", "url": "/about/center-for-cyber-defense/", "page": "Center for Cyber Defense" }
+		{ "label": "Academic Forms", "url": "/academic-forms.html", "page": "Academic Forms" },
+	    { "label": "Financial Forms", "url": "/financial-forms.html", "page": "Financial Forms" },
+	    { "label": "Official Documents", "url": "/official-documents.html", "page": "Official Documents" },
+	    { "label": "Student Handbook", "url": "/student-handbook.html", "page": "Student Handbook" }
 	    ]
     }
 	]
   },
-  { 
-  	"icon": "user-doctor", "slug": "career-services", "label": "Career Services", 
+  {
+  	"icon": "user-doctor", "slug": "career-services", "label": "Career Services", "url": "/career-services.html",
   	"mega": true,
   	"children": [
     {
 		"links": [
-		{ "label": "Catalog (Undergrad/Grad)", "url": "/about/presidents-page/", "page": "Catalog (Undergrad/Grad)" },
-	    { "label": "Journals", "url": "/about/journals/", "page": "Journals" },
-	    { "label": "Library", "url": "/about/Library/", "page": "Library" },
-	    { "label": "Observatory", "url": "/about/observatory/", "page": "Observatory" },
-	    { "label": "Center for Cyber Defense", "url": "/about/center-for-cyber-defense/", "page": "Center for Cyber Defense" }
+		{ "label": "Job Search", "url": "/job-search.html", "page": "Job Search" },
+	    { "label": "Resume Builder", "url": "/resume-builder.html", "page": "Resume Builder" },
+	    { "label": "Career Counseling", "url": "/career-counseling.html", "page": "Career Counseling" },
+	    { "label": "Career Events", "url": "/career-events.html", "page": "Career Events" }
 	    ]
     }
 	]
   },
-  { 
-  "icon": "school", "slug": "student-life", "label": "Student Life",
+  {
+  "icon": "school", "slug": "student-life", "label": "Student Life", "url": "/student-life.html",
   "mega": true,
+  "hideForStages": ["prospective", "applicant"],
   "children": [
     {
 		"links": [
-		{ "label": "Overview", "url": "/military/", "page": "Overview" },
-	    { "label": "Active Duty Servicemembers", "url": "/military/active-duty/", "page": "Active Duty Servicemembers" },
-	    { "label": "Veterans", "url": "/military/veterans/", "page": "Veterans" },
-	    { "label": "Spouses & Dependents", "url": "/military/spouses-dependents/", "page": "Spouses & Dependents" },
-	    { "label": "Credentialing Assistance", "url": "/military/credentialing-assistance/", "page": "Credentialing Assistance" },
-	    { "label": "Find Your Local Military Education Manager", "url": "https://www.amu.apus.edu/rep/", "page": "Find Your Local Military Education Manager" }
+		{ "label": "Student Organizations", "url": "/student-organizations.html", "page": "Student Organizations" },
+	    { "label": "Campus Events", "url": "/campus-events.html", "page": "Campus Events" },
+	    { "label": "Wellness Resources", "url": "/wellness-resources.html", "page": "Wellness Resources" },
+	    { "label": "Campus Resources", "url": "/campus-resources.html", "page": "Campus Resources" }
 		]
 	}
 	]
   },
- { 
-  "icon": "graduation-cap", "slug": "alumni", "label": "Alumni",
+ {
+  "icon": "graduation-cap", "slug": "alumni", "label": "Alumni", "url": "/alumni.html",
   "mega": true,
+  "hideForStages": ["prospective", "applicant", "accepted"],
   "children": [
     {
 		"links": [
-		{ "label": "Overview", "url": "/military/", "page": "Overview" },
-	    { "label": "Active Duty Servicemembers", "url": "/military/active-duty/", "page": "Active Duty Servicemembers" },
-	    { "label": "Veterans", "url": "/military/veterans/", "page": "Veterans" },
-	    { "label": "Spouses & Dependents", "url": "/military/spouses-dependents/", "page": "Spouses & Dependents" },
-	    { "label": "Credentialing Assistance", "url": "/military/credentialing-assistance/", "page": "Credentialing Assistance" },
-	    { "label": "Find Your Local Military Education Manager", "url": "https://www.amu.apus.edu/rep/", "page": "Find Your Local Military Education Manager" }
+		{ "label": "Alumni Network", "url": "/alumni-network.html", "page": "Alumni Network" },
+	    { "label": "Alumni Events", "url": "/alumni-events.html", "page": "Alumni Events" },
+	    { "label": "Alumni Benefits", "url": "/alumni-benefits.html", "page": "Alumni Benefits" },
+	    { "label": "Get Involved", "url": "/get-involved.html", "page": "Get Involved" }
 		]
 	}
 	]
   },
-  { 
-  "icon": "circle-info", "slug": "help-and-resources", "label": "Help & Resources",
+  {
+  "icon": "circle-info", "slug": "help-and-resources", "label": "Help & Resources", "url": "/help-and-resources.html",
   "mega": true,
   "children": [
     {
 		"links": [
-		{ "label": "Overview", "url": "/military/", "page": "Overview" },
-	    { "label": "Active Duty Servicemembers", "url": "/military/active-duty/", "page": "Active Duty Servicemembers" },
-	    { "label": "Veterans", "url": "/military/veterans/", "page": "Veterans" },
-	    { "label": "Spouses & Dependents", "url": "/military/spouses-dependents/", "page": "Spouses & Dependents" },
-	    { "label": "Credentialing Assistance", "url": "/military/credentialing-assistance/", "page": "Credentialing Assistance" },
-	    { "label": "Find Your Local Military Education Manager", "url": "https://www.amu.apus.edu/rep/", "page": "Find Your Local Military Education Manager" }
+		{ "label": "FAQ", "url": "/faq.html", "page": "FAQ" },
+	    { "label": "Technical Support", "url": "/technical-support.html", "page": "Technical Support" },
+	    { "label": "Live Chat", "url": "/live-chat.html", "page": "Live Chat" },
+	    { "label": "Contact Us", "url": "/contact-us.html", "page": "Contact Us" }
 		]
 	}
 	]

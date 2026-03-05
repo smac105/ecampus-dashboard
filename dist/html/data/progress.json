@@ -1,0 +1,7 @@
+[
+  { "label": "Brewery Construction", "current": 90, "max": 100, "color": "#4caf50" },
+  { "label": "Tasting Room", "current": 75, "max": 100, "color": "#2196f3" },
+  { "label": "Outdoor Seating", "current": 60, "max": 100, "color": "#ff9800" },
+  { "label": "Garden Expansion", "current": 45, "max": 100, "color": "#9c27b0" },
+  { "label": "Current GPA", "current": 3.6, "max": 4.0, "color": "#2ecc71" }
+]
