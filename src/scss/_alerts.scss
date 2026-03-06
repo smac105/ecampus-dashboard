@@ -20,14 +20,6 @@
 		color: $red;
 	}
 }
-.alert-border:before {
-	position: absolute;
-	// top: -25px;
-  background: linear-gradient(-45deg, #ffc107 25%, #000 25%, #000 50%, #ffc107 50%, #ffc107 75%, #000 75%, #000);
-  background-size: 20px 20px;
-  height: 25px;
-  z-index: 1;
-}
 .alert-alt {
 	padding: 2.0rem 1.5rem;
 	// background: $red;
@@ -38,7 +30,6 @@
 	align-items: start;
 	position: relative;
 	margin-bottom: 25px;
-	
 }
 .alert-exclamation {
 	grid-template-columns: 30px 1fr;
@@ -47,6 +38,16 @@
 		font-size: 25px;
 		color: $red;
 	}
+}
+.alert-required {
+	display: flex;
+	// grid-template-columns: auto 250px;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    h3, h4 {
+    	margin-bottom: 0px;
+    }
 }
 .alert-blue {
 	padding: 2.0rem 1.5rem;

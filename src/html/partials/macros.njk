@@ -10,7 +10,7 @@
 {% endmacro %}
 
 {% macro linkarrow(text, class, url, arialabel) %}
-  <a href="{{ url }}" class="small-link {{ class }}" aria-label="{{ arialabel }}">
+  <a href="{{ url }}" class="{{ class }}" aria-label="{{ arialabel }}">
     {{ text }}
   </a>
 {% endmacro %}

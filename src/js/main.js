@@ -88,6 +88,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // Initialize Bootstrap Popovers
+  const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+  const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+
   // Student Journey Stage Switcher
   const stageSwitcher = document.getElementById('stageSwitcher');
 

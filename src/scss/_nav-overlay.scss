@@ -1,15 +1,4 @@
 // =====================================
-// Overlay Navigation System
-// Harvard-style full-screen menu
-// =====================================
-
-// Variables
-$overlay-nav-height: 70px;
-$overlay-bg-color: rgba(0, 0, 0, 0.98);
-$overlay-link-color: #fff;
-$overlay-accent: $secondary; // Cyan
-
-// =====================================
 // Top Navigation Bar
 // =====================================
 .overlay-layout {
@@ -165,7 +154,7 @@ $overlay-accent: $secondary; // Cyan
       width: 45px;
       height: 45px;
       border-radius: 50%;
-      background: $overlay-accent;
+      background: $secondary;
       color: $primary;
       text-decoration: none;
       transition: all 0.3s ease;
@@ -178,7 +167,7 @@ $overlay-accent: $secondary; // Cyan
       &:hover {
         cursor: pointer;
         transform: scale(1.05);
-        background: lighten($overlay-accent, 5%);
+        background: $apu-blue-alt;
       }
     }
   }
@@ -411,12 +400,12 @@ $overlay-accent: $secondary; // Cyan
     padding: 10px 0;
 
     i {
-      color: $overlay-accent;
+      color: $secondary;
       font-size: 24px;
     }
 
     &:hover {
-      color: $overlay-accent;
+      color: $secondary;
     }
   }
 }
@@ -445,18 +434,18 @@ $overlay-accent: $secondary; // Cyan
       gap: 1.75rem;
 
       i {
-        color: $overlay-accent;
+        color: $secondary;
         font-size: 18px;
       }
     }
     .toggle-icon {
-      color: $overlay-accent;
+      color: $secondary;
       font-size: 1.5rem;
       transition: transform 0.3s ease;
     }
 
     &:hover {
-      color: $overlay-accent;
+      color: $secondary;
       opacity: 0.75 !important;
       cursor: pointer !important;
     }
@@ -480,7 +469,7 @@ $overlay-accent: $secondary; // Cyan
   // Overview link (links to main section page)
   .dropdown-overview-link {
     display: block;
-    color: $overlay-accent;
+    color: $secondary;
     text-decoration: none;
     font-weight: 600;
     padding: 1rem 0 0.5rem 0;
@@ -508,7 +497,7 @@ $overlay-accent: $secondary; // Cyan
     gap: 0.75rem;
     background: transparent;
     border: none;
-    color: $overlay-accent;
+    color: $secondary;
     font-size: 1.4rem;
     font-weight: 700;
     padding: 1rem 0;
@@ -565,7 +554,7 @@ $overlay-accent: $secondary; // Cyan
           transform: translateY(-50%);
           width: 0;
           height: 2px;
-          background: $overlay-accent;
+          background: $secondary;
           transition: width 0.3s ease;
         }
         &:after {
@@ -692,7 +681,7 @@ $overlay-accent: $secondary; // Cyan
   align-items: center;
 
   .overlay-sidebar-title {
-    // color: $overlay-accent;
+    // color: $secondary;
     color: $blk;
     font-weight: 700;
     text-transform: uppercase;
@@ -730,7 +719,7 @@ $overlay-accent: $secondary; // Cyan
         background: #000;
 
         i {
-          color: $overlay-accent;
+          color: $secondary;
           font-size: 1rem;
         }
 
@@ -777,7 +766,7 @@ $overlay-accent: $secondary; // Cyan
 @media (min-width: 768px) {
   .overlay-menu-sidebar {
     .overlay-sidebar-title {
-      // color: $overlay-accent;
+      // color: $secondary;
       color: $apu-blue;
       font-weight: 700;
       text-transform: uppercase;

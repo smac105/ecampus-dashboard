@@ -9,11 +9,20 @@
 			<h1>Congratulations Jorge! Your Application is Being Reviewed.</h1>
 			<p class="lead mb-0">Thank you for starting your application to APUS! Complete the remaining steps below to finish your application and be eligable for enrollment in courses. Our admissions team is here to help if you have any questions. While you are awaiting a decision on your application, continue to gather items needed in order to enroll before the next start date.</p>
 		</div>
-		<div class="stage-content alert-alt alert-border" data-stage="applicant">
-			<p class="next-step-badge small-title red">ACTION REQUIRED BEFORE ENROLLMENT CAN BEGIN!</p>
+		<div class="alert-alt alert-required">
 			<div>
-				<h3>Request Official Transcripts</h3>
-				<p>To complete your application, please submit official transcripts from all previously attended institutions. Transcripts can be sent electronically to <strong>transcripts@apus.edu</strong> or mailed to our admissions office.</p>
+				<p class="next-step-badge small-title red">ACTION REQUIRED BEFORE ENROLLMENT CAN BEGIN!</p>
+				<h3>Request Official Transcripts
+					<i class="fa-solid fa-circle-info"
+					   data-bs-toggle="popover"
+					   data-bs-trigger="focus"
+					   data-bs-placement="top"
+					   data-bs-content="To complete your application, please submit official transcripts from all previously attended institutions. Transcripts can be sent electronically to transcripts@apus.edu or mailed to our admissions office."
+					   tabindex="0"
+					   role="button"
+					   aria-label="More information about transcript requirements"
+					   style="cursor: pointer; font-size: 2rem; margin-left: 0.5rem; color: #0581C0;"></i>
+				</h3>
 			</div>
 			<div>
 				<a href="#" {# target="_blank" #} class="btn-main task-btn">Request Transcripts</a>
@@ -38,28 +47,7 @@
 			                </div>
 		                </div>
 			            <div class="accordion-body">
-							<p class="small-title mb-0">Completed:</p>
-							<div class="task-list applicant-sequential-list">
-								<div class="task-item task-completed" data-task-id="app-submitted">
-									<input type="checkbox" id="app-task1" class="task-checkbox" checked disabled>
-									<label for="app-task1">Application Submitted</label>
-									{# <a href="/view-application.html" class="arrow-link">View Application</a> #}
-								</div>
-								<div class="task-item task-completed" data-task-id="app-submitted">
-									<input type="checkbox" id="app-task1" class="task-checkbox" checked disabled>
-									<label for="app-task1">Student Rights and Responsibilities</label>
-									{# <a href="/view-application.html" class="arrow-link">View Completed SR&R Documents</a> #}
-								</div>
-								<div class="task-item task-completed" data-task-id="app-submitted">
-									<input type="checkbox" id="app-task1" class="task-checkbox" checked disabled>
-									<label for="app-task1">Student Orientation</label>
-									{# <a href="/view-application.html" class="arrow-link">View Completed SR&R Documents</a> #}
-								</div>
-							</div>
-						{# </div> #}
-						<hr>
-						
-							<div class="task-list applicant-sequential-list">
+			            <div class="task-list applicant-sequential-list">
 								<p class="small-title mb-0">To Do:</p>
 								{# <div class="task-item">
 									<input type="checkbox" id="app-task2" class="task-checkbox" disabled>
@@ -81,6 +69,27 @@
 									<p class="disclaimer mb-0">* This item is appearing because you selected that you have credits that might be transferrable from another institution. If you would like to opt out or change this, <a href="#" data-bs-toggle="modal" data-bs-target="#optOutTransferCreditsModal">click here</a>.</p>
 								</div>
 							</div>
+
+						{# </div> #}
+						{# <hr>						 #}
+							<p class="small-title mb-0">Completed:</p>
+							<div class="task-list applicant-sequential-list">
+								<div class="task-item task-completed" data-task-id="app-submitted">
+									<input type="checkbox" id="app-task1" class="task-checkbox" checked disabled>
+									<label for="app-task1">Application Submitted</label>
+									{# <a href="/view-application.html" class="arrow-link">View Application</a> #}
+								</div>
+								<div class="task-item task-completed" data-task-id="app-submitted">
+									<input type="checkbox" id="app-task1" class="task-checkbox" checked disabled>
+									<label for="app-task1">Student Rights and Responsibilities</label>
+									{# <a href="/view-application.html" class="arrow-link">View Completed SR&R Documents</a> #}
+								</div>
+								<div class="task-item task-completed" data-task-id="app-submitted">
+									<input type="checkbox" id="app-task1" class="task-checkbox" checked disabled>
+									<label for="app-task1">Student Orientation</label>
+									{# <a href="/view-application.html" class="arrow-link">View Completed SR&R Documents</a> #}
+								</div>
+							</div>	
 						</div>
 					{# </div>
 				</div> #}
@@ -186,8 +195,8 @@
 					</div>
 				</div>
 				<div>
-					<p class="mb-0"><i class="fa-solid fa-phone apu-blue-active"></i> <a href="tel:1-877-468-6268">1-877-468-6268</a><br>
-					<i class="fa-solid fa-envelope apu-blue-active"></i> <a href="mailto:Stephanie.Lastname@apus.edu">Stephanie.Lastname@apus.edu</a><br>
+					<p class="mb-0"><i class="fa-solid fa-phone apu-blue-active"></i> {# <a href="tel:1-877-468-6268"> #}1-877-468-6268{# </a> #}<br>
+					<i class="fa-solid fa-envelope apu-blue-active"></i> {# <a href="mailto:Stephanie.Lastname@apus.edu"> #}Stephanie.Lastname@apus.edu{# </a> #}<br>
 					<i class="fa-solid fa-clock apu-blue-active"></i> Mon-Fri 8am-8pm EST</p>
 				</div>
 			</div>
@@ -198,7 +207,9 @@
 				<p class="">
 					Our chat team is here to answer any questions you may have as you work through your enrollment requirements.
 				</p>
-				{{ buttons.button('Chat Now', '#', 'secondary') }}
+				{# {{ buttons.button('Chat Now', '#', 'secondary') }} #}
+				{{ buttons.linkarrow('Chat Now', 'arrow-link', '#', 'Chat with an enrollment advisor') }}
+				{# <a href="#" class="arrow-link">Chat Now</a> #}
 			</div>
 		</div>
 

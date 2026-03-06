@@ -95,3 +95,317 @@ $bar-warning-bg: #ffb74d;
     }
   }
 }
+
+// ============================================================================
+// POSITIONING MIXINS
+// ============================================================================
+
+// Absolute center vertically
+@mixin absolute-center-y {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Absolute center horizontally
+@mixin absolute-center-x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// Absolute center both axes
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// ============================================================================
+// RESPONSIVE BREAKPOINTS
+// ============================================================================
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+// ============================================================================
+// BADGE & STATUS INDICATORS
+// ============================================================================
+
+// Badge base styling with color variants
+@mixin badge($bg-color, $text-color, $border-color: transparent) {
+  background: $bg-color;
+  color: $text-color;
+  border: 1px solid $border-color;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1;
+}
+
+// Status badge variants for reusability across brands
+@mixin badge-required($brand-color: $red) {
+  @include badge(rgba($brand-color, 0.1), $brand-color, rgba($brand-color, 0.3));
+}
+
+@mixin badge-pending($brand-color: $orange) {
+  @include badge(rgba($brand-color, 0.1), $brand-color, rgba($brand-color, 0.3));
+}
+
+@mixin badge-completed($brand-color: $green) {
+  @include badge(rgba($brand-color, 0.1), $brand-color, rgba($brand-color, 0.3));
+}
+
+@mixin badge-disabled($brand-color: $gray-60) {
+  @include badge(rgba(0, 0, 0, 0.05), $brand-color, rgba(0, 0, 0, 0.1));
+}
+
+// ============================================================================
+// BORDER HIGHLIGHTS
+// ============================================================================
+
+// Border-left highlighting for document/status items
+@mixin border-highlight($color, $bg-alpha: 0, $important: false) {
+  border-left: 4px solid $color;
+  @if $bg-alpha > 0 {
+    @if $important {
+      background: rgba($color, $bg-alpha) !important;
+    } @else {
+      background: rgba($color, $bg-alpha);
+    }
+  }
+}
+
+// ============================================================================
+// DOCUMENT & STATUS STYLING
+// ============================================================================
+
+// Document status stat boxes
+@mixin document-stat($bg-color, $icon-bg, $icon-color) {
+  background: $bg-color;
+
+  .stat-icon {
+    background: $icon-bg;
+    color: $icon-color;
+  }
+}
+
+// Status stat variants
+@mixin stat-outstanding($brand-color: $red) {
+  @include document-stat(rgba($brand-color, 0.1), rgba($brand-color, 0.1), $brand-color);
+}
+
+@mixin stat-pending($brand-color: $orange) {
+  @include document-stat(rgba($brand-color, 0.1), rgba($brand-color, 0.1), $brand-color);
+}
+
+@mixin stat-completed($brand-color: $green) {
+  @include document-stat(rgba($brand-color, 0.1), rgba($brand-color, 0.1), $brand-color);
+}
+
+// ============================================================================
+// FLEXBOX UTILITIES
+// ============================================================================
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// ============================================================================
+// TRANSITIONS & ANIMATIONS
+// ============================================================================
+
+@mixin transition($properties: all, $duration: 0.3s, $easing: ease) {
+  transition: $properties $duration $easing;
+}
+
+@mixin hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// ============================================================================
+// TYPOGRAPHY
+// ============================================================================
+
+@mixin truncate-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin line-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// ============================================================================
+// CUSTOM FORM ELEMENTS
+// ============================================================================
+
+// Custom checkbox styling (for completed tasks, etc)
+@mixin custom-checkbox($size: 2.4rem, $color: $green, $border-radius: 3px) {
+  // Hide real checkbox
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  label {
+    position: relative;
+    padding-left: calc(#{$size} + 1.2rem);
+    cursor: pointer;
+
+    // Checkbox box
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: $size;
+      height: $size;
+      border: 2px solid $color;
+      border-radius: $border-radius;
+      background-color: $color;
+    }
+
+    // Checkmark
+    &::after {
+      font-family: "Font Awesome 6 Pro";
+      content: '\f00c';
+      position: absolute;
+      left: calc(#{$size} / 6);
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: calc(#{$size} * 0.75);
+      font-weight: 600;
+    }
+  }
+}
+
+// ============================================================================
+// BRAND-AGNOSTIC UTILITIES (for multi-brand support)
+// ============================================================================
+
+// Primary button with brand color variable
+@mixin btn-brand-primary($bg-color, $text-color, $hover-darken: 10%) {
+  background: $bg-color;
+  color: $text-color;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: darken($bg-color, $hover-darken);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// Secondary button variant
+@mixin btn-brand-secondary($border-color, $text-color, $hover-bg) {
+  background: transparent;
+  color: $text-color;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  border: 2px solid $border-color;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: $hover-bg;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// Scrollbar styling (brand-customizable)
+@mixin custom-scrollbar($track-color: #f1f1f1, $thumb-color: #888, $thumb-hover: #555) {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track-color;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-color;
+    border-radius: 4px;
+
+    &:hover {
+      background: $thumb-hover;
+    }
+  }
+}
