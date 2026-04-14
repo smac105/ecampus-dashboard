@@ -1,0 +1,168 @@
+<div class="collapse" id="collapseProfile">
+	<div class="card menu profile-menu-card">
+		<div class="profile-dropdown-wrap">
+			<div class="profile-header-section">
+				<div class="profile-image-wrap">
+					<div class="profile">
+						<p class="big-initial">J</p>
+					</div>
+				</div>
+				<div class="profile-info-section">
+					<h3 class="profile-name mb-1">Jorge Martinez</h3>
+					<p class="profile-detail mb-1"><strong>Student ID:</strong> 24768</p>
+					<p class="profile-detail mb-1"><strong>Major:</strong> Computer Science</p>
+					<p class="profile-detail mb-0"><strong>Expected Graduation:</strong> May 2026</p>
+				</div>
+			</div>
+			<div class="profile-actions">
+				<a href="/student-profile.html" class="btn-main btn-sm">
+					{# <i class="fa-regular fa-user-pen"></i> #}Edit Profile
+				</a>
+				<a href="#" class="btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#shareContactModal">
+					{# <i class="fa-regular fa-share-nodes"></i>  #}Share Contact Info
+				</a>
+			</div>
+		</div>
+		<div class="actions pt-4">
+			<p class="small-title blk mb-3">Contact Your Enrollment Advisor:</h3>
+			{# <p class="mb-sm">Contact your dedicated enrollment advisor today, They are here to support you every step of the way.</p> #}
+			<div class="advisor-wrap">
+				{# <div class="advisor-initial">
+					<span class="big-initial"><strong>S</strong></span>
+				</div> #}
+				<div>
+					<p class="text-advisor blk mb-2"><span>Stephanie Lastname</span><br>
+					<em>Admissions Officer</em></p>
+				</div>
+			</div>
+			<div>
+				<p class="mb-0"><i class="fa-solid fa-phone apu-blue-active"></i> <a href="tel:1-877-468-6268">1-877-468-6268</a><br>
+				<i class="fa-solid fa-envelope apu-blue-active"></i> <a href="mailto:Stephanie.Lastname@apus.edu">Stephanie.Lastname@apus.edu</a><br>
+				{# <i class="fa-solid fa-clock apu-blue-active"></i> Mon-Fri 8am-8pm EST</p> #}
+			</div>
+		</div>
+		<div class="profile-account-links">
+			<div>
+				<a href="#" class="profile-link" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+					<i class="fa-solid fa-key"></i> Change Password
+				</a>
+			</div>
+			<div>
+				<a href="/logout.html" class="profile-link profile-link-logout">
+					<i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+				</a>
+			</div>
+		</div>
+		{# </div> #}
+	</div>
+</div>
+
+<!-- Change Password Modal -->
+<div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title h3" id="changePasswordModalLabel">Change Password</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="changePasswordForm">
+					<div class="mb-3">
+						<label for="currentPassword" class="form-label"><strong>Current Password</strong> <span class="red">*</span></label>
+						<input type="password" class="form-control" id="currentPassword" required>
+					</div>
+					<div class="mb-3">
+						<label for="newPassword" class="form-label"><strong>New Password</strong> <span class="red">*</span></label>
+						<input type="password" class="form-control" id="newPassword" required>
+						<small class="form-text text-muted">Password must be at least 8 characters with uppercase, lowercase, and numbers.</small>
+					</div>
+					<div class="mb-3">
+						<label for="confirmPassword" class="form-label"><strong>Confirm New Password</strong> <span class="red">*</span></label>
+						<input type="password" class="form-control" id="confirmPassword" required>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary btn-min-width" data-bs-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-main btn-min-width" id="changePasswordBtn">Change Password</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+// Change password form validation and submission
+document.addEventListener('DOMContentLoaded', function() {
+	const changePasswordBtn = document.getElementById('changePasswordBtn');
+
+	if (changePasswordBtn) {
+		changePasswordBtn.addEventListener('click', function() {
+			const form = document.getElementById('changePasswordForm');
+			const newPassword = document.getElementById('newPassword').value;
+			const confirmPassword = document.getElementById('confirmPassword').value;
+
+			if (form.checkValidity()) {
+				if (newPassword !== confirmPassword) {
+					alert('New passwords do not match. Please try again.');
+					return;
+				}
+
+				// Form is valid and passwords match
+				alert('Your password has been changed successfully!');
+				const modal = bootstrap.Modal.getInstance(document.getElementById('changePasswordModal'));
+				modal.hide();
+				form.reset();
+			} else {
+				form.reportValidity();
+			}
+		});
+	}
+});
+</script>
+
+<!-- Share Contact Info Modal -->
+<div class="modal fade" id="shareContactModal" tabindex="-1" aria-labelledby="shareContactModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title h3" id="shareContactModalLabel">Share Contact Information</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<p>Choose what information you'd like to share with other students:</p>
+				<div class="form-check mb-2">
+					<input class="form-check-input" type="checkbox" value="" id="shareEmail" checked>
+					<label class="form-check-label" for="shareEmail">
+						Email Address
+					</label>
+				</div>
+				<div class="form-check mb-2">
+					<input class="form-check-input" type="checkbox" value="" id="sharePhone">
+					<label class="form-check-label" for="sharePhone">
+						Phone Number
+					</label>
+				</div>
+				<div class="form-check mb-2">
+					<input class="form-check-input" type="checkbox" value="" id="shareLinkedIn">
+					<label class="form-check-label" for="shareLinkedIn">
+						LinkedIn Profile
+					</label>
+				</div>
+				<div class="form-check mb-3">
+					<input class="form-check-input" type="checkbox" value="" id="shareMajor" checked>
+					<label class="form-check-label" for="shareMajor">
+						Major & Graduation Date
+					</label>
+				</div>
+				<div class="mb-3">
+					<label for="recipientEmail" class="form-label">Recipient Email:</label>
+					<input type="email" class="form-control" id="recipientEmail" placeholder="student@university.edu">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary btn-min-width" data-bs-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-main btn-min-width" data-bs-dismiss="modal">Send Contact Info</button>
+			</div>
+		</div>
+	</div>
+</div>

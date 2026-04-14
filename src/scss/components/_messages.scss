@@ -1,0 +1,358 @@
+// Messages Page Styles
+
+// Badge for resolved dates
+.badge-resolved-date {
+  background: $gray-10;
+  color: $gray-60;
+  border: 1px solid $gray-60;
+}
+
+// Alert Items
+.alert-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.alert-item-resolved {
+  padding: 1.2rem;
+  background: $gray-10;
+  border-radius: 8px;
+
+  h5 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $blk;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Message List
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.message-item {
+  padding: 1.5rem;
+  border-bottom: 1px solid $gray-20;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  display: flex;
+  gap: 1.2rem;
+
+  &:hover {
+    background: $gray-10;
+  }
+
+  &.active {
+    background: $gray-10;
+    border-left: 3px solid $apu-blue-active;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+// Hide trashed messages from inbox view only (must be very specific to not affect other tabs)
+#inboxContent #inboxMessagesList .message-item[data-trashed="true"] {
+  display: none !important;
+}
+
+// Ensure messages in starred tab are visible (override ALL hiding rules)
+#starredContent #starredMessagesList .message-item,
+#starredContent #starredMessagesList .message-item[data-trashed="true"],
+#starredContent #starredMessagesList .message-item[data-trashed="false"] {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+}
+
+// Ensure messages in trash tab are visible (override ALL hiding rules)
+#trashContent #trashMessagesList .message-item,
+#trashContent #trashMessagesList .message-item[data-trashed="true"],
+#trashContent #trashMessagesList .message-item[data-trashed="false"] {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+}
+
+.message-checkbox {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0.3rem;
+  flex-shrink: 0;
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: $apu-blue-active;
+  }
+}
+
+.message-unread {
+  background: rgba(5, 129, 192, 0.05);
+
+  &:hover {
+    background: rgba(5, 129, 192, 0.08);
+  }
+
+  .message-sender {
+    font-weight: 700;
+    color: $blk;
+  }
+
+  .message-subject {
+    font-weight: 600;
+    color: $blk;
+  }
+}
+
+.message-avatar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0.3rem;
+
+  .avatar-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: $apu-blue;
+    color: $wht;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .avatar-read {
+    background: $gray-60;
+  }
+}
+
+.message-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  gap: 1rem;
+}
+
+.message-sender {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $gray-70;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.message-sender-read {
+  font-weight: 500;
+  color: $gray-70;
+}
+
+.message-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.message-date {
+  font-size: 1.2rem;
+  color: $gray-60;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.message-star {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: $gray-60;
+  font-size: 1.6rem;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: $apu-yellow;
+  }
+
+  &.starred {
+    color: $orange;
+
+    i {
+      font-weight: 900;
+    }
+
+    i::before {
+      content: "\f005"; // fa-solid fa-star
+    }
+  }
+}
+
+.message-subject {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: $blk;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.message-subject-read {
+  font-weight: 400;
+  color: $gray-90;
+}
+
+.message-preview {
+  font-size: 1.3rem;
+  color: $gray-70;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.5;
+}
+
+// Modal Message Content
+.modal {
+  .avatar-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: $apu-blue;
+    color: $wht;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .info-list {
+    margin-left: 2rem;
+
+    li {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+
+      strong {
+        color: $blk;
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .message-item {
+    padding: 1.2rem;
+  }
+
+  .message-sender {
+    font-size: 1.4rem;
+  }
+
+  .message-subject {
+    font-size: 1.3rem;
+  }
+
+  .message-preview {
+    font-size: 1.2rem;
+  }
+
+  .message-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .message-meta {
+    gap: 0.8rem;
+  }
+
+  .message-date {
+    font-size: 1.1rem;
+  }
+
+  .message-star {
+    font-size: 1.4rem;
+  }
+}
+
+// Message Details Panel
+.message-details {
+  // h4 {
+  //   font-size: 2rem;
+  //   font-weight: 700;
+  //   color: $blk;
+  // }
+
+  // h5 {
+  //   font-size: 1.6rem;
+  //   font-weight: 600;
+  //   color: $blk;
+  //   margin-top: 2rem;
+  // }
+
+  // p {
+  //   font-size: 1.4rem;
+  //   line-height: 1.6;
+  //   margin-bottom: 1.5rem;
+  // }
+
+  ul, ol {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+
+    // li {
+    //   font-size: 1.4rem;
+    //   line-height: 1.6;
+    //   margin-bottom: 0.8rem;
+    // }
+  }
+
+  a {
+    color: $apu-blue-active;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  hr {
+    border-color: $gray-20;
+  }
+}
+
+.message-details-header {
+  border-bottom: 1px solid $gray-20;
+  padding-bottom: 1.5rem;
+
+  .message-star {
+    font-size: 2rem;
+  }
+}
+
+.message-details-body {
+  padding-top: 1rem;
+}

@@ -215,13 +215,13 @@
   <nav id="sidebarMenuSmall" class="top-nav-wrap">
     <ul id="topmenu" class="mb-0">
       <li class="">
-        <a href="/alerts.html" data-slug="alerts">
+        <a href="/messages.html?view=alerts" data-slug="alerts">
           <span class="top-wrap"><i class="fa-solid fa-bell"></i></span>
         </a>
           <span class="count alerts">2</span>
       </li>
       <li class="">
-        <a href="/email.html" data-slug="email">
+        <a href="/messages.html?view=messages" data-slug="email">
           <span class="top-wrap"><i class="fa-solid fa-envelope"></i></span>
         </a>
           <span class="count email">4</span>
@@ -255,7 +255,7 @@
 				<!-- User Profile with Initial -->
 				<div class="overlay-nav-user">
 <div class="collapse" id="collapseProfile">
-	<div class="card card-body menu">
+	<div class="card menu profile-menu-card">
 		<div class="profile-dropdown-wrap">
 			<div class="profile-header-section">
 				<div class="profile-image-wrap">
@@ -271,7 +271,7 @@
 				</div>
 			</div>
 			<div class="profile-actions">
-				<a href="/student-profile.html" class="btn-main btn-sm mb-2">
+				<a href="/student-profile.html" class="btn-main btn-sm">
 					Edit Profile
 				</a>
 				<a href="#" class="btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#shareContactModal">
@@ -279,18 +279,110 @@
 				</a>
 			</div>
 		</div>
+		<div class="actions pt-4">
+			<p class="small-title blk mb-3">Contact Your Enrollment Advisor:</h3>
+			
+			<div class="advisor-wrap">
+				
+				<div>
+					<p class="text-advisor blk mb-2"><span>Stephanie Lastname</span><br>
+					<em>Admissions Officer</em></p>
+				</div>
+			</div>
+			<div>
+				<p class="mb-0"><i class="fa-solid fa-phone apu-blue-active"></i> <a href="tel:1-877-468-6268">1-877-468-6268</a><br>
+				<i class="fa-solid fa-envelope apu-blue-active"></i> <a href="mailto:Stephanie.Lastname@apus.edu">Stephanie.Lastname@apus.edu</a><br>
+				
+			</div>
+		</div>
+		<div class="profile-account-links">
+			<div>
+				<a href="#" class="profile-link" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+					<i class="fa-solid fa-key"></i> Change Password
+				</a>
+			</div>
+			<div>
+				<a href="/logout.html" class="profile-link profile-link-logout">
+					<i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+				</a>
+			</div>
+		</div>
+		
 	</div>
 </div>
+
+<!-- Change Password Modal -->
+<div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title h3" id="changePasswordModalLabel">Change Password</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="changePasswordForm">
+					<div class="mb-3">
+						<label for="currentPassword" class="form-label"><strong>Current Password</strong> <span class="red">*</span></label>
+						<input type="password" class="form-control" id="currentPassword" required>
+					</div>
+					<div class="mb-3">
+						<label for="newPassword" class="form-label"><strong>New Password</strong> <span class="red">*</span></label>
+						<input type="password" class="form-control" id="newPassword" required>
+						<small class="form-text text-muted">Password must be at least 8 characters with uppercase, lowercase, and numbers.</small>
+					</div>
+					<div class="mb-3">
+						<label for="confirmPassword" class="form-label"><strong>Confirm New Password</strong> <span class="red">*</span></label>
+						<input type="password" class="form-control" id="confirmPassword" required>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary btn-min-width" data-bs-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-main btn-min-width" id="changePasswordBtn">Change Password</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+// Change password form validation and submission
+document.addEventListener('DOMContentLoaded', function() {
+	const changePasswordBtn = document.getElementById('changePasswordBtn');
+
+	if (changePasswordBtn) {
+		changePasswordBtn.addEventListener('click', function() {
+			const form = document.getElementById('changePasswordForm');
+			const newPassword = document.getElementById('newPassword').value;
+			const confirmPassword = document.getElementById('confirmPassword').value;
+
+			if (form.checkValidity()) {
+				if (newPassword !== confirmPassword) {
+					alert('New passwords do not match. Please try again.');
+					return;
+				}
+
+				// Form is valid and passwords match
+				alert('Your password has been changed successfully!');
+				const modal = bootstrap.Modal.getInstance(document.getElementById('changePasswordModal'));
+				modal.hide();
+				form.reset();
+			} else {
+				form.reportValidity();
+			}
+		});
+	}
+});
+</script>
 
 <!-- Share Contact Info Modal -->
 <div class="modal fade" id="shareContactModal" tabindex="-1" aria-labelledby="shareContactModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
-			<div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+			<div class="modal-header">
 				<h3 class="modal-title h3" id="shareContactModalLabel">Share Contact Information</h3>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
-			<div class="modal-body" style="padding: 2rem 2.5rem;">
+			<div class="modal-body">
 				<p>Choose what information you'd like to share with other students:</p>
 				<div class="form-check mb-2">
 					<input class="form-check-input" type="checkbox" value="" id="shareEmail" checked>
@@ -321,9 +413,9 @@
 					<input type="email" class="form-control" id="recipientEmail" placeholder="student@university.edu">
 				</div>
 			</div>
-			<div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem; gap: 1rem;">
-				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="min-width: 140px;">Cancel</button>
-				<button type="button" class="btn btn-main" data-bs-dismiss="modal" style="min-width: 140px;">Send Contact Info</button>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary btn-min-width" data-bs-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-main btn-min-width" data-bs-dismiss="modal">Send Contact Info</button>
 			</div>
 		</div>
 	</div>
@@ -550,16 +642,16 @@
   <nav id="sidebarMenuSmall" class="top-nav-wrap">
     <ul id="topmenu" class="mb-0">
       <li class="">
-        <a href="/alerts.html" data-slug="alerts">
+        <a href="/messages.html?view=alerts" data-slug="alerts">
           <span class="top-wrap"><i class="fa-solid fa-bell"></i></span>
         </a>
           <span class="count alerts">2</span>
       </li>
       <li class="">
-        <a href="/email.html" data-slug="email">
+        <a href="/messages.html" data-slug="messages">
           <span class="top-wrap"><i class="fa-solid fa-envelope"></i></span>
         </a>
-          <span class="count email">4</span>
+          <span class="count messages">4</span>
       </li>
       
     </ul>
@@ -573,7 +665,7 @@
 				<!-- User Profile with Initial -->
 				<div class="overlay-nav-user">
 <div class="collapse" id="collapseProfile">
-	<div class="card card-body menu">
+	<div class="card menu profile-menu-card">
 		<div class="profile-dropdown-wrap">
 			<div class="profile-header-section">
 				<div class="profile-image-wrap">
@@ -589,7 +681,7 @@
 				</div>
 			</div>
 			<div class="profile-actions">
-				<a href="/student-profile.html" class="btn-main btn-sm mb-2">
+				<a href="/student-profile.html" class="btn-main btn-sm">
 					Edit Profile
 				</a>
 				<a href="#" class="btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#shareContactModal">
@@ -597,18 +689,110 @@
 				</a>
 			</div>
 		</div>
+		<div class="actions pt-4">
+			<p class="small-title blk mb-3">Contact Your Enrollment Advisor:</h3>
+			
+			<div class="advisor-wrap">
+				
+				<div>
+					<p class="text-advisor blk mb-2"><span>Stephanie Lastname</span><br>
+					<em>Admissions Officer</em></p>
+				</div>
+			</div>
+			<div>
+				<p class="mb-0"><i class="fa-solid fa-phone apu-blue-active"></i> <a href="tel:1-877-468-6268">1-877-468-6268</a><br>
+				<i class="fa-solid fa-envelope apu-blue-active"></i> <a href="mailto:Stephanie.Lastname@apus.edu">Stephanie.Lastname@apus.edu</a><br>
+				
+			</div>
+		</div>
+		<div class="profile-account-links">
+			<div>
+				<a href="#" class="profile-link" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+					<i class="fa-solid fa-key"></i> Change Password
+				</a>
+			</div>
+			<div>
+				<a href="/logout.html" class="profile-link profile-link-logout">
+					<i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+				</a>
+			</div>
+		</div>
+		
 	</div>
 </div>
+
+<!-- Change Password Modal -->
+<div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title h3" id="changePasswordModalLabel">Change Password</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="changePasswordForm">
+					<div class="mb-3">
+						<label for="currentPassword" class="form-label"><strong>Current Password</strong> <span class="red">*</span></label>
+						<input type="password" class="form-control" id="currentPassword" required>
+					</div>
+					<div class="mb-3">
+						<label for="newPassword" class="form-label"><strong>New Password</strong> <span class="red">*</span></label>
+						<input type="password" class="form-control" id="newPassword" required>
+						<small class="form-text text-muted">Password must be at least 8 characters with uppercase, lowercase, and numbers.</small>
+					</div>
+					<div class="mb-3">
+						<label for="confirmPassword" class="form-label"><strong>Confirm New Password</strong> <span class="red">*</span></label>
+						<input type="password" class="form-control" id="confirmPassword" required>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary btn-min-width" data-bs-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-main btn-min-width" id="changePasswordBtn">Change Password</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+// Change password form validation and submission
+document.addEventListener('DOMContentLoaded', function() {
+	const changePasswordBtn = document.getElementById('changePasswordBtn');
+
+	if (changePasswordBtn) {
+		changePasswordBtn.addEventListener('click', function() {
+			const form = document.getElementById('changePasswordForm');
+			const newPassword = document.getElementById('newPassword').value;
+			const confirmPassword = document.getElementById('confirmPassword').value;
+
+			if (form.checkValidity()) {
+				if (newPassword !== confirmPassword) {
+					alert('New passwords do not match. Please try again.');
+					return;
+				}
+
+				// Form is valid and passwords match
+				alert('Your password has been changed successfully!');
+				const modal = bootstrap.Modal.getInstance(document.getElementById('changePasswordModal'));
+				modal.hide();
+				form.reset();
+			} else {
+				form.reportValidity();
+			}
+		});
+	}
+});
+</script>
 
 <!-- Share Contact Info Modal -->
 <div class="modal fade" id="shareContactModal" tabindex="-1" aria-labelledby="shareContactModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
-			<div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+			<div class="modal-header">
 				<h3 class="modal-title h3" id="shareContactModalLabel">Share Contact Information</h3>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
-			<div class="modal-body" style="padding: 2rem 2.5rem;">
+			<div class="modal-body">
 				<p>Choose what information you'd like to share with other students:</p>
 				<div class="form-check mb-2">
 					<input class="form-check-input" type="checkbox" value="" id="shareEmail" checked>
@@ -639,9 +823,9 @@
 					<input type="email" class="form-control" id="recipientEmail" placeholder="student@university.edu">
 				</div>
 			</div>
-			<div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem; gap: 1rem;">
-				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="min-width: 140px;">Cancel</button>
-				<button type="button" class="btn btn-main" data-bs-dismiss="modal" style="min-width: 140px;">Send Contact Info</button>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary btn-min-width" data-bs-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-main btn-min-width" data-bs-dismiss="modal">Send Contact Info</button>
 			</div>
 		</div>
 	</div>
@@ -1027,12 +1211,45 @@
 			</main>
 		</div>
 
+		
+	</div>
+	<!-- Footer -->
 <footer class="footer text-center text-lg-start border-top">
   <!-- Demo Mode Toggle -->
   
 
-  <div class="container-fluid py-4">
-    <p class="disclaimer mb-0">&copy; 2025 American Public University System. All rights reserved.</p>
+  <div class="container py-4">
+    <!-- Footer Navigation -->
+    <div class="row">
+      <div class="col-lg-8">
+        <nav class="footer-nav mb-3">
+          <ul class="footer-nav-list">
+            <li><a href="#" class="footer-nav-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-nav-link">Terms</a></li>
+            <li><a href="#" class="footer-nav-link">Accreditation</a></li>
+            <li><a href="#" class="footer-nav-link">Career Opportunities</a></li>
+            <li><a href="#" class="footer-nav-link">Newsroom</a></li>
+            <li><a href="#" class="footer-nav-link">Mission</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Do Not Sell Link and Disclaimer -->
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="footer-disclaimer-section">
+          <p class="mb-2">
+            <a href="https://www.apu.apus.edu/help/technical-and-classroom-support/navigating-the-ecampus/" class="footer-privacy-link" target="_blank" rel="noopener noreferrer">Do Not Sell My Personal Information (CA residents only)</a>
+          </p>
+
+          <p class="footer-disclaimer-text mb-3">
+            American Public University System (APUS) is accredited by the Higher Learning Commission (HLC) and is a wholly owned subsidiary of American Public Education, Inc. (APEI). Pursuant to a contractual arrangement, APEI provides certain services for the benefit of APUS, subject to APUS oversight and ultimate authority. Pursuant to a license, APEI may use APUS's trademarks and other intellectual property in its performance of those services. American Public University System, American Public University, and American Military University are not affiliated with American University or the U.S. Military.
+          </p>
+          <p class="footer-disclaimer-text mb-0">&copy; 2025 American Public University System. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -1045,8 +1262,7 @@
 <script src="/js/registration.js"></script>
 <script src="/js/application.js"></script>
 <script src="/js/student-rights.js"></script>
-<script src="/js/enrollment-tasks.js"></script>	</div>
-
+<script src="/js/enrollment-tasks.js"></script>
 	<!-- Registration Cart Modal -->
 <!-- Registration Cart Modal -->
 <div class="modal fade" id="registrationCartModal" tabindex="-1" aria-labelledby="registrationCartModalLabel" aria-hidden="true">

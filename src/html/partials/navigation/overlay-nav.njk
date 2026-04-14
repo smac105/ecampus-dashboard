@@ -1,0 +1,58 @@
+<nav class="overlay-nav">
+	<div class="container-fluid">
+		<div class="overlay-nav-content">
+			<!-- Logo Section -->
+			<div class="overlay-nav-logo">
+				<a href="/index.html" aria-label="American Public University ECampus Home">
+					{% include "partials/branding/apu-logo-wht.njk" %}
+				</a>
+			</div>
+
+			<!-- Right Side: Icons, Search, User Profile & Menu Toggle -->
+			<div class="overlay-nav-actions">
+				<!-- Quick Access Icons (from existing top-nav.njk) -->
+				<div class="overlay-nav-icons">
+					{% include "partials/navigation/top-nav.njk" %}
+				</div>
+
+				<!-- Vertical Divider -->
+				<div class="overlay-nav-divider"></div>
+
+				<!-- Search (Desktop only - using existing search partial) -->
+				<div class="overlay-nav-search">
+					{% include "partials/ui/search-alt.njk" %}
+				</div>
+
+				<!-- Vertical Divider -->
+				<div class="overlay-nav-divider"></div>
+
+				<!-- User Profile with Initial -->
+				<div class="overlay-nav-user">
+					{% include "partials/layout/profile.njk" %}
+					<span class="user-info">
+						<span class="user-name">Jorge</span>
+						<span class="user-id">ID: 24768</span>
+					</span>
+					<a href="#collapseProfile" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseProfile" class="profile-initial">
+						<span class="big-initial">J</span>
+					</a>
+				</div>
+
+				<!-- Menu Toggle Button (Grid Icon) -->
+				<button class="overlay-menu-toggle" id="overlayMenuToggle" aria-label="Open Menu">
+					<span class="menu-grid-icon">
+						<span class="grid-dot"></span>
+						<span class="grid-dot"></span>
+						<span class="grid-dot"></span>
+						<span class="grid-dot"></span>
+						<span class="grid-dot"></span>
+						<span class="grid-dot"></span>
+						<span class="grid-dot"></span>
+						<span class="grid-dot"></span>
+						<span class="grid-dot"></span>
+					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</nav>

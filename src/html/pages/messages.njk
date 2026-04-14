@@ -1,0 +1,1519 @@
+{% extends "layouts/registration-layout.njk" %}
+{% import "partials/macros.njk" as buttons %}
+{% set exitButtonText = "Exit Message Center" %}
+{% set exitButtonUrl = "/index.html" %}
+
+{% block content %}
+  <div class="container">
+    <div class="row row-message-center-layout">
+      <!-- Main Content -->
+      <div class="mb-5">
+        <h1 class="mb-2">Message Center</h1>
+        <p class="lead mb-4">View important communications, alerts, and notifications.</p>
+        <hr>
+
+        <!-- Tabs -->
+        <div class="document-tabs mb-4">
+          <a href="#messages" class="tab-link active" data-tab="messages">
+            <i class="fa-solid fa-envelope"></i> Messages <span class="badge bg-blue ms-2">4</span>
+          </a>
+          <a href="#alerts" class="tab-link" data-tab="alerts">
+            <i class="fa-solid fa-bell"></i> Alerts <span class="badge bg-red ms-2">2</span>
+          </a>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="messageCenterTabContent">
+          <!-- Messages Tab -->
+          <div class="tab-content active" id="messages">
+            <!-- Messages List -->
+            <div class="white-box mb-4">
+              <!-- Inbox Tabs -->
+              <div class="document-tabs mb-4">
+                <a href="#inbox" class="inbox-tab-link active" data-inbox-tab="inbox">
+                  <i class="fa-solid fa-inbox"></i> Inbox
+                </a>
+                <a href="#starred" class="inbox-tab-link" data-inbox-tab="starred">
+                  <i class="fa-solid fa-star"></i> Starred
+                </a>
+                <a href="#trash" class="inbox-tab-link" data-inbox-tab="trash">
+                  <i class="fa-solid fa-trash"></i> Trash
+                </a>
+              </div>
+
+              <!-- Inbox Tab Content -->
+              <div class="inbox-tab-content active" id="inboxContent">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  {# <h3 class="h3 mb-0"><i class="fa-regular fa-inbox"></i> Inbox</h3> #}
+                  <div class="d-flex gap-2">
+                    <button class="btn-secondary btn-one-icon btn-sm" id="deleteSelected" style="display: none;">
+                      <i class="fa-solid fa-trash"></i> Delete Selected
+                    </button>
+                    <button class="btn-secondary btn-one-icon btn-sm" id="markAllRead">
+                      <i class="fa-solid fa-check"></i> Mark All Read
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Message Items -->
+              <div class="message-list" id="inboxMessagesList">
+                <!-- Unread Message 1 -->
+                <div class="message-item message-unread" data-message-id="message1" data-starred="false" data-trashed="false">
+                  <div class="message-checkbox">
+                    <input type="checkbox" class="message-select-checkbox" data-message-id="message1" onclick="event.stopPropagation();">
+                  </div>
+                  <div class="message-content">
+                    <div class="message-header">
+                      <h4 class="message-sender">Stephanie Lastname</h4>
+                      <div class="message-meta">
+                        <span class="message-date">10:30 AM</span>
+                        <button class="message-star" aria-label="Star message" onclick="event.stopPropagation(); toggleStarMessage(this, 'message1');">
+                          <i class="fa-regular fa-star"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <p class="message-subject">Welcome to APUS - Next Steps for Your Application</p>
+                    <p class="message-preview">Hi Jorge, Welcome to American Public University System! I'm excited to work with you as you complete your application...</p>
+                  </div>
+                </div>
+
+                <!-- Unread Message 2 -->
+                <div class="message-item message-unread" data-message-id="message2" data-starred="false" data-trashed="false">
+                  <div class="message-checkbox">
+                    <input type="checkbox" class="message-select-checkbox" data-message-id="message2" onclick="event.stopPropagation();">
+                  </div>
+                  <div class="message-content">
+                    <div class="message-header">
+                      <h4 class="message-sender">Admissions Office</h4>
+                      <div class="message-meta">
+                        <span class="message-date">Mar 31</span>
+                        <button class="message-star" aria-label="Star message" onclick="event.stopPropagation(); toggleStarMessage(this, 'message2');">
+                          <i class="fa-regular fa-star"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <p class="message-subject">Action Required: Official Transcripts</p>
+                    <p class="message-preview">Your application is currently under review. To complete the process, we need you to submit official transcripts from all previously attended institutions...</p>
+                  </div>
+                </div>
+
+                <!-- Unread Message 3 -->
+                <div class="message-item message-unread" data-message-id="message3" data-starred="false" data-trashed="false">
+                  <div class="message-checkbox">
+                    <input type="checkbox" class="message-select-checkbox" data-message-id="message3" onclick="event.stopPropagation();">
+                  </div>
+                  <div class="message-content">
+                    <div class="message-header">
+                      <h4 class="message-sender">Financial Aid Office</h4>
+                      <div class="message-meta">
+                        <span class="message-date">Mar 28</span>
+                        <button class="message-star" aria-label="Star message" onclick="event.stopPropagation(); toggleStarMessage(this, 'message3');">
+                          <i class="fa-regular fa-star"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <p class="message-subject">Financial Aid Information Available</p>
+                    <p class="message-preview">Great news! You may be eligible for financial aid. We've prepared some information to help you understand your options...</p>
+                  </div>
+                </div>
+
+                <!-- Unread Message 4 -->
+                <div class="message-item message-unread" data-message-id="message4" data-starred="false" data-trashed="false">
+                  <div class="message-checkbox">
+                    <input type="checkbox" class="message-select-checkbox" data-message-id="message4" onclick="event.stopPropagation();">
+                  </div>
+                  <div class="message-content">
+                    <div class="message-header">
+                      <h4 class="message-sender">Stephanie Lastname</h4>
+                      <div class="message-meta">
+                        <span class="message-date">Mar 27</span>
+                        <button class="message-star" aria-label="Star message" onclick="event.stopPropagation(); toggleStarMessage(this, 'message4');">
+                          <i class="fa-regular fa-star"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <p class="message-subject">Your Program: Master of Arts in History</p>
+                    <p class="message-preview">I wanted to reach out and congratulate you on choosing the Master of Arts in History program. This is an excellent choice...</p>
+                  </div>
+                </div>
+
+                <!-- Read Message 1 -->
+                <div class="message-item" data-message-id="message5" data-starred="false" data-trashed="false">
+                  <div class="message-checkbox">
+                    <input type="checkbox" class="message-select-checkbox" data-message-id="message5" onclick="event.stopPropagation();">
+                  </div>
+                  <div class="message-content">
+                    <div class="message-header">
+                      <h4 class="message-sender message-sender-read">Admissions Office</h4>
+                      <div class="message-meta">
+                        <span class="message-date">Mar 26</span>
+                        <button class="message-star" aria-label="Star message" onclick="event.stopPropagation(); toggleStarMessage(this, 'message5');">
+                          <i class="fa-regular fa-star"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <p class="message-subject message-subject-read">Application Received</p>
+                    <p class="message-preview">Thank you for submitting your application to American Public University System. We have received your application and it is currently being reviewed...</p>
+                  </div>
+                </div>
+
+                <!-- Read Message 2 -->
+                <div class="message-item" data-message-id="message6" data-starred="false" data-trashed="false">
+                  <div class="message-checkbox">
+                    <input type="checkbox" class="message-select-checkbox" data-message-id="message6" onclick="event.stopPropagation();">
+                  </div>
+                  <div class="message-content">
+                    <div class="message-header">
+                      <h4 class="message-sender message-sender-read">Student Services</h4>
+                      <div class="message-meta">
+                        <span class="message-date">Mar 25</span>
+                        <button class="message-star" aria-label="Star message" onclick="event.stopPropagation(); toggleStarMessage(this, 'message6');">
+                          <i class="fa-regular fa-star"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <p class="message-subject message-subject-read">Important Dates and Deadlines</p>
+                    <p class="message-preview">Here are some important dates to keep in mind as you complete your application process...</p>
+                  </div>
+                </div>
+
+                <!-- Read Message 3 -->
+                <div class="message-item" data-message-id="message7" data-starred="false" data-trashed="false">
+                  <div class="message-checkbox">
+                    <input type="checkbox" class="message-select-checkbox" data-message-id="message7" onclick="event.stopPropagation();">
+                  </div>
+                  <div class="message-content">
+                    <div class="message-header">
+                      <h4 class="message-sender message-sender-read">Technical Support</h4>
+                      <div class="message-meta">
+                        <span class="message-date">Mar 24</span>
+                        <button class="message-star" aria-label="Star message" onclick="event.stopPropagation(); toggleStarMessage(this, 'message7');">
+                          <i class="fa-regular fa-star"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <p class="message-subject message-subject-read">Welcome to Your Student Portal</p>
+                    <p class="message-preview">Welcome to your APUS student portal! This is your central hub for managing your application, enrollment, and future coursework...</p>
+                  </div>
+                </div>
+
+                <!-- Read Message 4 -->
+                <div class="message-item" data-message-id="message8" data-starred="false" data-trashed="false">
+                  <div class="message-checkbox">
+                    <input type="checkbox" class="message-select-checkbox" data-message-id="message8" onclick="event.stopPropagation();">
+                  </div>
+                  <div class="message-content">
+                    <div class="message-header">
+                      <h4 class="message-sender message-sender-read">Admissions Office</h4>
+                      <div class="message-meta">
+                        <span class="message-date">Mar 23</span>
+                        <button class="message-star" aria-label="Star message" onclick="event.stopPropagation(); toggleStarMessage(this, 'message8');">
+                          <i class="fa-regular fa-star"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <p class="message-subject message-subject-read">Getting Started with Your Application</p>
+                    <p class="message-preview">Congratulations on taking the first step toward your graduate education! Here's what you can expect during the application process...</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Starred Tab Content -->
+              <div class="inbox-tab-content" id="starredContent">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <h3 class="h3 mb-0"><i class="fa-solid fa-star"></i> Starred Messages</h3>
+                </div>
+
+                <!-- Starred Messages List -->
+                <div class="message-list" id="starredMessagesList">
+                  <div class="text-center py-5">
+                    <i class="fa-regular fa-star" style="font-size: 4rem; color: #ccc; margin-bottom: 1rem;"></i>
+                    <p class="text-muted mb-0">No starred messages yet</p>
+                    <p class="text-muted small">Star important messages to find them easily</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Trash Tab Content -->
+              <div class="inbox-tab-content" id="trashContent">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <h3 class="h3 mb-0"><i class="fa-solid fa-trash"></i> Trash</h3>
+                  <div class="d-flex gap-2">
+                    <button class="btn-secondary btn-one-icon btn-sm" id="emptyTrash" style="display: none;">
+                      <i class="fa-solid fa-trash-can"></i> Empty Trash
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Trash Messages List -->
+                <div class="message-list" id="trashMessagesList">
+                  <div class="text-center py-5">
+                    <i class="fa-regular fa-trash-can" style="font-size: 4rem; color: #ccc; margin-bottom: 1rem;"></i>
+                    <p class="text-muted mb-0">No messages in trash</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <!-- Alerts Tab -->
+          <div class="tab-content" id="alerts">
+            <!-- All Alerts (default view) -->
+            <div id="allAlertsSection">
+              <!-- Active Alerts -->
+              <div class="white-box mb-4">
+                <h3 class="h3 mb-4"><i class="fa-regular fa-bell"></i> Active Alerts</h3>
+                <div class="document-list">
+                  <!-- Active Alert 1 -->
+                  <div class="document-item red-required">
+                    <div class="document-info">
+                      <div class="mb-2">
+                        <span class="badge badge-required"><i class="fa-solid fa-exclamation-circle"></i> Action Required</span>
+                        <span class="badge bg-secondary ms-2"><i class="fa-solid fa-clock"></i> Due: April 15, 2026</span>
+                      </div>
+                      <h4 class="document-title">Submit Official Transcripts</h4>
+                      <p class="document-meta mb-0">Your application is pending official transcripts from all previously attended institutions. Please request these as soon as possible to avoid delays.</p>
+                    </div>
+                    <div class="document-actions">
+                      <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert1">View Details</button>
+                    </div>
+                  </div>
+
+                  <!-- Active Alert 2 -->
+                  <div class="document-item orange-pending">
+                    <div class="document-info">
+                      <div class="mb-2">
+                        <span class="badge badge-pending"><i class="fa-solid fa-exclamation-triangle"></i> Important Notice</span>
+                        <span class="badge bg-secondary ms-2"><i class="fa-solid fa-clock"></i> Deadline: May 1, 2026</span>
+                      </div>
+                      <h4 class="document-title">Financial Aid Application Deadline Approaching</h4>
+                      <p class="document-meta mb-0">The deadline to submit your FAFSA for the upcoming academic year is May 1, 2026. Complete your application soon to maximize your financial aid opportunities.</p>
+                    </div>
+                    <div class="document-actions">
+                      <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert2">View Details</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Resolved Alerts -->
+              <div class="white-box mb-4">
+                <h3 class="h3 mb-4"><i class="fa-regular fa-check-circle"></i> Resolved Alerts</h3>
+                <div class="document-list">
+                  <!-- Resolved Alert 1 -->
+                  <div class="document-item green-completed">
+                    <div class="document-info">
+                      <div class="mb-2">
+                        <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Resolved</span>
+                        <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check"></i> Resolved on: March 26, 2026</span>
+                      </div>
+                      <h4 class="document-title">Application Submitted</h4>
+                      <p class="document-meta mb-0">Your application has been successfully submitted and is under review by the admissions committee.</p>
+                    </div>
+                    <div class="document-actions">
+                      <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert3">View Details</button>
+                    </div>
+                  </div>
+
+                  <!-- Resolved Alert 2 -->
+                  <div class="document-item green-completed">
+                    <div class="document-info">
+                      <div class="mb-2">
+                        <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Resolved</span>
+                        <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check"></i> Resolved on: February 10, 2026</span>
+                      </div>
+                      <h4 class="document-title">Student Code of Conduct Acknowledgment</h4>
+                      <p class="document-meta mb-0">You have reviewed and acknowledged the APUS Student Code of Conduct.</p>
+                    </div>
+                    <div class="document-actions">
+                      <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert4">View Details</button>
+                    </div>
+                  </div>
+
+                  <!-- Resolved Alert 3 -->
+                  <div class="document-item green-completed">
+                    <div class="document-info">
+                      <div class="mb-2">
+                        <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Resolved</span>
+                        <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check"></i> Resolved on: February 10, 2026</span>
+                      </div>
+                      <h4 class="document-title">FERPA Privacy Rights Acknowledgment</h4>
+                      <p class="document-meta mb-0">You have acknowledged your FERPA privacy rights regarding educational records.</p>
+                    </div>
+                    <div class="document-actions">
+                      <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert5">View Details</button>
+                    </div>
+                  </div>
+
+                  <!-- Resolved Alert 4 -->
+                  <div class="document-item green-completed">
+                    <div class="document-info">
+                      <div class="mb-2">
+                        <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Resolved</span>
+                        <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check"></i> Resolved on: February 10, 2026</span>
+                      </div>
+                      <h4 class="document-title">Academic Policies Acknowledgment</h4>
+                      <p class="document-meta mb-0">You have reviewed and acknowledged the APUS Academic Policies.</p>
+                    </div>
+                    <div class="document-actions">
+                      <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert6">View Details</button>
+                    </div>
+                  </div>
+
+                  <!-- Resolved Alert 5 -->
+                  <div class="document-item green-completed">
+                    <div class="document-info">
+                      <div class="mb-2">
+                        <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Resolved</span>
+                        <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check"></i> Resolved on: February 10, 2026</span>
+                      </div>
+                      <h4 class="document-title">Student Enrollment Agreement</h4>
+                      <p class="document-meta mb-0">Your Student Enrollment Agreement has been completed and electronically signed.</p>
+                    </div>
+                    <div class="document-actions">
+                      <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert7">View Details</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Active Alerts Only -->
+            <div class="white-box mb-4" id="activeAlertsSection" style="display: none;">
+              <h3 class="h3 mb-4"><i class="fa-regular fa-bell"></i> Active Alerts</h3>
+              <div class="document-list">
+                <!-- Active Alert 1 -->
+                <div class="document-item red-required">
+                  <div class="document-info">
+                    <div class="mb-2">
+                      <span class="badge badge-required"><i class="fa-solid fa-exclamation-circle"></i> Action Required</span>
+                      <span class="badge bg-secondary ms-2"><i class="fa-solid fa-clock"></i> Due: April 15, 2026</span>
+                    </div>
+                    <h4 class="document-title">Submit Official Transcripts</h4>
+                    <p class="document-meta mb-0">Your application is pending official transcripts from all previously attended institutions. Please request these as soon as possible to avoid delays.</p>
+                  </div>
+                  <div class="document-actions">
+                    <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert1">View Details</button>
+                  </div>
+                </div>
+
+                <!-- Active Alert 2 -->
+                <div class="document-item orange-pending">
+                  <div class="document-info">
+                    <div class="mb-2">
+                      <span class="badge badge-pending"><i class="fa-solid fa-exclamation-triangle"></i> Important Notice</span>
+                      <span class="badge bg-secondary ms-2"><i class="fa-solid fa-clock"></i> Deadline: May 1, 2026</span>
+                    </div>
+                    <h4 class="document-title">Financial Aid Application Deadline Approaching</h4>
+                    <p class="document-meta mb-0">The deadline to submit your FAFSA for the upcoming academic year is May 1, 2026. Complete your application soon to maximize your financial aid opportunities.</p>
+                  </div>
+                  <div class="document-actions">
+                    <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert2">View Details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Resolved Alerts -->
+            <div class="white-box mb-4" id="resolvedAlertsSection" style="display: none;">
+              <h3 class="h3 mb-4"><i class="fa-regular fa-check-circle"></i> Resolved Alerts</h3>
+              <div class="document-list">
+                <!-- Resolved Alert 1 -->
+                <div class="document-item green-completed">
+                  <div class="document-info">
+                    <div class="mb-2">
+                      <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Resolved</span>
+                      <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check"></i> Resolved on: March 26, 2026</span>
+                    </div>
+                    <h4 class="document-title">Application Submitted</h4>
+                    <p class="document-meta mb-0">Your application has been successfully submitted and is under review by the admissions committee.</p>
+                  </div>
+                  <div class="document-actions">
+                    <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert3">View Details</button>
+                  </div>
+                </div>
+
+                <!-- Resolved Alert 2 -->
+                <div class="document-item green-completed">
+                  <div class="document-info">
+                    <div class="mb-2">
+                      <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Resolved</span>
+                      <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check"></i> Resolved on: February 10, 2026</span>
+                    </div>
+                    <h4 class="document-title">Student Code of Conduct Acknowledgment</h4>
+                    <p class="document-meta mb-0">You have reviewed and acknowledged the APUS Student Code of Conduct.</p>
+                  </div>
+                  <div class="document-actions">
+                    <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert4">View Details</button>
+                  </div>
+                </div>
+
+                <!-- Resolved Alert 3 -->
+                <div class="document-item green-completed">
+                  <div class="document-info">
+                    <div class="mb-2">
+                      <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Resolved</span>
+                      <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check"></i> Resolved on: February 10, 2026</span>
+                    </div>
+                    <h4 class="document-title">FERPA Privacy Rights Acknowledgment</h4>
+                    <p class="document-meta mb-0">You have acknowledged your FERPA privacy rights regarding educational records.</p>
+                  </div>
+                  <div class="document-actions">
+                    <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert5">View Details</button>
+                  </div>
+                </div>
+
+                <!-- Resolved Alert 4 -->
+                <div class="document-item green-completed">
+                  <div class="document-info">
+                    <div class="mb-2">
+                      <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Resolved</span>
+                      <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check"></i> Resolved on: February 10, 2026</span>
+                    </div>
+                    <h4 class="document-title">Academic Policies Acknowledgment</h4>
+                    <p class="document-meta mb-0">You have reviewed and acknowledged the APUS Academic Policies.</p>
+                  </div>
+                  <div class="document-actions">
+                    <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert6">View Details</button>
+                  </div>
+                </div>
+
+                <!-- Resolved Alert 5 -->
+                <div class="document-item green-completed">
+                  <div class="document-info">
+                    <div class="mb-2">
+                      <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Resolved</span>
+                      <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check"></i> Resolved on: February 10, 2026</span>
+                    </div>
+                    <h4 class="document-title">Student Enrollment Agreement</h4>
+                    <p class="document-meta mb-0">Your Student Enrollment Agreement has been completed and electronically signed.</p>
+                  </div>
+                  <div class="document-actions">
+                    <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert7">View Details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="mb-5">
+        <!-- Alert Category Tabs (only visible when Alerts tab is active) -->
+        <div class="white-box mb-4" id="alertCategoryTabs" style="display: none;">
+          <h3 class="h3 mb-3">Filter Alerts</h3>
+          <div class="document-tabs document-tabs-horizontal">
+            <a href="#all" class="tab-link active" data-category="all">
+              <span><i class="fa-solid fa-list"></i> All Alerts</span> <span class="badge bg-blue ms-2">7</span>
+            </a>
+            <a href="#active" class="tab-link" data-category="active">
+              <span><i class="fa-solid fa-bell"></i> Active</span> <span class="badge bg-red ms-2">2</span>
+            </a>
+            <a href="#resolved" class="tab-link" data-category="resolved">
+              <span><i class="fa-solid fa-check-circle"></i> Resolved</span> <span class="badge bg-green ms-2">5</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Alert Details Panel -->
+        <div class="white-box" id="alertDetailsPanel" style="display: none;">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <h3 class="h3 mb-0">Alert Details</h3>
+            <button class="btn-close" id="closeAlertDetails" aria-label="Close"></button>
+          </div>
+          <div id="alertDetailsContent">
+            <!-- Details will be dynamically inserted here -->
+          </div>
+        </div>
+
+        <!-- Message Stats (visible when Messages tab is active) -->
+        <div class="white-box mb-4" id="messageStats">
+          <div class="row">
+            <div class="col-md-6 mb-3 mb-md-0">
+              <div class="document-stat stat-info">
+                {# <div class="stat-label-wrap stat-info"><p class="stat-label blue">Unread</p></div> #}
+                <div class="stat-icon info">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                </div>
+                <div class="stat-info">
+                  <p class="stat-number-messages blue">4<br><span class="stat-label blue">Unread Messages</span></p>
+                </div>
+              </div>
+              {# <div class="d-flex align-items-center gap-3">
+                <div class="stat-icon" style="background: #0581C0; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <i class="fa-solid fa-envelope" style="font-size: 2rem;"></i>
+                </div>
+                <div>
+                  <p class="stat-number mb-0" style="font-size: 3rem; font-weight: 700; color: #0581C0;">4</p>
+                  <p class="stat-label mb-0">Unread Messages</p>
+                </div>
+              </div> #}
+            </div>
+            <div class="col-md-6">
+              <div class="document-stat stat-regular">
+                {# <div class="stat-label-wrap stat-info"><p class="stat-label blue">Unread</p></div> #}
+                <div class="stat-icon regular">
+                  <i class="fa-solid fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="stat-regular">
+                  <p class="stat-number-messages gray-70">8<br><span class="stat-label gray-70">Total Messages</span></p>
+                </div>
+              </div>
+              {# <div class="d-flex align-items-center gap-3">
+                <div class="stat-icon" style="background: #80c342; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <i class="fa-solid fa-check" style="font-size: 2rem;"></i>
+                </div>
+                <div>
+                  <p class="stat-number mb-0" style="font-size: 3rem; font-weight: 700; color: #80c342;">8</p>
+                  <p class="stat-label mb-0">Total Messages</p>
+                </div>
+              </div> #}
+            </div>
+          </div>
+        </div>
+
+        <!-- Message Details Panel (visible when Messages tab is active) -->
+        <div class="white-box" id="messageDetailsPanel" style="display: none;">
+          <div id="messageDetailsContent">
+            <!-- Message details will be dynamically inserted here -->
+          </div>
+        </div>
+
+        <!-- Empty State for Messages -->
+        <div class="white-box" id="messageEmptyState">
+          <div class="text-center py-4">
+            <i class="fa-solid fa-envelope-open" style="font-size: 4rem; color: #ccc; margin-bottom: 1rem;"></i>
+            <p class="text-muted mb-0">Select a message to view details</p>
+          </div>
+        </div>
+
+        <!-- Empty State for Alerts -->
+        <div class="white-box" id="emptyStatePanel" style="display: none;">
+          <div class="text-center py-4">
+            <i class="fa-solid fa-info-circle" style="font-size: 4rem; color: #ccc; margin-bottom: 1rem;"></i>
+            <p class="text-muted mb-0">Select an alert to view details</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Message detail data
+    const messageDetails = {
+      message1: {
+        sender: 'Stephanie Lastname',
+        subject: 'Welcome to APUS - Next Steps for Your Application',
+        date: '10:30 AM',
+        content: `
+          <p>Hi Jorge,</p>
+          <p>Welcome to American Public University System! I'm excited to work with you as you complete your application process and begin your educational journey with us.</p>
+          <p>I wanted to reach out personally to introduce myself and let you know that I'm here to support you every step of the way. As your admissions advisor, I'll be your main point of contact throughout the enrollment process.</p>
+
+          <h4 class="mt-4 mb-3">Next Steps:</h4>
+          <ul>
+            <li>Complete any remaining application requirements (check your to-do list)</li>
+            <li>Submit official transcripts from all previously attended institutions</li>
+            <li>Complete your FAFSA if you're seeking financial aid</li>
+            <li>Review your program requirements and course catalog</li>
+          </ul>
+
+          <p class="mt-4">Please don't hesitate to reach out if you have any questions or need assistance. I'm here to help make this process as smooth as possible for you.</p>
+
+          <p>Best regards,<br>
+          Stephanie Lastname<br>
+          <em>Admissions Officer</em><br>
+          <a href="mailto:Stephanie.Lastname@apus.edu">Stephanie.Lastname@apus.edu</a><br>
+          <a href="tel:1-877-468-6268">1-877-468-6268</a></p>
+        `
+      },
+      message2: {
+        sender: 'Admissions Office',
+        subject: 'Action Required: Official Transcripts',
+        date: 'Mar 31',
+        content: `
+          <p>Dear Jorge,</p>
+          <p>Your application is currently under review. To complete the process, we need you to submit official transcripts from all previously attended institutions.</p>
+
+          <h4 class="mt-4 mb-3">How to Submit Transcripts:</h4>
+          <ul>
+            <li><strong>Electronic Transcripts:</strong> Request your previous institution(s) send transcripts to <a href="mailto:transcripts@apus.edu">transcripts@apus.edu</a></li>
+            <li><strong>Paper Transcripts:</strong> Have transcripts mailed to:<br>
+              APUS Admissions Office<br>
+              111 W. Congress Street<br>
+              Charles Town, WV 25414</li>
+            <li><strong>Processing Time:</strong> Allow 5-7 business days after receipt</li>
+          </ul>
+
+          <p class="mt-4">If you have any questions about this requirement, please contact your admissions advisor or reply to this message.</p>
+
+          <p>Thank you,<br>
+          APUS Admissions Office</p>
+        `
+      },
+      message3: {
+        sender: 'Financial Aid Office',
+        subject: 'Financial Aid Information Available',
+        date: 'Mar 28',
+        content: `
+          <p>Dear Jorge,</p>
+          <p>Great news! You may be eligible for financial aid. We've prepared some information to help you understand your options and begin the application process.</p>
+
+          <h4 class="mt-4 mb-3">Financial Aid Options:</h4>
+          <ul>
+            <li>Federal Student Aid (FAFSA)</li>
+            <li>Military Benefits (if applicable)</li>
+            <li>Scholarships and Grants</li>
+            <li>Payment Plans</li>
+          </ul>
+
+          <h4 class="mt-4 mb-3">Next Steps:</h4>
+          <ol>
+            <li>Complete your FAFSA at <a href="https://studentaid.gov" target="_blank">StudentAid.gov</a></li>
+            <li>Use APUS school code: <strong>011730</strong></li>
+            <li>Review your financial aid award letter (once available)</li>
+            <li>Contact our office with any questions</li>
+          </ol>
+
+          <p class="mt-4">Our financial aid team is here to help you navigate the process and maximize your aid opportunities.</p>
+
+          <p>Best regards,<br>
+          APUS Financial Aid Office<br>
+          <a href="mailto:financialaid@apus.edu">financialaid@apus.edu</a></p>
+        `
+      },
+      message4: {
+        sender: 'Stephanie Lastname',
+        subject: 'Your Program: Master of Arts in History',
+        date: 'Mar 27',
+        content: `
+          <p>Hi Jorge,</p>
+          <p>I wanted to reach out and congratulate you on choosing the Master of Arts in History program. This is an excellent choice and I'm excited to see you pursue this field of study.</p>
+
+          <h4 class="mt-4 mb-3">Program Highlights:</h4>
+          <ul>
+            <li>36 Credit Hours total</li>
+            <li>8-week course format for flexibility</li>
+            <li>8 Core courses covering essential historical methods and periods</li>
+            <li>Elective courses to tailor your studies to your interests</li>
+            <li>Capstone project to showcase your research skills</li>
+            <li>Completion in as little as 18-24 months</li>
+          </ul>
+
+          <p class="mt-4">Once you're enrolled, you'll be able to view your full academic plan and start planning your course sequence. The program is designed for working professionals, so you can balance your studies with your other commitments.</p>
+
+          <p class="mt-4">Feel free to reach out if you have any questions about the program or would like to discuss your academic goals.</p>
+
+          <p>Best regards,<br>
+          Stephanie Lastname<br>
+          <em>Admissions Officer</em></p>
+        `
+      },
+      message5: {
+        sender: 'Admissions Office',
+        subject: 'Application Received',
+        date: 'Mar 26',
+        content: `
+          <p>Dear Jorge,</p>
+          <p>Thank you for submitting your application to American Public University System. We have received your application and it is currently being reviewed by our admissions team.</p>
+
+          <h4 class="mt-4 mb-3">What Happens Next:</h4>
+          <ol>
+            <li>Our team will review your application materials</li>
+            <li>We may contact you if we need any additional information</li>
+            <li>You'll receive notification of your admission decision</li>
+            <li>Once admitted, you can begin the enrollment process</li>
+          </ol>
+
+          <p class="mt-4">You can check the status of your application anytime by logging into your student portal. We typically complete our review within 5-7 business days.</p>
+
+          <p>Thank you for choosing APUS!<br>
+          APUS Admissions Office</p>
+        `
+      },
+      message6: {
+        sender: 'Student Services',
+        subject: 'Important Dates and Deadlines',
+        date: 'Mar 25',
+        content: `
+          <p>Dear Jorge,</p>
+          <p>Here are some important dates to keep in mind as you complete your application process:</p>
+
+          <h4 class="mt-4 mb-3">Upcoming Deadlines:</h4>
+          <ul>
+            <li><strong>April 15:</strong> Priority deadline for summer term enrollment</li>
+            <li><strong>May 1:</strong> FAFSA submission deadline</li>
+            <li><strong>May 15:</strong> Final transcript submission deadline</li>
+            <li><strong>June 1:</strong> Summer term begins</li>
+          </ul>
+
+          <h4 class="mt-4 mb-3">Registration Dates:</h4>
+          <ul>
+            <li><strong>April 20:</strong> Summer term registration opens</li>
+            <li><strong>May 25:</strong> Fall term registration opens</li>
+          </ul>
+
+          <p class="mt-4">Mark these dates on your calendar to ensure you don't miss any important deadlines!</p>
+
+          <p>Best regards,<br>
+          APUS Student Services</p>
+        `
+      },
+      message7: {
+        sender: 'Technical Support',
+        subject: 'Welcome to Your Student Portal',
+        date: 'Mar 24',
+        content: `
+          <p>Dear Jorge,</p>
+          <p>Welcome to your APUS student portal! This is your central hub for managing your application, enrollment, and future coursework.</p>
+
+          <h4 class="mt-4 mb-3">Portal Features:</h4>
+          <ul>
+            <li><strong>Dashboard:</strong> View your to-do list and important updates</li>
+            <li><strong>Messages:</strong> Communicate with advisors and staff</li>
+            <li><strong>Documents:</strong> Upload and manage required documents</li>
+            <li><strong>Academics:</strong> View your program, courses, and grades (once enrolled)</li>
+            <li><strong>Finances:</strong> Manage tuition, payment plans, and financial aid</li>
+          </ul>
+
+          <h4 class="mt-4 mb-3">Tips for Using Your Portal:</h4>
+          <ul>
+            <li>Check your to-do list regularly for action items</li>
+            <li>Keep your contact information up to date</li>
+            <li>Review messages from your advisors promptly</li>
+            <li>Bookmark this page for easy access</li>
+          </ul>
+
+          <p class="mt-4">If you experience any technical issues, our support team is here to help!</p>
+
+          <p>Best regards,<br>
+          APUS Technical Support<br>
+          <a href="mailto:support@apus.edu">support@apus.edu</a></p>
+        `
+      },
+      message8: {
+        sender: 'Admissions Office',
+        subject: 'Start Your Journey with APUS',
+        date: 'Mar 23',
+        content: `
+          <p>Dear Jorge,</p>
+          <p>We're thrilled that you're considering American Public University System for your graduate education!</p>
+
+          <h4 class="mt-4 mb-3">Why APUS?</h4>
+          <ul>
+            <li>Flexible online format designed for working professionals</li>
+            <li>Affordable tuition with no hidden fees</li>
+            <li>Regionally accredited institution</li>
+            <li>8-week course terms for accelerated progress</li>
+            <li>Dedicated support from faculty and advisors</li>
+            <li>Career-focused curriculum</li>
+          </ul>
+
+          <h4 class="mt-4 mb-3">Getting Started:</h4>
+          <ol>
+            <li>Complete your application</li>
+            <li>Submit required documents</li>
+            <li>Connect with your admissions advisor</li>
+            <li>Explore financial aid options</li>
+            <li>Prepare for your first term</li>
+          </ol>
+
+          <p class="mt-4">We're excited to support you on your educational journey and help you achieve your academic and career goals!</p>
+
+          <p>Welcome to the APUS community!<br>
+          APUS Admissions Office</p>
+        `
+      }
+    };
+
+    // Alert detail data
+    const alertDetails = {
+      alert1: {
+        title: 'Submit Official Transcripts',
+        badge: 'Action Required',
+        badgeClass: 'badge-required',
+        icon: 'fa-exclamation-circle',
+        content: `
+          <div class="mb-3">
+            <span class="badge badge-required"><i class="fa-solid fa-exclamation-circle"></i> Action Required</span>
+            <span class="badge bg-secondary ms-2"><i class="fa-solid fa-clock"></i> Due: April 15, 2026</span>
+          </div>
+          <p>Your application is pending official transcripts from all previously attended institutions. Please request these as soon as possible to avoid delays in processing your application.</p>
+
+          <h4 class="mt-4 mb-3">How to Submit Transcripts:</h4>
+          <ul class="info-list mb-3">
+            <li><strong>Electronic Transcripts:</strong> Request your previous institution(s) send transcripts to <a href="mailto:transcripts@apus.edu">transcripts@apus.edu</a></li>
+            <li><strong>Paper Transcripts:</strong> Have transcripts mailed to:<br>
+              APUS Admissions Office<br>
+              111 W. Congress Street<br>
+              Charles Town, WV 25414</li>
+            <li><strong>Processing Time:</strong> Allow 5-7 business days after receipt</li>
+          </ul>
+
+          <div class="mt-4">
+            <a href="#" class="btn-main btn-sm">Request Transcripts</a>
+          </div>
+        `
+      },
+      alert2: {
+        title: 'Financial Aid Application Deadline Approaching',
+        badge: 'Important Notice',
+        badgeClass: 'badge-pending',
+        icon: 'fa-exclamation-triangle',
+        content: `
+          <div class="mb-3">
+            <span class="badge badge-pending"><i class="fa-solid fa-exclamation-triangle"></i> Important Notice</span>
+            <span class="badge bg-secondary ms-2"><i class="fa-solid fa-clock"></i> Deadline: May 1, 2026</span>
+          </div>
+          <p>The deadline to submit your FAFSA (Free Application for Federal Student Aid) for the upcoming academic year is May 1, 2026. Complete your application soon to maximize your financial aid opportunities.</p>
+
+          <h4 class="mt-4 mb-3">Important Information:</h4>
+          <ul class="info-list mb-3">
+            <li>Complete the FAFSA at <a href="https://studentaid.gov" target="_blank">StudentAid.gov</a></li>
+            <li>Use APUS school code: <strong>011730</strong></li>
+            <li>Priority deadline: May 1, 2026</li>
+            <li>Financial aid awards are made on a first-come, first-served basis</li>
+          </ul>
+
+          <div class="alert alert-info mt-3">
+            <i class="fa-solid fa-info-circle me-2"></i>
+            Need help? Contact the Financial Aid Office at <a href="mailto:financialaid@apus.edu">financialaid@apus.edu</a>
+          </div>
+
+          <div class="mt-4">
+            <a href="https://studentaid.gov" target="_blank" class="btn-main btn-sm">Complete FAFSA</a>
+          </div>
+        `
+      },
+      alert3: {
+        title: 'Application Submitted',
+        badge: 'Resolved',
+        badgeClass: 'badge-completed',
+        icon: 'fa-check-circle',
+        content: `
+          <div class="mb-3">
+            <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Resolved</span>
+            <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check"></i> Resolved on: March 26, 2026</span>
+          </div>
+          <p>Your application to American Public University System has been successfully submitted and is now under review by our admissions team.</p>
+
+          <h4 class="mt-4 mb-3">What Happens Next:</h4>
+          <ul class="info-list mb-3">
+            <li>Your application will be reviewed by our admissions committee</li>
+            <li>You will receive updates via email and your student portal</li>
+            <li>Review time is typically 2-3 weeks</li>
+            <li>Continue completing any required documents in the meantime</li>
+          </ul>
+
+          <div class="alert alert-success mt-3">
+            <i class="fa-solid fa-check-circle me-2"></i>
+            <strong>Status:</strong> Application successfully submitted on March 26, 2026
+          </div>
+        `
+      },
+      alert4: {
+        title: 'Student Code of Conduct Acknowledgment',
+        badge: 'Resolved',
+        badgeClass: 'badge-completed',
+        icon: 'fa-check-circle',
+        content: `
+          <div class="mb-3">
+            <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Resolved</span>
+            <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check"></i> Resolved on: February 10, 2026</span>
+          </div>
+          <p>You have successfully acknowledged the APUS Student Code of Conduct.</p>
+
+          <div class="alert alert-success mt-3">
+            <i class="fa-solid fa-check-circle me-2"></i>
+            <strong>Acknowledged by:</strong> Jorge Martinez on February 10, 2026 at 2:45 PM
+          </div>
+
+          <div class="mt-4">
+            <a href="#" class="arrow-link arrow-link-sm">View Document</a>
+          </div>
+        `
+      },
+      alert5: {
+        title: 'FERPA Privacy Rights Acknowledgment',
+        badge: 'Resolved',
+        badgeClass: 'badge-completed',
+        icon: 'fa-check-circle',
+        content: `
+          <div class="mb-3">
+            <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Resolved</span>
+            <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check"></i> Resolved on: February 10, 2026</span>
+          </div>
+          <p>You have been informed of your rights under the Family Educational Rights and Privacy Act (FERPA).</p>
+
+          <div class="alert alert-success mt-3">
+            <i class="fa-solid fa-check-circle me-2"></i>
+            <strong>Acknowledged by:</strong> Jorge Martinez on February 10, 2026 at 2:50 PM
+          </div>
+
+          <div class="mt-4">
+            <a href="#" class="arrow-link arrow-link-sm">View Document</a>
+          </div>
+        `
+      },
+      alert6: {
+        title: 'Academic Policies Acknowledgment',
+        badge: 'Resolved',
+        badgeClass: 'badge-completed',
+        icon: 'fa-check-circle',
+        content: `
+          <div class="mb-3">
+            <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Resolved</span>
+            <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check"></i> Resolved on: February 10, 2026</span>
+          </div>
+          <p>You have reviewed and acknowledged the APUS Academic Policies including academic integrity, grading policies, and attendance requirements.</p>
+
+          <div class="alert alert-success mt-3">
+            <i class="fa-solid fa-check-circle me-2"></i>
+            <strong>Acknowledged by:</strong> Jorge Martinez on February 10, 2026 at 2:35 PM
+          </div>
+
+          <div class="mt-4">
+            <a href="#" class="arrow-link arrow-link-sm">View Document</a>
+          </div>
+        `
+      },
+      alert7: {
+        title: 'Student Enrollment Agreement',
+        badge: 'Resolved',
+        badgeClass: 'badge-completed',
+        icon: 'fa-check-circle',
+        content: `
+          <div class="mb-3">
+            <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Resolved</span>
+            <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check"></i> Resolved on: February 10, 2026</span>
+          </div>
+          <p>Your Student Enrollment Agreement has been completed and electronically signed.</p>
+
+          <div class="alert alert-success mt-3">
+            <i class="fa-solid fa-check-circle me-2"></i>
+            <strong>Signed by:</strong> Jorge Martinez on February 10, 2026 at 2:30 PM
+          </div>
+
+          <div class="mt-4">
+            <a href="#" class="arrow-link arrow-link-sm me-3">View Document</a>
+            <a href="#" class="arrow-link arrow-link-sm"><i class="fa-solid fa-download me-1"></i> Download PDF</a>
+          </div>
+        `
+      }
+    };
+
+    // Main tab switching (Messages vs Alerts)
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainTabLinks = document.querySelectorAll('.document-tabs:not(.document-tabs-horizontal) .tab-link');
+      const tabContents = document.querySelectorAll('.tab-content');
+      const alertCategoryTabs = document.getElementById('alertCategoryTabs');
+      const emptyStatePanel = document.getElementById('emptyStatePanel');
+      const alertDetailsPanel = document.getElementById('alertDetailsPanel');
+      const messageStats = document.getElementById('messageStats');
+      const messageDetailsPanel = document.getElementById('messageDetailsPanel');
+      const messageEmptyState = document.getElementById('messageEmptyState');
+
+      // Function to switch main tabs
+      function switchMainTab(tabId) {
+        // Remove active class from all tabs and contents
+        mainTabLinks.forEach(link => link.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        // Add active class to selected tab and content
+        const selectedLink = document.querySelector(`.document-tabs:not(.document-tabs-horizontal) .tab-link[data-tab="${tabId}"]`);
+        const selectedContent = document.getElementById(tabId);
+
+        if (selectedLink) selectedLink.classList.add('active');
+        if (selectedContent) selectedContent.classList.add('active');
+
+        // Show/hide sidebar elements based on tab
+        if (tabId === 'alerts') {
+          alertCategoryTabs.style.display = 'block';
+          emptyStatePanel.style.display = 'block';
+          alertDetailsPanel.style.display = 'none';
+          messageStats.style.display = 'none';
+          messageDetailsPanel.style.display = 'none';
+          messageEmptyState.style.display = 'none';
+        } else {
+          alertCategoryTabs.style.display = 'none';
+          emptyStatePanel.style.display = 'none';
+          alertDetailsPanel.style.display = 'none';
+          messageStats.style.display = 'block';
+          messageDetailsPanel.style.display = 'none';
+          messageEmptyState.style.display = 'block';
+        }
+      }
+
+      // Add click handlers to main tab links
+      mainTabLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const tabId = this.getAttribute('data-tab');
+          switchMainTab(tabId);
+
+          // Update URL without page reload
+          const url = new URL(window.location);
+          url.searchParams.set('view', tabId);
+          window.history.pushState({}, '', url);
+        });
+      });
+
+      // Check for URL parameter on page load
+      const urlParams = new URLSearchParams(window.location.search);
+      const viewParam = urlParams.get('view');
+
+      if (viewParam === 'alerts') {
+        switchMainTab('alerts');
+      } else {
+        switchMainTab('messages');
+      }
+
+      // Category tab switching (All / Active / Resolved) within Alerts
+      const categoryLinks = document.querySelectorAll('.tab-link[data-category]');
+      const allAlertsSection = document.getElementById('allAlertsSection');
+      const activeSection = document.getElementById('activeAlertsSection');
+      const resolvedSection = document.getElementById('resolvedAlertsSection');
+
+      categoryLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const category = this.getAttribute('data-category');
+
+          // Update active tab
+          categoryLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+
+          // Show/hide sections
+          if (category === 'all') {
+            allAlertsSection.style.display = 'block';
+            activeSection.style.display = 'none';
+            resolvedSection.style.display = 'none';
+          } else if (category === 'active') {
+            allAlertsSection.style.display = 'none';
+            activeSection.style.display = 'block';
+            resolvedSection.style.display = 'none';
+          } else {
+            allAlertsSection.style.display = 'none';
+            activeSection.style.display = 'none';
+            resolvedSection.style.display = 'block';
+          }
+
+          // Hide alert details when switching categories
+          alertDetailsPanel.style.display = 'none';
+          emptyStatePanel.style.display = 'block';
+        });
+      });
+
+      // View alert details
+      const viewDetailButtons = document.querySelectorAll('.view-alert-details');
+      const detailsContent = document.getElementById('alertDetailsContent');
+
+      viewDetailButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const alertId = this.getAttribute('data-alert-id');
+          const alert = alertDetails[alertId];
+
+          if (alert) {
+            detailsContent.innerHTML = alert.content;
+            alertDetailsPanel.style.display = 'block';
+            emptyStatePanel.style.display = 'none';
+          }
+        });
+      });
+
+      // Close alert details
+      document.getElementById('closeAlertDetails').addEventListener('click', function() {
+        alertDetailsPanel.style.display = 'none';
+        emptyStatePanel.style.display = 'block';
+      });
+
+      // Mark all messages as read
+      document.getElementById('markAllRead')?.addEventListener('click', function() {
+        const unreadMessages = document.querySelectorAll('.message-unread');
+        unreadMessages.forEach(msg => {
+          msg.classList.remove('message-unread');
+          const sender = msg.querySelector('.message-sender');
+          const subject = msg.querySelector('.message-subject');
+
+          if (sender) sender.classList.add('message-sender-read');
+          if (subject) subject.classList.add('message-subject-read');
+
+          const indicator = msg.querySelector('.message-indicator');
+          if (indicator) indicator.style.opacity = '0';
+        });
+      });
+
+      // Message item click handlers
+      const messageItems = document.querySelectorAll('.message-item[data-message-id]');
+      const messageDetailsContent = document.getElementById('messageDetailsContent');
+
+      messageItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const messageId = this.getAttribute('data-message-id');
+          const message = messageDetails[messageId];
+
+          if (message) {
+            const messageItem = document.querySelector(`[data-message-id="${messageId}"]`);
+            const isStarred = messageItem.getAttribute('data-starred') === 'true';
+            const isTrashed = messageItem.getAttribute('data-trashed') === 'true';
+
+            // Build message details HTML
+            const messageHTML = `
+              <div class="message-details">
+                <div class="message-details-header mb-4">
+                  <h4 class="mb-2">${message.subject}</h4>
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                      <p class="mb-0"><strong>From:</strong> ${message.sender}</p>
+                      <p class="mb-0 text-muted"><strong>Date:</strong> ${message.date}</p>
+                    </div>
+                    <div class="d-flex gap-2">
+                      <button class="message-star ${isStarred ? 'starred' : ''}" aria-label="Star message" onclick="toggleStarMessage(this, '${messageId}');">
+                        <i class="fa-${isStarred ? 'solid' : 'regular'} fa-star"></i>
+                      </button>
+                      ${!isTrashed ? `
+                        <button class="btn-secondary btn-one-icon btn-sm" onclick="deleteMessage('${messageId}');">
+                          <i class="fa-solid fa-trash"></i> Delete
+                        </button>
+                      ` : `
+                        <button class="btn-secondary btn-one-icon btn-sm" onclick="restoreMessage('${messageId}');">
+                          <i class="fa-solid fa-trash-arrow-up"></i> Restore
+                        </button>
+                        <button class="btn-secondary btn-one-icon btn-sm" onclick="permanentlyDeleteMessage('${messageId}');">
+                          <i class="fa-solid fa-trash"></i> Delete Permanently
+                        </button>
+                      `}
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+                <div class="message-details-body">
+                  ${message.content}
+                </div>
+              </div>
+            `;
+
+            messageDetailsContent.innerHTML = messageHTML;
+            messageDetailsPanel.style.display = 'block';
+            messageEmptyState.style.display = 'none';
+
+            // Mark message as read
+            if (this.classList.contains('message-unread')) {
+              this.classList.remove('message-unread');
+              const sender = this.querySelector('.message-sender');
+              const subject = this.querySelector('.message-subject');
+
+              if (sender) sender.classList.add('message-sender-read');
+              if (subject) subject.classList.add('message-subject-read');
+            }
+
+            // Remove active class from all messages and add to clicked one
+            messageItems.forEach(msg => msg.classList.remove('active'));
+            this.classList.add('active');
+          }
+        });
+      });
+
+      // Mark individual message as read when opened (legacy modal support)
+      document.querySelectorAll('[data-bs-toggle="modal"]').forEach(trigger => {
+        trigger.addEventListener('click', function() {
+          if (this.classList.contains('message-unread')) {
+            this.classList.remove('message-unread');
+            const sender = this.querySelector('.message-sender');
+            const subject = this.querySelector('.message-subject');
+
+            if (sender) sender.classList.add('message-sender-read');
+            if (subject) subject.classList.add('message-subject-read');
+
+            const indicator = this.querySelector('.message-indicator');
+            if (indicator) {
+              indicator.style.opacity = '0';
+            }
+          }
+        });
+      });
+
+      // Inbox tab switching
+      const inboxTabLinks = document.querySelectorAll('.inbox-tab-link');
+      const inboxTabContents = document.querySelectorAll('.inbox-tab-content');
+
+      console.log('Found', inboxTabLinks.length, 'inbox tab links');
+      console.log('Found', inboxTabContents.length, 'inbox tab contents');
+
+      inboxTabLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const tabId = this.getAttribute('data-inbox-tab');
+          console.log('Inbox tab clicked:', tabId);
+
+          // Update active tab
+          inboxTabLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+
+          // Show/hide tab content
+          inboxTabContents.forEach(content => content.classList.remove('active'));
+          if (tabId === 'inbox') {
+            console.log('Showing inbox content');
+            document.getElementById('inboxContent').classList.add('active');
+          } else if (tabId === 'starred') {
+            console.log('Showing starred content');
+            document.getElementById('starredContent').classList.add('active');
+            refreshStarredMessages();
+          } else if (tabId === 'trash') {
+            document.getElementById('trashContent').classList.add('active');
+            refreshTrashMessages();
+          }
+        });
+      });
+
+      // Empty Trash button
+      document.getElementById('emptyTrash')?.addEventListener('click', function() {
+        if (confirm('Are you sure you want to permanently delete all messages in trash? This action cannot be undone.')) {
+          const trashedMessages = document.querySelectorAll('[data-trashed="true"]');
+          trashedMessages.forEach(msg => msg.remove());
+          refreshTrashMessages();
+
+          // Hide message details if showing a trashed message
+          messageDetailsPanel.style.display = 'none';
+          messageEmptyState.style.display = 'block';
+        }
+      });
+
+      // Checkbox selection handling
+      const checkboxes = document.querySelectorAll('.message-select-checkbox');
+      const deleteSelectedBtn = document.getElementById('deleteSelected');
+
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+          updateDeleteButtonVisibility();
+        });
+      });
+
+      function updateDeleteButtonVisibility() {
+        const checkedBoxes = document.querySelectorAll('.message-select-checkbox:checked');
+        if (checkedBoxes.length > 0) {
+          deleteSelectedBtn.style.display = 'inline-block';
+        } else {
+          deleteSelectedBtn.style.display = 'none';
+        }
+      }
+
+      // Delete selected messages
+      deleteSelectedBtn?.addEventListener('click', function() {
+        const checkedBoxes = document.querySelectorAll('.message-select-checkbox:checked');
+        if (checkedBoxes.length === 0) return;
+
+        if (confirm(`Are you sure you want to delete ${checkedBoxes.length} selected message(s)?`)) {
+          checkedBoxes.forEach(checkbox => {
+            const messageId = checkbox.getAttribute('data-message-id');
+            deleteMessage(messageId);
+          });
+
+          // Uncheck all checkboxes and hide button
+          checkboxes.forEach(cb => cb.checked = false);
+          deleteSelectedBtn.style.display = 'none';
+        }
+      });
+    });
+
+    // Global functions for message management
+    function toggleStarMessage(button, messageId) {
+      console.log('toggleStarMessage called for:', messageId);
+      const messageItem = document.querySelector(`#inboxMessagesList .message-item[data-message-id="${messageId}"]`);
+      if (!messageItem) {
+        console.error('Message not found:', messageId);
+        return;
+      }
+
+      const isStarred = messageItem.getAttribute('data-starred') === 'true';
+      const newStarredState = !isStarred;
+      console.log('Changing starred state from', isStarred, 'to', newStarredState);
+      messageItem.setAttribute('data-starred', newStarredState);
+
+      // Update button appearance
+      button.classList.toggle('starred');
+      const icon = button.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('fa-regular');
+        icon.classList.toggle('fa-solid');
+      }
+
+      // Always refresh starred messages list (even if not currently viewing it)
+      // This ensures the starred tab is up to date when the user switches to it
+      console.log('Calling refreshStarredMessages');
+      refreshStarredMessages();
+    }
+
+    function deleteMessage(messageId) {
+      console.log('deleteMessage called for:', messageId);
+      const messageItem = document.querySelector(`#inboxMessagesList .message-item[data-message-id="${messageId}"]`);
+      if (!messageItem) {
+        console.error('Message not found for deletion:', messageId);
+        return;
+      }
+
+      console.log('Setting data-trashed=true for message:', messageId);
+      // Mark as trashed
+      messageItem.setAttribute('data-trashed', 'true');
+      console.log('After setting, data-trashed is:', messageItem.getAttribute('data-trashed'));
+
+      // Hide message details
+      const messageDetailsPanel = document.getElementById('messageDetailsPanel');
+      const messageEmptyState = document.getElementById('messageEmptyState');
+      messageDetailsPanel.style.display = 'none';
+      messageEmptyState.style.display = 'block';
+
+      // Always refresh trash messages
+      console.log('Calling refreshTrashMessages');
+      refreshTrashMessages();
+
+      // Refresh starred if the deleted message was starred
+      const isStarred = messageItem.getAttribute('data-starred') === 'true';
+      if (isStarred) {
+        refreshStarredMessages();
+      }
+    }
+
+    function restoreMessage(messageId) {
+      const messageItem = document.querySelector(`#inboxMessagesList .message-item[data-message-id="${messageId}"]`);
+      if (!messageItem) return;
+
+      messageItem.setAttribute('data-trashed', 'false');
+
+      // Hide message details
+      const messageDetailsPanel = document.getElementById('messageDetailsPanel');
+      const messageEmptyState = document.getElementById('messageEmptyState');
+      messageDetailsPanel.style.display = 'none';
+      messageEmptyState.style.display = 'block';
+
+      // Refresh trash view
+      refreshTrashMessages();
+
+      // Refresh starred if the restored message is starred
+      const isStarred = messageItem.getAttribute('data-starred') === 'true';
+      if (isStarred) {
+        refreshStarredMessages();
+      }
+    }
+
+    function permanentlyDeleteMessage(messageId) {
+      if (confirm('Are you sure you want to permanently delete this message? This action cannot be undone.')) {
+        const messageItem = document.querySelector(`#inboxMessagesList .message-item[data-message-id="${messageId}"]`);
+        if (messageItem) {
+          // Check if starred before removing
+          const isStarred = messageItem.getAttribute('data-starred') === 'true';
+
+          messageItem.remove();
+
+          // Hide message details
+          const messageDetailsPanel = document.getElementById('messageDetailsPanel');
+          const messageEmptyState = document.getElementById('messageEmptyState');
+          messageDetailsPanel.style.display = 'none';
+          messageEmptyState.style.display = 'block';
+
+          // Refresh trash view
+          refreshTrashMessages();
+
+          // Refresh starred if the deleted message was starred
+          if (isStarred) {
+            refreshStarredMessages();
+          }
+        }
+      }
+    }
+
+    function refreshStarredMessages() {
+      const starredList = document.getElementById('starredMessagesList');
+      // Only get MESSAGE ITEMS from the inbox list, not checkboxes
+      const allMessages = document.querySelectorAll('#inboxMessagesList .message-item[data-message-id]');
+      console.log('Total messages in inbox:', allMessages.length);
+
+      const starredMessages = Array.from(allMessages).filter(msg => {
+        const isStarred = msg.getAttribute('data-starred') === 'true';
+        const isTrashed = msg.getAttribute('data-trashed') === 'false';
+        console.log('Message', msg.getAttribute('data-message-id'), '- starred:', isStarred, 'trashed:', msg.getAttribute('data-trashed'));
+        return isStarred && isTrashed;
+      });
+
+      console.log('Starred messages found:', starredMessages.length);
+
+      if (starredMessages.length === 0) {
+        console.log('No starred messages, showing empty state');
+        starredList.innerHTML = `
+          <div class="text-center py-5">
+            <i class="fa-regular fa-star" style="font-size: 4rem; color: #ccc; margin-bottom: 1rem;"></i>
+            <p class="text-muted mb-0">No starred messages yet</p>
+            <p class="text-muted small">Star important messages to find them easily</p>
+          </div>
+        `;
+      } else {
+        console.log('Populating starred tab with', starredMessages.length, 'messages');
+        starredList.innerHTML = '';
+        starredMessages.forEach(msg => {
+          const clone = msg.cloneNode(true);
+          console.log('Cloning message:', msg.getAttribute('data-message-id'));
+          starredList.appendChild(clone);
+        });
+        console.log('Starred list now has', starredList.children.length, 'children');
+
+        // Reattach click handlers to cloned messages
+        starredList.querySelectorAll('.message-item').forEach(item => {
+          item.addEventListener('click', function() {
+            const messageId = this.getAttribute('data-message-id');
+            // Trigger click on original message to show details
+            document.querySelector(`#inboxMessagesList .message-item[data-message-id="${messageId}"]`)?.click();
+          });
+        });
+      }
+    }
+
+    function refreshTrashMessages() {
+      console.log('refreshTrashMessages called');
+      const trashList = document.getElementById('trashMessagesList');
+      const emptyTrashBtn = document.getElementById('emptyTrash');
+      // Only get MESSAGE ITEMS from the inbox list, not checkboxes
+      const allMessages = document.querySelectorAll('#inboxMessagesList .message-item[data-message-id]');
+      console.log('Total messages in inbox for trash check:', allMessages.length);
+
+      const trashedMessages = Array.from(allMessages).filter(msg => {
+        const isTrashed = msg.getAttribute('data-trashed') === 'true';
+        console.log('Message', msg.getAttribute('data-message-id'), '- trashed:', isTrashed);
+        return isTrashed;
+      });
+
+      console.log('Trashed messages found:', trashedMessages.length);
+
+      if (trashedMessages.length === 0) {
+        console.log('No trashed messages, showing empty state');
+        trashList.innerHTML = `
+          <div class="text-center py-5">
+            <i class="fa-regular fa-trash-can" style="font-size: 4rem; color: #ccc; margin-bottom: 1rem;"></i>
+            <p class="text-muted mb-0">No messages in trash</p>
+          </div>
+        `;
+        if (emptyTrashBtn) emptyTrashBtn.style.display = 'none';
+      } else {
+        console.log('Populating trash tab with', trashedMessages.length, 'messages');
+        trashList.innerHTML = '';
+        trashedMessages.forEach(msg => {
+          const clone = msg.cloneNode(true);
+          console.log('Cloning trashed message:', msg.getAttribute('data-message-id'));
+          trashList.appendChild(clone);
+        });
+        console.log('Trash list now has', trashList.children.length, 'children');
+        if (emptyTrashBtn) emptyTrashBtn.style.display = 'inline-block';
+
+        // Reattach click handlers to cloned messages
+        trashList.querySelectorAll('.message-item').forEach(item => {
+          item.addEventListener('click', function() {
+            const messageId = this.getAttribute('data-message-id');
+            // Trigger click on original message to show details
+            document.querySelector(`#inboxMessagesList .message-item[data-message-id="${messageId}"]`)?.click();
+          });
+        });
+      }
+    }
+  </script>
+{% endblock %}

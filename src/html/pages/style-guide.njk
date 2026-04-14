@@ -1,0 +1,1583 @@
+{% extends "layouts/base-styleguide.njk" %}
+{% import "partials/macros.njk" as buttons %}
+
+{% block content %}
+<style>
+.style-guide-nav {
+  position: fixed;
+  left: 0;
+  top: 70px;
+  width: 250px;
+  height: calc(100vh - 70px);
+  background: #f4f4f4;
+  border-right: 2px solid #d2d2d2;
+  overflow-y: auto;
+  padding: 2rem 0;
+  z-index: 100;
+}
+
+.style-guide-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.style-guide-nav li {
+  margin: 0;
+}
+
+.style-guide-nav a {
+  display: block;
+  padding: 1rem 2rem;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.style-guide-nav a:hover,
+.style-guide-nav a.active {
+  background: #fff;
+  border-left-color: #00ffff;
+  color: #000;
+}
+
+.style-guide-content {
+  margin-left: 250px;
+  padding: 3rem 4rem;
+}
+
+.section {
+  margin-bottom: 6rem;
+  scroll-margin-top: 90px;
+}
+
+.section h2 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #00ffff;
+}
+
+.section h3 {
+  font-size: 2.4rem;
+  margin: 3rem 0 1.5rem;
+}
+
+.section h4 {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+  color: #424242;
+}
+
+.component-example {
+  background: #fff;
+  padding: 3rem;
+  border: 1px solid #d2d2d2;
+  border-radius: 9px;
+  margin-bottom: 2rem;
+}
+.component-example h4, .component-example .white-box h3 {
+  margin: 0rem 0 1.5rem;
+}
+.color-swatch {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  border-radius: 9px;
+  margin: 1rem 1rem 1rem 0;
+  border: 2px solid #d2d2d2;
+  position: relative;
+}
+
+.color-swatch-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 0 0 7px 7px;
+}
+
+.code-example {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 1.5rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-top: 1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .style-guide-nav {
+    display: none;
+  }
+  .style-guide-content {
+    margin-left: 0;
+    padding: 2rem;
+  }
+}
+</style>
+
+<!-- Side Navigation -->
+<nav class="style-guide-nav">
+  <ul>
+    <li><a href="#colors">Colors</a></li>
+    <li><a href="#typography">Typography</a></li>
+    <li><a href="#buttons">Buttons</a></li>
+    <li><a href="#forms">Forms</a></li>
+    <li><a href="#alerts">Alerts</a></li>
+    <li><a href="#modals">Modals</a></li>
+    <li><a href="#tabs">Tabs</a></li>
+    <li><a href="#badges">Badges</a></li>
+    <li><a href="#counts">Count Badges</a></li>
+    <li><a href="#cards">Cards & Boxes</a></li>
+    <li><a href="#progress">Progress Indicators</a></li>
+    <li><a href="#navigation">Navigation</a></li>
+    <li><a href="#chat">Chat</a></li>
+    <li><a href="#calendar">Calendar</a></li>
+    <li><a href="#documents">Document Lists</a></li>
+    <li><a href="#shoppingcart">Cart</a></li>
+    <li><a href="#footer">Footer</a></li>
+  </ul>
+</nav>
+
+<div class="style-guide-content">
+  <div class="container-fluid">
+    <h1 class="mb-3">APU eCampus Style Guide</h1>
+    <p class="lead mb-5">A comprehensive guide to all reusable design components in the eCampus system.</p>
+    <p class="mb-5">Last Updated: April 2026</p>
+
+    <!-- ============================================ -->
+    <!-- COLORS SECTION -->
+    <!-- ============================================ -->
+    <section id="colors" class="section">
+      <h2>Colors</h2>
+      <p>Color palette defined in <code>scss/components/_colors.scss</code></p>
+
+      <h3>Utility Colors</h3>
+      <div class="component-example">
+        <div class="color-swatch" style="background: #E4193B;">
+          <span class="color-swatch-label">Red<br>#E4193B</span>
+        </div>
+        <div class="color-swatch" style="background: #80c342;">
+          <span class="color-swatch-label">Green<br>#80c342</span>
+        </div>
+        <div class="color-swatch" style="background: #F88A00;">
+          <span class="color-swatch-label">Orange<br>#F88A00</span>
+        </div>
+        <div class="color-swatch" style="background: #FDB933;">
+          <span class="color-swatch-label">Yellow<br>#FDB933</span>
+        </div>
+        <div class="color-swatch" style="background: #0096D6;">
+          <span class="color-swatch-label">Blue<br>#0096D6</span>
+        </div>
+      </div>
+
+      <h3>Brand Colors - APU</h3>
+      <div class="component-example">
+        <div class="color-swatch" style="background: #00ffff;">
+          <span class="color-swatch-label">APU Blue<br>#00ffff</span>
+        </div>
+        <div class="color-swatch" style="background: #B3F5F5;">
+          <span class="color-swatch-label">APU Blue Alt<br>#B3F5F5</span>
+        </div>
+        <div class="color-swatch" style="background: #00CCCC;">
+          <span class="color-swatch-label">APU Blue Active<br>#00CCCC</span>
+        </div>
+        <div class="color-swatch" style="background: #00ff00;">
+          <span class="color-swatch-label">APU Green<br>#00ff00</span>
+        </div>
+        <div class="color-swatch" style="background: #B2FFB2;">
+          <span class="color-swatch-label">APU Green Alt<br>#B2FFB2</span>
+        </div>
+        <div class="color-swatch" style="background: #ffff00;">
+          <span class="color-swatch-label">APU Yellow<br>#ffff00</span>
+        </div>
+        <div class="color-swatch" style="background: #ffffb2;">
+          <span class="color-swatch-label">APU Yellow Alt<br>#ffffb2</span>
+        </div>
+      </div>
+
+      <h3>Grayscale</h3>
+      <div class="component-example">
+        <div class="color-swatch" style="background: #000000;">
+          <span class="color-swatch-label">Black<br>#000000</span>
+        </div>
+        <div class="color-swatch" style="background: #424242;">
+          <span class="color-swatch-label">Gray Dark<br>#424242</span>
+        </div>
+        <div class="color-swatch" style="background: #6b6b6b;">
+          <span class="color-swatch-label">Gray 60<br>#6b6b6b</span>
+        </div>
+        <div class="color-swatch" style="background: #e5e5e5;">
+          <span class="color-swatch-label">Gray 20<br>#e5e5e5</span>
+        </div>
+        <div class="color-swatch" style="background: #f5f5f5;">
+          <span class="color-swatch-label">Gray 10<br>#f5f5f5</span>
+        </div>
+        <div class="color-swatch" style="background: #ffffff; border: 2px solid #333;">
+          <span class="color-swatch-label">White<br>#ffffff</span>
+        </div>
+      </div>
+
+      <h3>Utility Classes</h3>
+      <div class="component-example">
+        <p class="red">Red text (.red)</p>
+        <p class="green">Green text (.green)</p>
+        <p class="orange">Orange text (.orange)</p>
+        <p class="blue">Blue text (.blue)</p>
+        <p class="gray-dk">Gray dark text (.gray-dk)</p>
+      </div>
+      <div class="code-example">&lt;p class="red"&gt;Red text&lt;/p&gt;
+&lt;p class="apu-blue"&gt;APU Blue text&lt;/p&gt;</div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- TYPOGRAPHY SECTION -->
+    <!-- ============================================ -->
+    <section id="typography" class="section">
+      <h2>Typography</h2>
+      <p>Heading styles defined in <code>scss/components/_headings-apu.scss</code></p>
+
+      <h3>Headings</h3>
+      <div class="component-example">
+        <h1>Heading 1 - Main Page Title</h1>
+        <h2>Heading 2 - Section Title</h2>
+        <h3>Heading 3 - Subsection Title</h3>
+        <h4>Heading 4 - Component Title</h4>
+      </div>
+
+      <h3>Text Utilities</h3>
+      <div class="component-example">
+        <p class="small-title">Small Title (.small-title)</p>
+        <p class="lead">Lead paragraph with larger text (.lead)</p>
+        <p>Base text size (.text-base)</p>
+        <p class="text-sm">Small text size (.text-sm)</p>
+        <p class="text-lg">Large text size (.text-lg)</p>
+      </div>
+      <div class="code-example">&lt;h3 class="small-title"&gt;Small Title&lt;/h3&gt;
+&lt;p class="lead"&gt;Lead paragraph&lt;/p&gt;
+&lt;p class="text-sm"&gt;Small text&lt;/p&gt;</div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- BUTTONS SECTION -->
+    <!-- ============================================ -->
+    <section id="buttons" class="section">
+      <h2>Buttons</h2>
+      <p>Button styles defined in <code>scss/components/_buttons-apu.scss</code></p>
+
+      <h3>Primary Buttons</h3>
+      <div class="component-example">
+        <button class="btn btn-main">Primary Button</button>
+        {# <button class="btn btn-main" disabled>Disabled Button</button> #}
+      </div>
+      {# <div class="code-example">&lt;button class="btn btn-main"&gt;Primary Button&lt;/button&gt;
+&lt;button class="btn btn-main" disabled&gt;Disabled Button&lt;/button&gt;
+&lt;button class="btn btn-main btn-min-width"&gt;Min Width Button&lt;/button&gt;</div>
+ #}
+      <h3>Secondary Buttons</h3>
+      <div class="component-example">
+        <button class="btn btn-secondary">Secondary Button</button>
+      </div>
+
+      <h3>Disabled Button</h3>
+      <div class="component-example">
+        <button class="btn btn-secondary" disabled>Disabled Button</button>
+      </div>
+      <div class="code-example">&lt;button class="btn btn-secondary"&gt;Secondary Button&lt;/button&gt;</div>
+
+      <h3>Link Buttons</h3>
+      <div class="component-example">
+        <div class="mb-4">
+          <a class="arrow-link">Arrow Link</a>
+        </div>
+        <div class="mb-4">
+          <a href="#" class="btn-link-primary">
+            <i class="fa-solid fa-eye me-1" aria-hidden="true"></i> View Document
+          </a>
+        </div>
+      </div>
+      <div class="code-example">&lt;button class="btn btn-link"&gt;Link Button&lt;/button&gt;</div>
+
+      <h3>Forward and Back Buttons</h3>
+      <div class="component-example">
+        <div class="d-flex justify-content-between step-navigation mt-0" id="appStepNavigation">
+          <button id="appBackBtn" class="btn-main back-btn">
+            Back
+          </button>
+          <button id="appNextBtn" class="btn-main ms-auto">
+            Next
+          </button>
+        </div>
+      </div>
+      <div class="code-example">&lt;button class="btn btn-link"&gt;Link Button&lt;/button&gt;</div>
+
+      <h3>Button Sizes</h3>
+      <div class="component-example">
+      <button class="btn btn-main">Default Button</button>
+        <button class="btn btn-main btn-sm">Small Button</button>
+      </div>
+      <div class="code-example">&lt;button class="btn btn-main btn-sm"&gt;Small&lt;/button&gt;
+&lt;button class="btn btn-main"&gt;Default&lt;/button&gt;
+&lt;button class="btn btn-main btn-lg"&gt;Large&lt;/button&gt;</div>
+
+      <h3>Icon Buttons</h3>
+      <div class="component-example">
+        <button class="btn btn-main btn-one-icon">
+          <i class="fa-solid fa-check"></i> Save
+        </button>
+        <button class="btn btn-secondary btn-one-icon">
+          <i class="fa-solid fa-times"></i> Cancel
+        </button>
+        <button class="btn btn-main btn-one-icon">
+          <i class="fa-solid fa-download"></i> Download
+        </button>
+      </div>
+      <div class="code-example">&lt;button class="btn btn-main"&gt;
+  &lt;i class="fa-solid fa-check"&gt;&lt;/i&gt; Save
+&lt;/button&gt;</div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FORMS SECTION -->
+    <!-- ============================================ -->
+    <section id="forms" class="section">
+      <h2>Forms</h2>
+      <p>Form styles defined in <code>scss/components/_forms.scss</code></p>
+
+      <h3>Text Inputs</h3>
+      <div class="component-example">
+        <div class="mb-3">
+          <label for="input1" class="form-label">Text Input</label>
+          <input type="text" class="form-control" id="input1" placeholder="Enter text">
+        </div>
+        <div class="mb-3">
+          <label for="input2" class="form-label">Required Field <span class="red">*</span></label>
+          <input type="text" class="form-control" id="input2" required>
+        </div>
+        <div class="mb-3">
+          <label for="input3" class="form-label">Disabled Input</label>
+          <input type="text" class="form-control" id="input3" disabled value="Disabled field">
+        </div>
+      </div>
+      <div class="code-example">&lt;div class="mb-3"&gt;
+  &lt;label for="input1" class="form-label"&gt;Text Input&lt;/label&gt;
+  &lt;input type="text" class="form-control" id="input1"&gt;
+&lt;/div&gt;</div>
+
+      <h3>Select Dropdowns</h3>
+      <div class="component-example">
+        <div class="col-md-6 mb-3">
+          <label for="state" class="form-label">State <span class="text-danger">*</span></label>
+          <select class="form-control" id="state" name="state" required="">
+            <option value="">Select State</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="CA">California</option>
+            <option value="FL">Florida</option>
+            <option value="NY">New York</option>
+            <option value="TX">Texas</option>
+            <!-- Add more states as needed -->
+          </select>
+        </div>
+      </div>
+      <div class="code-example">&lt;select class="form-select"&gt;
+  &lt;option selected&gt;Choose an option&lt;/option&gt;
+  &lt;option value="1"&gt;Option 1&lt;/option&gt;
+&lt;/select&gt;</div>
+
+      <h3>Checkboxes & Radios</h3>
+      <div class="component-example">
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="checkbox" id="check1" checked>
+          <label class="form-check-label" for="check1">
+            Checkbox option 1
+          </label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" id="check2">
+          <label class="form-check-label" for="check2">
+            Checkbox option 2
+          </label>
+        </div>
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="radio" name="radio" id="radio1" checked>
+          <label class="form-check-label" for="radio1">
+            Radio option 1
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="radio" id="radio2">
+          <label class="form-check-label" for="radio2">
+            Radio option 2
+          </label>
+        </div>
+      </div>
+      <div class="code-example">&lt;div class="form-check"&gt;
+  &lt;input class="form-check-input" type="checkbox" id="check1"&gt;
+  &lt;label class="form-check-label" for="check1"&gt;
+    Checkbox option
+  &lt;/label&gt;
+&lt;/div&gt;</div>
+
+      <h3>Textarea</h3>
+      <div class="component-example">
+        <div class="mb-3">
+          <label for="textarea1" class="form-label">Textarea</label>
+          <textarea class="form-control" id="textarea1" rows="3" placeholder="Enter multiple lines of text"></textarea>
+        </div>
+      </div>
+      <div class="code-example">&lt;textarea class="form-control" rows="3"&gt;&lt;/textarea&gt;</div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- ALERTS SECTION -->
+    <!-- ============================================ -->
+    <section id="alerts" class="section">
+      <h2>Alerts</h2>
+      <p>Alert styles defined in <code>scss/components/_alerts.scss</code></p>
+
+      <h3>Alert Types</h3>
+      <div class="component-example">
+        <div class="alert-alt alert-green">
+          <i class="fas fa-info-circle mb-3" aria-hidden="true"></i>
+          <div>
+            <p class="mb-3"><strong>Track Your Status:</strong></p>
+            <p class="mb-0">Check your email regularly for updates. You can also contact our admissions office at <strong>1-877-468-6268</strong> or <strong>admissions@apus.edu</strong> for any questions.</p>
+          </div>
+        </div>
+
+        <div class="alert-alt alert-blue">
+          <i class="fas fa-info-circle mb-3" aria-hidden="true"></i>
+          <div>
+            <p class="mb-3"><strong>Track Your Status:</strong></p>
+            <p class="mb-0">Check your email regularly for updates. You can also contact our admissions office at <strong>1-877-468-6268</strong> or <strong>admissions@apus.edu</strong> for any questions.</p>
+          </div>
+        </div>
+        
+        <div class="alert-alt alert-exclamation alert-disabled">
+          <i class="fa-solid fa-lock" aria-hidden="true"></i>
+          <div>
+            <p class="mb-0"><strong><em>Financial documents will be available once you have been accepted and complete the pre-enrollment process.</em></strong></p>
+          </div>
+        </div>
+      </div>
+
+
+      <h3>Dismissible Alerts</h3>
+      <div class="component-example">
+        <div class="alert-outage" id="outageAlert">
+          <button class="alert-close-btn alert-close-btn-outage" id="closeOutageAlert" aria-label="Close alert">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+          <div class="alert-outage-icon">
+            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+          </div>
+          <div class="alert-outage-content">
+            <h4 class="mb-1"><strong>System Maintenance Notice</strong></h4>
+            <p class="mb-0">Our systems will be undergoing scheduled maintenance on Sunday, April 6th from 2:00 AM - 6:00 AM EST. Some services may be temporarily unavailable during this time.</p>
+          </div>
+        </div>
+        <div class="alert-alt alert-required" id="transcriptAlert">
+          <button class="alert-close-btn" id="closeTranscriptAlert" aria-label="Close alert">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+          <div>
+            <p class="next-step-badge small-title red">ACTION REQUIRED BEFORE ENROLLMENT CAN BEGIN!</p>
+            <h3>Request Official Transcripts
+              <i class="fa-solid fa-circle-info" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="top" data-bs-content="To complete your application, please submit official transcripts from all previously attended institutions. Transcripts can be sent electronically to transcripts@apus.edu or mailed to our admissions office." tabindex="0" role="button" aria-label="More information about transcript requirements" style="cursor: pointer; font-size: 2rem; margin-left: 0.5rem; color: #0581C0;" aria-hidden="true" data-bs-original-title="" title=""></i>
+            </h3>
+          </div>
+          <div>
+            <a href="#" class="btn-main btn-sm">Request Transcripts</a>
+          </div>
+        </div>
+      
+      </div>
+
+    </section>
+
+    <!-- ============================================ -->
+    <!-- MODALS SECTION -->
+    <!-- ============================================ -->
+    <section id="modals" class="section">
+      <h2>Modals</h2>
+      <p>Modal styles defined in <code>scss/components/_modal.scss</code></p>
+
+      <h3>Modal Dialog</h3>
+      <div class="component-example">
+        <button class="btn btn-main" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Launch Demo Modal
+        </button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title h3">Modal Title</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <p>This is a modal dialog. It overlays the main content and requires user interaction.</p>
+                <p class="mb-0">Modal body content goes here.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-min-width" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-main btn-min-width">Save Changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="code-example">&lt;button data-bs-toggle="modal" data-bs-target="#modal"&gt;Launch Modal&lt;/button&gt;
+
+&lt;div class="modal fade" id="modal"&gt;
+  &lt;div class="modal-dialog modal-dialog-centered"&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;h3 class="modal-title"&gt;Modal Title&lt;/h3&gt;
+        &lt;button class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body"&gt;Content&lt;/div&gt;
+      &lt;div class="modal-footer"&gt;Buttons&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- TABS SECTION -->
+    <!-- ============================================ -->
+    <section id="tabs" class="section">
+      <h2>Tabs</h2>
+      <p>Tab styles defined in <code>scss/components/_tabs.scss</code></p>
+
+      <h3>Tab Navigation</h3>
+      <!-- Tabbed Navigation -->
+  <div class="document-tabs mb-4">
+    <a href="#my-todo-list" class="tab-link active" data-tab="my-todo-list">My To-do List</a>
+    <a href="#pending-tasks" class="tab-link" data-tab="pending-tasks">Pending</a>
+    <a href="#completed-tasks" class="tab-link" data-tab="completed-tasks">Completed</a>
+  </div>
+
+  <!-- Tab Content: My To-do List -->
+  <div class="tab-content active" id="my-todo-list">
+    <!-- Required Items Section -->
+    <h4 class="mt-0 mb-3">Required</h4>
+    <div class="document-list">
+      <div class="document-item mb-2">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
+          <p class="mb-0"><strong>ID Verification</strong></p>
+        </div>
+        <a href="#" class="arrow-link arrow-link-sm">
+          <i class="fa-solid fa-upload me-1"></i> Upload ID
+        </a>
+      </div>
+      <div class="document-item mb-2">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
+          <p class="mb-0"><strong>Transfer Credit Evaluation</strong></p>
+        </div>
+        <a href="/transfer-credits.html" class="arrow-link arrow-link-sm">
+          Begin Evaluation
+        </a>
+      </div>
+      <div class="document-item mb-2">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
+          <p class="mb-0"><strong>Financial Aid Application</strong></p>
+        </div>
+        <a href="/financial-aid.html" class="arrow-link arrow-link-sm">
+          Start Application
+        </a>
+      </div>
+    </div>
+
+    <!-- Additional Items Section -->
+    <h4 class="mt-4 mb-2">Not Required - Additional Items</h4>
+    <p class="text-muted mb-3">These items are not required for enrollment, but will be required before registering for classes.</p>
+    <div class="document-list">
+      <div class="document-item mb-2">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
+          <p class="mb-0"><strong>Define Your Payment Type</strong></p>
+        </div>
+        <a href="#" class="arrow-link arrow-link-sm">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Content: Pending -->
+  <div class="tab-content" id="pending-tasks">
+    <div class="document-list">
+      <div class="document-item mb-2">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-clock orange me-3 icon-lg"></i>
+          <p class="mb-0"><strong>Application Review</strong></p>
+        </div>
+        <span class="badge-pending">Under Review</span>
+      </div>
+      <div class="document-item mb-2">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-clock orange me-3 icon-lg"></i>
+          <p class="mb-0"><strong>Transcript Processing</strong></p>
+        </div>
+        <span class="badge-pending">In Progress</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Content: Completed -->
+  <div class="tab-content" id="completed-tasks">
+    <div class="document-list">
+      <div class="document-item mb-2">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-circle-check green me-3 icon-lg"></i>
+          <p class="mb-0"><strong>Application Submitted</strong></p>
+        </div>
+        <a href="/view-application.html" class="btn-link-primary">
+          <i class="fa-solid fa-eye me-1"></i> View Document
+        </a>
+      </div>
+      <div class="document-item mb-2">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-circle-check green me-3 icon-lg"></i>
+          <p class="mb-0"><strong>Student Rights and Responsibilities</strong></p>
+        </div>
+        <a href="/student-rights-flow.html" class="btn-link-primary">
+          <i class="fa-solid fa-eye me-1"></i> View Document
+        </a>
+      </div>
+      <div class="document-item mb-2">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-circle-check green me-3 icon-lg"></i>
+          <p class="mb-0"><strong>Student Orientation</strong></p>
+        </div>
+        <a href="#" class="btn-link-primary">
+          <i class="fa-solid fa-eye me-1"></i> View Document
+        </a>
+      </div>
+    </div>
+  </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- BADGES SECTION -->
+    <!-- ============================================ -->
+    <section id="badges" class="section">
+      <h2>Badges</h2>
+      <p>Badge styles defined in <code>scss/components/_badges.scss</code></p>
+
+      <h3>Status Badges</h3>
+      <div class="component-example">
+        <span class="badge badge-required"><i class="fa-solid fa-exclamation-circle"></i> Required</span>
+        <span class="badge badge-pending"><i class="fa-solid fa-clock"></i> Pending</span>
+        <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Completed</span>
+        <span class="badge badge-disabled">Disabled</span>
+      </div>
+      <div class="code-example">&lt;span class="badge badge-required"&gt;Required&lt;/span&gt;
+&lt;span class="badge badge-pending"&gt;Pending&lt;/span&gt;
+&lt;span class="badge badge-completed"&gt;Completed&lt;/span&gt;
+&lt;span class="badge badge-disabled"&gt;Disabled&lt;/span&gt;</div>
+      <h3>Description Badges</h3>
+      <div class="component-example">
+        <span class="badge bg-green">Elective</span>
+        <span class="badge bg-blue">Capstone</span>
+        <span class="badge bg-orange">Internship</span>
+        <span class="badge bg-secondary">Core</span>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- COUNT BADGES SECTION -->
+    <!-- ============================================ -->
+    <section id="counts" class="section">
+      <h2>Count Badges</h2>
+      <p>Count badge styles defined in <code>scss/components/_counts.scss</code></p>
+
+      <h3>Notification Counts</h3>
+      <div class="component-example">
+        <p>Count badges are circular notification indicators:</p>
+        <div class="overlay-nav-icons">
+          <nav id="sidebarMenuSmall" class="top-nav-wrap">
+            <ul id="topmenu" class="mb-0">
+              <li class="">
+                <a href="/messages.html?view=alerts" data-slug="alerts">
+                  <span class="top-wrap"><i class="fa-solid fa-bell" aria-hidden="true"></i></span>
+                </a>
+                  <span class="count alerts">2</span>
+              </li>
+              <li class="">
+                <a href="/messages.html?view=messages" data-slug="email">
+                  <span class="top-wrap"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                </a>
+                  <span class="count email">4</span>
+              </li>
+              
+              <li class="">
+                <a href="#" data-slug="cart">
+                  <span class="top-wrap"><i class="fa-solid fa-shopping-cart" aria-hidden="true"></i></span>
+                </a>
+                  <span class="count" data-cart-badge="" style="display: inline-block;">2</span>
+              </li>
+              
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="code-example">&lt;div style="position: relative"&gt;
+  &lt;i class="fa-solid fa-bell"&gt;&lt;/i&gt;
+  &lt;span class="count"&gt;3&lt;/span&gt;
+&lt;/div&gt;</div>
+
+      <h3>Standalone Counts</h3>
+      <div class="component-example">
+        <span class="count-standalone messages">4</span>
+        <span class="count-standalone email">8</span>
+        <span class="count-standalone cart">15</span>
+      </div>
+      <div class="code-example">&lt;span class="count-standalone messages"&gt;4&lt;/span&gt;</div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CARDS SECTION -->
+    <!-- ============================================ -->
+    <section id="cards" class="section">
+      <h2>Cards & Boxes</h2>
+      <p>Card styles defined in <code>scss/components/_cards.scss</code></p>
+
+      <h3>White Box</h3>
+      <div class="component-example">
+        <div class="white-box">
+          <h3>White Box Component</h3>
+          <p class="mb-0">Standard white box with padding, border radius, and shadow.</p>
+        </div>
+      </div>
+      <div class="code-example">&lt;div class="white-box"&gt;
+  &lt;h3&gt;Title&lt;/h3&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+&lt;/div&gt;</div>
+
+      <h3>White Box Variants</h3>
+      <div class="component-example">
+        {# <div class="white-box-nopad mb-3">
+          <div style="padding: 2rem;">
+            <h4>No Padding (.white-box-nopad)</h4>
+            <p class="mb-0">White box without default padding.</p>
+          </div>
+        </div> #}
+        <div class="white-box white-box-border">
+          <h4>With Border (.white-box-border)</h4>
+          <p class="mb-0">White box with visible border.</p>
+        </div>
+      </div>
+      <div class="code-example">&lt;div class="white-box-nopad"&gt;Content&lt;/div&gt;
+&lt;div class="white-box white-box-border"&gt;Content&lt;/div&gt;</div>
+
+      <h3>Black Background</h3>
+      <div class="component-example">
+        <div class="black-bg">
+          <h4>Black Background Box</h4>
+          <p class="mb-0">Used for high-contrast content sections.</p>
+        </div>
+      </div>
+      <div class="code-example">&lt;div class="black-bg"&gt;
+  &lt;h4&gt;Title&lt;/h4&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+&lt;/div&gt;</div>
+
+      <h3>Profile Badge</h3>
+      <div class="component-example">
+        <span class="profile-badge">
+          Computer Science <i class="fa-solid fa-pencil"></i>
+        </span>
+        <span class="profile-badge">
+          Expected Graduation: May 2027 <i class="fa-solid fa-pencil"></i>
+        </span>
+      </div>
+      <div class="code-example">&lt;span class="profile-badge"&gt;
+  Computer Science &lt;i class="fa-solid fa-pencil"&gt;&lt;/i&gt;
+&lt;/span&gt;</div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PROGRESS SECTION -->
+    <!-- ============================================ -->
+    <section id="progress" class="section">
+      <h2>Progress Indicators</h2>
+      <p>Progress bar styles defined in <code>scss/components/_progress-bar.scss</code> and <code>scss/components/_horizontal-progress-tracker.scss</code></p>
+
+      <h3>Vertical Progress Bar</h3>
+      <div class="component-example">
+        <div class="col-lg-4">
+          <div class="actions white-box mb-4">
+            <div class="student-status-module">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <p class="small-title mb-0">Your Journey Status</p>
+                <button class="status-toggle-btn" id="statusToggleBtn" aria-label="Toggle all statuses">
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </button>
+              </div>
+
+              <div class="status-list">
+                <!-- Current Active Status (Collapsed View) -->
+                <div class="status-item status-active show" id="statusCollapsed">
+                  <div class="status-indicator"></div>
+                  <span class="status-label">Pre-Enrollment</span>
+                </div>
+
+                <!-- Expanded Tree View (Hidden by Default) -->
+                <div class="status-tree-list" id="statusTree" style="display: none;">
+                  <div class="status-tree-wrapper">
+                    <!-- Pre-Enrollment with Sub-statuses -->
+                    <div class="status-tree-section">
+                      <div class="status-item status-active">
+                        <div class="status-indicator"></div>
+                        <span class="status-label">Pre-Enrollment</span>
+                      </div>
+                      <div class="sub-status-tree">
+                        <div class="sub-status-item completed">
+                          <div class="tree-connector"></div>
+                          <i class="fa-solid fa-circle-check green" aria-hidden="true"></i>
+                          <span>Applicability Evaluation</span>
+
+                        </div>
+                        
+                        <div class="sub-status-item pending">
+                          <div class="tree-connector"></div>
+                          <i class="fa-solid fa-clock orange" aria-hidden="true"></i>
+                          <span>Document Verification</span>
+                        </div>
+                        <div class="sub-status-item incomplete">
+                          <div class="tree-connector"></div>
+                          <i class="fa-regular fa-circle" aria-hidden="true"></i>
+                          <span>Admitted</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Admissions -->
+                    <div class="status-tree-section incomplete">
+                      <div class="status-item">
+                        <div class="status-indicator"></div>
+                        <span class="status-label">Admissions</span>
+                      </div>
+                    </div>
+
+                    <!-- Onboarding -->
+                    <div class="status-tree-section incomplete">
+                      <div class="status-item">
+                        <div class="status-indicator"></div>
+                        <span class="status-label">Onboarding</span>
+                      </div>
+                    </div>
+
+                    <!-- Enrollment -->
+                    <div class="status-tree-section incomplete">
+                      <div class="status-item">
+                        <div class="status-indicator"></div>
+                        <span class="status-label">Enrollment</span>
+                      </div>
+                    </div>
+
+                    <!-- Alumni -->
+                    <div class="status-tree-section incomplete">
+                      <div class="status-item">
+                        <div class="status-indicator"></div>
+                        <span class="status-label">Alumni</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+            // Toggle status expansion
+            document.addEventListener('DOMContentLoaded', function() {
+              const toggleBtn = document.getElementById('statusToggleBtn');
+              const statusCollapsed = document.getElementById('statusCollapsed');
+              const statusTree = document.getElementById('statusTree');
+
+              if (toggleBtn) {
+                toggleBtn.addEventListener('click', function() {
+                  const icon = this.querySelector('i');
+                  const isExpanded = statusTree.classList.contains('show');
+
+                  if (isExpanded) {
+                    // Collapse - hide tree and show collapsed
+                    statusTree.classList.remove('show');
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+
+                    // Wait for animation, then hide tree completely
+                    setTimeout(() => {
+                      statusTree.style.display = 'none';
+                      statusCollapsed.style.display = 'flex';
+                      statusCollapsed.classList.add('show');
+                    }, 400);
+                  } else {
+                    // Expand - hide collapsed and show tree
+                    statusCollapsed.classList.remove('show');
+
+                    // Wait for collapsed to animate out, then show tree
+                    setTimeout(() => {
+                      statusCollapsed.style.display = 'none';
+                      statusTree.style.display = 'block';
+                      // Small delay to ensure display change is processed
+                      setTimeout(() => {
+                        statusTree.classList.add('show');
+                      }, 10);
+                    }, 400);
+
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                  }
+                });
+              }
+            });
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <h3>Horizontal Chevron Progress</h3>
+      <div class="component-example">
+        <div class="horizontal-progress-wrapper">
+          <div class="horizontal-progress-tracker">
+            <div class="progress-step-wrapper">
+              <div class="progress-step-label">Step 1</div>
+              <div class="progress-step completed first">
+                <i class="fas fa-circle-check"></i>
+              </div>
+            </div>
+            <div class="progress-step-wrapper">
+              <div class="progress-step-label">Step 2</div>
+              <div class="progress-step completed">
+                <i class="fas fa-circle-check"></i>
+              </div>
+            </div>
+            <div class="progress-step-wrapper">
+              <div class="progress-step-label">Step 3</div>
+              <div class="progress-step active">
+                <i class="fas fa-circle-check"></i>
+              </div>
+            </div>
+            <div class="progress-step-wrapper">
+              <div class="progress-step-label">Step 4</div>
+              <div class="progress-step last"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="code-example">&lt;div class="horizontal-progress-tracker"&gt;
+  &lt;div class="progress-step-wrapper"&gt;
+    &lt;div class="progress-step-label"&gt;Step 1&lt;/div&gt;
+    &lt;div class="progress-step completed first"&gt;
+      &lt;i class="fas fa-circle-check"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- NAVIGATION SECTION -->
+    <!-- ============================================ -->
+    <section id="navigation" class="section">
+      <h2>Navigation Components</h2>
+      <p>Navigation styles defined in <code>scss/components/_nav.scss</code>, <code>_nav-offcanvas.scss</code>, and <code>_nav-overlay.scss</code></p>
+
+      <h3>Main Navigation Bar</h3>
+      <div class="component-example">
+        <p>The main navigation bar includes:</p>
+        <ul>
+          <li>Logo and branding</li>
+          <li>Search functionality</li>
+          <li>Top navigation links</li>
+          <li>Application menu dropdown</li>
+          <li>User profile access</li>
+          <li>Notification counts</li>
+        </ul>
+        <p class="mb-0"><em>See the top of this page for a live example.</em></p>
+      </div>
+
+      <h3>Overlay Navigation</h3>
+      <div class="component-example">
+        <p>Overlay navigation features:</p>
+        <ul>
+          <li>Full-screen overlay menu</li>
+          <li>Animated slide-in from right</li>
+          <li>Notification badges</li>
+          <li>Search integration</li>
+          <li>User profile quick access</li>
+        </ul>
+        <p class="mb-0"><em>Click the menu icon in the top navigation to see it in action.</em></p>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CHAT SECTION -->
+    <!-- ============================================ -->
+    <section id="chat" class="section">
+      <h2>Chat Widget</h2>
+      <p>Chat styles defined in <code>scss/components/_chat.scss</code></p>
+
+      <h3>Chat Components</h3>
+      <div class="component-example">
+      <div class="col-lg-4">
+        <p>The chat widget includes:</p>
+        <ul>
+          <li><strong>Sticky Button</strong> - Fixed position chat trigger button</li>
+          <li><strong>Chat Window</strong> - Slide-up chat interface</li>
+          <li><strong>Chat Header</strong> - Title and close button</li>
+          <li><strong>Chat Body</strong> - Message display area with agent/user messages</li>
+          <li><strong>Chat Footer</strong> - Input field and send button</li>
+        </ul>
+
+        <h4 class="mt-4">Chat Button</h4>
+        <button class="chat-sticky-btn" style="position: static; margin: 2rem 0;">
+          <i class="fa-solid fa-comment"></i>
+        </button>
+
+        <h4 class="mt-4">Message Styles</h4>
+        <div style="background: #f5f5f5; padding: 2rem; border-radius: 9px;">
+          <div class="chat-message chat-message-agent mb-3">
+            <div class="chat-message-content">
+              <p class="mb-0">Hello! How can I help you today?</p>
+            </div>
+          </div>
+          <div class="chat-message chat-message-user">
+            <div class="chat-message-content">
+              <p class="mb-0">I have a question about my enrollment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="code-example">&lt;button class="chat-sticky-btn"&gt;
+  &lt;i class="fa-solid fa-comment"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;div class="chat-window"&gt;
+  &lt;div class="chat-window-header"&gt;...&lt;/div&gt;
+  &lt;div class="chat-window-body"&gt;...&lt;/div&gt;
+  &lt;div class="chat-window-footer"&gt;...&lt;/div&gt;
+&lt;/div&gt;</div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CALENDAR SECTION -->
+    <!-- ============================================ -->
+    <section id="calendar" class="section">
+      <h2>Calendar Component</h2>
+      <p>Calendar styles defined in <code>scss/components/_calendar.scss</code></p>
+
+      <h3>Calendar Features</h3>
+      <div class="component-example">
+        <p>The calendar component includes:</p>
+        <ul class="mb-5">
+          <li>Full month view with navigation</li>
+          <li>Compact mini-calendar view</li>
+          <li>Event indicators on dates</li>
+          <li>Tabbed event lists (My Events / School Events)</li>
+          <li>Event detail cards with actions</li>
+          <li>Color-coded event types</li>
+          <li>Responsive layouts for mobile</li>
+        </ul>
+        {# <p class="mb-0"><em>See the calendar partial in action on the dashboard page.</em></p> #}
+
+        <div class="col-lg-4">
+          <div class="white-box">
+            <div class="calendar-wrapper">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <p class="small-title mb-0">Important Dates: March 2026</p>
+                <button class="calendar-toggle-btn" id="calendarToggleBtn" aria-label="Toggle calendar view">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+
+              <!-- Full Calendar View (Hidden by Default) -->
+              <div class="calendar-full-view" id="calendarFullView" style="display: none;">
+                <ol class="calendar">
+                  <li class="day-name">Sun</li>
+                  <li class="day-name">Mon</li>
+                  <li class="day-name">Tue</li>
+                  <li class="day-name">Wed</li>
+                  <li class="day-name">Thu</li>
+                  <li class="day-name">Fri</li>
+                  <li class="day-name">Sat</li>
+                  <li class="first-day">1</li>
+                  <li>2</li>
+                  <li>
+                    <span class="school-event class-outline" style="display: none;">3</span>
+                    <span class="student-event">3</span>
+                  </li>
+                  <li>4</li>
+                  <li>
+                    <span class="school-event" style="display: none;">5</span>
+                    <span class="student-event class-blue">5</span>
+                  </li>
+                  <li>6</li>
+                  <li>7</li>
+                  <li>8</li>
+                  <li>
+                    <span class="school-event class-start" style="display: none;">9</span>
+                    <span class="student-event">9</span>
+                  </li>
+                  <li>10</li>
+                  <li>11</li>
+                  <li>
+                    <span class="school-event" style="display: none;">12</span>
+                    <span class="student-event class-blue">12</span>
+                  </li>
+                  <li>
+                    <span class="school-event class-red" style="display: none;">13</span>
+                    <span class="student-event">13</span>
+                  </li>
+                  <li>14</li>
+                  <li>15</li>
+                  <li>16</li>
+                  <li>17</li>
+                  <li>
+                    <span class="school-event class-start" style="display: none;">18</span>
+                    <span class="student-event">18</span>
+                  </li>
+                  <li>
+                    <span class="school-event" style="display: none;">19</span>
+                    <span class="student-event class-blue">19</span>
+                  </li>
+                  <li>20</li>
+                  <li>21</li>
+                  <li>22</li>
+                  <li>23</li>
+                  <li>24</li>
+                  <li>25</li>
+                  <li>
+                    <span class="school-event" style="display: none;">26</span>
+                    <span class="student-event class-blue">26</span>
+                  </li>
+                  <li>
+                    <span class="school-event class-orange" style="display: none;">27</span>
+                    <span class="student-event">27</span>
+                  </li>
+                  <li>28</li>
+                  <li>29</li>
+                  <li>30</li>
+                  <li>31</li>
+                  <li class="gray">1</li>
+                  <li class="gray">2</li>
+                  <li class="gray">3</li>
+                  <li class="gray">4</li>
+                </ol>
+              </div>
+
+              <!-- Event Tabs -->
+              <div class="calendar-event-tabs document-tabs mb-3">
+
+                <a href="#student-events" class="calendar-tab-link active" data-calendar-tab="student">
+                  My Events <span class="count-standalone messages ms-2">4</span>
+                </a>
+                <a href="#school-events" class="calendar-tab-link" data-calendar-tab="school">
+                  School Events
+                </a>
+
+              </div>
+
+              <!-- Student Events List -->
+              <div class="calendar-events calendar-tab-content active" id="studentEventsList">
+                <div class="calendar-event">
+                  <span class="date">
+                    <span class="dot bg-blue"></span>
+                    Mar 5
+                  </span>
+                  <span class="label">Virtual Career Fair</span>
+                  <span class="time">Thu 10:00 AM</span>
+                </div>
+                <div class="calendar-event">
+                  <span class="date">
+                    <span class="dot bg-blue"></span>
+                    Mar 12
+                  </span>
+                  <span class="label">Registration Deadline</span>
+                  <span class="time">Thu 7:00 PM</span>
+                </div>
+                <div class="calendar-event">
+                  <span class="date">
+                    <span class="dot bg-blue"></span>
+                    Mar 19
+                  </span>
+                  <span class="label">Transfer Credit Evaluation Results Posted</span>
+                  <span class="time">Thu 6:00 PM</span>
+                </div>
+                <div class="calendar-event">
+                  <span class="date">
+                    <span class="dot bg-blue"></span>
+                    Mar 26
+                  </span>
+                  <span class="label">FAFSA Steps Needed</span>
+                  <span class="time">Thu 5:00 PM</span>
+                </div>
+              </div>
+
+              <!-- School Events List (Default View) -->
+              <div class="calendar-events calendar-tab-content" id="schoolEventsList" style="display: none;">
+                <div class="calendar-event">
+                  <span class="date">
+                    <span class="dot" style="background-color: #000; border: 2px solid #000;"></span>
+                    Mar 3
+                  </span>
+                  <span class="label">School Event 1</span>
+                  <span class="time">Tue 8:00 AM</span>
+                </div>
+                <div class="calendar-event">
+                  <span class="date">
+                    <span class="dot" style="background-color: #80c342;"></span>
+                    Mar 9
+                  </span>
+                  <span class="label">School Event 2</span>
+                  <span class="time">Mon 12:00 AM</span>
+                </div>
+                <div class="calendar-event">
+                  <span class="date">
+                    <span class="dot" style="background-color: #E4193B;"></span>
+                    Mar 13
+                  </span>
+                  <span class="label">School Event 3</span>
+                  <span class="time">Fri 11:59 PM</span>
+                </div>
+                <div class="calendar-event">
+                  <span class="date">
+                    <span class="dot" style="background-color: #80c342;"></span>
+                    Mar 18
+                  </span>
+                  <span class="label">School Event 4</span>
+                  <span class="time">Wed 12:00 AM</span>
+                </div>
+                <div class="calendar-event">
+                  <span class="date">
+                    <span class="dot" style="background-color: #F88A00;"></span>
+                    Mar 27
+                  </span>
+                  <span class="label">School Event 5</span>
+                  <span class="time">Fri 11:59 PM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+        // Toggle calendar view and handle tabs
+        document.addEventListener('DOMContentLoaded', function() {
+          const toggleBtn = document.getElementById('calendarToggleBtn');
+          const fullView = document.getElementById('calendarFullView');
+
+          // Calendar expand/collapse
+          if (toggleBtn && fullView) {
+            toggleBtn.addEventListener('click', function() {
+              const icon = this.querySelector('i');
+              const isExpanded = fullView.style.display !== 'none';
+
+              if (isExpanded) {
+                // Collapse - hide full calendar
+                fullView.style.display = 'none';
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+              } else {
+                // Expand - show full calendar
+                fullView.style.display = 'block';
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+              }
+            });
+          }
+
+          // Calendar tab switching
+          const calendarTabs = document.querySelectorAll('.calendar-tab-link');
+          const schoolEventsList = document.getElementById('schoolEventsList');
+          const studentEventsList = document.getElementById('studentEventsList');
+          const schoolEventMarkers = document.querySelectorAll('.school-event');
+          const studentEventMarkers = document.querySelectorAll('.student-event');
+
+          if (calendarTabs.length > 0 && schoolEventsList && studentEventsList) {
+            calendarTabs.forEach(tab => {
+              tab.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Update active tab
+                calendarTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                // Show/hide event lists and calendar markers
+                const tabType = this.getAttribute('data-calendar-tab');
+                if (tabType === 'school') {
+                  // Show school events
+                  schoolEventsList.style.display = 'flex';
+                  studentEventsList.style.display = 'none';
+
+                  // Show school markers, hide student markers
+                  schoolEventMarkers.forEach(marker => marker.style.display = 'grid');
+                  studentEventMarkers.forEach(marker => marker.style.display = 'none');
+                } else if (tabType === 'student') {
+                  // Show student events
+                  schoolEventsList.style.display = 'none';
+                  studentEventsList.style.display = 'flex';
+
+                  // Hide school markers, show student markers
+                  schoolEventMarkers.forEach(marker => marker.style.display = 'none');
+                  studentEventMarkers.forEach(marker => marker.style.display = 'grid');
+                }
+              });
+            });
+          }
+        });
+        </script>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- DOCUMENTS SECTION -->
+    <!-- ============================================ -->
+    <section id="documents" class="section">
+      <h2>Document Lists</h2>
+      <p>Document list styles defined in <code>scss/components/_document-lists.scss</code></p>
+
+      <h3>Document Items</h3>
+      {# <div class="component-example">
+        <div class="document-list">
+          <div class="document-item">
+            <div class="document-info">
+              <div class="document-title">Official Transcript</div>
+              <div class="document-meta">Submitted: March 15, 2026 • Status: Approved</div>
+            </div>
+            <div class="document-actions">
+              <span class="badge badge-completed"><i class="fa-solid fa-check-circle"></i> Completed</span>
+              <button class="btn btn-sm btn-main">
+                <i class="fa-solid fa-download"></i> Download
+              </button>
+            </div>
+          </div>
+
+          <div class="document-item">
+            <div class="document-info">
+              <div class="document-title">Immunization Records</div>
+              <div class="document-meta">Due: April 30, 2026</div>
+            </div>
+            <div class="document-actions">
+              <span class="badge badge-required"><i class="fa-solid fa-exclamation-circle"></i> Required</span>
+              <button class="btn btn-sm btn-main">
+                <i class="fa-solid fa-upload"></i> Upload
+              </button>
+            </div>
+          </div>
+        </div>
+      </div> #}
+
+      <div class="component-example">
+        <div class="document-list">
+          <div class="document-item mb-2">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-circle-check apu-blue-active me-3 icon-lg" aria-hidden="true"></i>
+              <p class="mb-0"><strong>ID Verification</strong></p>
+            </div>
+            <a href="#" class="arrow-link arrow-link-sm" data-bs-toggle="modal" data-bs-target="#uploadIdModal">
+              <i class="fa-solid fa-upload me-1" aria-hidden="true"></i> Upload ID
+            </a>
+          </div>
+          <div class="document-item mb-2">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-clock orange me-3 icon-lg" aria-hidden="true"></i>
+              <p class="mb-0"><strong>Application Review</strong></p>
+            </div>
+            <span class="badge badge-pending">Under Review</span>
+          </div>
+          <div class="document-item mb-2">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-circle-check green me-3 icon-lg" aria-hidden="true"></i>
+              <p class="mb-0"><strong>Application Submitted</strong></p>
+            </div>
+            <a href="/view-application.html" class="btn-link-primary">
+              <i class="fa-solid fa-eye me-1" aria-hidden="true"></i> View Document
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="component-example">
+        <div class="document-list">
+          <!-- Active Alert 1 -->
+          <div class="document-item red-required">
+            <div class="document-info">
+              <div class="mb-2">
+                <span class="badge badge-required"><i class="fa-solid fa-exclamation-circle" aria-hidden="true"></i> Action Required</span>
+                <span class="badge bg-secondary ms-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> Due: April 15, 2026</span>
+              </div>
+              <h4 class="document-title">Submit Official Transcripts</h4>
+              <p class="document-meta mb-0">Your application is pending official transcripts from all previously attended institutions. Please request these as soon as possible to avoid delays.</p>
+            </div>
+            <div class="document-actions">
+              <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert1">View Details</button>
+            </div>
+          </div>
+
+          <!-- Active Alert 2 -->
+          <div class="document-item orange-pending">
+            <div class="document-info">
+              <div class="mb-2">
+                <span class="badge badge-pending"><i class="fa-solid fa-exclamation-triangle" aria-hidden="true"></i> Important Notice</span>
+                <span class="badge bg-secondary ms-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> Deadline: May 1, 2026</span>
+              </div>
+              <h4 class="document-title">Financial Aid Application Deadline Approaching</h4>
+              <p class="document-meta mb-0">The deadline to submit your FAFSA for the upcoming academic year is May 1, 2026. Complete your application soon to maximize your financial aid opportunities.</p>
+            </div>
+            <div class="document-actions">
+              <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert2">View Details</button>
+            </div>
+          </div>
+
+          <div class="document-item green-completed">
+            <div class="document-info">
+              <div class="mb-2">
+                <span class="badge badge-completed"><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Resolved</span>
+                <span class="badge badge-resolved-date ms-2"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Resolved on: March 26, 2026</span>
+              </div>
+              <h4 class="document-title">Application Submitted</h4>
+              <p class="document-meta mb-0">Your application has been successfully submitted and is under review by the admissions committee.</p>
+            </div>
+            <div class="document-actions">
+              <button class="btn-secondary btn-sm view-alert-details" data-alert-id="alert3">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-example">
+        <div class="document-list program-list mb-4">
+          <div class="document-item program-item mb-0">
+            <div>
+              <p class="mb-0"><strong>HIST 501 - Historical Research Methods</strong></p>
+              <p class="small-text mb-0">3 Credit Hours</p>
+            </div>
+            <span class="badge bg-secondary">Core</span>
+          </div>
+          <div class="document-item program-item mb-0">
+            <div>
+              <p class="mb-0"><strong>HIST 502 - Historiography</strong></p>
+              <p class="small-text mb-0">3 Credit Hours</p>
+            </div>
+            <span class="badge bg-green">Elective</span>
+          </div>
+          <div class="document-item program-item mb-0">
+            <div>
+              <p class="mb-0"><strong>HIST 510 - American History Since 1865</strong></p>
+              <p class="small-text mb-0">3 Credit Hours</p>
+            </div>
+            <span class="badge bg-orange">Internship</span>
+          </div>
+          <div class="document-item program-item mb-0">
+            <div>
+              <p class="mb-0"><strong>HIST 520 - European History: 1500-Present</strong></p>
+              <p class="small-text mb-0">3 Credit Hours</p>
+            </div>
+            <span class="badge bg-blue">Capstone</span>
+          </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CART SECTION -->
+    <!-- ============================================ -->
+    <section id="shoppingcart" class="section">
+      <h2>Cart Component</h2>
+      <p>Cart styles defined in <code>scss/components/_utilities.scss</code>, and <code>_modal.scss</code></p>
+      <h3>Registration "Shopping Cart" Modal</h3>
+      <div class="component-example">
+        <p>Cart modal includes:</p>
+        <ul>
+          <li>Standard modal styles</li>
+          <li>"Start Registration" button if empty</li>
+          <li>If not empty, shows classes, totals and costs</li>
+          <li>If not empty, shows ability to continue registration and "Clear Cart"</li>
+        </ul>
+        <p class="mb-0"><em>See the top of this page for a live example.</em></p>
+      </div>
+    </section>
+
+<!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <section id="footer" class="section">
+      <h2>Footer</h2>
+      <p>Footer styles defined in <code>scss/components/_footer.scss</code></p>
+      <!-- Footer -->
+      {% include "partials/layout/footer.njk" %}      
+
+    </section>
+
+    <!-- Footer -->
+    <div class="mt-5 pt-5 border-top">
+      <p class="text-center gray-60">
+        Last Updated: April 2026
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// Smooth scroll to sections
+document.querySelectorAll('.style-guide-nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+
+      // Update active state
+      document.querySelectorAll('.style-guide-nav a').forEach(a => a.classList.remove('active'));
+      this.classList.add('active');
+    }
+  });
+});
+
+// Update active nav on scroll
+window.addEventListener('scroll', function() {
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('.style-guide-nav a');
+
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= (sectionTop - 100)) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+
+{% endblock %}

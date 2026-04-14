@@ -9,7 +9,7 @@
 	<!-- font awesome 6.0 -->
 	<script src="https://kit.fontawesome.com/7e5f6c5917.js" crossorigin="anonymous"></script>
 
-	{% include "partials/head-apu.njk" %}
+	{% include "partials/branding/head-apu.njk" %}
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="/css/main.css">
@@ -21,16 +21,16 @@
 <div class="dashboard-overlay">
 	<!-- Overlay Navigation (Default - for all stages except applicant) -->
 	<div id="overlay-nav-default">
-		{% include "partials/overlay-nav.njk" %}
+		{% include "partials/navigation/overlay-nav.njk" %}
 	</div>
 
 	<!-- Overlay Navigation (Applicant Stage Only) -->
 	<div id="overlay-nav-applicant" style="display: none;">
-		{% include "partials/overlay-nav-applicant.njk" %}
+		{% include "partials/navigation/overlay-nav-applicant.njk" %}
 	</div>
 
 	<!-- Full Screen Menu Overlay -->
-	{% include "partials/overlay-menu.njk" %}
+	{% include "partials/navigation/overlay-menu.njk" %}
 
 	<div id="main" class="dashboard-app overlay-layout">
 		{# <div class="row">
@@ -38,17 +38,19 @@
 		</div> #}
 		<div class="row flex-nowrap">
 			<main class="col main-wrap">
-			{% include "partials/header.njk" %}
+			{% include "partials/layout/header.njk" %}
 
 			{% block content %}{% endblock %}
 			</main>
 		</div>
 
-		{% include "partials/footer.njk" %}
+		
 	</div>
+	<!-- Footer -->
+	{% include "partials/layout/footer.njk" %}
 
 	<!-- Registration Cart Modal -->
-	{% include "partials/registration/cart-modal.njk" %}
+	{% include "partials/flows/registration/cart-modal.njk" %}
 
 	<!-- Confetti Library -->
 	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>

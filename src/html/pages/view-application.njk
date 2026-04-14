@@ -5,19 +5,19 @@
 
 {% block content %}
 <div class="container">
-  <div class="row justify-content-center mb-4">
-    <div class="col-9">
+  <div class="row row-main-layout mb-4">
+    <div class="">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
           <li class="breadcrumb-item active" aria-current="page">View Application</li>
         </ol>
       </nav>
-    </div>
-  </div>
+    {# </div> #}
+  {# </div> #}
 
-  <div class="row justify-content-center mb-5">
-    <div class="col-9">
+  <div class="mb-5">
+    {# <div class="col-9"> #}
       <div class="d-flex justify-content-between align-items-center">
         <div>
           <h1 class="mb-2">Application Summary</h1>
@@ -28,14 +28,14 @@
           <span class="badge bg-review" style="font-size: 1.4rem; padding: 0.8rem 1.5rem;">Submitted - Pending Review</span>
         </div>
       </div>
-    </div>
+    {# </div> #}
   </div>
 
   <!-- Application Status -->
-  <div class="row justify-content-center mb-4">
-    <div class="col-9">
+  <div class="mb-4">
+    {# <div class="col-9"> #}
       <div class="white-box">
-        <h4 class="mb-5">Application Status</h3>
+        <h4 class="mb-5">Application Status</h4>
         <div class="row">
           {# <div class="col-md-4 mb-3">
             <p class="small-title gray-70 mb-1">Current Status</p>
@@ -57,14 +57,14 @@
           </div> #}
         </div>
       </div>
-    </div>
+    {# </div> #}
   </div>
 
   <!-- Personal Information -->
-  <div class="row justify-content-center mb-4">
-    <div class="col-9">
+  <div class="mb-4">
+    {# <div class="col-9"> #}
       <div class="white-box">
-        <h4 class="mb-5">Personal Information</h3>
+        <h4 class="mb-5">Personal Information</h4>
         <div class="row">
           <div class="col-md-6 mb-3">
             <p class="small-title gray-70 mb-1">Full Name</p>
@@ -88,14 +88,14 @@
           </div>
         </div>
       </div>
-    </div>
+    {# </div> #}
   </div>
 
   <!-- Education History -->
-  <div class="row justify-content-center mb-4">
-    <div class="col-9">
+  <div class="mb-4">
+    {# <div class="col-9"> #}
       <div class="white-box">
-        <h4 class="mb-5">Education History</h3>
+        <h4 class="mb-5">Education History</h4>
         <div class="row">
           <div class="col-md-6 mb-3">
             <p class="small-title gray-70 mb-1">High School</p>
@@ -112,14 +112,14 @@
           </div>
         </div>
       </div>
-    </div>
+    {# </div> #}
   </div>
 
   <!-- Military Background -->
-  <div class="row justify-content-center mb-4">
-    <div class="col-9">
+  <div class="mb-4">
+    {# <div class="col-9"> #}
       <div class="white-box">
-        <h4 class="mb-5">Military Background</h3>
+        <h4 class="mb-5">Military Background</h4>
         <div class="row">
           <div class="col-md-6 mb-3">
             <p class="small-title gray-70 mb-1">Military Affiliation</p>
@@ -147,12 +147,12 @@
           </div>
         </div>
       </div>
-    </div>
+    {# </div> #}
   </div>
 
   <!-- Documents -->
-  <div class="row justify-content-center mb-4">
-    <div class="col-9">
+  <div class="mb-4">
+    {# <div class="col-9"> #}
       <div class="white-box">
         <h4 class="mb-5">Uploaded Documents</h4>
         <div class="document-list">
@@ -178,37 +178,35 @@
           </div>
         </div>
       </div>
-    </div>
+    {# </div> #}
   </div>
+</div>
 
   <!-- Admissions Decision (Coming Soon) -->
-  <div class="row justify-content-center mb-4">
-    <div class="col-9">
-      <div class="white-box" style="background: #f8f9fa; border-left: 4px solid #00ffff;">
+  {# <div class="mb-4"> #}
+    <div class="">
+      <div class="white-box">
         <h3 class="mb-3">Next Steps</h3>
-        <p class="mb-3">Your application is currently under review by our admissions team. You will receive an admission decision via email within 5-7 business days.</p>
-        <div class="alert-exclamation alert-blue mb-0">
-          <i class="fas fa-info-circle me-2"></i>
+        <p class="mb-4">Your application is currently under review by our admissions team. You will receive an admission decision via email within 5-7 business days.</p>
+        <div class="alert-alt alert-blue mb-0">
+          <i class="fas fa-info-circle mb-3"></i>
           <div>
             <p class="mb-3"><strong>Track Your Status:</strong></p>
             <p class="mb-0">Check your email regularly for updates. You can also contact our admissions office at <strong>1-877-468-6268</strong> or <strong>admissions@apus.edu</strong> for any questions.</p>
           </div>
         </div>
       </div>
-    </div>
+    {# </div>
   </div>
 
   <!-- Actions -->
-  <div class="row justify-content-center mb-5">
-    <div class="col-9">
-      <div class="d-flex gap-3">
-        <a href="/" class="btn-secondary">
-          <i class="fas fa-arrow-left me-2"></i> Back to Dashboard
-        </a>
-        <button onclick="window.print()" class="btn-secondary">
+  <div class="mb-5">
+    <div class="col-9"> #}
+      <div class="{# d-flex gap-3 #}">
+        <a onclick="window.print()" class="btn-secondary btn-sm mb-2">
           <i class="fas fa-print me-2"></i> Print Application
-        </button>
-        <a href="mailto:admissions@apus.edu" class="btn-main">
+        </a>
+        <a href="mailto:admissions@apus.edu" class="btn-main btn-sm mb-2">
           <i class="fas fa-envelope me-2"></i> Contact Admissions
         </a>
       </div>

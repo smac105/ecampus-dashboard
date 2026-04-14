@@ -1,0 +1,110 @@
+// ============================================
+// UTILITIES
+// Color, spacing, and text utilities
+// ============================================
+
+/* COLOR UTILITIES */
+.red { color: $red; }
+.green { color: $green; }
+.orange { color: $orange; }
+.yellow { color: $yellow; }
+.blue { color: $blue; }
+
+.bg-red { background: $red; }
+.bg-green { background: $green; }
+.bg-orange { background: $orange; }
+.bg-yellow { background: $yellow; }
+.bg-blue { background: $blue; }
+
+.blk { color: $blk; }
+.wht, .white { color: $wht; }
+
+.bg-blk { background: $blk; }
+.bg-wht, .bg-white { background: $wht; }
+
+.gray-10 { color: $gray-10; }
+.gray-20, .gray { color: $gray-20; }
+.gray-60 { color: $gray-60; }
+.gray-70 { color: $gray-70; }
+.gray-90 { color: $gray-90; }
+.gray-dk { color: $gray-dk; }
+
+.bg-gray-10 { background: $gray-10; }
+.bg-gray-20, .bg-gray { background: $gray-20; }
+.bg-gray-60 { background: $gray-60; }
+.bg-gray-70 { background: $gray-70; }
+.bg-gray-90 { background: $gray-90; }
+.bg-gray-dk { background: $gray-dk; }
+
+/* BRAND COLORS */
+.apu-blue { color: $apu-blue; }
+.apu-blue-alt { color: $apu-blue-alt; }
+.apu-blue-active { color: $apu-blue-active; }
+
+.apu-green { color: $apu-green; }
+.apu-green-alt { color: $apu-green-alt; }
+.apu-green-active { color: $apu-green-active; }
+
+.apu-yellow { color: $apu-yellow; }
+.apu-yellow-alt { color: $apu-yellow-alt; }
+.apu-yellow-active { color: $apu-yellow-active; }
+
+/* SPACING UTILITIES */
+.mb-sm {
+  margin-bottom: 1.5rem;
+}
+
+/* TYPOGRAPHY UTILITIES */
+.small-title {
+  font-size: 1.4rem;
+  line-height: 1.0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lead {
+  font-size: 2.0rem;
+  margin-bottom: 25px;
+}
+
+.text-advisor {
+  line-height: 1.2;
+  span {
+    font-weight: 700;
+  }
+}
+
+.text-sm {
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
+.text-base {
+  font-size: 1.4rem;
+  line-height: 1.7;
+}
+
+.text-lg {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
+/* LAYOUT UTILITIES */
+.space-between {
+  @include space-between;
+}
+
+/* ICON UTILITIES */
+.icon-lg {
+  font-size: 2rem;
+}
+
+.icon-xl {
+  font-size: 2.4rem;
+}
+
+/* BUTTON UTILITIES */
+.btn-min-width {
+  min-width: 140px;
+}

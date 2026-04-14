@@ -1,0 +1,59 @@
+// ============================================
+// COUNT BADGES
+// Circular notification count badges
+// ============================================
+
+/* COUNT BADGE - Default Style */
+.count {
+  position: absolute;
+  width: 2.0rem;
+  height: 2.0rem;
+  border-radius: 50%;
+  background: $green;
+  font-size: 1.3rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: $wht;
+  top: 0px;
+  right: -4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Barlow", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* COUNT BADGE VARIANTS */
+.count.email {
+  background: $blue;
+}
+
+.count.cart {
+  background: $green;
+}
+
+.count.messages {
+  background: $blue;
+}
+
+.count.alerts {
+  background: $red;
+}
+
+/* Standalone Count Badge (not positioned absolutely) */
+.count-standalone {
+  position: static;
+  display: inline-flex;
+  width: 2.0rem;
+  height: 2.0rem;
+  border-radius: 50%;
+  background: $blue;
+  font-size: 1.3rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: $wht;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Barlow", "Helvetica Neue", Arial, sans-serif;
+}

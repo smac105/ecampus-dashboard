@@ -1,0 +1,200 @@
+// ============================================
+// CHAT COMPONENTS
+// Sticky chat button and chat window
+// ============================================
+
+/* STICKY CHAT BUTTON */
+.chat-sticky-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background: $apu-blue;
+  border: none;
+  color: $blk;
+  font-size: 2.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1000;
+
+  &:hover {
+    background: darken($apu-blue, 10%);
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  i {
+    color: $blk;
+  }
+}
+
+/* CHAT WINDOW */
+.chat-window {
+  position: fixed;
+  bottom: -520px;
+  right: 2rem;
+  width: 380px;
+  height: 500px;
+  background: $wht;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+
+  &.show {
+    bottom: 2rem;
+  }
+}
+
+/* CHAT WINDOW HEADER */
+.chat-window-header {
+  padding: 2rem;
+  background: $apu-blue;
+  color: $blk;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h4 {
+    color: $blk;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .chat-status {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    color: $blk;
+  }
+}
+
+.chat-close-btn {
+  background: transparent;
+  border: none;
+  color: $blk;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  i {
+    color: $blk;
+  }
+}
+
+/* CHAT WINDOW BODY */
+.chat-window-body {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background: $gray-10;
+}
+
+/* CHAT MESSAGES */
+.chat-message {
+  margin-bottom: 1.5rem;
+
+  &.chat-message-agent {
+    .chat-message-content {
+      background: $wht;
+      padding: 1.2rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      max-width: 80%;
+
+      p {
+        font-size: 1.4rem;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  &.chat-message-user {
+    display: flex;
+    justify-content: flex-end;
+
+    .chat-message-content {
+      background: $apu-blue;
+      color: $blk;
+      padding: 1.2rem 1.5rem;
+      border-radius: 12px;
+      max-width: 80%;
+
+      p {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        color: $blk;
+      }
+    }
+  }
+}
+
+/* CHAT WINDOW FOOTER */
+.chat-window-footer {
+  padding: 1.5rem 2rem;
+  background: $wht;
+  border-top: 1px solid $gray-20;
+  border-radius: 0 0 12px 12px;
+  display: flex;
+  gap: 1rem;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: 1px solid $gray-20;
+  border-radius: 24px;
+  font-size: 1.4rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    border-color: $apu-blue;
+  }
+
+  &::placeholder {
+    color: $gray-60;
+  }
+}
+
+.chat-send-btn {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: $apu-blue;
+  border: none;
+  color: $apu-blue-active;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: darken($apu-blue, 10%);
+    transform: scale(1.05);
+  }
+
+  i {
+    color: $blk;
+  }
+}

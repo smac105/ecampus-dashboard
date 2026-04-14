@@ -1,0 +1,1038 @@
+// =====================================
+// Top Navigation Bar
+// =====================================
+.overlay-layout {
+  margin-left: 13px;
+}
+.overlay-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $overlay-nav-height;
+  background: $primary;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+  .container-fluid {
+    height: 100%;
+  }
+
+  .overlay-nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 2rem;
+  }
+
+  .overlay-nav-logo {
+    height: 50px;
+
+    a {
+      display: block;
+      height: 100%;
+    }
+
+    svg {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  .overlay-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  // Quick Access Icons (using existing top-nav partial)
+  .overlay-nav-icons {
+    // Override top-nav styles to be white
+    .top-nav-wrap {
+      ul {
+        margin: 0;
+
+        li {
+          a {
+            color: #fff;
+
+            .top-wrap {
+              i {
+                color: #fff;
+              }
+            }
+
+            &:hover {
+              background: rgba(255, 255, 255, 0.1);
+            }
+          }
+
+          // Count badge variant for overlay nav
+          .count {
+            border: 1px solid $blk;
+          }
+        }
+      }
+    }
+  }
+
+  // Vertical Divider
+  .overlay-nav-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  // Search (Desktop only - using existing search partial)
+  .overlay-nav-search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-width: 35px;
+
+    // Override search partial styles for overlay nav
+    .search-wrap {
+      margin: 0;
+
+      input[type="search"],
+      input[type="text"] {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        min-width: 200px;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.6);
+        }
+
+        &:focus {
+          background: rgba(255, 255, 255, 0.15);
+          border-color: rgba(255, 255, 255, 0.4);
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .overlay-nav-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #fff;
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .user-name {
+        font-weight: 600;
+      }
+
+      .user-id {
+        opacity: 0.8;
+        font-size: 1.2rem;
+      }
+    }
+
+    // Profile Initial Circle
+    .profile-initial {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: $secondary;
+      color: $primary;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      .big-initial {
+        // font-size: 1.25rem;
+        font-weight: 700;
+      }
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        background: $apu-blue-alt;
+      }
+    }
+  }
+
+  .overlay-menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    padding: 1.5rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    // font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    // 9-Dot Grid Icon
+    .menu-grid-icon {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      width: 22px;
+      height: 22px;
+
+      .grid-dot {
+        width: 5px;
+        height: 5px;
+        background: #fff;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+    }
+
+    // Active state - transform grid to X (two intersecting lines)
+    &.active {
+      .menu-grid-icon {
+        position: relative;
+
+        // Fade out all dots except center
+        .grid-dot:nth-child(1),
+        .grid-dot:nth-child(2),
+        .grid-dot:nth-child(3),
+        .grid-dot:nth-child(4),
+        .grid-dot:nth-child(6),
+        .grid-dot:nth-child(7),
+        .grid-dot:nth-child(8),
+        .grid-dot:nth-child(9) {
+          opacity: 0;
+          transform: scale(0);
+        }
+
+        // Center dot becomes both X lines using pseudo-elements
+        .grid-dot:nth-child(5) {
+          width: 26px;
+          height: 3px;
+          border-radius: 2px;
+          transform: translate(-10px, 0) rotate(45deg);
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 26px;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile Adjustments for Top Nav
+@media (max-width: 768px) {
+  .overlay-nav {
+    .overlay-nav-content {
+      padding: 0 1rem;
+    }
+
+    // Keep icons visible on mobile
+    .overlay-nav-icons {
+      // Icons stay visible
+    }
+
+    // Hide first divider (after icons), show second divider (before profile)
+    .overlay-nav-divider {
+      display: none;
+
+      // Show only the divider before profile
+      &:last-of-type {
+        display: block;
+      }
+    }
+
+    // Hide search on mobile (shown in overlay menu instead)
+    .overlay-nav-search {
+      display: none;
+    }
+
+    .overlay-nav-user {
+      .user-info {
+        display: none;
+      }
+
+      // Keep profile initial visible on mobile
+      .profile-initial {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .overlay-nav-logo {
+      height: 40px;
+    }
+
+    .overlay-menu-toggle {
+      padding: 1.5rem 1rem;
+      font-size: 0.85rem;
+
+      .menu-toggle-text {
+        display: none;
+      }
+    }
+  }
+}
+
+// =====================================
+// Full-Screen Overlay Menu
+// =====================================
+
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $blk;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  overflow-y: auto;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .overlay-menu-content {
+    padding-top: calc($overlay-nav-height + 3rem);
+    padding-bottom: 4rem;
+    min-height: 100vh;
+    background: linear-gradient(90deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/grid-pattern-static.png') repeat-x;
+    background-position: 0 70px;
+  }
+}
+
+// Mobile Search in Overlay Menu (hidden on desktop)
+.overlay-menu-search-mobile {
+  display: none;
+  padding: 0 2rem 1rem 2rem;
+  margin-bottom: 1rem;
+
+  .search-wrap {
+    input[type="search"] {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      font-size: 1rem;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      &:focus {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.4);
+        outline: none;
+      }
+    }
+  }
+
+  // Show on mobile
+  @media (max-width: 768px) {
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    right: 8px;
+    top: 94px;
+
+  }
+}
+
+// Menu Sections
+.overlay-menu-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 2rem 0;
+}
+
+.overlay-menu-item-single {
+  margin-bottom: 1rem;
+
+  .overlay-menu-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: $overlay-link-color;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 10px 0;
+
+    i {
+      color: $secondary;
+      font-size: 24px;
+    }
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+
+.overlay-menu-section {
+  // border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0rem 2rem 0rem 0rem;
+
+  .overlay-menu-title {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: $overlay-link-color;
+    font-size: 26px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    .title-content {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+
+      i {
+        color: $secondary;
+        font-size: 18px;
+      }
+    }
+    .toggle-icon {
+      color: $secondary;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      color: $secondary;
+      opacity: 0.75 !important;
+      cursor: pointer !important;
+    }
+  }
+
+  // Inactive state (when another section is expanded)
+  &.inactive {
+    .overlay-menu-title {
+      opacity: 0.3;
+      cursor: default;
+    }
+  }
+}
+
+// Dropdown Styles (now in separate container)
+.overlay-menu-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+
+  // Overview link (links to main section page)
+  .dropdown-overview-link {
+    display: block;
+    color: $secondary;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 1rem 0 0.5rem 0;
+    transition: opacity 0.3s ease;
+    width: 320px;
+    &:after {
+      font-family: "Font Awesome 6 Pro";
+      content: "\f0da";
+      color: $apu-blue !important;
+      margin:10px 0px 10px 10px;
+    }
+    i {
+      margin-right: 0.5rem;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  // Back button for mobile progressive navigation
+  .dropdown-back-button {
+    display: none; // Hidden by default (desktop)
+    align-items: center;
+    gap: 0.75rem;
+    background: transparent;
+    border: none;
+    color: $secondary;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 1rem 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    text-transform: uppercase;
+
+    i {
+      font-size: 1.2rem;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  // Description text under overview link (above divider)
+  .dropdown-description {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+    margin: 0.75rem 0 0 0;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #333;
+    max-width: 320px;
+  }
+
+  // Submenu links
+  .overlay-menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+
+      &:last-child {
+        margin-bottom: 1rem;
+      }
+
+      a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        display: block;
+        padding: 1.0rem 0;
+        position: relative;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 0;
+          height: 2px;
+          background: $secondary;
+          transition: width 0.3s ease;
+        }
+        &:after {
+          font-family: "Font Awesome 6 Pro";
+          content: "\f0da";
+          color: rgba(255, 255, 255, 0.8);
+          margin:10px 0px 10px 10px;
+          font-weight: 700;
+        }
+        &:hover {
+          color: $overlay-link-color;
+          padding-right: 1.5rem;
+          font-weight: 700;
+          &:after {
+            font-family: "Font Awesome 6 Pro";
+            content: "\f0da";
+            color: $apu-blue !important;
+            margin:10px 0px 10px 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Desktop: Two-column layout with sidebar at bottom
+@media (min-width: 769px) {
+  // Wrapper for grid layout
+  .container {
+    position: relative;
+  }
+
+  .overlay-menu-sections {
+    display: flex;
+    flex-direction: column;
+    width: 345px;
+    padding: 2rem 0;
+    position: relative;
+  }
+
+  .overlay-menu-item-single {
+    .overlay-menu-link {
+      // Keep single item styles
+    }
+  }
+
+  .overlay-menu-section {
+    .overlay-menu-title {
+      .toggle-icon {
+        // Chevron already faces right (fa-chevron-right)
+      }
+    }
+
+    &.expanded {
+      .overlay-menu-title {
+        .toggle-icon {
+          // No rotation needed - stays facing right
+        }
+      }
+    }
+  }
+
+  // Dropdowns container positioned to the right of nav
+  .overlay-menu-dropdowns {
+    position: absolute;
+    top: 2rem; // Match sections padding
+    left: 370px; // 320px nav width + 50px spacing
+    right: 250px; // Leave space for sidebar
+    z-index: 10;
+    width: 100%;
+  }
+
+  // Each dropdown positioned absolutely, overlapping at same position
+  .overlay-menu-dropdown {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+
+    // Active state on desktop (when section is expanded)
+    &.active {
+      max-height: 600px;
+      overflow: visible;
+    }
+  }
+
+  // Position sidebar to the right of dropdown on large desktop
+  .overlay-menu-sidebar {
+    position: fixed;
+    top: calc($overlay-nav-height + 3rem + 2rem); // Align with dropdown
+    right: 2rem;
+    bottom: auto;
+    left: auto;
+    width: 250px;
+    margin-top: 0;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: stretch;
+
+    .overlay-sidebar-links {
+      flex-direction: column;
+      align-items: stretch;
+
+      li a {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+// Sidebar Quick Links
+.overlay-menu-sidebar {
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 2rem;
+  margin-top: 3rem;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+
+  .overlay-sidebar-title {
+    // color: $secondary;
+    color: $blk;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0rem;
+    line-height: 1.0;
+    font-size: 14px;
+    // display: none;
+  }
+
+  .overlay-sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+
+    li {
+      margin-bottom: 0;
+
+      a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1.25rem;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.05);
+        white-space: nowrap;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #000;
+
+        i {
+          color: $secondary;
+          font-size: 1rem;
+        }
+
+        &:hover {
+          background: $apu-blue-active;
+          color: $overlay-link-color;
+          color: $blk;
+          border-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+  }
+}
+
+// Tablet Adjustments (768-991px) - Quick Links at bottom
+@media (min-width: 768px) and (max-width: 991px) {
+  .overlay-menu-sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    width: auto;
+    margin-top: 0;
+    padding: 1.5rem 1rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    flex-direction: row;
+    align-items: center;
+    
+    .overlay-sidebar-links {
+      flex-direction: row;
+      justify-content: flex-start;
+      padding: 0 1rem;
+
+      li a {
+        justify-content: center;
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .overlay-menu-sidebar {
+    .overlay-sidebar-title {
+      // color: $secondary;
+      color: $apu-blue;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0rem;
+      line-height: 1.0;
+      font-size: 14px;
+      display: block;
+    }
+  }
+}
+// Mobile Adjustments (<991px) - Horizontal scrolling
+@media (max-width: 991px) {
+  .overlay-menu-sidebar {
+    // padding-left: 70px;
+    .overlay-sidebar-links {
+      display: flex;
+      flex-wrap: nowrap; // Keep items in one line
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+      padding: 0 1rem 0.5rem 1rem; // Space on sides and for scrollbar
+      justify-content: flex-start;
+
+      li {
+        flex-shrink: 0; // Prevent items from shrinking
+
+        &:first-child {
+          margin-left: 0; // First item aligns with padding
+        }
+
+        &:last-child {
+          margin-right: 1rem; // Extra space at end for better scrolling
+        }
+
+        a {
+          white-space: nowrap; // Keep text on one line
+        }
+      }
+
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 3px;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  // Container needs to allow overflow for sliding panels
+  .overlay-menu-content {
+    overflow-x: hidden;
+    position: relative;
+  }
+  .overlay-menu {
+    .overlay-menu-content {
+      background-position: 0 159px;
+    }
+  }
+  .overlay-menu-sections {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+  }
+
+  // Slide left when dropdown is active
+  .overlay-menu-sections.slide-left {
+    transform: translateX(-130%);
+  }
+
+  .overlay-menu-section {
+    .overlay-menu-title {
+      padding: 13px 0;
+
+      .title-content {
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  // Dropdowns container (outside of sections, not affected by transform)
+  .overlay-menu-dropdowns {
+    position: relative;
+  }
+
+  // Mobile: dropdown slides in from right
+  .overlay-menu-dropdown {
+    display: none; // Hidden by default on mobile
+
+    // Active state - show dropdown and slide in
+    &.active {
+      display: block; // Make visible
+      position: fixed;
+      //top: $overlay-nav-height;  Align with top of menu content
+      top: 160px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      min-height: calc(100vh - 160px);
+      padding: 2rem 2rem;
+      // background: $blk;
+      overflow-y: auto;
+      z-index: 1002;
+      animation: slideInFromRight 0.3s ease-in-out;
+
+      // Show back button only when dropdown is active
+      .dropdown-back-button {
+        display: flex;
+      }
+    }
+  }
+  .right-ql-gradient {
+    height: 47%;
+    width: 35px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.0), rgba(0,0,0,0.349));
+    position: absolute;
+    bottom: 13px;
+    right: 4.6rem;
+    border-right: 1px solid #ffff00;
+    border-radius: 0px 4px 4px 0px;
+  }
+  .left-ql-gradient {
+    height: 47%;
+    width: 35px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.349), rgba(0,0,0,0.0));
+    position: absolute;
+    bottom: 13px;
+    left: 1.6rem;
+    border-left: 1px solid #00ffff;
+    border-radius: 4px 0px 0px 4px;
+  }
+  // Slide in animation
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .overlay-menu-dropdown {
+    .dropdown-overview-link {
+      padding: 0.75rem 0 0.5rem 0;
+    }
+  }
+
+  .overlay-menu-item-single {
+    .overlay-menu-link {
+      padding: 10px 0;
+    }
+  }
+
+  .overlay-menu-sidebar {
+    // padding: 1.5rem;
+    // margin-top: 2rem;
+    // overflow: visible;
+    // position: fixed;
+    // bottom: 0;
+    // left: 0;
+    // display: grid;
+    // gap: 9px;
+    padding: 1.5rem 5rem 1.0rem 2rem;
+    /* margin-top: 2rem; */
+    overflow: visible;
+    position: fixed;
+    top: 34px;
+    left: 0;
+    display: grid;
+    gap: 9px;
+    background: linear-gradient(45deg, #ff0 50%, #0ff 100%);
+
+    .overlay-sidebar-links {
+      padding: 0 0.25rem 0.5rem 0rem;
+      margin: 0;
+
+      li:first-child {
+        padding-left: 0rem;
+      }
+
+      li:last-child {
+        padding-right: 0rem;
+      }
+    }
+  }
+
+  .overlay-menu {
+    .overlay-menu-content {
+      padding-top: calc($overlay-nav-height + 10rem);
+    }
+  }
+}
+@media (max-width: 600px) {
+    .overlay-menu-sections {
+      width: 100%;
+      position: fixed;
+      left: 0;
+    }
+}
+
+// =====================================
+// Layout Adjustments for Overlay Nav
+// =====================================
+
+.overlay-nav-body {
+  .dashboard-overlay {
+    padding-top: $overlay-nav-height;
+  }
+
+  // Hide the old sidebar navigation
+  .sidebar {
+    display: none;
+  }
+
+  // Adjust main content area
+  .main-wrap {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  // Hide the old top nav elements that conflict
+  .top-nav {
+    .sm-logo-main,
+    .search-wrap,
+    .top-nav-wrap {
+      display: none;
+    }
+  }
+}
+
+// =====================================
+// Animations
+// =====================================
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.overlay-menu.active {
+  .overlay-menu-section,
+  .overlay-menu-item-single {
+    opacity: 0;
+    animation: fadeInDown 0.4s ease forwards;
+  }
+
+  @for $i from 1 through 10 {
+    .overlay-menu-section:nth-child(#{$i}),
+    .overlay-menu-item-single:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.04}s;
+    }
+  }
+}

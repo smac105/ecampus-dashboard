@@ -1,0 +1,48 @@
+// ============================================
+// DOCUMENT LISTS
+// Document list items and actions
+// ============================================
+
+/* MY DOCUMENTS - DOCUMENT LIST */
+.document-list {
+  @include flex-column;
+  gap: 1.5rem;
+
+  .document-item {
+    @include flex-between;
+    padding: 1.4rem 2rem;
+    background: $gray-10;
+    border-radius: 9px;
+    border-left: 4px solid $gray-20;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(0, 255, 255, 0.05);
+      border-left-color: $apu-blue-active;
+    }
+
+    .document-info {
+      flex: 1;
+
+      .document-title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: $primary;
+      }
+
+      .document-meta {
+        font-size: 1.4rem;
+        margin-bottom: 0;
+        color: $gray-dk;
+      }
+    }
+
+    .document-actions {
+      @include flex-column;
+      align-items: end;
+      gap: 1.5rem;
+      flex-shrink: 0;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+// ============================================
+// BADGES
+// Status badges and indicators
+// ============================================
+
+/* DOCUMENT STATUS BADGES */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 20px;
+  white-space: nowrap;
+
+  i {
+    font-size: 1.4rem;
+  }
+
+  &.badge-required {
+    background: rgba(228, 25, 59, 0.1);
+    color: $red;
+    border: 1px solid rgba(228, 25, 59, 0.3);
+  }
+
+  &.badge-pending {
+    background: rgba(248, 138, 0, 0.1);
+    color: $orange;
+    border: 1px solid rgba(248, 138, 0, 0.3);
+  }
+
+  &.badge-completed {
+    background: rgba(128, 195, 66, 0.1);
+    color: $green;
+    border: 1px solid rgba(128, 195, 66, 0.3);
+  }
+
+  &.badge-disabled {
+    background: rgba(0, 0, 0, 0.05);
+    color: $gray-60;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  &.bg-success {
+    background-color: $green;
+  }
+
+  &.bg-review {
+    background-color: $orange;
+  }
+}
+
+/* DISABLED DOCUMENT SECTION */
+.document-section-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}

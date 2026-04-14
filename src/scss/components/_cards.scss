@@ -1,0 +1,117 @@
+// ============================================
+// CARDS & WHITE BOXES
+// Card components and white box containers
+// ============================================
+
+/* WHITE BOX VARIANTS */
+.white-box {
+  @include white-box-apus;
+}
+
+.white-box-nopad {
+  @include white-box-apus-nopad;
+}
+
+.white-box-flatbottom {
+  border-radius: 9px 9px 0px 0px;
+  margin-bottom: 0px;
+  box-shadow: none;
+}
+
+.primary-flattop {
+  border-radius: 0px 0px 9px 9px;
+  background: $gray-10;
+  box-shadow: none;
+}
+
+.white-box-border {
+  @include white-box-apus-border;
+}
+
+/* BLACK BACKGROUND BOX */
+.black-bg {
+  background: $primary;
+  color: $wht;
+  padding: 2.0rem 2.5rem;
+  border-radius: 0;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $wht;
+  }
+
+  p {
+    color: $wht;
+  }
+
+  a {
+    color: $secondary;
+
+    &:hover {
+      color: $apu-blue-alt;
+    }
+  }
+}
+
+/* TITLE WRAPPER */
+.title-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .title-wrap-content {
+    display: grid;
+    align-items: center;
+  }
+}
+
+/* ADVISOR COMPONENTS */
+.advisor-wrap {
+  border-bottom: 1px solid $gray-10;
+}
+
+.advisor-initial {
+  @include flex-center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: $gray-10;
+  color: $gray-70;
+  border: 2px solid $gray-70;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* PROFILE BADGE */
+.profile-badge {
+  border-radius: 20px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: $gray-10;
+  border: 1px solid $gray-20;
+  color: $primary;
+  transition: all 0.2s ease;
+
+  i {
+    color: $apu-blue-active;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &:hover {
+    background-color: $apu-blue-active;
+    color: $wht;
+    border-color: $apu-blue-active;
+
+    i {
+      color: $wht;
+    }
+  }
+}

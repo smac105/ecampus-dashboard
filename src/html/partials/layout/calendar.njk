@@ -1,0 +1,308 @@
+<div class="calendar-wrapper">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <p class="small-title mb-0">Important Dates: March 2026</p>
+    <button class="calendar-toggle-btn" id="calendarToggleBtn" aria-label="Toggle calendar view">
+      <i class="fa-solid fa-chevron-down"></i>
+    </button>
+  </div>
+
+  <!-- Full Calendar View (Hidden by Default) -->
+  <div class="calendar-full-view" id="calendarFullView" style="display: none;">
+    <ol class="calendar">
+      <li class="day-name">Sun</li>
+      <li class="day-name">Mon</li>
+      <li class="day-name">Tue</li>
+      <li class="day-name">Wed</li>
+      <li class="day-name">Thu</li>
+      <li class="day-name">Fri</li>
+      <li class="day-name">Sat</li>
+      <li class="first-day">1</li>
+      <li>2</li>
+      <li>
+        <span class="school-event class-outline" style="display: none;">3</span>
+        <span class="student-event">3</span>
+      </li>
+      <li>4</li>
+      <li>
+        <span class="school-event" style="display: none;">5</span>
+        <span class="student-event class-blue">5</span>
+      </li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>
+        <span class="school-event class-start" style="display: none;">9</span>
+        <span class="student-event">9</span>
+      </li>
+      <li>10</li>
+      <li>11</li>
+      <li>
+        <span class="school-event" style="display: none;">12</span>
+        <span class="student-event class-blue">12</span>
+      </li>
+      <li>
+        <span class="school-event class-red" style="display: none;">13</span>
+        <span class="student-event">13</span>
+      </li>
+      <li>14</li>
+      <li>15</li>
+      <li>16</li>
+      <li>17</li>
+      <li>
+        <span class="school-event class-start" style="display: none;">18</span>
+        <span class="student-event">18</span>
+      </li>
+      <li>
+        <span class="school-event" style="display: none;">19</span>
+        <span class="student-event class-blue">19</span>
+      </li>
+      <li>20</li>
+      <li>21</li>
+      <li>22</li>
+      <li>23</li>
+      <li>24</li>
+      <li>25</li>
+      <li>
+        <span class="school-event" style="display: none;">26</span>
+        <span class="student-event class-blue">26</span>
+      </li>
+      <li>
+        <span class="school-event class-orange" style="display: none;">27</span>
+        <span class="student-event">27</span>
+      </li>
+      <li>28</li>
+      <li>29</li>
+      <li>30</li>
+      <li>31</li>
+      <li class="gray">1</li>
+      <li class="gray">2</li>
+      <li class="gray">3</li>
+      <li class="gray">4</li>
+    </ol>
+  </div>
+
+  <!-- Event Tabs -->
+  <div class="calendar-event-tabs document-tabs mb-3">
+
+    <a href="#student-events" class="calendar-tab-link active" data-calendar-tab="student">
+      My Events <span class="count-standalone messages ms-2">4</span>
+    </a>
+    <a href="#school-events" class="calendar-tab-link" data-calendar-tab="school">
+      School Events
+    </a>
+
+  </div>
+
+  <!-- Student Events List -->
+  <div class="calendar-events calendar-tab-content active" id="studentEventsList">
+    <div class="calendar-event">
+      <span class="date">
+        <span class="dot bg-blue"></span>
+        Mar 5
+      </span>
+      <span class="label">Virtual Career Fair</span>
+      <span class="time">Thu 10:00 AM</span>
+    </div>
+    <div class="calendar-event">
+      <span class="date">
+        <span class="dot bg-blue"></span>
+        Mar 12
+      </span>
+      <span class="label">Registration Deadline</span>
+      <span class="time">Thu 7:00 PM</span>
+    </div>
+    <div class="calendar-event">
+      <span class="date">
+        <span class="dot bg-blue"></span>
+        Mar 19
+      </span>
+      <span class="label">Transfer Credit Evaluation Results Posted</span>
+      <span class="time">Thu 6:00 PM</span>
+    </div>
+    <div class="calendar-event">
+      <span class="date">
+        <span class="dot bg-blue"></span>
+        Mar 26
+      </span>
+      <span class="label">FAFSA Steps Needed</span>
+      <span class="time">Thu 5:00 PM</span>
+    </div>
+  </div>
+
+  <!-- School Events List (Default View) -->
+  <div class="calendar-events calendar-tab-content" id="schoolEventsList" style="display: none;">
+    <div class="calendar-event">
+      <span class="date">
+        <span class="dot" style="background-color: #000; border: 2px solid #000;"></span>
+        Mar 3
+      </span>
+      <span class="label">School Event 1</span>
+      <span class="time">Tue 8:00 AM</span>
+    </div>
+    <div class="calendar-event">
+      <span class="date">
+        <span class="dot" style="background-color: #80c342;"></span>
+        Mar 9
+      </span>
+      <span class="label">School Event 2</span>
+      <span class="time">Mon 12:00 AM</span>
+    </div>
+    <div class="calendar-event">
+      <span class="date">
+        <span class="dot" style="background-color: #E4193B;"></span>
+        Mar 13
+      </span>
+      <span class="label">School Event 3</span>
+      <span class="time">Fri 11:59 PM</span>
+    </div>
+    <div class="calendar-event">
+      <span class="date">
+        <span class="dot" style="background-color: #80c342;"></span>
+        Mar 18
+      </span>
+      <span class="label">School Event 4</span>
+      <span class="time">Wed 12:00 AM</span>
+    </div>
+    <div class="calendar-event">
+      <span class="date">
+        <span class="dot" style="background-color: #F88A00;"></span>
+        Mar 27
+      </span>
+      <span class="label">School Event 5</span>
+      <span class="time">Fri 11:59 PM</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Toggle calendar view and handle tabs
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtn = document.getElementById('calendarToggleBtn');
+  const fullView = document.getElementById('calendarFullView');
+
+  // Calendar expand/collapse
+  if (toggleBtn && fullView) {
+    toggleBtn.addEventListener('click', function() {
+      const icon = this.querySelector('i');
+      const isExpanded = fullView.style.display !== 'none';
+
+      if (isExpanded) {
+        // Collapse - hide full calendar
+        fullView.style.display = 'none';
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+      } else {
+        // Expand - show full calendar
+        fullView.style.display = 'block';
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-chevron-up');
+      }
+    });
+  }
+
+  // Calendar tab switching
+  const calendarTabs = document.querySelectorAll('.calendar-tab-link');
+  const schoolEventsList = document.getElementById('schoolEventsList');
+  const studentEventsList = document.getElementById('studentEventsList');
+  const schoolEventMarkers = document.querySelectorAll('.school-event');
+  const studentEventMarkers = document.querySelectorAll('.student-event');
+
+  if (calendarTabs.length > 0 && schoolEventsList && studentEventsList) {
+    calendarTabs.forEach(tab => {
+      tab.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Update active tab
+        calendarTabs.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+
+        // Show/hide event lists and calendar markers
+        const tabType = this.getAttribute('data-calendar-tab');
+        if (tabType === 'school') {
+          // Show school events
+          schoolEventsList.style.display = 'flex';
+          studentEventsList.style.display = 'none';
+
+          // Show school markers, hide student markers
+          schoolEventMarkers.forEach(marker => marker.style.display = 'grid');
+          studentEventMarkers.forEach(marker => marker.style.display = 'none');
+        } else if (tabType === 'student') {
+          // Show student events
+          schoolEventsList.style.display = 'none';
+          studentEventsList.style.display = 'flex';
+
+          // Hide school markers, show student markers
+          schoolEventMarkers.forEach(marker => marker.style.display = 'none');
+          studentEventMarkers.forEach(marker => marker.style.display = 'grid');
+        }
+      });
+    });
+  }
+});
+</script>
+
+{# {{ calendar("July", 2025, [
+  { day: 4, label: "Registration Closes", time: "Fri 11:59 PM", color: "var(--red)" },
+  { day: 7, label: "Course Start", time: "Mon 11:59 PM", color: "var(--green)" },
+  { day: 13, label: "Course Drop Deadline", time: "Sun 11:59 PM", color: "var(--red)" },
+  { day: 26, label: "FSA Academic Year Closes", time: "Thu 11:59 PM", color: "var(--blue)" }
+]) }} #}
+
+
+{# <div class="calendar">
+  <div class="month">      
+    <ul>
+      <li class="prev">&#10094;</li>
+      <li class="next">&#10095;</li>
+      <li>
+        August<br>
+        <span style="font-size:18px">2021</span>
+      </li>
+    </ul>
+  </div>
+
+  <ul class="weekdays">
+    <li>S</li>
+    <li>M</li>
+    <li>T</li>
+    <li>W</li>
+    <li>T</li>
+    <li>F</li>
+    <li>S</li>
+  </ul>
+
+  <ul class="days">  
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li><span class="active">10</span></li>
+    <li>11</li>
+    <li>12</li>
+    <li>13</li>
+    <li>14</li>
+    <li>15</li>
+    <li>16</li>
+    <li>17</li>
+    <li>18</li>
+    <li>19</li>
+    <li>20</li>
+    <li>21</li>
+    <li>22</li>
+    <li>23</li>
+    <li>24</li>
+    <li>25</li>
+    <li>26</li>
+    <li>27</li>
+    <li>28</li>
+    <li>29</li>
+    <li>30</li>
+    <li>31</li>
+  </ul>
+</div> #}

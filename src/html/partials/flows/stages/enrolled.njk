@@ -1,0 +1,107 @@
+{% import "partials/macros.njk" as buttons %}
+{% import "partials/macros.njk" as cards %}
+{% import "partials/macros.njk" as grids %}
+{% from "partials/macros.njk" import progress, progressLine %}
+
+{# Enrolled Student Stage #}
+<div class="container">
+<div class="row">
+	<div class="col-lg-8 mb-5">
+		<!-- Welcome Message -->
+		<div class="intro-box">
+			{% if site.student.name %}
+			  <h1>Welcome back, {{ site.student.name }}!</h1>
+			  <p class="lead">Stay on track with your courses and upcoming deadlines. Check your task list and course progress below.</p>
+			{% else %}
+			  <h1>Welcome back, student!</h1>
+			  <p class="lead">Stay on track with your courses and upcoming deadlines. Check your task list and course progress below.</p>
+			{% endif %}
+		</div>
+
+		<!-- Current Classes -->
+		<div class="actions white-box">
+			<h4>Current Classes</h4>
+			<p>This is the intro paragraph of the home page dashboard that tells you information.</p>
+
+			{{ grids.cardGrid(classes, cards.classCard) }}
+			{{ buttons.button('View All Classes', '/contact', 'main') }}
+		</div>
+	</div>
+
+	<div class="col-lg-4 mb-5">
+		<!-- Task List -->
+		<div class="actions black-bg mb-5">
+			<h4 class="mb-3">Task List</h4>
+
+			<!-- Task Filters -->
+			<div class="task-filters mb-3">
+				<button class="task-filter-btn active" data-filter="all">All</button>
+				<button class="task-filter-btn" data-filter="classroom">Classroom</button>
+				<button class="task-filter-btn" data-filter="registration">Registration</button>
+				<button class="task-filter-btn" data-filter="finance">Finance</button>
+			</div>
+
+			<div class="task-list">
+				<div class="task-item" data-category="classroom">
+					<input type="checkbox" id="task1" class="task-checkbox">
+					<label for="task1">Complete Module 5 Quiz</label>
+					<a href="/class.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div class="task-item" data-category="classroom">
+					<input type="checkbox" id="task2" class="task-checkbox">
+					<label for="task2">Submit Project Proposal</label>
+					<a href="/class.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div class="task-item" data-category="classroom">
+					<input type="checkbox" id="task3" class="task-checkbox" checked>
+					<label for="task3">Review Course Materials</label>
+					<a href="/class.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div class="task-item" data-category="classroom">
+					<input type="checkbox" id="task4" class="task-checkbox">
+					<label for="task4">Attend Virtual Office Hours</label>
+					<a href="/class.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div class="task-item" data-category="registration">
+					<input type="checkbox" id="task5" class="task-checkbox">
+					<label for="task5">Register for Spring Courses</label>
+					<a href="/registration-flow.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div class="task-item" data-category="registration">
+					<input type="checkbox" id="task6" class="task-checkbox">
+					<label for="task6">Complete Advising Appointment</label>
+					<a href="/my-academics.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div class="task-item" data-category="finance">
+					<input type="checkbox" id="task7" class="task-checkbox">
+					<label for="task7">Review Financial Aid Status</label>
+					<a href="/my-finances.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+				<div class="task-item" data-category="finance">
+					<input type="checkbox" id="task8" class="task-checkbox">
+					<label for="task8">Make Tuition Payment</label>
+					<a href="/my-finances.html" class="task-link"><i class="fas fa-chevron-right"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Program Overview -->
+		<div class="actions white-box mb-5">
+			<h4>Program Overview</h4>
+			<section class="progress-circles">
+			  {{ progress("Current GPA", 3.6, 4.0, "var(--apu-blue-active)", "raw") }}
+			  {{ progress("Credits Earned", 90, 120, "var(--apu-blue-active)", "raw") }}
+			</section>
+			<h4 class="mb-3">Overall Program Progress</h4>
+			<section class="progress-overall">
+				{{ progressLine("Overall Progress", 70, 100, "var(--apu-blue-active)", "percent") }}
+			</section>
+		</div>
+
+		<!-- Calendar -->
+		<div class="actions white-box">
+	  		{% include "partials/layout/calendar.njk" %}
+  		</div>
+	</div>
+</div>
+</div>

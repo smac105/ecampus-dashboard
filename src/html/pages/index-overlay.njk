@@ -10,7 +10,7 @@
 {% block content %}
 
 	<div class="alert">
-		{% include "partials/alerts.njk" %}
+		{% include "partials/ui/alerts.njk" %}
 	</div>
 
 	<div class="row">
@@ -472,11 +472,11 @@
 
 			<!-- Enrolled/Returning: Calendar -->
 			<div class="actions white-box stage-content" data-stage="enrolled">
-		  		{% include "partials/calendar.njk" %}
+		  		{% include "partials/layout/calendar.njk" %}
 	  		</div>
 
 			<div class="actions white-box stage-content" data-stage="returning">
-		  		{% include "partials/calendar.njk" %}
+		  		{% include "partials/layout/calendar.njk" %}
 	  		</div>
 
 			<!-- Alumni: Events Calendar -->

@@ -9,7 +9,7 @@
 	<!-- font awesome 6.0 -->
 	<script src="https://kit.fontawesome.com/7e5f6c5917.js" crossorigin="anonymous"></script>
 
-	{% include "partials/head-apu.njk" %}
+	{% include "partials/branding/head-apu.njk" %}
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="/css/main.css">
@@ -27,7 +27,7 @@
 			<div class="container-fluid">
 				<div class="d-flex justify-content-between align-items-center">
 					<div>
-						{% include "partials/apu-logo.njk" %}
+						{% include "partials/branding/apu-logo.njk" %}
 					</div>
 					<a href="{{ exitButtonUrl or '/index.html' }}" class="close-btn" id="exitRegistration">
 						<i class="fas fa-times"></i> {{ exitButtonText or "Exit Registration" }}
@@ -43,7 +43,7 @@
 	</div>
 
 	<!-- Exit Confirmation Modal -->
-	{% include "partials/registration/exit-confirmation-modal.njk" %}
+	{% include "partials/flows/registration/exit-confirmation-modal.njk" %}
 
 	<!-- Confetti Utility -->
 	<script src="/js/confetti-util.js"></script>

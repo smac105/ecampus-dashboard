@@ -1,0 +1,134 @@
+{# Student Status Module #}
+<div class="student-status-module">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <p class="small-title mb-0">Your Journey Status</p>
+    <button class="status-toggle-btn" id="statusToggleBtn" aria-label="Toggle all statuses">
+      <i class="fa-solid fa-chevron-down"></i>
+    </button>
+  </div>
+
+  <div class="status-list">
+    <!-- Current Active Status (Collapsed View) -->
+    <div class="status-item status-active show" id="statusCollapsed">
+      <div class="status-indicator"></div>
+      <span class="status-label">Pre-Enrollment</span>
+    </div>
+
+    <!-- Expanded Tree View (Hidden by Default) -->
+    <div class="status-tree-list" id="statusTree" style="display: none;">
+      <div class="status-tree-wrapper">
+        <!-- Pre-Enrollment with Sub-statuses -->
+        <div class="status-tree-section">
+          <div class="status-item status-active">
+            <div class="status-indicator"></div>
+            <span class="status-label">Pre-Enrollment</span>
+          </div>
+          <div class="sub-status-tree">
+            <div class="sub-status-item completed">
+              <div class="tree-connector"></div>
+              <i class="fa-solid fa-circle-check green"></i>
+              <span>Applicability Evaluation</span>
+{# 3. Outstanding Initial Fullfillment Needed (Sequence: 3)
+4. Outstanding - Correction / Resubmission Needed (Sequence: 4)
+5. In Review / In Progress (Sequence: 5)
+6. Document Collection #}
+            </div>
+            {# <div class="sub-status-item completed">
+              <div class="tree-connector"></div>
+              <i class="fa-solid fa-circle-check green"></i>
+              <span>Document Verification</span>
+            </div> #}
+            <div class="sub-status-item pending">
+              <div class="tree-connector"></div>
+              <i class="fa-solid fa-clock orange"></i>
+              <span>Document Verification</span>
+            </div>
+            <div class="sub-status-item incomplete">
+              <div class="tree-connector"></div>
+              <i class="fa-regular fa-circle"></i>
+              <span>Admitted</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admissions -->
+        <div class="status-tree-section incomplete">
+          <div class="status-item">
+            <div class="status-indicator"></div>
+            <span class="status-label">Admissions</span>
+          </div>
+        </div>
+
+        <!-- Onboarding -->
+        <div class="status-tree-section incomplete">
+          <div class="status-item">
+            <div class="status-indicator"></div>
+            <span class="status-label">Onboarding</span>
+          </div>
+        </div>
+
+        <!-- Enrollment -->
+        <div class="status-tree-section incomplete">
+          <div class="status-item">
+            <div class="status-indicator"></div>
+            <span class="status-label">Enrollment</span>
+          </div>
+        </div>
+
+        <!-- Alumni -->
+        <div class="status-tree-section incomplete">
+          <div class="status-item">
+            <div class="status-indicator"></div>
+            <span class="status-label">Alumni</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Toggle status expansion
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtn = document.getElementById('statusToggleBtn');
+  const statusCollapsed = document.getElementById('statusCollapsed');
+  const statusTree = document.getElementById('statusTree');
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function() {
+      const icon = this.querySelector('i');
+      const isExpanded = statusTree.classList.contains('show');
+
+      if (isExpanded) {
+        // Collapse - hide tree and show collapsed
+        statusTree.classList.remove('show');
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+
+        // Wait for animation, then hide tree completely
+        setTimeout(() => {
+          statusTree.style.display = 'none';
+          statusCollapsed.style.display = 'flex';
+          statusCollapsed.classList.add('show');
+        }, 400);
+      } else {
+        // Expand - hide collapsed and show tree
+        statusCollapsed.classList.remove('show');
+
+        // Wait for collapsed to animate out, then show tree
+        setTimeout(() => {
+          statusCollapsed.style.display = 'none';
+          statusTree.style.display = 'block';
+          // Small delay to ensure display change is processed
+          setTimeout(() => {
+            statusTree.classList.add('show');
+          }, 10);
+        }, 400);
+
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-chevron-up');
+      }
+    });
+  }
+});
+</script>

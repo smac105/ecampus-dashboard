@@ -4,7 +4,7 @@
 
 <div class="container">
 
-	{% include "partials/alerts.njk" %}
+	{% include "partials/ui/alerts.njk" %}
 
 </div>
 	{# Stage Switcher for Demo #}
@@ -22,27 +22,27 @@
 
 	{# Load all stage layouts with data attributes #}
 	<div class="stage-container" data-stage="prospective">
-		{% include "partials/stages/prospective.njk" %}
+		{% include "partials/flows/stages/prospective.njk" %}
 	</div>
 
 	<div class="stage-container active" data-stage="applicant">
-		{% include "partials/stages/applicant.njk" %}
+		{% include "partials/flows/stages/applicant.njk" %}
 	</div>
 
 	<div class="stage-container" data-stage="accepted">
-		{% include "partials/stages/accepted.njk" %}
+		{% include "partials/flows/stages/accepted.njk" %}
 	</div>
 
 	<div class="stage-container" data-stage="enrolled">
-		{% include "partials/stages/enrolled.njk" %}
+		{% include "partials/flows/stages/enrolled.njk" %}
 	</div>
 
 	<div class="stage-container" data-stage="returning">
-		{% include "partials/stages/returning.njk" %}
+		{% include "partials/flows/stages/returning.njk" %}
 	</div>
 
 	<div class="stage-container" data-stage="alumni">
-		{% include "partials/stages/alumni.njk" %}
+		{% include "partials/flows/stages/alumni.njk" %}
 	</div>
 
 {% endblock %}

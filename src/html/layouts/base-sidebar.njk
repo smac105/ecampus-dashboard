@@ -9,7 +9,7 @@
 	<!-- font awesome 6.0 -->
 	<script src="https://kit.fontawesome.com/7e5f6c5917.js" crossorigin="anonymous"></script>
 
-	{% include "partials/head-apu.njk" %}
+	{% include "partials/branding/head-apu.njk" %}
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="/css/main.css">
@@ -22,26 +22,26 @@
 
 <div class="dashboard">
 	{# <div class="dashboard-nav"> #}
-		{% include "partials/nav.njk" %}
+		{% include "partials/navigation/nav.njk" %}
 	{# </div> #}
 	<div id="main" class="dashboard-app"> 
 		<div class="row">
-			{% include "partials/top-header.njk" %}
+			{% include "partials/layout/top-header.njk" %}
 		</div>
 		{# <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button> #}
 		<div class="row flex-nowrap">
 			{# {% include "partials/icon-nav.njk" %} #}
 			<main class="col main-wrap">
-			{% include "partials/header.njk" %}
+			{% include "partials/layout/header.njk" %}
 
 			{% block content %}{% endblock %}
 			</main>
 		</div>
 
-		{% include "partials/footer.njk" %}
+		{% include "partials/layout/footer.njk" %}
 	</div>
 
 	<!-- Registration Cart Modal -->
-	{% include "partials/registration/cart-modal.njk" %}
+	{% include "partials/flows/registration/cart-modal.njk" %}
 </body>
 </html>

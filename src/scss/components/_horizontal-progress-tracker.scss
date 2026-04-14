@@ -1,0 +1,281 @@
+// Horizontal Chevron Progress Tracker Styles
+
+.horizontal-progress-wrapper {
+  margin-bottom: 2rem;
+}
+
+.horizontal-progress-tracker {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  overflow-x: auto;
+  padding: 1rem 0;
+  // gap: 5px; // Slight negative gap for overlap
+
+  // Scrollbar styling for overflow
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+
+    &:hover {
+      background: #555;
+    }
+  }
+}
+
+// Wrapper for each step (label + chevron)
+.progress-step-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // margin-right: -15px; // Overlap chevrons
+
+  // Z-index layering: first item on top, last item on bottom
+  &:nth-child(1) { z-index: 8; }
+  &:nth-child(2) { z-index: 7; }
+  &:nth-child(3) { z-index: 6; }
+  &:nth-child(4) { z-index: 5; }
+  &:nth-child(5) { z-index: 4; }
+  &:nth-child(6) { z-index: 3; }
+  &:nth-child(7) { z-index: 2; }
+  &:nth-child(8) { z-index: 1; margin-right: 0; } // Last item no margin
+}
+
+// Label above chevron
+.progress-step-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: $gray-70;
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.0;
+  width: 100%;
+  max-width: 160px;
+}
+
+// The chevron shape itself
+.progress-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 160px;
+  height: 30px;  // Reduced height
+  background: #e9ecef;
+  color: #6c757d;
+  transition: all 0.3s ease;
+
+  // Chevron shape with proper parallelogram
+  clip-path: polygon(
+    0px 0%,
+    calc(100% - 9px) 0%,
+    100% 50%,
+    calc(100% - 9px) 100%,
+    0px 100%,
+    9px 50%
+  );
+
+  // Checkmark icon
+  i {
+    font-size: 1.6rem;  // Smaller to fit in 30px height
+    display: none; // Hidden by default
+  }
+
+  // COMPLETED STATE
+  &.completed {
+    background: $green;
+    color: #fff;
+
+    i {
+      display: block; // Show checkmark
+    }
+  }
+
+  // ACTIVE STATE (current step)
+  &.active {
+    background: $orange;
+    color: #fff;
+
+    i {
+      display: block; // Show checkmark
+      animation: pulse 2s infinite;
+    }
+  }
+
+  // INACTIVE STATE (default - grayed out, empty)
+  // Already styled above with gray background
+
+  // First item - rounded left side (pill shape), straight left edge
+  &.first {
+    clip-path: polygon(
+      0px 0%,
+      calc(100% - 9px) 0%,
+      100% 50%,
+      calc(100% - 9px) 100%,
+      0px 100%
+    );
+    border-radius: 15px 0 0 15px; // Round left side
+  }
+
+  // Last item - rounded right side (pill shape)
+  &.last {
+    clip-path: polygon(
+      0px 0%,
+      100% 0%,
+      100% 50%,
+      100% 100%,
+      0px 100%,
+      9px 50%
+    );
+    border-radius: 0 15px 15px 0; // Round right side
+  }
+}
+
+// Pulse animation for active step
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 1400px) {
+  .progress-step-label {
+    font-size: 1.1rem;
+    max-width: 140px;
+  }
+
+  .progress-step {
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .progress-step-label {
+    font-size: 1.0rem;
+    max-width: 120px;
+  }
+
+  .progress-step {
+    max-width: 120px;
+    height: 28px;
+
+    i {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .horizontal-progress-wrapper {
+    margin-bottom: 1.5rem;
+  }
+
+  .progress-step-label {
+    font-size: 0.95rem;
+    max-width: 100px;
+    min-height: 3.5rem;
+  }
+
+  .progress-step {
+    max-width: 100px;
+    height: 26px;
+
+    i {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .horizontal-progress-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+
+    // Left gradient overlay on wrapper
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 40px;
+      background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    // Right gradient overlay on wrapper
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 40px;
+      background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+      pointer-events: none;
+      z-index: 10;
+    }
+  }
+
+  .horizontal-progress-tracker {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem calc(50vw - 50px); // Add enough padding to center any item
+    gap: 0;
+
+    // Hide scrollbar but keep functionality
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // IE/Edge
+
+    &::-webkit-scrollbar {
+      display: none; // Chrome/Safari
+    }
+  }
+
+  .progress-step-wrapper {
+    flex-shrink: 0;
+  }
+
+  .progress-step-label {
+    font-size: 0.85rem;
+    width: 100px;
+    max-width: 100px;
+    min-width: 100px;
+    min-height: 3rem;
+  }
+
+  .progress-step {
+    width: 100px;
+    max-width: 100px;
+    min-width: 100px;
+    height: 24px;
+
+    i {
+      font-size: 1.1rem;
+    }
+  }
+}

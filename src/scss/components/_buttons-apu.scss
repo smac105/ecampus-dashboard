@@ -1,0 +1,199 @@
+/* APUS BUTTONS */
+
+.btn-main, .btn-main-alt, .btn-secondary, .btn-amu, .btn-apu {
+	transition: all 300ms ease-in-out;
+	border: none;
+	font-family: $font-main;
+	// text-transform: uppercase;
+	color: $blk;
+	font-size: 18px;
+	font-size: 1.8rem;
+	font-weight: 300;
+	text-decoration-line: none;
+	border-radius: 4px;
+	border-radius: 0.4rem;
+	padding: 10px 20px;
+	display: inline-block;
+}
+
+/* APU BUTTONS */
+
+.btn-main, .btn-secondary {
+	transition: all 300ms ease-in-out;
+	border-color: $blk;
+	border-style: solid;
+	border-width: 1px;
+	font-family: $font-main;
+	// text-transform: uppercase;
+	color: $blk;
+	font-size: 16px;
+	font-size: 1.6rem;
+	font-weight: 600;
+	text-decoration-line: none;
+	border-radius: 25px;
+	border-radius: 2.5rem;
+	padding: 10px 20px;
+}
+.btn-main {
+	background: $apu-blue;
+	&:after {
+		font-family: "Font Awesome 6 Pro";
+		content: "\f0da";
+		color: $blk !important;
+		margin:10px 0px 10px 10px;
+	}
+	&:link, &:visited {
+		background: $apu-blue;
+		color: $blk;
+	}
+	&:hover {
+		background: $apu-blue-alt;
+		color: $blk;
+	}
+	&:active {
+		background: $apu-blue-active;
+		color: $blk;
+	}
+}
+.btn-secondary {
+	background: $apuyellow;
+	&:after {
+		font-family: "Font Awesome 6 Pro";
+		content: "\f0da";
+		color: $blk !important;
+		margin:10px 0px 10px 10px;
+	}
+	&:link, &:visited {
+		background: $apuyellow;
+		color: $blk;
+	}
+	&:hover {
+		background: $apuyellow-lt;
+		color: $blk;
+	}
+	&:active {
+		background: $apuyellow-dk;
+		color: $blk;
+	}
+}
+.btn-wrap-sm {
+	padding-top: 15px;
+}
+.btn-sm {
+	font-size: 14px;
+	font-size: 1.4rem;
+	padding: 4px 10px;
+
+}
+.btn-outline {
+	font-size: 1.6rem;
+    color: $apu-blue;
+    border-width: 0.2rem;
+    border-color: $apu-blue;
+    border-radius: 0.5rem !important;
+    padding: 1.8rem 1.9rem;
+    &:hover {
+    	background: $apu-blue;
+    	color: $blk;
+    }
+    &:active {
+    	background: $apu-blue-alt;
+    }
+}
+.arrow-link {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.0;
+  // text-decoration: underline !important;
+  // text-decoration-thickness: 2px !important;
+  // text-underline-offset: 6px !important;
+  // text-decoration-color: $secondary !important;
+  position: relative;
+  padding-bottom: 4px;
+  text-decoration: none;
+  color: $blk !important;
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.2rem;
+    background-color: $secondary;
+    border-radius: 0;
+    pointer-events: none;
+  }
+  &:after {
+    font-family: "Font Awesome 6 Pro";
+    content: "\f061";
+    font-weight: 600;
+    color: $secondary;
+    margin:10px 0px 10px 5px;
+  }
+  &:hover {
+    transition: all 600ms ease-in-out;
+    &:after {
+      margin:10px 0px 10px 15px;
+    }
+  }
+}
+.arrow-link-sm {
+	font-size: 14px;
+}
+.reset {
+	border: none;
+    border-color: none;
+    border-radius: 0px;
+    background: none;
+    line-height: auto;
+    padding: 0.6em 0em 0.4em;
+    &:after {
+    	content: "\f2ea";
+    }
+}
+
+.back-btn {
+	&:before {
+	    font-family: "Font Awesome 6 Pro";
+	    content: "\f0d9";
+	    font-weight: 600;
+	    margin:10px 5px 10px 0px;
+	}
+	&:after {
+	    content: "" !important;
+	    margin: 0px;
+	}
+}
+
+a.btn.disabled, fieldset:disabled a.btn {
+    pointer-events: none;
+}
+.btn-secondary.disabled, .btn-secondary:disabled {
+    color: #fff;
+    background-color: $gray-70;
+    border-color: $gray-70;
+    opacity: .5;
+    pointer-events: none;
+    padding: 7px 10px;
+    &:after {
+    	content: "";
+    	margin: 10px 0px;
+    }
+}
+.btn-link-primary {
+	color: $apu-green-active;
+	text-decoration: none;
+	font-size: 1.4rem;
+	font-weight: 500;
+	transition: all 0.2s ease;
+	&:hover, &:visited, &:active {
+		color: $secondary-active;
+		text-decoration: underline;
+	}
+}
+.btn-one-icon {
+	&:after {
+		content: "" !important;
+		margin: 0px;
+	}
+}

@@ -1,0 +1,762 @@
+{
+	"info": {
+		"_postman_id": "polaris-sis-api-collection",
+		"name": "Polaris SIS API",
+		"description": "Polaris Student Information System API collection.\n\nSet the `baseUrl` variable to switch between local and Azure environments:\n- Local: http://localhost:5128\n- Azure Dev: https://ca-polaris-api-dev.purplesand-853efe19.eastus.azurecontainerapps.io",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{ "key": "baseUrl", "value": "https://ca-polaris-api-dev.purplesand-853efe19.eastus.azurecontainerapps.io", "type": "string" },
+		{ "key": "personId", "value": "57ad97b0-4c8c-44a1-9f63-69a210e128e2", "type": "string" },
+		{ "key": "roleId", "value": "20", "type": "string" },
+		{ "key": "roleTypeId", "value": "2", "type": "string" },
+		{ "key": "lifecycleId", "value": "8", "type": "string" },
+		{ "key": "catalogId", "value": "1", "type": "string" },
+		{ "key": "termId", "value": "1", "type": "string" },
+		{ "key": "studentId", "value": "57ad97b0-4c8c-44a1-9f63-69a210e128e2", "type": "string" }
+	],
+	"item": [
+		{
+			"name": "Health",
+			"item": [
+				{
+					"name": "Liveness",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/health", "host": ["{{baseUrl}}"], "path": ["health"] }
+					}
+				},
+				{
+					"name": "Readiness",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/health/ready", "host": ["{{baseUrl}}"], "path": ["health", "ready"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Persons",
+			"item": [
+				{
+					"name": "List All Persons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/persons", "host": ["{{baseUrl}}"], "path": ["api", "persons"] }
+					}
+				},
+				{
+					"name": "Get Person by ID (Read Model)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}"] }
+					}
+				},
+				{
+					"name": "Get Person Details (Write Model)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}/details", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}", "details"] }
+					}
+				},
+				{
+					"name": "Get Person Full Details (Portal)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/person-full-details/{{personId}}", "host": ["{{baseUrl}}"], "path": ["api", "person-full-details", "{{personId}}"] }
+					}
+				},
+				{
+					"name": "Create Person",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"Jane\",\n  \"middleName\": null,\n  \"lastName\": \"Doe\",\n  \"email\": \"jane.doe@example.com\",\n  \"title\": null,\n  \"suffix\": null,\n  \"preferredName\": null,\n  \"ssn\": null,\n  \"governmentId\": null,\n  \"gender\": \"F\",\n  \"pronouns\": null,\n  \"citizenshipStatus\": null,\n  \"residencyStatus\": null,\n  \"maritalStatus\": null,\n  \"nativeLanguage\": null,\n  \"ethnicity\": null,\n  \"initialRole\": \"Student\"\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/persons", "host": ["{{baseUrl}}"], "path": ["api", "persons"] }
+					}
+				},
+				{
+					"name": "Update Person",
+					"request": {
+						"method": "PUT",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"John\",\n  \"middleName\": null,\n  \"lastName\": \"Bouchard\",\n  \"email\": \"johnbouchard@icloud.com\",\n  \"title\": null,\n  \"suffix\": null,\n  \"preferredName\": null,\n  \"ssn\": null,\n  \"governmentId\": null,\n  \"gender\": null,\n  \"pronouns\": null,\n  \"citizenshipStatus\": null,\n  \"residencyStatus\": null,\n  \"maritalStatus\": null,\n  \"nativeLanguage\": null,\n  \"ethnicity\": null,\n  \"initialRole\": \"Student\"\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}"] }
+					}
+				},
+				{
+					"name": "Update Person Languages",
+					"request": {
+						"method": "PUT",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  { \"systemListItemId\": 1, \"isPrimary\": true }\n]"
+						},
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}/languages", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}", "languages"] }
+					}
+				},
+				{
+					"name": "Add Contact",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"value\": \"john.doe@example.com\",\n  \"type\": 0,\n  \"label\": \"Personal Email\",\n  \"isPrimary\": true\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}/contacts", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}", "contacts"] }
+					}
+				},
+				{
+					"name": "Delete Contact",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}/contacts/1", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}", "contacts", "1"] }
+					}
+				},
+				{
+					"name": "Add Address",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"street1\": \"123 Main St\",\n  \"street2\": null,\n  \"city\": \"Springfield\",\n  \"stateProvince\": \"IL\",\n  \"postalCode\": \"62701\",\n  \"country\": \"US\",\n  \"addressType\": \"Home\",\n  \"isPrimary\": true\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}/addresses", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}", "addresses"] }
+					}
+				},
+				{
+					"name": "Delete Address",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}/addresses/1", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}", "addresses", "1"] }
+					}
+				},
+				{
+					"name": "Add Military Affiliation",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"affiliationType\": \"Veteran\",\n  \"branch\": \"Army\",\n  \"status\": \"Honorably Discharged\",\n  \"startDate\": \"2010-01-01\",\n  \"endDate\": \"2018-06-30\",\n  \"rank\": \"Sergeant\",\n  \"mosCode\": \"11B\"\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}/military", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}", "military"] }
+					}
+				},
+				{
+					"name": "Delete Military Affiliation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}/military/1", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}", "military", "1"] }
+					}
+				},
+				{
+					"name": "Add Role to Person",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"roleTypeId\": 2,\n  \"startDate\": \"2026-01-01T00:00:00\",\n  \"endDate\": null,\n  \"status\": 0,\n  \"isPrimary\": true,\n  \"catalogProgramId\": null,\n  \"roleLifecycleId\": null\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}/roles", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}", "roles"] }
+					}
+				},
+				{
+					"name": "Update Role (Program)",
+					"request": {
+						"method": "PUT",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"catalogProgramId\": 1\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}/roles/{{roleId}}", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}", "roles", "{{roleId}}"] }
+					}
+				},
+				{
+					"name": "Delete Role from Person",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}/roles/{{roleId}}", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}", "roles", "{{roleId}}"] }
+					}
+				},
+				{
+					"name": "Update Role Profile Data",
+					"request": {
+						"method": "PUT",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"profile_type\": \"Traditional\",\n    \"program_level\": \"Undergraduate\"\n  }\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}/roles/{{roleId}}/profile-data", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}", "roles", "{{roleId}}", "profile-data"] }
+					}
+				},
+				{
+					"name": "Trigger Role Transition",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"trigger\": \"Advance\",\n  \"reason\": \"Moving to next state\"\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}/roles/{{roleId}}/transition", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}", "roles", "{{roleId}}", "transition"] }
+					}
+				},
+				{
+					"name": "Toggle SR&R",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/persons/{{personId}}/toggle-srr", "host": ["{{baseUrl}}"], "path": ["api", "persons", "{{personId}}", "toggle-srr"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Role Types",
+			"item": [
+				{
+					"name": "List All Role Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/roletypes", "host": ["{{baseUrl}}"], "path": ["api", "roletypes"] }
+					}
+				},
+				{
+					"name": "Get Role Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/roletypes/{{roleTypeId}}", "host": ["{{baseUrl}}"], "path": ["api", "roletypes", "{{roleTypeId}}"] }
+					}
+				},
+				{
+					"name": "Create Role Type",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Faculty\",\n  \"description\": \"Faculty role type\",\n  \"attributeDefinitions\": [],\n  \"inheritAttributesFromRoleTypeIds\": null\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/roletypes", "host": ["{{baseUrl}}"], "path": ["api", "roletypes"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Lifecycle",
+			"item": [
+				{
+					"name": "Create Lifecycle",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Student Lifecycle v2\",\n  \"isDefault\": false\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/roletypes/{{roleTypeId}}/lifecycles", "host": ["{{baseUrl}}"], "path": ["api", "roletypes", "{{roleTypeId}}", "lifecycles"] }
+					}
+				},
+				{
+					"name": "Publish Lifecycle",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/lifecycles/{{lifecycleId}}/publish", "host": ["{{baseUrl}}"], "path": ["api", "lifecycles", "{{lifecycleId}}", "publish"] }
+					}
+				},
+				{
+					"name": "Create Phase",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Enrollment\"\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/lifecycles/{{lifecycleId}}/phases", "host": ["{{baseUrl}}"], "path": ["api", "lifecycles", "{{lifecycleId}}", "phases"] }
+					}
+				},
+				{
+					"name": "Create State",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Active\",\n  \"phase\": null,\n  \"sequenceOrder\": 1,\n  \"isTerminal\": false,\n  \"rolePhaseId\": null\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/lifecycles/{{lifecycleId}}/states", "host": ["{{baseUrl}}"], "path": ["api", "lifecycles", "{{lifecycleId}}", "states"] }
+					}
+				},
+				{
+					"name": "Create Transition",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fromStateId\": null,\n  \"toStateId\": 1,\n  \"trigger\": \"Start\"\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/lifecycles/{{lifecycleId}}/transitions", "host": ["{{baseUrl}}"], "path": ["api", "lifecycles", "{{lifecycleId}}", "transitions"] }
+					}
+				},
+				{
+					"name": "Deactivate Phase",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/phases/1/deactivate", "host": ["{{baseUrl}}"], "path": ["api", "phases", "1", "deactivate"] }
+					}
+				},
+				{
+					"name": "Activate Phase",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/phases/1/activate", "host": ["{{baseUrl}}"], "path": ["api", "phases", "1", "activate"] }
+					}
+				},
+				{
+					"name": "Phase Deactivation Impact",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/phases/1/deactivation-impact", "host": ["{{baseUrl}}"], "path": ["api", "phases", "1", "deactivation-impact"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Activity Types",
+			"item": [
+				{
+					"name": "List Activity Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/activitytypes", "host": ["{{baseUrl}}"], "path": ["api", "activitytypes"] }
+					}
+				},
+				{
+					"name": "Create Activity Type",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Orientation\",\n  \"category\": \"Onboarding\",\n  \"description\": \"New student orientation\"\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/activitytypes", "host": ["{{baseUrl}}"], "path": ["api", "activitytypes"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Journey (Portal)",
+			"item": [
+				{
+					"name": "Get Person Journey",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/people/{{personId}}/roles/{{roleId}}/journey/", "host": ["{{baseUrl}}"], "path": ["api", "people", "{{personId}}", "roles", "{{roleId}}", "journey", ""] }
+					}
+				},
+				{
+					"name": "Get Journey History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/people/{{personId}}/roles/{{roleId}}/journey/history", "host": ["{{baseUrl}}"], "path": ["api", "people", "{{personId}}", "roles", "{{roleId}}", "journey", "history"] }
+					}
+				},
+				{
+					"name": "Create Journey Activity",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"personRoleId\": 20,\n  \"roleStateId\": 80,\n  \"activityTypeId\": 1,\n  \"status\": 0\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/people/{{personId}}/roles/{{roleId}}/journey/activities", "host": ["{{baseUrl}}"], "path": ["api", "people", "{{personId}}", "roles", "{{roleId}}", "journey", "activities"] }
+					}
+				},
+				{
+					"name": "Update Activity Status",
+					"request": {
+						"method": "PUT",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": 1\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/activities/1/status", "host": ["{{baseUrl}}"], "path": ["api", "activities", "1", "status"] }
+					}
+				},
+				{
+					"name": "Delete Activity",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/activities/1", "host": ["{{baseUrl}}"], "path": ["api", "activities", "1"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Catalogs",
+			"item": [
+				{
+					"name": "List Catalogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/catalogs/", "host": ["{{baseUrl}}"], "path": ["api", "catalogs", ""] }
+					}
+				},
+				{
+					"name": "Get Catalog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/catalogs/{{catalogId}}", "host": ["{{baseUrl}}"], "path": ["api", "catalogs", "{{catalogId}}"] }
+					}
+				},
+				{
+					"name": "Get Programs (Dropdown)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/catalogs/programs", "host": ["{{baseUrl}}"], "path": ["api", "catalogs", "programs"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Registration",
+			"item": [
+				{
+					"name": "List Terms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/registration/terms", "host": ["{{baseUrl}}"], "path": ["api", "registration", "terms"] }
+					}
+				},
+				{
+					"name": "List Grades",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/registration/grades", "host": ["{{baseUrl}}"], "path": ["api", "registration", "grades"] }
+					}
+				},
+				{
+					"name": "Get Term Offerings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/registration/terms/{{termId}}/offerings", "host": ["{{baseUrl}}"], "path": ["api", "registration", "terms", "{{termId}}", "offerings"] }
+					}
+				},
+				{
+					"name": "Get Student Registrations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/registration/students/{{studentId}}/registrations", "host": ["{{baseUrl}}"], "path": ["api", "registration", "students", "{{studentId}}", "registrations"] }
+					}
+				},
+				{
+					"name": "Get Student Transcript",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/registration/students/{{studentId}}/transcript", "host": ["{{baseUrl}}"], "path": ["api", "registration", "students", "{{studentId}}", "transcript"] }
+					}
+				},
+				{
+					"name": "Register for Course",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"studentId\": \"57ad97b0-4c8c-44a1-9f63-69a210e128e2\",\n  \"courseOfferingId\": 1\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/registration/registrations", "host": ["{{baseUrl}}"], "path": ["api", "registration", "registrations"] }
+					}
+				},
+				{
+					"name": "Seed Registration Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/registration/seed-data", "host": ["{{baseUrl}}"], "path": ["api", "registration", "seed-data"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Financials",
+			"item": [
+				{
+					"name": "Get Student Account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/financials/students/{{studentId}}/account", "host": ["{{baseUrl}}"], "path": ["api", "financials", "students", "{{studentId}}", "account"] }
+					}
+				},
+				{
+					"name": "List Tuition Rates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/financials/rates", "host": ["{{baseUrl}}"], "path": ["api", "financials", "rates"] }
+					}
+				},
+				{
+					"name": "Post Transaction",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": 0,\n  \"description\": \"Tuition payment\",\n  \"amount\": 500.00,\n  \"termId\": 1\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/financials/students/{{studentId}}/transactions", "host": ["{{baseUrl}}"], "path": ["api", "financials", "students", "{{studentId}}", "transactions"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Admissions",
+			"item": [
+				{
+					"name": "List Applications for Person",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/admissions/applicants/{{personId}}", "host": ["{{baseUrl}}"], "path": ["api", "admissions", "applicants", "{{personId}}"] }
+					}
+				},
+				{
+					"name": "Create Application",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"applicantId\": \"57ad97b0-4c8c-44a1-9f63-69a210e128e2\",\n  \"termId\": 1,\n  \"programCode\": \"BA-CS\"\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/admissions/applications", "host": ["{{baseUrl}}"], "path": ["api", "admissions", "applications"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Functionalities",
+			"item": [
+				{
+					"name": "List Functionalities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/functionalities", "host": ["{{baseUrl}}"], "path": ["api", "functionalities"] }
+					}
+				},
+				{
+					"name": "Create Functionality",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"code\": \"REG\",\n  \"name\": \"Registration\",\n  \"description\": \"Course registration functionality\",\n  \"isActive\": true,\n  \"category\": \"Academic\",\n  \"displayOrder\": 1\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/functionalities", "host": ["{{baseUrl}}"], "path": ["api", "functionalities"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Analytics",
+			"item": [
+				{
+					"name": "Get Dashboard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/analytics/dashboard", "host": ["{{baseUrl}}"], "path": ["api", "analytics", "dashboard"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "System Lists",
+			"item": [
+				{
+					"name": "List All System Lists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/systemlists", "host": ["{{baseUrl}}"], "path": ["api", "systemlists"] }
+					}
+				},
+				{
+					"name": "Create System List",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Ethnicities\",\n  \"slug\": \"ethnicities\",\n  \"description\": \"Ethnicity options\"\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/systemlists", "host": ["{{baseUrl}}"], "path": ["api", "systemlists"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Pre-Enrollment",
+			"item": [
+				{
+					"name": "Resolve Profile (Stateless Simulation)",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"isSrrComplete\": true,\n  \"militaryStatus\": null,\n  \"militaryAffiliation\": null,\n  \"citizenship\": \"US\",\n  \"countryCode\": \"US\",\n  \"studentType\": \"Traditional\",\n  \"country\": \"United States\",\n  \"phoneCountryCode\": \"1\",\n  \"mailingCountry\": \"United States\",\n  \"mailingCountryCode\": \"US\",\n  \"usLegalResident\": true\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/pre-enrollment/resolve-profile", "host": ["{{baseUrl}}"], "path": ["api", "pre-enrollment", "resolve-profile"] }
+					}
+				},
+				{
+					"name": "Resolve and Persist Profile for Role",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"isSrrComplete\": true,\n  \"militaryStatus\": null,\n  \"militaryAffiliation\": null,\n  \"citizenship\": \"US\",\n  \"countryCode\": \"US\",\n  \"studentType\": \"Traditional\",\n  \"country\": \"United States\",\n  \"phoneCountryCode\": \"1\",\n  \"mailingCountry\": \"United States\",\n  \"mailingCountryCode\": \"US\",\n  \"usLegalResident\": true\n}"
+						},
+						"url": { "raw": "{{baseUrl}}/api/pre-enrollment/resolve/{{roleId}}", "host": ["{{baseUrl}}"], "path": ["api", "pre-enrollment", "resolve", "{{roleId}}"] }
+					}
+				},
+				{
+					"name": "Get Readiness Checklist (requires resolve first)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/pre-enrollment/readiness/{{personId}}/{{roleId}}", "host": ["{{baseUrl}}"], "path": ["api", "pre-enrollment", "readiness", "{{personId}}", "{{roleId}}"] }
+					}
+				},
+				{
+					"name": "Get Criteria Fields",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/pre-enrollment/criteria-fields", "host": ["{{baseUrl}}"], "path": ["api", "pre-enrollment", "criteria-fields"] }
+					}
+				},
+				{
+					"name": "Check Access Gate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/pre-enrollment/access-gate/{{roleId}}", "host": ["{{baseUrl}}"], "path": ["api", "pre-enrollment", "access-gate", "{{roleId}}"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Degree Audit",
+			"item": [
+				{
+					"name": "Generate Degree Audit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/degree-audit/{{studentId}}", "host": ["{{baseUrl}}"], "path": ["api", "degree-audit", "{{studentId}}"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Simulation",
+			"item": [
+				{
+					"name": "List Scenarios (DB)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/simulation/scenarios/db", "host": ["{{baseUrl}}"], "path": ["api", "simulation", "scenarios", "db"] }
+					}
+				},
+				{
+					"name": "Get Scenario Summaries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/simulation/scenarios/db/summaries", "host": ["{{baseUrl}}"], "path": ["api", "simulation", "scenarios", "db", "summaries"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Resources",
+			"item": [
+				{
+					"name": "List Buildings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/resources/buildings", "host": ["{{baseUrl}}"], "path": ["api", "resources", "buildings"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Tables (Dynamic)",
+			"item": [
+				{
+					"name": "List Available Tables",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "{{baseUrl}}/api/tables/", "host": ["{{baseUrl}}"], "path": ["api", "tables", ""] }
+					}
+				}
+			]
+		}
+	]
+}

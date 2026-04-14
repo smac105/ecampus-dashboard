@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  {% include "partials/header.njk" %}
+  {% include "partials/layout/header.njk" %}
   <main>
     {% block content %}{% endblock %}
   </main>
-  {% include "partials/footer.njk" %}
+  {% include "partials/layout/footer.njk" %}
   <script src="js/main.js"></script>
 </body>
 </html>

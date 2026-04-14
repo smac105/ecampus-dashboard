@@ -1,0 +1,111 @@
+{# Horizontal Chevron Progress Tracker #}
+<div class="horizontal-progress-wrapper">
+  <h4 class="mb-1 text-center">Pre-Enrollment Progress</h4>
+
+  <div class="horizontal-progress-tracker">
+    <!-- Step 1: Admissions Application - Completed -->
+    <div class="progress-step-wrapper">
+      <div class="progress-step-label">Admissions<br>Application</div>
+      <div class="progress-step completed first">
+        <i class="fas fa-circle-check"></i>
+      </div>
+    </div>
+
+    <!-- Step 2: Student Rights & Responsibilities - Completed -->
+    <div class="progress-step-wrapper">
+      <div class="progress-step-label">Student Rights<br>& Responsibilities</div>
+      <div class="progress-step completed">
+        <i class="fas fa-circle-check"></i>
+      </div>
+    </div>
+
+    <!-- Step 3: Verify Identity - Completed -->
+    <div class="progress-step-wrapper">
+      <div class="progress-step-label">Verify<br>Identity</div>
+      <div class="progress-step completed">
+        <i class="fas fa-circle-check"></i>
+      </div>
+    </div>
+
+    <!-- Step 4: Send Official Transcript - Active -->
+    <div class="progress-step-wrapper">
+      <div class="progress-step-label">Send Official<br>Transcript</div>
+      <div class="progress-step active">
+        <i class="fas fa-circle-check"></i>
+      </div>
+    </div>
+
+    <!-- Step 5: Complete Document Log Requirements - Inactive -->
+    <div class="progress-step-wrapper">
+      <div class="progress-step-label">Complete Document<br>Log Requirements</div>
+      <div class="progress-step">
+        <!-- Empty - grayed out -->
+      </div>
+    </div>
+
+    <!-- Step 6: Begin Transfer Credit Application - Inactive -->
+    <div class="progress-step-wrapper">
+      <div class="progress-step-label">Begin Transfer<br>Credit Application</div>
+      <div class="progress-step">
+        <!-- Empty - grayed out -->
+      </div>
+    </div>
+
+    <!-- Step 7: Explore Payment Options - Inactive -->
+    <div class="progress-step-wrapper">
+      <div class="progress-step-label">Explore<br>Payment Options</div>
+      <div class="progress-step">
+        <!-- Empty - grayed out -->
+      </div>
+    </div>
+
+    <!-- Step 8: Access Ecampus - Inactive -->
+    <div class="progress-step-wrapper">
+      <div class="progress-step-label">Access Ecampus</div>
+      <div class="progress-step last">
+        <!-- Empty - grayed out -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Center active item in horizontal progress tracker on mobile
+document.addEventListener('DOMContentLoaded', function() {
+  function centerActiveProgressItem() {
+    const progressTracker = document.querySelector('.horizontal-progress-tracker');
+    const activeWrapper = document.querySelector('.progress-step-wrapper:has(.progress-step.active)');
+
+    if (progressTracker && activeWrapper && window.innerWidth <= 768) {
+      // Small delay to ensure layout is complete
+      setTimeout(function() {
+        // Calculate the scroll position to center the active item
+        const trackerRect = progressTracker.getBoundingClientRect();
+        const itemRect = activeWrapper.getBoundingClientRect();
+        const scrollLeft = progressTracker.scrollLeft;
+
+        // Calculate center position
+        const itemCenter = itemRect.left - trackerRect.left + scrollLeft + (itemRect.width / 2);
+        const trackerCenter = trackerRect.width / 2;
+        const scrollPosition = itemCenter - trackerCenter;
+
+        // Scroll to center the active item
+        progressTracker.scrollTo({
+          left: scrollPosition,
+          behavior: 'smooth'
+        });
+      }, 150);
+    }
+  }
+
+  // Center on load
+  centerActiveProgressItem();
+
+  // Re-center on window resize
+  let resizeTimeout;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(centerActiveProgressItem, 150);
+  });
+});
+</script>
