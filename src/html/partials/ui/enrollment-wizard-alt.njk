@@ -1,0 +1,367 @@
+
+
+    <!-- Tab-Style Progress Bar (4 Stages) -->
+    <div class="enrollment-wizard-progress">
+      <div class="enrollment-progress-tab completed" data-stage="1" data-total-items="3" data-completed-items="3">
+        <div class="tab-content-wrapper">
+          <span class="tab-number">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <span class="tab-label">Profile Verification</span>
+        </div>
+      </div>
+      <div class="enrollment-progress-tab active" data-stage="2" data-total-items="9" data-completed-items="3" data-pending-items="2">
+        <div class="tab-content-wrapper">
+          <span class="tab-number">
+            <i class="fa-regular fa-file-lines"></i>
+          </span>
+          <span class="tab-label">Document Submission</span>
+        </div>
+      </div>
+      <div class="enrollment-progress-tab" data-stage="3" data-total-items="3" data-completed-items="1">
+        <div class="tab-content-wrapper">
+          <span class="tab-number">
+            <i class="fa-regular fa-building-columns"></i>
+          </span>
+          <span class="tab-label">Funding and Financial</span>
+        </div>
+      </div>
+      <div class="enrollment-progress-tab" data-stage="4" data-total-items="0" data-completed-items="0">
+        <div class="tab-content-wrapper">
+          <span class="tab-number">
+            <i class="fa-regular fa-check"></i>
+          </span>
+          <span class="tab-label">Review & Submit</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wizard Content Area -->
+    <div class="enrollment-wizard-content">
+
+      <!-- Profile Verification -->
+      <div class="enrollment-wizard-stage" id="enrollmentStage1">
+        <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Profile Verification</h2>
+            {# <p class="enrollment-stage-description">Complete the requirements below as prompted by the next stage.</p> #}
+
+            <!-- Task List -->
+            <h4 class="mt-0 mb-3">Requirements & Reminders</h4>
+            <div class="document-list">
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Verify Personal Information</strong></p>
+                </div>
+                <span class="badge bg-green">Completed</span>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Confirm Program Selection</strong></p>
+                </div>
+                <span class="badge bg-green">Completed</span>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Update Emergency Contact</strong></p>
+                </div>
+                <span class="badge bg-green">Completed</span>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <!-- Document Submission -->
+      <div class="enrollment-wizard-stage active" id="enrollmentStage2">
+        <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Document Submission</h2>
+            {# <p class="enrollment-stage-description">Complete the requirements below as prompted by the next stage.</p> #}
+
+            <!-- Enrollment To Do List - Tabbed Version -->
+            {% include "partials/ui/enrollment-todo-tabs.njk" %}
+          </div>
+      </div>
+
+      <!-- Funding and Financial -->
+      <div class="enrollment-wizard-stage" id="enrollmentStage3">
+        <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Funding and Financial</h2>
+            {# <p class="enrollment-stage-description">Complete the requirements below as prompted by the next stage.</p> #}
+
+            <!-- Payment Type Widget -->
+            <div class="payment-widget white-box-border-noshad mb-5">
+              <h4 class="mt-0 mb-3">Could you provide the payment type that you intend to use for your educational journey?</h4>
+
+              <div class="payment-options">
+                <button type="button" class="payment-option-btn" data-payment="cash">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">Cash</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="financial-aid">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">Financial Aid</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="military-ta">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">Military TA</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="employer">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">Employer</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="other">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">I am unsure at this time</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="payment-widget white-box-border-noshad mb-4">
+              <!-- Tuition Assistance Question -->
+              <div class="tuition-assistance-question">
+                <h4 class="mb-3">Do you intend to apply for Tuition Assistance?</h4>
+                <div class="radio-group mb-5">
+                  <label class="radio-option">
+                    <input type="radio" name="tuitionAssistance" value="yes" id="taYes">
+                    <span>Yes</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="tuitionAssistance" value="no" id="taNo">
+                    <span>No</span>
+                  </label>
+                </div>
+
+                <!-- TA Action Buttons (hidden by default) -->
+                <div class="ta-action-buttons" id="taActionButtons" style="display: none;">
+                  <button type="button" class="btn-main mb-4" id="beginTaRequest">
+                    Begin Request
+                  </button>
+                  <label class="ta-decline-checkbox">
+                    <input type="checkbox" id="taDeclineCheckbox" class="form-check-input">
+                    <span>I decline for now and intend to initiate this request at a later time.</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <!-- Review & Submit -->
+      <div class="enrollment-wizard-stage" id="enrollmentStage4">
+        <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Review & Submit</h2>
+            <p class="enrollment-stage-description">Review all completed items and confirm to complete enrollment.</p>
+
+            <!-- Profile Verification Items -->
+            <h4 class="mt-0 mb-3">Profile Documents</h4>
+            <div class="document-list">
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Verify Personal Information</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  View Details
+                </a>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Confirm Program Selection</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  View Details
+                </a>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Update Emergency Contact</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  View Details
+                </a>
+              </div>
+            </div>
+
+            <!-- Document Submission Items - My To-do List -->
+            <h4 class="mt-4 mb-3">Required Documents</h4>
+            <div class="document-list">
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>ID Verification</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> View Document
+                </a>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Transfer Credit Evaluation</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> View Document
+                </a>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Financial Aid Application</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> View Document
+                </a>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Student Rights and Responsibilities</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> View Document
+                </a>
+              </div>
+            {# </div> #}
+
+            <!-- Document Submission Items - Pending -->
+            {# <h4 class="mt-4 mb-3">Pending Items</h4> #}
+            {# <div class="document-list"> #}
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Transcript Processing</strong></p>
+                </div>
+                <span class="badge badge-pending">In Progress</span>
+              </div>
+            {# </div> #}
+
+            <!-- Document Submission Items - Completed -->
+            {# <h4 class="mt-4 mb-3">Completed Documents</h4> #}
+            {# <div class="document-list"> #}
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Application Submitted</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> View Document
+                </a>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Student Orientation</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> View Document
+                </a>
+              </div>
+            {# </div> #}
+
+            <!-- Funding and Financial Items -->
+            <h4 class="mt-4 mb-3">Financial Information</h4>
+            {# <div class="document-list"> #}
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Financing Payment Type</strong></p>
+                  <div class="status-item status-active show" style="margin-left: 20px;" id="statusCollapsed">
+                    <div class="status-indicator"></div>
+                    <span class="status-label">Financial Aid</span>
+                  </div>
+                  
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> Change
+                </a>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Submit Tuition Assistance Request</strong> <span class="badge badge-required">Assistance Declined</span></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> Change
+                </a>
+              </div>
+            {# </div> #}
+
+            
+            </div>
+            <!-- Confirmation Checkbox -->
+          </div>
+          <div class="checkbox-wrap">
+            <div class="confirmation-checkbox mb-5">
+              <input type="checkbox" id="enrollmentConfirmation" class="form-check-input">
+              <div>
+              <h4>Confirmation</h4>
+              <label for="enrollmentConfirmation" class="form-check-label">
+                I confirm that all information provided is accurate and complete. I understand that submission of false information may result in denial of admission or dismissal from the university.
+              </label>
+              </div>
+            </div>
+          </div>
+          <!-- Footer Navigation -->
+          <div class="enrollment-wizard-footer">
+            <button type="button" class="btn-main btn-one-icon btn-large" id="enrollmentCompleteBtn" style="display: none;" disabled>
+              <i class="fas fa-check"></i> Complete Enrollment
+            </button>
+          </div>
+      </div>
+
+    </div>
+
+    <!-- Enrollment Success State (hidden by default) -->
+    <div class="enrollment-success-state" id="enrollmentSuccessState" style="display: none;">
+      <div class="success-content">
+        <div class="success-icon">
+          <i class="fas fa-party-horn"></i>
+        </div>
+        {# <h2 class="success-title">Congratulations, Jorge!</h2>
+        <p class="success-message">
+          All documentation has been submitted successfully and you are ready to enroll.
+          We're excited to have you join our academic community!
+        </p> #}
+        <button type="button" class="btn-main btn-large btn-success-pulse" onclick="window.location.href='/index.html'">
+          <i class="fas fa-arrow-right"></i> Continue to Enrollment
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer Navigation -->
+    {# <div class="enrollment-wizard-footer">
+      <a type="button" class="btn-main back-btn" id="enrollmentBackBtn" style="display: none;">
+        Previous
+      </a>
+
+      <div class="footer-step-indicator">
+        <span>Stage <span id="enrollmentCurrentStageNum">1</span> of 4</span>
+      </div>
+
+      <a type="button" class="btn-main" id="enrollmentNextBtn">
+        Next
+      </a>
+
+      <button type="button" class="btn-main btn-one-icon" id="enrollmentCompleteBtn" style="display: none;">
+        <i class="fas fa-check"></i> Complete Enrollment
+      </button>
+    </div> #}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="/js/confetti-util.js"></script>
+<script src="/js/enrollment-wizard-flow.js"></script>
+{% endblock %}

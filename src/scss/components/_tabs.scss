@@ -39,6 +39,7 @@
   }
 
     .tab-link.active,
+    .tab-link.active-sub,
     .calendar-tab-link.active,
     .inbox-tab-link.active {
       font-weight: 700;
@@ -53,6 +54,7 @@
     }
 
     .tab-content.active,
+    .tab-content.active-sub,
     .inbox-tab-content.active {
       display: block;
     }

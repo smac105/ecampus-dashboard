@@ -1,25 +1,25 @@
 {# Enrollment To Do List - Tabbed Version #}
 {# <div class="actions white-box-border"> #}
 <div>
-	<h2 class="mb-3">Pre-Enrollment To Do List</h2>
+{# 	<h2 class="mb-3">Pre-Enrollment To Do List</h2>
 	<p>Continue your enrollment process. While your application is being processed, finish your pre-enrollment action items below to begin your journey at APU. We're here to help every step of the way.</p>
-
+ #}
 	<!-- Tabbed Navigation -->
 	<div class="document-tabs mb-4">
-		<a href="#my-todo-list" class="tab-link active" data-tab="my-todo-list">My To-do List</a>
-		<a href="#pending-tasks" class="tab-link" data-tab="pending-tasks">Pending</a>
+		<a href="#my-todo-list" class="tab-link active-sub" data-tab="my-todo-list">My To-do List <span class="count alerts">1</span></a>
+		<a href="#pending-tasks" class="tab-link" data-tab="pending-tasks">Pending <span class="count alerts">1</span></a>
 		<a href="#completed-tasks" class="tab-link" data-tab="completed-tasks">Completed</a>
 	</div>
 
 	<!-- Tab Content: My To-do List -->
-	<div class="tab-content active" id="my-todo-list">
+	<div class="tab-content active-sub" id="my-todo-list">
 		<!-- Required Items Section -->
-		<h4 class="mt-0 mb-3">Required</h4>
+		{# <h4 class="mt-0 mb-3">Required</h4> #}
 		<div class="document-list">
 			<div class="document-item mb-2">
 				<div class="d-flex align-items-center">
-					<i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
-					<p class="mb-0"><strong>ID Verification</strong></p>
+					<i class="fa-regular fa-circle apu-blue-active me-3 icon-lg"></i>
+					<p class="mb-0"><strong>ID Verification</strong> <span class="badge badge-required">Required</span></p>
 				</div>
 				<a href="#" class="arrow-link arrow-link-sm" data-bs-toggle="modal" data-bs-target="#uploadIdModal">
 					<i class="fa-solid fa-upload me-1"></i> Upload ID
@@ -27,56 +27,65 @@
 			</div>
 			<div class="document-item mb-2">
 				<div class="d-flex align-items-center">
-					<i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
+					<i class="fa-regular fa-circle apu-blue-active me-3 icon-lg"></i>
 					<p class="mb-0"><strong>Transfer Credit Evaluation</strong></p>
 				</div>
 				<a href="/transfer-credits.html" class="arrow-link arrow-link-sm">
 					Begin Evaluation
 				</a>
 			</div>
-			<div class="document-item mb-2">
+			{# <div class="document-item mb-2">
 				<div class="d-flex align-items-center">
-					<i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
+					<i class="fa-regular fa-circle apu-blue-active me-3 icon-lg"></i>
 					<p class="mb-0"><strong>Financial Aid Application</strong></p>
 				</div>
 				<a href="/financial-aid.html" class="arrow-link arrow-link-sm">
 					Start Application
 				</a>
-			</div>
+			</div> #}
 		</div>
 
 		<!-- Additional Items Section -->
-		<h4 class="mt-4 mb-2">Not Required - Additional Items</h4>
+		{# <h4 class="mt-4 mb-2">Not Required - Additional Items</h4>
 		<p class="text-muted mb-3">These items are not required for enrollment, but will be required before registering for classes.</p>
 		<div class="document-list">
 			<div class="document-item mb-2">
 				<div class="d-flex align-items-center">
-					<i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
+					<i class="fa-regular fa-circle apu-blue-active me-3 icon-lg"></i>
 					<p class="mb-0"><strong>Define Your Payment Type</strong></p>
 				</div>
 				<a href="#" class="arrow-link arrow-link-sm">
 					Get Started
 				</a>
 			</div>
-		</div>
+		</div> #}
 	</div>
 
 	<!-- Tab Content: Pending -->
 	<div class="tab-content" id="pending-tasks">
 		<div class="document-list">
-			<div class="document-item mb-2">
+			<div class="document-item orange-pending mb-2">
 				<div class="d-flex align-items-center">
 					<i class="fas fa-clock orange me-3 icon-lg"></i>
 					<p class="mb-0"><strong>Application Review</strong></p>
 				</div>
 				<span class="badge badge-pending">Under Review</span>
 			</div>
-			<div class="document-item mb-2">
+			<div class="document-item red-required mb-2">
 				<div class="d-flex align-items-center">
 					<i class="fas fa-clock orange me-3 icon-lg"></i>
-					<p class="mb-0"><strong>Transcript Processing</strong></p>
+					<p class="mb-0"><strong>Transcript Processing</strong> <i class="fa-solid fa-circle-info"
+					   data-bs-toggle="popover"
+					   data-bs-trigger="focus"
+					   data-bs-placement="top"
+					   data-bs-content="To complete your enrollment, please submit official ID by uploading to our portal. If you have questions, please reach out to enrollment@apus.edu."
+					   tabindex="0"
+					   role="button"
+					   aria-label="More information about transcript requirements"
+					   style="cursor: pointer; font-size: 1.6rem; color: #E4193B;"></i> <span class="badge badge-required">Attention Required</span></p>
 				</div>
-				<span class="badge badge-pending">In Progress</span>
+				{# <span class="badge badge-pending">In Progress</span> #}
+				<a href="/mesages.html" class="arrow-link arrow-link-sm">Contact Admissions</a>
 			</div>
 		</div>
 	</div>
@@ -84,7 +93,7 @@
 	<!-- Tab Content: Completed -->
 	<div class="tab-content" id="completed-tasks">
 		<div class="document-list">
-			<div class="document-item mb-2">
+			<div class="document-item green-completed mb-2">
 				<div class="d-flex align-items-center">
 					<i class="fas fa-circle-check green me-3 icon-lg"></i>
 					<p class="mb-0"><strong>Application Submitted</strong></p>
@@ -93,7 +102,7 @@
 					<i class="fa-solid fa-eye me-1"></i> View Document
 				</a>
 			</div>
-			<div class="document-item mb-2">
+			<div class="document-item green-completed mb-2">
 				<div class="d-flex align-items-center">
 					<i class="fas fa-circle-check green me-3 icon-lg"></i>
 					<p class="mb-0"><strong>Student Rights and Responsibilities</strong></p>
@@ -102,7 +111,7 @@
 					<i class="fa-solid fa-eye me-1"></i> View Document
 				</a>
 			</div>
-			<div class="document-item mb-2">
+			<div class="document-item green-completed mb-2">
 				<div class="d-flex align-items-center">
 					<i class="fas fa-circle-check green me-3 icon-lg"></i>
 					<p class="mb-0"><strong>Student Orientation</strong></p>
@@ -125,16 +134,16 @@ document.addEventListener('DOMContentLoaded', function() {
 		link.addEventListener('click', function(e) {
 			e.preventDefault();
 
-			// Remove active class from all tabs and contents
-			tabLinks.forEach(l => l.classList.remove('active'));
-			tabContents.forEach(c => c.classList.remove('active'));
+			// Remove active-sub class from all tabs and contents
+			tabLinks.forEach(l => l.classList.remove('active-sub'));
+			tabContents.forEach(c => c.classList.remove('active-sub'));
 
-			// Add active class to clicked tab
-			this.classList.add('active');
+			// Add active-sub class to clicked tab
+			this.classList.add('active-sub');
 
 			// Show corresponding content
 			const tabId = this.getAttribute('data-tab');
-			document.getElementById(tabId).classList.add('active');
+			document.getElementById(tabId).classList.add('active-sub');
 		});
 	});
 });
