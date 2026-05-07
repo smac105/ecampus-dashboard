@@ -1,0 +1,100 @@
+    <!-- Wizard Content Area -->
+    <div class="enrollment-wizard-content">
+
+      <!-- Document Submission (Only Section) -->
+      <div class="enrollment-wizard-stage active" id="enrollmentStage2">
+        <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Document Submission</h2>
+
+            <!-- Enrollment To Do List - Tabbed Version -->
+            {% include "partials/ui/enrollment-todo-tabs.njk" %}
+
+            <!-- Demo Checkbox to Mark Stage Complete -->
+            <div class="mt-5 pt-4" style="border-top: 2px solid #e5e5e5;">
+              <label class="demo-complete-checkbox" style="display: flex; align-items: center; gap: 1rem; cursor: pointer; font-size: 1.5rem; color: #666;">
+                <input type="checkbox" id="demoCompleteDocuments" style="width: 2rem; height: 2rem; cursor: pointer;">
+                <span><strong>Demo:</strong> Mark all documents as complete</span>
+              </label>
+            </div>
+          </div>
+      </div>
+
+    </div>
+
+{% block scripts %}
+<script>
+// Simple script for documents-only page - no tab management needed
+document.addEventListener('DOMContentLoaded', function() {
+  // Handle demo checkbox on Document Submission stage
+  const demoCompleteCheckbox = document.getElementById('demoCompleteDocuments');
+  if (demoCompleteCheckbox) {
+    demoCompleteCheckbox.addEventListener('change', function() {
+      if (this.checked) {
+        // Show completion modal
+        showEnrollmentComplete();
+      }
+    });
+  }
+
+  // Modal close handlers
+  const completionModal = document.getElementById('enrollmentCompletionModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const closeModalOverlay = document.getElementById('closeModalOverlay');
+
+  if (closeModalBtn && completionModal) {
+    closeModalBtn.addEventListener('click', function() {
+      completionModal.style.display = 'none';
+    });
+  }
+
+  if (closeModalOverlay && completionModal) {
+    closeModalOverlay.addEventListener('click', function() {
+      completionModal.style.display = 'none';
+    });
+  }
+
+  // Complete phase button handlers
+  const completePhaseBtn = document.getElementById('completePhaseBtn');
+  if (completePhaseBtn) {
+    completePhaseBtn.addEventListener('click', function() {
+      window.location.href = '/index.html';
+    });
+  }
+
+  const completePhaseBtnSidebar = document.getElementById('completePhaseBtnSidebar');
+  if (completePhaseBtnSidebar) {
+    completePhaseBtnSidebar.addEventListener('click', function() {
+      window.location.href = '/index.html';
+    });
+  }
+});
+
+// Show enrollment completion modal
+function showEnrollmentComplete() {
+  const completionModal = document.getElementById('enrollmentCompletionModal');
+  const completionBoxSidebar = document.getElementById('enrollmentCompletionBoxSidebar');
+
+  if (completionModal) {
+    setTimeout(() => {
+      completionModal.style.display = 'flex';
+    }, 300);
+  }
+
+  // Also show sidebar box
+  if (completionBoxSidebar) {
+    completionBoxSidebar.style.display = 'block';
+  }
+
+  // Hide all alerts
+  const alertBox = document.querySelector('.alert-box-hp');
+  if (alertBox) {
+    alertBox.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    alertBox.style.opacity = '0';
+    alertBox.style.transform = 'translateY(-10px)';
+    setTimeout(() => {
+      alertBox.style.display = 'none';
+    }, 300);
+  }
+}
+</script>
+{% endblock %}

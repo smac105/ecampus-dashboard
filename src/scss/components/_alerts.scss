@@ -131,7 +131,7 @@
 	border: 2px solid $orange;
 	border-radius: $border-radius;
 	display: flex;
-	align-items: center;
+	// align-items: center;
 	gap: 1.5rem;
 	position: relative;
 	margin-bottom: 25px;
@@ -156,7 +156,7 @@
 		}
 
 		p {
-			font-size: 1.5rem;
+			// font-size: 1.5rem;
 			font-weight: 500;
 			color: $blk;
 		}
@@ -168,5 +168,76 @@
 		i {
 			color: $orange;
 		}
+	}
+}
+.alert-info {
+	display: grid;
+	grid-template-columns: 60px auto;
+	grid-gap: 10px;
+	align-items: center;
+	border: 2px solid $blue;
+	background: rgba(5,129,192,0.05) !important;
+	color: $blue;
+	i {
+		color: $blue;
+	}
+	.fa-triangle-exclamation, .fa-info-circle {
+	    font-size: 50px;
+	    display: grid;
+	    justify-content: center;
+	    color: $blue
+	}
+}
+.alert-toomany {
+	padding: 2.0rem 2.5rem;
+	background: rgba(228,25,59,0.15);
+	border: 2px solid $red;
+	border-radius: $border-radius;
+	display: flex;
+	// align-items: center;
+	gap: 1.5rem;
+	position: relative;
+	margin-bottom: 25px;
+	transition: opacity 0.3s ease, transform 0.3s ease;
+
+	.alert-toomany-icon {
+		flex-shrink: 0;
+
+		i {
+			font-size: 3rem;
+			color: $red;
+		}
+	}
+
+	.alert-toomany-content {
+		flex: 1;
+
+		h4 {
+			color: $red;
+			// font-size: 1.8rem;
+			// font-weight: 600;
+		}
+
+		p {
+			// font-size: 1.5rem;
+			font-weight: 500;
+			color: $blk;
+		}
+	}
+
+	.alert-close-btn-toomany {
+		color: $red;
+
+		i {
+			color: $red;
+		}
+	}
+}
+.alert-box-hp {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	.alert-alt {
+		width: 100%;
 	}
 }

@@ -1,0 +1,177 @@
+
+    <!-- Tab-Style Progress Bar (3 Stages) -->
+    <div class="enrollment-wizard-progress enrollment-wizard-progress-simplified">
+      <div class="enrollment-progress-tab completed" data-stage="1" data-total-items="3" data-completed-items="3">
+        <div class="tab-content-wrapper">
+          <span class="tab-number">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <span class="tab-label">Profile Verification</span>
+        </div>
+      </div>
+      <div class="enrollment-progress-tab active" data-stage="2" data-total-items="9" data-completed-items="3" data-pending-items="2">
+        <div class="tab-content-wrapper">
+          <span class="tab-number">
+            <i class="fa-regular fa-file-lines"></i>
+          </span>
+          <span class="tab-label">Document Submission</span>
+        </div>
+      </div>
+      <div class="enrollment-progress-tab" data-stage="3" data-total-items="3" data-completed-items="1">
+        <div class="tab-content-wrapper">
+          <span class="tab-number">
+            <i class="fa-regular fa-building-columns"></i>
+          </span>
+          <span class="tab-label">Funding and Financial</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wizard Content Area -->
+    <div class="enrollment-wizard-content">
+
+      <!-- Profile Verification -->
+      <div class="enrollment-wizard-stage" id="enrollmentStage1">
+        <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Profile Verification</h2>
+
+            <!-- Task List -->
+            <h4 class="mt-0 mb-3">Requirements & Reminders</h4>
+            <div class="document-list">
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Verify Personal Information</strong></p>
+                </div>
+                <span class="badge bg-green">Completed</span>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Confirm Program Selection</strong></p>
+                </div>
+                <span class="badge bg-green">Completed</span>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Update Emergency Contact</strong></p>
+                </div>
+                <span class="badge bg-green">Completed</span>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <!-- Document Submission -->
+      <div class="enrollment-wizard-stage active" id="enrollmentStage2">
+        <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Document Submission</h2>
+
+            <!-- Enrollment To Do List - Tabbed Version -->
+            {% include "partials/ui/enrollment-todo-tabs.njk" %}
+
+            <!-- Demo Checkbox to Mark Stage Complete -->
+            <div class="mt-5 pt-4" style="border-top: 2px solid #e5e5e5;">
+              <label class="demo-complete-checkbox" style="display: flex; align-items: center; gap: 1rem; cursor: pointer; font-size: 1.5rem; color: #666;">
+                <input type="checkbox" id="demoCompleteDocuments" style="width: 2rem; height: 2rem; cursor: pointer;">
+                <span><strong>Demo:</strong> Mark all documents as complete</span>
+              </label>
+            </div>
+          </div>
+      </div>
+
+      <!-- Funding and Financial -->
+      <div class="enrollment-wizard-stage" id="enrollmentStage3">
+        <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Funding and Financial</h2>
+
+            <!-- Payment Type Selection (shown initially) -->
+            <div class="payment-widget white-box-border-noshad mb-5" id="paymentSelectionWidget">
+              <h4 class="mt-0 mb-3">Could you provide the payment type that you intend to use for your educational journey?</h4>
+              <p class="disclaimer gray-dk">(This can be adjusted as you rpogress through your enrollment process. Select the option that best fits your current financial plan of payment.)</p>
+              <div class="payment-options">
+                <button type="button" class="payment-option-btn" data-payment="Military TA">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">Military TA</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="Employer Benefits">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">Employer Benefits</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="Federal Student Aid">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">Federal Student Aid</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="GI Bill® Benefits">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">GI Bill® Benefits</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="Self-Payment">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">Self-Payment</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="VR&E">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">VR&E</span>
+                </button>
+               <button type="button" class="payment-option-btn" data-payment="MyCAA">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">MyCAA</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="Scholarship">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">Scholarship</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="Private Loan">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">Private Loan</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="ArmyIgnitED Guide">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">ArmyIgnitED Guide</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="I am unsure at this time">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">I am unsure at this time</span>
+                </button>
+              </div>
+
+              <!-- Save Button (hidden until selection) -->
+              <div class="text-center mt-4">
+                <button type="button" class="btn-main btn-large" id="savePaymentBtn" style="display: none;">
+                  Save and Continue
+                </button>
+              </div>
+            </div>
+
+            <!-- Payment Confirmation (hidden initially) -->
+            <div class="payment-widget white-box-border-noshad mb-5" id="paymentConfirmationWidget" style="display: none;">
+              <h4 class="mt-0 mb-3">Your selected Payment type:</h4>
+              <p class="lead mb-4" id="selectedPaymentType" style="font-weight: 600; color: #0581C0;"></p>
+              <a href="#" class="arrow-link" id="editPaymentBtn">Edit Payment Type</a>
+            </div>
+          </div>
+      </div>
+
+    </div>
+
+    <!-- Enrollment Success State (hidden by default) -->
+    <div class="enrollment-success-state" id="enrollmentSuccessState" style="display: none;">
+      <div class="success-content">
+        <div class="success-icon">
+          <i class="fas fa-party-horn"></i>
+        </div>
+        <button type="button" class="btn-main btn-large btn-success-pulse" onclick="window.location.href='/index.html'">
+          <i class="fas fa-arrow-right"></i> Continue to Enrollment
+        </button>
+      </div>
+    </div>
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="/js/confetti-util.js"></script>
+<script src="/js/enrollment-wizard-simplified.js"></script>
+{% endblock %}

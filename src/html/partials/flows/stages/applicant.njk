@@ -17,22 +17,17 @@
 </div>
 
 <!-- Horizontal Progress Tracker -->
-{% include "partials/ui/horizontal-progress-tracker.njk" %}
+{# {% include "partials/ui/horizontal-progress-tracker.njk" %} #}
 
-<div class="row row-main-layout">
-	<div class="mb-5">
-		<!-- Welcome Message -->
-		<div class="intro-box">
-			<h1>Congratulations Jorge! You're On Your Way to Being Enrolled.</h1>
-			<p class="lead mb-0">Thank you for starting your education journey with APU! Complete the remaining steps below to start the enrollment process. Our admissions team is here to help if you have any questions as you continue to gather items needed in order to enroll before the next start date.</p>
-		</div>
-		<div class="alert-alt alert-required" id="transcriptAlert">
+<div class="row">
+	<div class="col-lg-12 mb-0">
+		{# <div class="alert-alt alert-required" id="transcriptAlert">
 			<button class="alert-close-btn" id="closeTranscriptAlert" aria-label="Close alert">
 				<i class="fa-solid fa-xmark"></i>
 			</button>
 			<div>
 				<p class="next-step-badge small-title red">ACTION REQUIRED BEFORE ENROLLMENT CAN BEGIN!</p>
-				<h3>Request Official Transcripts
+				<h4>Request Official Transcripts
 					<i class="fa-solid fa-circle-info"
 					   data-bs-toggle="popover"
 					   data-bs-trigger="focus"
@@ -42,11 +37,160 @@
 					   role="button"
 					   aria-label="More information about transcript requirements"
 					   style="cursor: pointer; font-size: 2rem; margin-left: 0.5rem; color: #0581C0;"></i>
-				</h3>
+				</h4>
 			</div>
 			<div>
-				<a href="#" {# target="_blank" #} class="btn-main btn-sm">Request Transcripts</a>
+				<a href="#" class="btn-main btn-sm">Request Transcripts</a>
 			</div>
+		</div> #}
+		<!-- Welcome Message -->
+		<div class="intro-box mb-0">
+			<h1>Congratulations Jorge! You're On Your Way to Being Enrolled.</h1>
+			<p class="lead mb-0">Thank you for starting your education journey with APU! Complete the remaining steps below to start the enrollment process. Our admissions team is here to help if you have any questions as you continue to gather items needed in order to enroll before the next start date.</p>
+
+		</div>
+		
+
+	</div>
+</div>
+<div class="alert-box-hp">
+	{# <div class="mb-4"> #}
+		<div class="alert-alt alert-required" id="transcriptAlert">
+			<button class="alert-close-btn" id="closeTranscriptAlert" aria-label="Close alert">
+				<i class="fa-solid fa-xmark"></i>
+			</button>
+			<div>
+				<p class="next-step-badge small-title red">ACTION REQUIRED BEFORE ENROLLMENT CAN BEGIN!</p>
+				<h4>Upload ID Required
+					<i class="fa-solid fa-circle-info"
+					   data-bs-toggle="popover"
+					   data-bs-trigger="focus"
+					   data-bs-placement="top"
+					   data-bs-content="To complete your enrollment, please submit official ID by uploading to our portal. If you have questions, please reach out to enrollment@apus.edu."
+					   tabindex="0"
+					   role="button"
+					   aria-label="More information about transcript requirements"
+					   style="cursor: pointer; font-size: 2rem; margin-left: 0.5rem; color: #0581C0;"></i>
+				</h4>
+			</div>
+			<div>
+				<a href="#" class="btn-main btn-sm">Upload ID</a>
+			</div>
+		</div>
+	{# </div> #}
+	{# <div class="mb-4"> #}
+		<div class="alert-alt alert-required" id="programAlert">
+			<button class="alert-close-btn" id="closeProgramAlert" aria-label="Close alert">
+				<i class="fa-solid fa-xmark"></i>
+			</button>
+			<div>
+				<p class="next-step-badge small-title red">ACTION REQUIRED BEFORE ENROLLMENT CAN BEGIN!</p>
+				<h4>Issue With Transcript Request
+					<i class="fa-solid fa-circle-info"
+					   data-bs-toggle="popover"
+					   data-bs-trigger="focus"
+					   data-bs-placement="top"
+					   data-bs-content="To complete your application, please submit official transcripts from all previously attended institutions. Transcripts can be sent electronically to transcripts@apus.edu or mailed to our admissions office."
+					   tabindex="0"
+					   role="button"
+					   aria-label="More information about confirming program selection"
+					   style="cursor: pointer; font-size: 2rem; margin-left: 0.5rem; color: #0581C0;"></i>
+				</h4>
+			</div>
+			<div>
+				<a href="#" class="btn-main btn-sm">Contact Admissions</a>
+			</div>
+		</div>
+	{# </div> #}
+</div>
+{# <div class="row justify-content-center">
+	<div class="col mb-0">
+		<div class="alert-toomany" id="toomanyAlert">
+			<button class="alert-close-btn" id="closeToomanyAlert" aria-label="Close alert">
+				<i class="fa-solid fa-xmark"></i>
+			</button>
+			<div class="alert-toomany-icon">
+				<i class="fa-solid fa-triangle-exclamation"></i>
+			</div>
+			<div class="alert-toomany-content">
+				<div>
+					<h3 class="mb-2 red">ACTION REQUIRED: You have three or more alerts!</h3>
+					<p class="mb-4">In order to see more details regarding your alerts, visit your alert center.</p>
+				<div>
+				<a href="/messages.html?view=alerts" class="btn-main btn-sm">Vist Alert Center</a>
+			</div>
+		</div>
+	</div>
+</div> #}
+<div class="row row-main-layout">
+	<div class="mb-5">
+		
+		<!-- Enrollment Wizard Module -->
+		<div class="white-box mb-4">
+			<!-- Tab-Style Progress Bar -->
+			{# <div class="document-tabs enrollment-progress-tabs">
+				<a href="#" class="tab-link enrollment-tab active" data-stage="1">
+					<span class="tab-number">1</span>
+					<span class="tab-label">Profile Verification</span>
+				</a>
+				<a href="#" class="tab-link enrollment-tab" data-stage="2">
+					<span class="tab-number">2</span>
+					<span class="tab-label">Document Submission</span>
+				</a>
+				<a href="#" class="tab-link enrollment-tab" data-stage="3">
+					<span class="tab-number">3</span>
+					<span class="tab-label">Funding and Financial</span>
+				</a>
+				<a href="#" class="tab-link enrollment-tab" data-stage="4">
+					<span class="tab-number">4</span>
+					<span class="tab-label">Review and Confirm</span>
+				</a>
+			</div>
+
+			<h2 class="h2 mb-2">Stage 1: Profile Verification</h2>
+			<p class="lead mb-4">Complete the requirements below as prompted by the next stage.</p>
+
+			<h3 class="h3 mb-3">Requirements & Reminders</h3>
+			<div class="document-list mb-4">
+				<div class="document-item">
+					<div>
+						<i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
+						<div>
+							<p class="mb-0"><strong>Verify Personal Information</strong></p>
+							<p class="small-text mb-0">Ensure all contact details are accurate</p>
+						</div>
+					</div>
+					<button class="btn-main btn-sm" data-bs-toggle="modal" data-bs-target="#verifyInfoModal">Required</button>
+				</div>
+
+				<div class="document-item">
+					<div>
+						<i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
+						<div>
+							<p class="mb-0"><strong>Confirm Program Selection</strong></p>
+							<p class="small-text mb-0">Review your chosen degree program</p>
+						</div>
+					</div>
+					<button class="btn-main btn-sm">Required</button>
+				</div>
+			</div>
+
+			<h3 class="h3 mb-3">Additional Items</h3>
+			<div class="document-list">
+				<div class="document-item">
+					<div>
+						<i class="fas fa-circle gray-dk me-3 icon-lg"></i>
+						<div>
+							<p class="mb-0"><strong>Update Emergency Contact</strong></p>
+							<p class="small-text mb-0">Add or update emergency contact information</p>
+						</div>
+					</div>
+					<button class="btn-secondary btn-sm">Optional</button>
+				</div>
+			</div> #}
+
+			<!-- Enrollment To Do List - Tabbed Version -->
+			{% include "partials/ui/enrollment-wizard-alt.njk" %}
 		</div>
 
 		<script>
@@ -81,11 +225,56 @@
 					}, 300);
 				});
 			}
+
+			// Outage alert
+			const closeProgramBtn = document.getElementById('closeProgramAlert');
+			const programAlert = document.getElementById('programAlert');
+
+			if (closeProgramBtn && programAlert) {
+				closeProgramBtn.addEventListener('click', function() {
+					programAlert.style.opacity = '0';
+					programAlert.style.transform = 'translateY(-10px)';
+
+					setTimeout(() => {
+						programAlert.style.display = 'none';
+					}, 300);
+				});
+			}
+
+			// Outage alert
+			const closeToomanyBtn = document.getElementById('closeToomanyAlert');
+			const toomanyAlert = document.getElementById('toomanyAlert');
+
+			if (closeToomanyBtn && toomanyAlert) {
+				closeToomanyBtn.addEventListener('click', function() {
+					toomanyAlert.style.opacity = '0';
+					toomanyAlert.style.transform = 'translateY(-10px)';
+
+					setTimeout(() => {
+						toomanyAlert.style.display = 'none';
+					}, 300);
+				});
+			}
+
+			// Enrollment wizard alert
+			const closeEnrollmentWizardBtn = document.getElementById('closeEnrollmentWizardAlert');
+			const enrollmentWizardAlert = document.getElementById('enrollmentWizardAlert');
+
+			if (closeEnrollmentWizardBtn && enrollmentWizardAlert) {
+				closeEnrollmentWizardBtn.addEventListener('click', function() {
+					enrollmentWizardAlert.style.opacity = '0';
+					enrollmentWizardAlert.style.transform = 'translateY(-10px)';
+
+					setTimeout(() => {
+						enrollmentWizardAlert.style.display = 'none';
+					}, 300);
+				});
+			}
 		});
 		</script>
 		
 		<!-- Enrollment To Do List - Tabbed Version -->
-		{% include "partials/ui/enrollment-todo-tabs.njk" %}
+		{# {% include "partials/ui/enrollment-todo-tabs.njk" %} #}
 
 	</div>
 

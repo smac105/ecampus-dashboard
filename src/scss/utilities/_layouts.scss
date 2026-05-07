@@ -9,11 +9,18 @@
   grid-template-columns: 2fr 1fr;
   gap: 30px;
   padding-top: 20px;
-  padding-bottom: 150px;
+  padding-bottom: 40px;
+}
+.row-reverse-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
 
 @media (max-width: 991px) {
-  .row-main-layout {
+  .row-main-layout, .row-reverse-layout{
     display: grid;
     grid-template-columns: 1fr;
     gap: 0px;

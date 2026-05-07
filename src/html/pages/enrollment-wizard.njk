@@ -1,0 +1,364 @@
+{% extends "layouts/registration-layout.njk" %}
+{% set exitButtonText = "Exit Enrollment Wizard" %}
+{% set exitButtonUrl = "/index.html" %}
+
+{% block content %}
+<div class="container">
+
+  <!-- Welcome Header -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="intro-box">
+        <h1>Hello John!</h1>
+        <p class="lead mb-0">Welcome to Pre-Enrollment. Complete the steps below to get started on your journey.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Two Column Layout -->
+  <div class="row">
+    <!-- Main Content Column -->
+    <div class="col-lg-8 mb-4">
+
+      <!-- Stage 1: Profile Verification -->
+      <div class="enrollment-stage active" id="enrollmentStage1">
+        <div class="white-box mb-4">
+          <!-- Tab-Style Progress Bar -->
+          <div class="document-tabs enrollment-progress-tabs">
+            <a href="#" class="tab-link enrollment-tab active" data-stage="1">
+              <span class="tab-number">1</span>
+              <span class="tab-label">Profile Verification</span>
+            </a>
+            <a href="#" class="tab-link enrollment-tab" data-stage="2">
+              <span class="tab-number">2</span>
+              <span class="tab-label">Document Submission</span>
+            </a>
+            <a href="#" class="tab-link enrollment-tab" data-stage="3">
+              <span class="tab-number">3</span>
+              <span class="tab-label">Funding and Financial</span>
+            </a>
+            <a href="#" class="tab-link enrollment-tab" data-stage="4">
+              <span class="tab-number">4</span>
+              <span class="tab-label">Review and Confirm</span>
+            </a>
+          </div>
+          <h2 class="h2 mb-2">Stage 1: Profile Verification</h2>
+          <p class="lead mb-4">Complete the requirements below as prompted by the next stage.</p>
+
+          <h3 class="h3 mb-3">Requirements & Reminders</h3>
+          <div class="document-list mb-4">
+            <div class="document-item">
+              <div>
+                <i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
+                <div>
+                  <p class="mb-0"><strong>Verify Personal Information</strong></p>
+                  <p class="small-text mb-0">Ensure all contact details are accurate</p>
+                </div>
+              </div>
+              <button class="btn-main btn-sm" data-bs-toggle="modal" data-bs-target="#verifyInfoModal">Required</button>
+            </div>
+
+            <div class="document-item">
+              <div>
+                <i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
+                <div>
+                  <p class="mb-0"><strong>Confirm Program Selection</strong></p>
+                  <p class="small-text mb-0">Review your chosen degree program</p>
+                </div>
+              </div>
+              <button class="btn-main btn-sm">Required</button>
+            </div>
+          </div>
+
+          <h3 class="h3 mb-3">Additional Items</h3>
+          <div class="document-list">
+            <div class="document-item">
+              <div>
+                <i class="fas fa-circle gray-dk me-3 icon-lg"></i>
+                <div>
+                  <p class="mb-0"><strong>Update Emergency Contact</strong></p>
+                  <p class="small-text mb-0">Add or update emergency contact information</p>
+                </div>
+              </div>
+              <button class="btn-secondary btn-sm">Optional</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 2: Document Submission -->
+      <div class="enrollment-stage" id="enrollmentStage2">
+        <div class="white-box mb-4">
+          <!-- Tab-Style Progress Bar -->
+          <div class="document-tabs enrollment-progress-tabs">
+            <a href="#" class="tab-link enrollment-tab completed" data-stage="1">
+              <span class="tab-number">1</span>
+              <span class="tab-label">Profile Verification</span>
+            </a>
+            <a href="#" class="tab-link enrollment-tab active" data-stage="2">
+              <span class="tab-number">2</span>
+              <span class="tab-label">Document Submission</span>
+            </a>
+            <a href="#" class="tab-link enrollment-tab" data-stage="3">
+              <span class="tab-number">3</span>
+              <span class="tab-label">Funding and Financial</span>
+            </a>
+            <a href="#" class="tab-link enrollment-tab" data-stage="4">
+              <span class="tab-number">4</span>
+              <span class="tab-label">Review and Confirm</span>
+            </a>
+          </div>
+
+          <h2 class="h2 mb-2">Stage 2: Document Submission</h2>
+          <p class="lead mb-4">Complete the requirements below as prompted by the next stage.</p>
+
+          <h3 class="h3 mb-3">Required Documents</h3>
+          <div class="document-list mb-4">
+            <div class="document-item">
+              <div>
+                <i class="fas fa-file-pdf apu-blue-active me-3 icon-lg"></i>
+                <div>
+                  <p class="mb-0"><strong>Upload Photo ID</strong></p>
+                  <p class="small-text mb-0">Government-issued ID required</p>
+                </div>
+              </div>
+              <button class="btn-main btn-sm" data-bs-toggle="modal" data-bs-target="#uploadIdModal">Upload</button>
+            </div>
+
+            <div class="document-item">
+              <div>
+                <i class="fas fa-file-pdf apu-blue-active me-3 icon-lg"></i>
+                <div>
+                  <p class="mb-0"><strong>Submit Official Transcripts</strong></p>
+                  <p class="small-text mb-0">From all previously attended institutions</p>
+                </div>
+              </div>
+              <button class="btn-main btn-sm">Request</button>
+            </div>
+          </div>
+
+          <h3 class="h3 mb-3">Additional Documents</h3>
+          <div class="document-list">
+            <div class="document-item">
+              <div>
+                <i class="fas fa-file gray-dk me-3 icon-lg"></i>
+                <div>
+                  <p class="mb-0"><strong>Military Documentation</strong></p>
+                  <p class="small-text mb-0">DD-214 or service records (if applicable)</p>
+                </div>
+              </div>
+              <button class="btn-secondary btn-sm">Upload</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 3: Funding and Financial -->
+      <div class="enrollment-stage" id="enrollmentStage3">
+        <div class="white-box mb-4">
+          <!-- Tab-Style Progress Bar -->
+          <div class="document-tabs enrollment-progress-tabs">
+            <a href="#" class="tab-link enrollment-tab completed" data-stage="1">
+              <span class="tab-number">1</span>
+              <span class="tab-label">Profile Verification</span>
+            </a>
+            <a href="#" class="tab-link enrollment-tab completed" data-stage="2">
+              <span class="tab-number">2</span>
+              <span class="tab-label">Document Submission</span>
+            </a>
+            <a href="#" class="tab-link enrollment-tab active" data-stage="3">
+              <span class="tab-number">3</span>
+              <span class="tab-label">Funding and Financial</span>
+            </a>
+            <a href="#" class="tab-link enrollment-tab" data-stage="4">
+              <span class="tab-number">4</span>
+              <span class="tab-label">Review and Confirm</span>
+            </a>
+          </div>
+
+          <h2 class="h2 mb-2">Stage 3: Funding and Financial</h2>
+          <p class="lead mb-4">Complete the requirements below as prompted by the next stage.</p>
+
+          <h3 class="h3 mb-3">Funding</h3>
+          <div class="document-list mb-4">
+            <div class="document-item">
+              <div>
+                <i class="fas fa-dollar-sign apu-blue-active me-3 icon-lg"></i>
+                <div>
+                  <p class="mb-0"><strong>Select Payment Type</strong></p>
+                  <p class="small-text mb-0">Choose how you'll pay for tuition</p>
+                </div>
+              </div>
+              <button class="btn-main btn-sm">Required</button>
+            </div>
+
+            <div class="document-item">
+              <div>
+                <i class="fas fa-file-invoice-dollar gray-dk me-3 icon-lg"></i>
+                <div>
+                  <p class="mb-0"><strong>Submit Tuition Assistance Request</strong></p>
+                  <p class="small-text mb-0">If using military or employer TA</p>
+                </div>
+              </div>
+              <button class="btn-secondary btn-sm">Optional</button>
+            </div>
+          </div>
+
+          <h3 class="h3 mb-3">Financial Aid</h3>
+          <div class="document-list">
+            <div class="document-item">
+              <div>
+                <i class="fas fa-graduation-cap gray-dk me-3 icon-lg"></i>
+                <div>
+                  <p class="mb-0"><strong>Complete FAFSA</strong></p>
+                  <p class="small-text mb-0">Federal student aid application</p>
+                </div>
+              </div>
+              <button class="btn-secondary btn-sm">Start</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 4: Review and Confirm -->
+      <div class="enrollment-stage" id="enrollmentStage4">
+        <div class="white-box mb-4">
+          <!-- Tab-Style Progress Bar -->
+          <div class="document-tabs enrollment-progress-tabs">
+            <a href="#" class="tab-link enrollment-tab completed" data-stage="1">
+              <span class="tab-number">1</span>
+              <span class="tab-label">Profile Verification</span>
+            </a>
+            <a href="#" class="tab-link enrollment-tab completed" data-stage="2">
+              <span class="tab-number">2</span>
+              <span class="tab-label">Document Submission</span>
+            </a>
+            <a href="#" class="tab-link enrollment-tab completed" data-stage="3">
+              <span class="tab-number">3</span>
+              <span class="tab-label">Funding and Financial</span>
+            </a>
+            <a href="#" class="tab-link enrollment-tab active" data-stage="4">
+              <span class="tab-number">4</span>
+              <span class="tab-label">Review and Confirm</span>
+            </a>
+          </div>
+
+          <h2 class="h2 mb-2">Stage 4: Review and Confirm</h2>
+          <p class="lead mb-4">Review all information and confirm to complete enrollment.</p>
+
+          <h3 class="h3 mb-3">Profile Information</h3>
+          <div class="document-list mb-4">
+            <div class="document-item">
+              <p class="mb-0"><strong>Name:</strong></p>
+              <p class="mb-0">John Doe</p>
+            </div>
+            <div class="document-item">
+              <p class="mb-0"><strong>Email:</strong></p>
+              <p class="mb-0">john.doe@example.com</p>
+            </div>
+            <div class="document-item">
+              <p class="mb-0"><strong>Program:</strong></p>
+              <p class="mb-0">Master of Arts in History</p>
+            </div>
+          </div>
+
+          <h3 class="h3 mb-3">Documents</h3>
+          <div class="document-list mb-4">
+            <div class="document-item">
+              <p class="mb-0"><strong>Photo ID:</strong></p>
+              <p class="mb-0"><i class="fas fa-check green"></i> Uploaded</p>
+            </div>
+            <div class="document-item">
+              <p class="mb-0"><strong>Transcripts:</strong></p>
+              <p class="mb-0"><i class="fas fa-check green"></i> Requested</p>
+            </div>
+          </div>
+
+          <h3 class="h3 mb-3">Funding</h3>
+          <div class="document-list mb-4">
+            <div class="document-item">
+              <p class="mb-0"><strong>Payment Method:</strong></p>
+              <p class="mb-0">Financial Aid</p>
+            </div>
+            <div class="document-item">
+              <p class="mb-0"><strong>FAFSA Status:</strong></p>
+              <p class="mb-0">Completed</p>
+            </div>
+          </div>
+
+          <div class="white-box-border mb-4">
+            <div class="form-check">
+              <input type="checkbox" id="enrollmentConfirmation" class="form-check-input">
+              <label for="enrollmentConfirmation" class="form-check-label">
+                I confirm that all information provided is accurate and complete. I understand that submission of false information may result in denial of admission or dismissal from the university.
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sidebar Column -->
+    <div class="col-lg-4">
+      <!-- Action Items Stats -->
+      <div class="white-box mb-4">
+        <div class="document-stat stat-info">
+          <div class="stat-icon info">
+            <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+          </div>
+          <div class="stat-info">
+            <p class="stat-number-messages blue">3<br><span class="stat-label blue">Action Items</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Enrollment Advisor -->
+      <div class="white-box">
+        <p class="small-title blk mb-3">Contact Your Enrollment Advisor:</p>
+
+        <div class="advisor-wrap">
+          <div>
+            <p class="text-advisor blk mb-2"><span>Stephanie Lastname</span><br>
+            <em>Admissions Officer</em></p>
+          </div>
+        </div>
+        <div>
+          <p class="mb-0"><i class="fa-solid fa-phone apu-blue-active"></i> <a href="tel:1-877-468-6268">1-877-468-6268</a><br>
+          <i class="fa-solid fa-envelope apu-blue-active"></i> <a href="mailto:Stephanie.Lastname@apus.edu">Stephanie.Lastname@apus.edu</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Footer -->
+  <div class="row">
+    <div class="col-12">
+      <div class="white-box">
+        <div class="enrollment-footer-nav">
+          <button type="button" class="btn-secondary" id="enrollmentBackBtn">
+            <i class="fas fa-arrow-left"></i> Previous
+          </button>
+
+          <div class="enrollment-step-indicator">
+            <span>Stage <span id="enrollmentCurrentStageNum">1</span> of 4</span>
+          </div>
+
+          <button type="button" class="btn-main" id="enrollmentNextBtn">
+            Next <i class="fas fa-arrow-right"></i>
+          </button>
+
+          <button type="button" class="btn-main" id="enrollmentCompleteBtn">
+            <i class="fas fa-check"></i> Complete Enrollment
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/js/enrollment-wizard-flow.js"></script>
+{% endblock %}

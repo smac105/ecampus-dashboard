@@ -1,0 +1,112 @@
+// ============================================
+// PAYMENT SELECT CARDS
+// Prominent selection cards for payment wizard
+// ============================================
+
+.payment-select-card {
+  display: block !important;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 3rem !important;
+
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .select-card-content {
+    display: flex !important;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem 3rem !important;
+    background: $gray-10 !important;
+    border: 3px solid $gray-20 !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease;
+  }
+
+  .select-card-icon {
+    flex-shrink: 0;
+    width: 5rem !important;
+    height: 5rem !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: $wht !important;
+    border: 3px solid $gray-40 !important;
+    border-radius: 50% !important;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 3.5rem !important;
+      color: $gray-40 !important;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .select-card-text {
+    flex: 1;
+
+    .select-card-label {
+      font-size: 2rem !important;
+      font-weight: 700 !important;
+      color: $blk !important;
+      margin: 0 0 0.5rem !important;
+      line-height: 1.2;
+    }
+
+    .select-card-sublabel {
+      font-size: 1.6rem !important;
+      color: $gray-dk !important;
+      margin: 0 !important;
+    }
+  }
+
+  // Hover state
+  &:hover .select-card-content {
+    border-color: $green !important;
+    background: rgba(128, 195, 66, 0.05) !important;
+  }
+
+  &:hover .select-card-icon {
+    border-color: $green !important;
+  }
+
+  // Checked state
+  input[type="radio"]:checked ~ .select-card-content {
+    background: rgba(128, 195, 66, 0.1) !important;
+    border-color: $green !important;
+    border-width: 3px !important;
+    box-shadow: 0 4px 20px rgba(128, 195, 66, 0.2) !important;
+    animation: cardPulse 0.4s ease-out;
+
+    .select-card-icon {
+      background: $green !important;
+      border-color: $green !important;
+      box-shadow: 0 0 0 4px rgba(128, 195, 66, 0.2) !important;
+
+      i {
+        color: $wht !important;
+        transform: scale(1.1);
+      }
+    }
+
+    .select-card-label {
+      color: $green !important;
+    }
+  }
+}
+
+@keyframes cardPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

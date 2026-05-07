@@ -1,0 +1,540 @@
+{# Enrollment Wizard - Screen Takeover #}
+<!-- Enrollment Wizard Overlay -->
+<div class="enrollment-wizard-overlay" id="enrollmentWizardOverlay">
+  <div class="enrollment-wizard-container">
+
+    <!-- Wizard Header -->
+    <div class="enrollment-wizard-header">
+      <h1 class="enrollment-wizard-title">Hello John!</h1>
+      <p class="enrollment-wizard-subtitle">Welcome to Pre-Enrollment. Complete the steps below to get started on your journey.</p>
+    </div>
+
+    <!-- Tab-Style Progress Bar (4 Stages) -->
+    <div class="enrollment-wizard-progress">
+      <div class="enrollment-progress-tab active" data-stage="1">
+        <div class="tab-content-wrapper">
+          <span class="tab-number">1</span>
+          <span class="tab-label">Profile Verification</span>
+        </div>
+      </div>
+      <div class="enrollment-progress-tab" data-stage="2">
+        <div class="tab-content-wrapper">
+          <span class="tab-number">2</span>
+          <span class="tab-label">Document Submission</span>
+        </div>
+      </div>
+      <div class="enrollment-progress-tab" data-stage="3">
+        <div class="tab-content-wrapper">
+          <span class="tab-number">3</span>
+          <span class="tab-label">Funding and Financial</span>
+        </div>
+      </div>
+      <div class="enrollment-progress-tab" data-stage="4">
+        <div class="tab-content-wrapper">
+          <span class="tab-number">4</span>
+          <span class="tab-label">Review and Confirm</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wizard Content Area -->
+    <div class="enrollment-wizard-content">
+
+      <!-- Stage 1: Profile Verification -->
+      <div class="enrollment-wizard-stage active" id="enrollmentStage1">
+        <div class="stage-content-grid">
+
+          <!-- Left Column: Stage Info & Task List -->
+          <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Stage 1: Profile Verification</h2>
+            <p class="enrollment-stage-description">Complete the requirements below as prompted by the next stage.</p>
+
+            <!-- Task List -->
+            <div class="enrollment-task-list">
+              <!-- Requirements & Reminders -->
+              <div class="task-group">
+                <h3 class="task-group-title">Requirements & Reminders</h3>
+                <div class="task-item">
+                  <div class="task-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                  </div>
+                  <div class="task-details">
+                    <p class="task-name">Verify Personal Information</p>
+                    <p class="task-description">Ensure all contact details are accurate</p>
+                  </div>
+                  <div class="task-action">
+                    <button class="task-btn task-btn-required" data-bs-toggle="modal" data-bs-target="#verifyInfoModal">
+                      Required
+                    </button>
+                  </div>
+                </div>
+
+                <div class="task-item">
+                  <div class="task-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                  </div>
+                  <div class="task-details">
+                    <p class="task-name">Confirm Program Selection</p>
+                    <p class="task-description">Review your chosen degree program</p>
+                  </div>
+                  <div class="task-action">
+                    <button class="task-btn task-btn-required">
+                      Required
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Funding -->
+              <div class="task-group">
+                <h3 class="task-group-title">Additional Items</h3>
+                <div class="task-item">
+                  <div class="task-icon">
+                    <i class="fa-solid fa-circle"></i>
+                  </div>
+                  <div class="task-details">
+                    <p class="task-name">Update Emergency Contact</p>
+                    <p class="task-description">Add or update emergency contact information</p>
+                  </div>
+                  <div class="task-action">
+                    <button class="task-btn task-btn-optional">
+                      Optional
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Calendar/Action Items -->
+          <div class="stage-sidebar">
+            <div class="action-items-card">
+              <h3>Action Items</h3>
+              <p class="small-text mb-3">Items in this category:</p>
+              <p class="count-number">3</p>
+            </div>
+
+            <!-- Mini Calendar -->
+            <div class="mini-calendar-card">
+              <div class="mini-calendar-header">
+                <button class="month-nav">&lt;</button>
+                <span class="month-year">April 2026</span>
+                <button class="month-nav">&gt;</button>
+              </div>
+              <div class="mini-calendar-grid">
+                <div class="calendar-day-name">S</div>
+                <div class="calendar-day-name">M</div>
+                <div class="calendar-day-name">T</div>
+                <div class="calendar-day-name">W</div>
+                <div class="calendar-day-name">T</div>
+                <div class="calendar-day-name">F</div>
+                <div class="calendar-day-name">S</div>
+
+                <div class="calendar-day inactive">30</div>
+                <div class="calendar-day inactive">31</div>
+                <div class="calendar-day">1</div>
+                <div class="calendar-day">2</div>
+                <div class="calendar-day">3</div>
+                <div class="calendar-day">4</div>
+                <div class="calendar-day">5</div>
+
+                <div class="calendar-day">6</div>
+                <div class="calendar-day">7</div>
+                <div class="calendar-day">8</div>
+                <div class="calendar-day">9</div>
+                <div class="calendar-day">10</div>
+                <div class="calendar-day">11</div>
+                <div class="calendar-day">12</div>
+
+                <div class="calendar-day">13</div>
+                <div class="calendar-day">14</div>
+                <div class="calendar-day">15</div>
+                <div class="calendar-day">16</div>
+                <div class="calendar-day today">17</div>
+                <div class="calendar-day">18</div>
+                <div class="calendar-day">19</div>
+
+                <div class="calendar-day">20</div>
+                <div class="calendar-day">21</div>
+                <div class="calendar-day">22</div>
+                <div class="calendar-day">23</div>
+                <div class="calendar-day">24</div>
+                <div class="calendar-day">25</div>
+                <div class="calendar-day">26</div>
+
+                <div class="calendar-day">27</div>
+                <div class="calendar-day">28</div>
+                <div class="calendar-day">29</div>
+                <div class="calendar-day">30</div>
+                <div class="calendar-day inactive">1</div>
+                <div class="calendar-day inactive">2</div>
+                <div class="calendar-day inactive">3</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Stage 2: Document Submission -->
+      <div class="enrollment-wizard-stage" id="enrollmentStage2">
+        <div class="stage-content-grid">
+
+          <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Stage 2: Document Submission</h2>
+            <p class="enrollment-stage-description">Complete the requirements below as prompted by the next stage.</p>
+
+            <!-- Enrollment To Do List - Tabbed Version -->
+            {% include "partials/ui/enrollment-todo-tabs.njk" %}
+            {# <div class="enrollment-task-list">
+              <div class="task-group">
+                <h3 class="task-group-title">Required Documents</h3>
+                <div class="task-item">
+                  <div class="task-icon">
+                    <i class="fa-solid fa-file-pdf"></i>
+                  </div>
+                  <div class="task-details">
+                    <p class="task-name">Upload Photo ID</p>
+                    <p class="task-description">Government-issued ID required</p>
+                  </div>
+                  <div class="task-action">
+                    <button class="task-btn task-btn-required" data-bs-toggle="modal" data-bs-target="#uploadIdModal">
+                      Upload
+                    </button>
+                  </div>
+                </div>
+
+                <div class="task-item">
+                  <div class="task-icon">
+                    <i class="fa-solid fa-file-pdf"></i>
+                  </div>
+                  <div class="task-details">
+                    <p class="task-name">Submit Official Transcripts</p>
+                    <p class="task-description">From all previously attended institutions</p>
+                  </div>
+                  <div class="task-action">
+                    <button class="task-btn task-btn-required">
+                      Request
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="task-group">
+                <h3 class="task-group-title">Additional Documents</h3>
+                <div class="task-item">
+                  <div class="task-icon">
+                    <i class="fa-solid fa-file"></i>
+                  </div>
+                  <div class="task-details">
+                    <p class="task-name">Military Documentation</p>
+                    <p class="task-description">DD-214 or service records (if applicable)</p>
+                  </div>
+                  <div class="task-action">
+                    <button class="task-btn task-btn-optional">
+                      Upload
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div> #}
+          </div>
+
+          <div class="stage-sidebar">
+            <div class="action-items-card">
+              <h3>Action Items</h3>
+              <p class="small-text mb-3">Items in this category:</p>
+              <p class="count-number">3</p>
+            </div>
+            <div class="mini-calendar-card">
+              <div class="mini-calendar-header">
+                <button class="month-nav">&lt;</button>
+                <span class="month-year">April 2026</span>
+                <button class="month-nav">&gt;</button>
+              </div>
+              <div class="mini-calendar-grid">
+                <div class="calendar-day-name">S</div>
+                <div class="calendar-day-name">M</div>
+                <div class="calendar-day-name">T</div>
+                <div class="calendar-day-name">W</div>
+                <div class="calendar-day-name">T</div>
+                <div class="calendar-day-name">F</div>
+                <div class="calendar-day-name">S</div>
+
+                <div class="calendar-day inactive">30</div>
+                <div class="calendar-day inactive">31</div>
+                <div class="calendar-day">1</div>
+                <div class="calendar-day">2</div>
+                <div class="calendar-day">3</div>
+                <div class="calendar-day">4</div>
+                <div class="calendar-day">5</div>
+
+                <div class="calendar-day">6</div>
+                <div class="calendar-day">7</div>
+                <div class="calendar-day">8</div>
+                <div class="calendar-day">9</div>
+                <div class="calendar-day">10</div>
+                <div class="calendar-day">11</div>
+                <div class="calendar-day">12</div>
+
+                <div class="calendar-day">13</div>
+                <div class="calendar-day">14</div>
+                <div class="calendar-day">15</div>
+                <div class="calendar-day">16</div>
+                <div class="calendar-day today">17</div>
+                <div class="calendar-day">18</div>
+                <div class="calendar-day">19</div>
+
+                <div class="calendar-day">20</div>
+                <div class="calendar-day">21</div>
+                <div class="calendar-day">22</div>
+                <div class="calendar-day">23</div>
+                <div class="calendar-day">24</div>
+                <div class="calendar-day">25</div>
+                <div class="calendar-day">26</div>
+
+                <div class="calendar-day">27</div>
+                <div class="calendar-day">28</div>
+                <div class="calendar-day">29</div>
+                <div class="calendar-day">30</div>
+                <div class="calendar-day inactive">1</div>
+                <div class="calendar-day inactive">2</div>
+                <div class="calendar-day inactive">3</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Stage 3: Funding and Financial -->
+      <div class="enrollment-wizard-stage" id="enrollmentStage3">
+        <div class="stage-content-grid">
+
+          <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Stage 3: Funding and Financial</h2>
+            <p class="enrollment-stage-description">Complete the requirements below as prompted by the next stage.</p>
+
+            <div class="enrollment-task-list">
+              <!-- Funding -->
+              <div class="task-group">
+                <h3 class="task-group-title">Funding</h3>
+                <div class="task-item">
+                  <div class="task-icon">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                  </div>
+                  <div class="task-details">
+                    <p class="task-name">Select Payment Type</p>
+                    <p class="task-description">Choose how you'll pay for tuition</p>
+                  </div>
+                  <div class="task-action">
+                    <button class="task-btn task-btn-required">
+                      Required
+                    </button>
+                  </div>
+                </div>
+
+                <div class="task-item">
+                  <div class="task-icon">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                  </div>
+                  <div class="task-details">
+                    <p class="task-name">Submit Tuition Assistance Request</p>
+                    <p class="task-description">If using military or employer TA</p>
+                  </div>
+                  <div class="task-action">
+                    <button class="task-btn task-btn-optional">
+                      Optional
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Financial Aid -->
+              <div class="task-group">
+                <h3 class="task-group-title">Financial Aid</h3>
+                <div class="task-item">
+                  <div class="task-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                  </div>
+                  <div class="task-details">
+                    <p class="task-name">Complete FAFSA</p>
+                    <p class="task-description">Federal student aid application</p>
+                  </div>
+                  <div class="task-action">
+                    <button class="task-btn task-btn-optional">
+                      Start
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stage-sidebar">
+            <div class="action-items-card">
+              <h3>Action Items</h3>
+              <p class="small-text mb-3">Items in this category:</p>
+              <p class="count-number">3</p>
+            </div>
+            <div class="mini-calendar-card">
+              <div class="mini-calendar-header">
+                <button class="month-nav">&lt;</button>
+                <span class="month-year">April 2026</span>
+                <button class="month-nav">&gt;</button>
+              </div>
+              <div class="mini-calendar-grid">
+                <div class="calendar-day-name">S</div>
+                <div class="calendar-day-name">M</div>
+                <div class="calendar-day-name">T</div>
+                <div class="calendar-day-name">W</div>
+                <div class="calendar-day-name">T</div>
+                <div class="calendar-day-name">F</div>
+                <div class="calendar-day-name">S</div>
+
+                <div class="calendar-day inactive">30</div>
+                <div class="calendar-day inactive">31</div>
+                <div class="calendar-day">1</div>
+                <div class="calendar-day">2</div>
+                <div class="calendar-day">3</div>
+                <div class="calendar-day">4</div>
+                <div class="calendar-day">5</div>
+
+                <div class="calendar-day">6</div>
+                <div class="calendar-day">7</div>
+                <div class="calendar-day">8</div>
+                <div class="calendar-day">9</div>
+                <div class="calendar-day">10</div>
+                <div class="calendar-day">11</div>
+                <div class="calendar-day">12</div>
+
+                <div class="calendar-day">13</div>
+                <div class="calendar-day">14</div>
+                <div class="calendar-day">15</div>
+                <div class="calendar-day">16</div>
+                <div class="calendar-day today">17</div>
+                <div class="calendar-day">18</div>
+                <div class="calendar-day">19</div>
+
+                <div class="calendar-day">20</div>
+                <div class="calendar-day">21</div>
+                <div class="calendar-day">22</div>
+                <div class="calendar-day">23</div>
+                <div class="calendar-day">24</div>
+                <div class="calendar-day">25</div>
+                <div class="calendar-day">26</div>
+
+                <div class="calendar-day">27</div>
+                <div class="calendar-day">28</div>
+                <div class="calendar-day">29</div>
+                <div class="calendar-day">30</div>
+                <div class="calendar-day inactive">1</div>
+                <div class="calendar-day inactive">2</div>
+                <div class="calendar-day inactive">3</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Stage 4: Review and Confirm -->
+      <div class="enrollment-wizard-stage" id="enrollmentStage4">
+        <div class="stage-content-grid">
+
+          <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Stage 4: Review and Confirm</h2>
+            <p class="enrollment-stage-description">Review all information and confirm to complete enrollment.</p>
+
+            <!-- Summary Review -->
+            <div class="enrollment-summary">
+              <div class="summary-section">
+                <h3>Profile Information</h3>
+                <div class="summary-item">
+                  <span class="summary-label">Name:</span>
+                  <span class="summary-value">John Doe</span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">Email:</span>
+                  <span class="summary-value">john.doe@example.com</span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">Program:</span>
+                  <span class="summary-value">Master of Arts in History</span>
+                </div>
+              </div>
+
+              <div class="summary-section">
+                <h3>Documents</h3>
+                <div class="summary-item">
+                  <span class="summary-label">Photo ID:</span>
+                  <span class="summary-value"><i class="fa-solid fa-check green"></i> Uploaded</span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">Transcripts:</span>
+                  <span class="summary-value"><i class="fa-solid fa-check green"></i> Requested</span>
+                </div>
+              </div>
+
+              <div class="summary-section">
+                <h3>Funding</h3>
+                <div class="summary-item">
+                  <span class="summary-label">Payment Method:</span>
+                  <span class="summary-value">Financial Aid</span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">FAFSA Status:</span>
+                  <span class="summary-value">Completed</span>
+                </div>
+              </div>
+
+              <div class="confirmation-checkbox">
+                <input type="checkbox" id="enrollmentConfirmation" class="form-check-input">
+                <label for="enrollmentConfirmation" class="form-check-label">
+                  I confirm that all information provided is accurate and complete. I understand that submission of false information may result in denial of admission or dismissal from the university.
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="stage-sidebar">
+            <div class="action-items-card completion-card">
+              <div class="completion-icon">
+                <i class="fa-solid fa-check-circle"></i>
+              </div>
+              <h3>Almost Done!</h3>
+              <p>Review your information and confirm to complete your enrollment.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Navigation -->
+    <div class="enrollment-wizard-footer">
+      <button type="button" class="btn-main back-btn" id="enrollmentBackBtn" style="display: none;">
+        Previous
+      </button>
+
+      <div class="footer-step-indicator">
+        <span>Stage <span id="enrollmentCurrentStageNum">1</span> of 4</span>
+      </div>
+
+      <button type="button" class="btn-main" id="enrollmentNextBtn">
+        Next
+      </button>
+
+      <button type="button" class="btn-main btn-one-icon" id="enrollmentCompleteBtn" style="display: none;">
+        <i class="fas fa-check"></i> Complete Enrollment
+      </button>
+    </div>
+
+    <!-- Close Button -->
+    <button type="button" class="enrollment-wizard-close" id="enrollmentWizardCloseBtn" aria-label="Close wizard">
+      <i class="fas fa-times"></i>
+    </button>
+
+  </div>
+</div>

@@ -1528,131 +1528,53 @@ class="img-post"loading="lazy"  >
 
 <!-- Horizontal Progress Tracker -->
 
-<div class="horizontal-progress-wrapper">
-  <h4 class="mb-1 text-center">Pre-Enrollment Progress</h4>
 
-  <div class="horizontal-progress-tracker">
-    <!-- Step 1: Admissions Application - Completed -->
-    <div class="progress-step-wrapper">
-      <div class="progress-step-label">Admissions<br>Application</div>
-      <div class="progress-step completed first">
-        <i class="fas fa-circle-check"></i>
-      </div>
-    </div>
-
-    <!-- Step 2: Student Rights & Responsibilities - Completed -->
-    <div class="progress-step-wrapper">
-      <div class="progress-step-label">Student Rights<br>& Responsibilities</div>
-      <div class="progress-step completed">
-        <i class="fas fa-circle-check"></i>
-      </div>
-    </div>
-
-    <!-- Step 3: Verify Identity - Completed -->
-    <div class="progress-step-wrapper">
-      <div class="progress-step-label">Verify<br>Identity</div>
-      <div class="progress-step completed">
-        <i class="fas fa-circle-check"></i>
-      </div>
-    </div>
-
-    <!-- Step 4: Send Official Transcript - Active -->
-    <div class="progress-step-wrapper">
-      <div class="progress-step-label">Send Official<br>Transcript</div>
-      <div class="progress-step active">
-        <i class="fas fa-circle-check"></i>
-      </div>
-    </div>
-
-    <!-- Step 5: Complete Document Log Requirements - Inactive -->
-    <div class="progress-step-wrapper">
-      <div class="progress-step-label">Complete Document<br>Log Requirements</div>
-      <div class="progress-step">
-        <!-- Empty - grayed out -->
-      </div>
-    </div>
-
-    <!-- Step 6: Begin Transfer Credit Application - Inactive -->
-    <div class="progress-step-wrapper">
-      <div class="progress-step-label">Begin Transfer<br>Credit Application</div>
-      <div class="progress-step">
-        <!-- Empty - grayed out -->
-      </div>
-    </div>
-
-    <!-- Step 7: Explore Payment Options - Inactive -->
-    <div class="progress-step-wrapper">
-      <div class="progress-step-label">Explore<br>Payment Options</div>
-      <div class="progress-step">
-        <!-- Empty - grayed out -->
-      </div>
-    </div>
-
-    <!-- Step 8: Access Ecampus - Inactive -->
-    <div class="progress-step-wrapper">
-      <div class="progress-step-label">Access Ecampus</div>
-      <div class="progress-step last">
-        <!-- Empty - grayed out -->
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-// Center active item in horizontal progress tracker on mobile
-document.addEventListener('DOMContentLoaded', function() {
-  function centerActiveProgressItem() {
-    const progressTracker = document.querySelector('.horizontal-progress-tracker');
-    const activeWrapper = document.querySelector('.progress-step-wrapper:has(.progress-step.active)');
-
-    if (progressTracker && activeWrapper && window.innerWidth <= 768) {
-      // Small delay to ensure layout is complete
-      setTimeout(function() {
-        // Calculate the scroll position to center the active item
-        const trackerRect = progressTracker.getBoundingClientRect();
-        const itemRect = activeWrapper.getBoundingClientRect();
-        const scrollLeft = progressTracker.scrollLeft;
-
-        // Calculate center position
-        const itemCenter = itemRect.left - trackerRect.left + scrollLeft + (itemRect.width / 2);
-        const trackerCenter = trackerRect.width / 2;
-        const scrollPosition = itemCenter - trackerCenter;
-
-        // Scroll to center the active item
-        progressTracker.scrollTo({
-          left: scrollPosition,
-          behavior: 'smooth'
-        });
-      }, 150);
-    }
-  }
-
-  // Center on load
-  centerActiveProgressItem();
-
-  // Re-center on window resize
-  let resizeTimeout;
-  window.addEventListener('resize', function() {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(centerActiveProgressItem, 150);
-  });
-});
-</script>
-
-<div class="row row-main-layout">
-	<div class="mb-5">
+<div class="row">
+	<div class="col-lg-12 mb-0">
+		
 		<!-- Welcome Message -->
-		<div class="intro-box">
+		<div class="intro-box mb-0">
 			<h1>Congratulations Jorge! You're On Your Way to Being Enrolled.</h1>
 			<p class="lead mb-0">Thank you for starting your education journey with APU! Complete the remaining steps below to start the enrollment process. Our admissions team is here to help if you have any questions as you continue to gather items needed in order to enroll before the next start date.</p>
+
 		</div>
+		
+
+	</div>
+</div>
+<div class="alert-box-hp">
+	
 		<div class="alert-alt alert-required" id="transcriptAlert">
 			<button class="alert-close-btn" id="closeTranscriptAlert" aria-label="Close alert">
 				<i class="fa-solid fa-xmark"></i>
 			</button>
 			<div>
 				<p class="next-step-badge small-title red">ACTION REQUIRED BEFORE ENROLLMENT CAN BEGIN!</p>
-				<h3>Request Official Transcripts
+				<h4>Upload ID Required
+					<i class="fa-solid fa-circle-info"
+					   data-bs-toggle="popover"
+					   data-bs-trigger="focus"
+					   data-bs-placement="top"
+					   data-bs-content="To complete your enrollment, please submit official ID by uploading to our portal. If you have questions, please reach out to enrollment@apus.edu."
+					   tabindex="0"
+					   role="button"
+					   aria-label="More information about transcript requirements"
+					   style="cursor: pointer; font-size: 2rem; margin-left: 0.5rem; color: #0581C0;"></i>
+				</h4>
+			</div>
+			<div>
+				<a href="#" class="btn-main btn-sm">Upload ID</a>
+			</div>
+		</div>
+	
+	
+		<div class="alert-alt alert-required" id="programAlert">
+			<button class="alert-close-btn" id="closeProgramAlert" aria-label="Close alert">
+				<i class="fa-solid fa-xmark"></i>
+			</button>
+			<div>
+				<p class="next-step-badge small-title red">ACTION REQUIRED BEFORE ENROLLMENT CAN BEGIN!</p>
+				<h4>Issue With Transcript Request
 					<i class="fa-solid fa-circle-info"
 					   data-bs-toggle="popover"
 					   data-bs-trigger="focus"
@@ -1660,13 +1582,498 @@ document.addEventListener('DOMContentLoaded', function() {
 					   data-bs-content="To complete your application, please submit official transcripts from all previously attended institutions. Transcripts can be sent electronically to transcripts@apus.edu or mailed to our admissions office."
 					   tabindex="0"
 					   role="button"
-					   aria-label="More information about transcript requirements"
+					   aria-label="More information about confirming program selection"
 					   style="cursor: pointer; font-size: 2rem; margin-left: 0.5rem; color: #0581C0;"></i>
-				</h3>
+				</h4>
 			</div>
 			<div>
-				<a href="#"  class="btn-main btn-sm">Request Transcripts</a>
+				<a href="#" class="btn-main btn-sm">Contact Admissions</a>
 			</div>
+		</div>
+	
+</div>
+
+<div class="row row-main-layout">
+	<div class="mb-5">
+		
+		<!-- Enrollment Wizard Module -->
+		<div class="white-box mb-4">
+			<!-- Tab-Style Progress Bar -->
+			
+
+			<!-- Enrollment To Do List - Tabbed Version -->
+
+
+    <!-- Tab-Style Progress Bar (4 Stages) -->
+    <div class="enrollment-wizard-progress">
+      <div class="enrollment-progress-tab completed" data-stage="1" data-total-items="3" data-completed-items="3">
+        <div class="tab-content-wrapper">
+          <span class="tab-number">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <span class="tab-label">Profile Verification</span>
+        </div>
+      </div>
+      <div class="enrollment-progress-tab active" data-stage="2" data-total-items="9" data-completed-items="3" data-pending-items="2">
+        <div class="tab-content-wrapper">
+          <span class="tab-number">
+            <i class="fa-regular fa-file-lines"></i>
+          </span>
+          <span class="tab-label">Document Submission</span>
+        </div>
+      </div>
+      <div class="enrollment-progress-tab" data-stage="3" data-total-items="3" data-completed-items="1">
+        <div class="tab-content-wrapper">
+          <span class="tab-number">
+            <i class="fa-regular fa-building-columns"></i>
+          </span>
+          <span class="tab-label">Funding and Financial</span>
+        </div>
+      </div>
+      <div class="enrollment-progress-tab" data-stage="4" data-total-items="0" data-completed-items="0">
+        <div class="tab-content-wrapper">
+          <span class="tab-number">
+            <i class="fa-regular fa-check"></i>
+          </span>
+          <span class="tab-label">Review & Submit</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wizard Content Area -->
+    <div class="enrollment-wizard-content">
+
+      <!-- Profile Verification -->
+      <div class="enrollment-wizard-stage" id="enrollmentStage1">
+        <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Profile Verification</h2>
+            
+
+            <!-- Task List -->
+            <h4 class="mt-0 mb-3">Requirements & Reminders</h4>
+            <div class="document-list">
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Verify Personal Information</strong></p>
+                </div>
+                <span class="badge bg-green">Completed</span>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Confirm Program Selection</strong></p>
+                </div>
+                <span class="badge bg-green">Completed</span>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Update Emergency Contact</strong></p>
+                </div>
+                <span class="badge bg-green">Completed</span>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <!-- Document Submission -->
+      <div class="enrollment-wizard-stage active" id="enrollmentStage2">
+        <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Document Submission</h2>
+            
+
+            <!-- Enrollment To Do List - Tabbed Version -->
+
+
+<div>
+
+	<!-- Tabbed Navigation -->
+	<div class="document-tabs mb-4">
+		<a href="#my-todo-list" class="tab-link active-sub" data-tab="my-todo-list">My To-do List <span class="count alerts">1</span></a>
+		<a href="#pending-tasks" class="tab-link" data-tab="pending-tasks">Pending <span class="count alerts">1</span></a>
+		<a href="#completed-tasks" class="tab-link" data-tab="completed-tasks">Completed</a>
+	</div>
+
+	<!-- Tab Content: My To-do List -->
+	<div class="tab-content active-sub" id="my-todo-list">
+		<!-- Required Items Section -->
+		
+		<div class="document-list">
+			<div class="document-item mb-2">
+				<div class="d-flex align-items-center">
+					<i class="fa-regular fa-circle apu-blue-active me-3 icon-lg"></i>
+					<p class="mb-0"><strong>ID Verification</strong> <span class="badge badge-required">Required</span></p>
+				</div>
+				<a href="#" class="arrow-link arrow-link-sm" data-bs-toggle="modal" data-bs-target="#uploadIdModal">
+					<i class="fa-solid fa-upload me-1"></i> Upload ID
+				</a>
+			</div>
+			<div class="document-item mb-2">
+				<div class="d-flex align-items-center">
+					<i class="fa-regular fa-circle apu-blue-active me-3 icon-lg"></i>
+					<p class="mb-0"><strong>Transfer Credit Evaluation</strong></p>
+				</div>
+				<a href="/transfer-credits.html" class="arrow-link arrow-link-sm">
+					Begin Evaluation
+				</a>
+			</div>
+			
+		</div>
+
+		<!-- Additional Items Section -->
+		
+	</div>
+
+	<!-- Tab Content: Pending -->
+	<div class="tab-content" id="pending-tasks">
+		<div class="document-list">
+			<div class="document-item orange-pending mb-2">
+				<div class="d-flex align-items-center">
+					<i class="fas fa-clock orange me-3 icon-lg"></i>
+					<p class="mb-0"><strong>Application Review</strong></p>
+				</div>
+				<span class="badge badge-pending">Under Review</span>
+			</div>
+			<div class="document-item red-required mb-2">
+				<div class="d-flex align-items-center">
+					<i class="fas fa-clock orange me-3 icon-lg"></i>
+					<p class="mb-0"><strong>Transcript Processing</strong> <i class="fa-solid fa-circle-info"
+					   data-bs-toggle="popover"
+					   data-bs-trigger="focus"
+					   data-bs-placement="top"
+					   data-bs-content="To complete your enrollment, please submit official ID by uploading to our portal. If you have questions, please reach out to enrollment@apus.edu."
+					   tabindex="0"
+					   role="button"
+					   aria-label="More information about transcript requirements"
+					   style="cursor: pointer; font-size: 1.6rem; color: #E4193B;"></i> <span class="badge badge-required">Attention Required</span></p>
+				</div>
+				
+				<a href="/mesages.html" class="arrow-link arrow-link-sm">Contact Admissions</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Tab Content: Completed -->
+	<div class="tab-content" id="completed-tasks">
+		<div class="document-list">
+			<div class="document-item green-completed mb-2">
+				<div class="d-flex align-items-center">
+					<i class="fas fa-circle-check green me-3 icon-lg"></i>
+					<p class="mb-0"><strong>Application Submitted</strong></p>
+				</div>
+				<a href="/view-application.html" class="btn-link-primary">
+					<i class="fa-solid fa-eye me-1"></i> View Document
+				</a>
+			</div>
+			<div class="document-item green-completed mb-2">
+				<div class="d-flex align-items-center">
+					<i class="fas fa-circle-check green me-3 icon-lg"></i>
+					<p class="mb-0"><strong>Student Rights and Responsibilities</strong></p>
+				</div>
+				<a href="/student-rights-flow.html" class="btn-link-primary">
+					<i class="fa-solid fa-eye me-1"></i> View Document
+				</a>
+			</div>
+			<div class="document-item green-completed mb-2">
+				<div class="d-flex align-items-center">
+					<i class="fas fa-circle-check green me-3 icon-lg"></i>
+					<p class="mb-0"><strong>Student Orientation</strong></p>
+				</div>
+				<a href="#" class="btn-link-primary">
+					<i class="fa-solid fa-eye me-1"></i> View Document
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+// Tab switching functionality for enrollment to-do list
+document.addEventListener('DOMContentLoaded', function() {
+	const tabLinks = document.querySelectorAll('.tab-link');
+	const tabContents = document.querySelectorAll('.tab-content');
+
+	tabLinks.forEach(link => {
+		link.addEventListener('click', function(e) {
+			e.preventDefault();
+
+			// Remove active-sub class from all tabs and contents
+			tabLinks.forEach(l => l.classList.remove('active-sub'));
+			tabContents.forEach(c => c.classList.remove('active-sub'));
+
+			// Add active-sub class to clicked tab
+			this.classList.add('active-sub');
+
+			// Show corresponding content
+			const tabId = this.getAttribute('data-tab');
+			document.getElementById(tabId).classList.add('active-sub');
+		});
+	});
+});
+</script>
+          </div>
+      </div>
+
+      <!-- Funding and Financial -->
+      <div class="enrollment-wizard-stage" id="enrollmentStage3">
+        <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Funding and Financial</h2>
+            
+
+            <!-- Payment Type Widget -->
+            <div class="payment-widget white-box-border-noshad mb-5">
+              <h4 class="mt-0 mb-3">Could you provide the payment type that you intend to use for your educational journey?</h4>
+
+              <div class="payment-options">
+                <button type="button" class="payment-option-btn" data-payment="cash">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">Cash</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="financial-aid">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">Financial Aid</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="military-ta">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">Military TA</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="employer">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">Employer</span>
+                </button>
+                <button type="button" class="payment-option-btn" data-payment="other">
+                  <span class="payment-indicator"></span>
+                  <span class="payment-label">I am unsure at this time</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="payment-widget white-box-border-noshad mb-4">
+              <!-- Tuition Assistance Question -->
+              <div class="tuition-assistance-question">
+                <h4 class="mb-3">Do you intend to apply for Tuition Assistance?</h4>
+                <div class="radio-group mb-5">
+                  <label class="radio-option">
+                    <input type="radio" name="tuitionAssistance" value="yes" id="taYes">
+                    <span>Yes</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="tuitionAssistance" value="no" id="taNo">
+                    <span>No</span>
+                  </label>
+                </div>
+
+                <!-- TA Action Buttons (hidden by default) -->
+                <div class="ta-action-buttons" id="taActionButtons" style="display: none;">
+                  <button type="button" class="btn-main mb-4" id="beginTaRequest">
+                    Begin Request
+                  </button>
+                  <label class="ta-decline-checkbox">
+                    <input type="checkbox" id="taDeclineCheckbox" class="form-check-input">
+                    <span>I decline for now and intend to initiate this request at a later time.</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <!-- Review & Submit -->
+      <div class="enrollment-wizard-stage" id="enrollmentStage4">
+        <div class="stage-main-content">
+            <h2 class="enrollment-stage-title">Review & Submit</h2>
+            <p class="enrollment-stage-description">Review all completed items and confirm to complete enrollment.</p>
+
+            <!-- Profile Verification Items -->
+            <h4 class="mt-0 mb-3">Profile Documents</h4>
+            <div class="document-list">
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Verify Personal Information</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  View Details
+                </a>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Confirm Program Selection</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  View Details
+                </a>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Update Emergency Contact</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  View Details
+                </a>
+              </div>
+            </div>
+
+            <!-- Document Submission Items - My To-do List -->
+            <h4 class="mt-4 mb-3">Required Documents</h4>
+            <div class="document-list">
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>ID Verification</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> View Document
+                </a>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Transfer Credit Evaluation</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> View Document
+                </a>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Financial Aid Application</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> View Document
+                </a>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Student Rights and Responsibilities</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> View Document
+                </a>
+              </div>
+            
+
+            <!-- Document Submission Items - Pending -->
+            
+            
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Transcript Processing</strong></p>
+                </div>
+                <span class="badge badge-pending">In Progress</span>
+              </div>
+            
+
+            <!-- Document Submission Items - Completed -->
+            
+            
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Application Submitted</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> View Document
+                </a>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Student Orientation</strong></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> View Document
+                </a>
+              </div>
+            
+
+            <!-- Funding and Financial Items -->
+            <h4 class="mt-4 mb-3">Financial Information</h4>
+            
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Financing Payment Type</strong></p>
+                  <div class="status-item status-active show" style="margin-left: 20px;" id="statusCollapsed">
+                    <div class="status-indicator"></div>
+                    <span class="status-label">Financial Aid</span>
+                  </div>
+                  
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> Change
+                </a>
+              </div>
+
+              <div class="document-item mb-2">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-circle-check green me-3 icon-lg"></i>
+                  <p class="mb-0"><strong>Submit Tuition Assistance Request</strong> <span class="badge badge-required">Assistance Declined</span></p>
+                </div>
+                <a href="#" class="arrow-link arrow-link-sm">
+                  <i class="fa-solid fa-eye me-1"></i> Change
+                </a>
+              </div>
+            
+
+            
+            </div>
+            <!-- Confirmation Checkbox -->
+          </div>
+          <div class="checkbox-wrap">
+            <div class="confirmation-checkbox mb-5">
+              <input type="checkbox" id="enrollmentConfirmation" class="form-check-input">
+              <div>
+              <h4>Confirmation</h4>
+              <label for="enrollmentConfirmation" class="form-check-label">
+                I confirm that all information provided is accurate and complete. I understand that submission of false information may result in denial of admission or dismissal from the university.
+              </label>
+              </div>
+            </div>
+          </div>
+          <!-- Footer Navigation -->
+          <div class="enrollment-wizard-footer">
+            <button type="button" class="btn-main btn-one-icon btn-large" id="enrollmentCompleteBtn" style="display: none;" disabled>
+              <i class="fas fa-check"></i> Complete Enrollment
+            </button>
+          </div>
+      </div>
+
+    </div>
+
+    <!-- Enrollment Success State (hidden by default) -->
+    <div class="enrollment-success-state" id="enrollmentSuccessState" style="display: none;">
+      <div class="success-content">
+        <div class="success-icon">
+          <i class="fas fa-party-horn"></i>
+        </div>
+        
+        <button type="button" class="btn-main btn-large btn-success-pulse" onclick="window.location.href='/index.html'">
+          <i class="fas fa-arrow-right"></i> Continue to Enrollment
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer Navigation -->
+    
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="/js/confetti-util.js"></script>
+<script src="/js/enrollment-wizard-flow.js"></script>
 		</div>
 
 		<script>
@@ -1701,151 +2108,56 @@ document.addEventListener('DOMContentLoaded', function() {
 					}, 300);
 				});
 			}
+
+			// Outage alert
+			const closeProgramBtn = document.getElementById('closeProgramAlert');
+			const programAlert = document.getElementById('programAlert');
+
+			if (closeProgramBtn && programAlert) {
+				closeProgramBtn.addEventListener('click', function() {
+					programAlert.style.opacity = '0';
+					programAlert.style.transform = 'translateY(-10px)';
+
+					setTimeout(() => {
+						programAlert.style.display = 'none';
+					}, 300);
+				});
+			}
+
+			// Outage alert
+			const closeToomanyBtn = document.getElementById('closeToomanyAlert');
+			const toomanyAlert = document.getElementById('toomanyAlert');
+
+			if (closeToomanyBtn && toomanyAlert) {
+				closeToomanyBtn.addEventListener('click', function() {
+					toomanyAlert.style.opacity = '0';
+					toomanyAlert.style.transform = 'translateY(-10px)';
+
+					setTimeout(() => {
+						toomanyAlert.style.display = 'none';
+					}, 300);
+				});
+			}
+
+			// Enrollment wizard alert
+			const closeEnrollmentWizardBtn = document.getElementById('closeEnrollmentWizardAlert');
+			const enrollmentWizardAlert = document.getElementById('enrollmentWizardAlert');
+
+			if (closeEnrollmentWizardBtn && enrollmentWizardAlert) {
+				closeEnrollmentWizardBtn.addEventListener('click', function() {
+					enrollmentWizardAlert.style.opacity = '0';
+					enrollmentWizardAlert.style.transform = 'translateY(-10px)';
+
+					setTimeout(() => {
+						enrollmentWizardAlert.style.display = 'none';
+					}, 300);
+				});
+			}
 		});
 		</script>
 		
 		<!-- Enrollment To Do List - Tabbed Version -->
-
-
-<div>
-	<h2 class="mb-3">Pre-Enrollment To Do List</h2>
-	<p>Continue your enrollment process. While your application is being processed, finish your pre-enrollment action items below to begin your journey at APU. We're here to help every step of the way.</p>
-
-	<!-- Tabbed Navigation -->
-	<div class="document-tabs mb-4">
-		<a href="#my-todo-list" class="tab-link active" data-tab="my-todo-list">My To-do List</a>
-		<a href="#pending-tasks" class="tab-link" data-tab="pending-tasks">Pending</a>
-		<a href="#completed-tasks" class="tab-link" data-tab="completed-tasks">Completed</a>
-	</div>
-
-	<!-- Tab Content: My To-do List -->
-	<div class="tab-content active" id="my-todo-list">
-		<!-- Required Items Section -->
-		<h4 class="mt-0 mb-3">Required</h4>
-		<div class="document-list">
-			<div class="document-item mb-2">
-				<div class="d-flex align-items-center">
-					<i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
-					<p class="mb-0"><strong>ID Verification</strong></p>
-				</div>
-				<a href="#" class="arrow-link arrow-link-sm" data-bs-toggle="modal" data-bs-target="#uploadIdModal">
-					<i class="fa-solid fa-upload me-1"></i> Upload ID
-				</a>
-			</div>
-			<div class="document-item mb-2">
-				<div class="d-flex align-items-center">
-					<i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
-					<p class="mb-0"><strong>Transfer Credit Evaluation</strong></p>
-				</div>
-				<a href="/transfer-credits.html" class="arrow-link arrow-link-sm">
-					Begin Evaluation
-				</a>
-			</div>
-			<div class="document-item mb-2">
-				<div class="d-flex align-items-center">
-					<i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
-					<p class="mb-0"><strong>Financial Aid Application</strong></p>
-				</div>
-				<a href="/financial-aid.html" class="arrow-link arrow-link-sm">
-					Start Application
-				</a>
-			</div>
-		</div>
-
-		<!-- Additional Items Section -->
-		<h4 class="mt-4 mb-2">Not Required - Additional Items</h4>
-		<p class="text-muted mb-3">These items are not required for enrollment, but will be required before registering for classes.</p>
-		<div class="document-list">
-			<div class="document-item mb-2">
-				<div class="d-flex align-items-center">
-					<i class="fas fa-circle-check apu-blue-active me-3 icon-lg"></i>
-					<p class="mb-0"><strong>Define Your Payment Type</strong></p>
-				</div>
-				<a href="#" class="arrow-link arrow-link-sm">
-					Get Started
-				</a>
-			</div>
-		</div>
-	</div>
-
-	<!-- Tab Content: Pending -->
-	<div class="tab-content" id="pending-tasks">
-		<div class="document-list">
-			<div class="document-item mb-2">
-				<div class="d-flex align-items-center">
-					<i class="fas fa-clock orange me-3 icon-lg"></i>
-					<p class="mb-0"><strong>Application Review</strong></p>
-				</div>
-				<span class="badge badge-pending">Under Review</span>
-			</div>
-			<div class="document-item mb-2">
-				<div class="d-flex align-items-center">
-					<i class="fas fa-clock orange me-3 icon-lg"></i>
-					<p class="mb-0"><strong>Transcript Processing</strong></p>
-				</div>
-				<span class="badge badge-pending">In Progress</span>
-			</div>
-		</div>
-	</div>
-
-	<!-- Tab Content: Completed -->
-	<div class="tab-content" id="completed-tasks">
-		<div class="document-list">
-			<div class="document-item mb-2">
-				<div class="d-flex align-items-center">
-					<i class="fas fa-circle-check green me-3 icon-lg"></i>
-					<p class="mb-0"><strong>Application Submitted</strong></p>
-				</div>
-				<a href="/view-application.html" class="btn-link-primary">
-					<i class="fa-solid fa-eye me-1"></i> View Document
-				</a>
-			</div>
-			<div class="document-item mb-2">
-				<div class="d-flex align-items-center">
-					<i class="fas fa-circle-check green me-3 icon-lg"></i>
-					<p class="mb-0"><strong>Student Rights and Responsibilities</strong></p>
-				</div>
-				<a href="/student-rights-flow.html" class="btn-link-primary">
-					<i class="fa-solid fa-eye me-1"></i> View Document
-				</a>
-			</div>
-			<div class="document-item mb-2">
-				<div class="d-flex align-items-center">
-					<i class="fas fa-circle-check green me-3 icon-lg"></i>
-					<p class="mb-0"><strong>Student Orientation</strong></p>
-				</div>
-				<a href="#" class="btn-link-primary">
-					<i class="fa-solid fa-eye me-1"></i> View Document
-				</a>
-			</div>
-		</div>
-	</div>
-</div>
-
-<script>
-// Tab switching functionality for enrollment to-do list
-document.addEventListener('DOMContentLoaded', function() {
-	const tabLinks = document.querySelectorAll('.tab-link');
-	const tabContents = document.querySelectorAll('.tab-content');
-
-	tabLinks.forEach(link => {
-		link.addEventListener('click', function(e) {
-			e.preventDefault();
-
-			// Remove active class from all tabs and contents
-			tabLinks.forEach(l => l.classList.remove('active'));
-			tabContents.forEach(c => c.classList.remove('active'));
-
-			// Add active class to clicked tab
-			this.classList.add('active');
-
-			// Show corresponding content
-			const tabId = this.getAttribute('data-tab');
-			document.getElementById(tabId).classList.add('active');
-		});
-	});
-});
-</script>
+		
 
 	</div>
 
@@ -3815,5 +4127,10 @@ document.addEventListener('DOMContentLoaded', function() {
 	<!-- Overlay Navigation JavaScript -->
 	<script src="/js/overlay-nav.js"></script>
 	<script src="/js/confetti-util.js"></script>
+
+	<!-- Enrollment Wizard JavaScript -->
+	<script src="/js/enrollment-wizard.js"></script>
+
+	<!-- Page-specific scripts -->
 </body>
 </html>

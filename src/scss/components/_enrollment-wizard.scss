@@ -90,6 +90,11 @@
   gap: 1px;
   background: $wht;
   // border-bottom: 2px solid $gray-20;
+
+  // Simplified 3-tab version - full width
+  &.enrollment-wizard-progress-simplified {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .enrollment-progress-tab {
@@ -178,6 +183,24 @@
     }
   }
 
+  // Override for simplified 3-tab wizard (no disabled state)
+  .enrollment-wizard-progress-simplified & {
+    &:last-child {
+      background: $wht;
+      border-bottom-color: $apu-blue;
+
+      .tab-number {
+        background: transparent;
+        border: 2px solid $apu-blue-active;
+        color: $apu-blue-active;
+      }
+
+      .tab-label {
+        color: $gray-dk;
+      }
+    }
+  }
+
   // Active state
   &.active {
     background: rgba(0, 255, 255, 0.10);
@@ -245,7 +268,6 @@
       color: $wht;
       font-size: 0;
       transform: none; // Remove rotation when completed
-      animation: pulsate 2s ease-in-out infinite;
 
       &::before {
         display: none; // Hide circular progress when completed
@@ -765,7 +787,7 @@
   cursor: pointer;
   text-align: left;
   flex: 1;
-  min-width: 150px;
+  min-width: 350px;
 
   &:hover {
     border-color: $apu-blue;
@@ -855,6 +877,284 @@
   }
 }
 
+// Enrollment Completion Box (shows when all tabs done)
+.enrollment-completion-box {
+  margin: 3rem 0;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(128, 195, 66, 0.1) 0%, rgba(0, 255, 255, 0.1) 100%);
+  border: 3px solid $green;
+  border-radius: 12px;
+  text-align: center;
+  animation: slideDown 0.5s ease-out;
+
+  .completion-box-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .completion-icon-check {
+    margin-bottom: 1.5rem;
+
+    i {
+      font-size: 6rem;
+      color: $green;
+      animation: scaleIn 0.6s ease-out;
+    }
+  }
+
+  h3 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: $blk;
+    margin: 0 0 1.5rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: $gray-dk;
+    margin: 0 0 2.5rem;
+  }
+
+  .btn-large {
+    min-width: 280px;
+  }
+}
+
+// Sidebar version of completion box
+.enrollment-completion-box-sidebar {
+  padding: 2.5rem;
+  background: rgba(128, 195, 66, 0.15) !important;
+  border: 3px solid $green;
+  border-radius: 12px;
+  text-align: center;
+  animation: slideDown 0.5s ease-out;
+
+  .completion-icon-check {
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      font-size: 5rem;
+      color: $green;
+      animation: pulsate 2s ease-in-out infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $blk;
+    margin: 0 0 1.5rem;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: $gray-dk;
+    margin: 0 0 2rem;
+  }
+
+  .btn-main {
+    width: 100%;
+  }
+}
+
+// Completion Modal (full-screen overlay)
+.enrollment-completion-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.enrollment-completion-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+
+.enrollment-completion-modal-content {
+  position: relative;
+  background: $wht;
+  padding: 4rem 5rem;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.5s ease-out;
+
+  .completion-icon-check {
+    margin-bottom: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      font-size: 8rem;
+      color: $green;
+      animation: pulsate 2s ease-in-out infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+  }
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: $blk;
+    margin: 0 0 2rem;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: $gray-dk;
+    margin: 0 0 3rem;
+  }
+
+  .btn-large {
+    min-width: 280px;
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 4rem;
+  height: 4rem;
+  background: $gray-10;
+  border: 2px solid $gray-20;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+
+  i {
+    font-size: 2rem;
+    color: $gray-dk;
+  }
+
+  &:hover {
+    background: $gray-20;
+    border-color: $gray-40;
+    transform: rotate(90deg);
+
+    i {
+      color: $blk;
+    }
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .enrollment-completion-modal-content {
+    padding: 3rem 2.5rem;
+    width: 95%;
+
+    .completion-icon-check i {
+      font-size: 6rem;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Financing Selection Sidebar Module
+#financingSelectionSidebar {
+  border-left: 4px solid $green;
+  animation: slideDown 0.5s ease-out;
+
+  .badge-success-sm {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: rgba(128, 195, 66, 0.15);
+    color: $green;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    i {
+      font-size: 1.2rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: $blk;
+    line-height: 1.4;
+  }
+
+  .btn-sm {
+    padding: 1rem 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+}
+
 // Enrollment Success State
 .enrollment-success-state {
   // display: none;
@@ -923,6 +1223,267 @@
   }
   100% {
     box-shadow: 0 0 0 20px rgba(128, 195, 66, 0);
+  }
+}
+
+// Payment Wizard (Full-Screen Takeover)
+.payment-wizard-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.payment-wizard-fullscreen {
+  width: 100%;
+  height: 100%;
+  background: $wht;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.payment-wizard-header {
+  background: $blk;
+  color: $wht;
+  padding: 2.5rem 0;
+  border-bottom: 3px solid $apu-blue-active;
+  flex-shrink: 0;
+}
+
+.payment-wizard-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: $wht;
+}
+
+.payment-wizard-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4rem 0;
+  background: $gray-10;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $gray-10;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $gray-40;
+    border-radius: 6px;
+
+    &:hover {
+      background: $gray-60;
+    }
+  }
+}
+
+// Payment Wizard Tabs (Left Column)
+.payment-wizard-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.payment-wizard-tab {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  background: $wht;
+  border: 2px solid $gray-20;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+
+  .tab-icon {
+    flex-shrink: 0;
+    width: 2rem;
+    color: $gray-40;
+    transition: all 0.2s ease;
+
+    i {
+      font-size: 1.4rem;
+    }
+  }
+
+  .tab-label {
+    flex: 1;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $gray-dk;
+    transition: all 0.2s ease;
+  }
+
+  &:hover {
+    border-color: $apu-blue;
+    background: rgba(0, 255, 255, 0.05);
+
+    .tab-icon {
+      color: $apu-blue;
+    }
+
+    .tab-label {
+      color: $blk;
+    }
+  }
+
+  &.active {
+    background: $apu-blue-bg-light;
+    border-color: $apu-blue;
+    border-width: 3px;
+    padding: calc(1.5rem - 1px) calc(2rem - 1px);
+
+    .tab-icon {
+      color: $apu-blue;
+    }
+
+    .tab-label {
+      color: $blk;
+      font-weight: 600;
+    }
+  }
+}
+
+// Payment Content Area (Right Column)
+.payment-wizard-content-area {
+  min-height: 500px;
+  padding: 3rem;
+
+  .payment-content {
+    &.active {
+      display: block;
+      animation: fadeInContent 0.3s ease-out;
+    }
+  }
+}
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Payment Select Card (Prominent Selection Card)
+.payment-select-card {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 3rem !important;
+
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .select-card-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem 3rem;
+    background: $gray-10 !important;
+    border: 3px solid $gray-20 !important;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .select-card-icon {
+    flex-shrink: 0;
+    width: 7rem;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $wht !important;
+    border: 3px solid $gray-40 !important;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 3.5rem !important;
+      color: $gray-40 !important;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .select-card-text {
+    flex: 1;
+
+    .select-card-label {
+      font-size: 2rem !important;
+      font-weight: 700 !important;
+      color: $blk !important;
+      margin: 0 0 0.5rem !important;
+      line-height: 1.2;
+    }
+
+    .select-card-sublabel {
+      font-size: 1.4rem !important;
+      color: $gray-dk !important;
+      margin: 0 !important;
+    }
+  }
+
+  // Hover state
+  &:hover .select-card-content {
+    border-color: $green !important;
+    background: rgba(128, 195, 66, 0.05) !important;
+  }
+
+  &:hover .select-card-icon {
+    border-color: $green !important;
+  }
+
+  // Checked state
+  input[type="radio"]:checked ~ .select-card-content {
+    background: rgba(128, 195, 66, 0.1) !important;
+    border-color: $green !important;
+    border-width: 3px !important;
+    box-shadow: 0 4px 20px rgba(128, 195, 66, 0.2) !important;
+    animation: cardPulse 0.4s ease-out;
+
+    .select-card-icon {
+      background: $green !important;
+      border-color: $green !important;
+      box-shadow: 0 0 0 4px rgba(128, 195, 66, 0.2) !important;
+
+      i {
+        color: $wht !important;
+        transform: scale(1.1);
+      }
+    }
+
+    .select-card-label {
+      color: $green !important;
+    }
+  }
+}
+
+@keyframes cardPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -1038,5 +1599,211 @@
     order: -1;
     width: 100%;
     margin-bottom: 1rem;
+  }
+}
+
+// TEST STYLE - DELETE ME
+.test-payment-style {
+  background: red !important;
+}
+
+// Payment Select Card (Prominent Selection Card) - Updated
+.payment-select-card {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 3rem;
+
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .select-card-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem 3rem;
+    background: $gray-10;
+    border: 3px solid $gray-20;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .select-card-icon {
+    flex-shrink: 0;
+    width: 7rem;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $wht;
+    border: 3px solid $gray-40;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 3.5rem;
+      color: $gray-40;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .select-card-text {
+    flex: 1;
+
+    .select-card-label {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $blk;
+      margin: 0 0 0.5rem;
+      line-height: 1.2;
+    }
+
+    .select-card-sublabel {
+      font-size: 1.4rem;
+      color: $gray-dk;
+      margin: 0;
+    }
+  }
+
+  // Hover state
+  &:hover .select-card-content {
+    border-color: $green;
+    background: rgba(128, 195, 66, 0.05);
+  }
+
+  &:hover .select-card-icon {
+    border-color: $green;
+  }
+
+  // Checked state
+  input[type="radio"]:checked ~ .select-card-content {
+    background: rgba(128, 195, 66, 0.1);
+    border-color: $green;
+    border-width: 3px;
+    box-shadow: 0 4px 20px rgba(128, 195, 66, 0.2);
+    animation: cardPulse 0.4s ease-out;
+
+    .select-card-icon {
+      background: $green;
+      border-color: $green;
+      box-shadow: 0 0 0 4px rgba(128, 195, 66, 0.2);
+
+      i {
+        color: $wht;
+        transform: scale(1.1);
+      }
+    }
+
+    .select-card-label {
+      color: $green;
+    }
+  }
+}
+
+@keyframes cardPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Payment Selection Banner
+.payment-selection-banner {
+  background: rgba(128,195,66, 0.1);
+  border: 3px solid $green;
+  border-radius: $border-radius;
+  padding: 2.5rem 3rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 4px 20px rgba(128, 195, 66, 0.3);
+  animation: slideDown 0.5s ease-out;
+
+  p {
+    // color: $wht;
+    margin: 0;
+
+    &.lead {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+  }
+  .btn-main {
+    margin-bottom: 10px;
+  }
+  // .btn-main {
+  //   background: $wht;
+  //   color: $green;
+  //   border: 2px solid $wht;
+
+  //   &:hover {
+  //     background: $gray-10;
+  //     color: $green;
+  //     border-color: $wht;
+  //   }
+  // }
+
+  .btn-secondary {
+    background: transparent;
+    color: $wht;
+    border: 2px solid $wht;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: $wht;
+      border-color: $wht;
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Financing Selection Sidebar Module
+#financingSelectionSidebar {
+  border-left: 4px solid $green;
+  animation: slideDown 0.5s ease-out;
+
+  .badge-success-sm {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: rgba(128, 195, 66, 0.15);
+    color: $green;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    i {
+      font-size: 1.2rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: $blk;
+    line-height: 1.4;
+  }
+
+  .btn-sm {
+    padding: 1rem 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
   }
 }

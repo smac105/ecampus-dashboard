@@ -27,6 +27,10 @@
 .white-box-border {
   @include white-box-apus-border;
 }
+.white-box-border-noshad {
+  @include white-box-apus-border;
+  box-shadow: none;
+}
 
 /* BLACK BACKGROUND BOX */
 .black-bg {

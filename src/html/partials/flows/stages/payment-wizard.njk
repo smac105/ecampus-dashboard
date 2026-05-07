@@ -1,0 +1,106 @@
+{% import "partials/macros.njk" as buttons %}
+
+{# Payment Type Wizard #}
+<div class="container">
+
+<div class="row">
+	<div class="col-lg-12 mb-0">
+		<!-- Welcome Message -->
+		<div class="intro-box mb-0">
+			<h1>Select Your Payment Type</h1>
+			<p class="lead mb-0">Choose the payment method that best fits your educational journey. You can update this selection later if your circumstances change.</p>
+		</div>
+	</div>
+</div>
+
+<div class="row row-main-layout">
+	<div class="mb-5">
+		<!-- Payment Wizard Module -->
+		<div class="white-box mb-4">
+			<h2 class="h2 mb-4">Payment Options</h2>
+
+			<!-- Payment Type Selection -->
+			<div class="payment-widget white-box-border-noshad mb-5" id="paymentWizardSelectionWidget">
+				<h4 class="mt-0 mb-3">Could you provide the payment type that you intend to use for your educational journey?</h4>
+				<p class="disclaimer gray-dk mb-4">(This can be adjusted as you progress through your enrollment process. Select the option that best fits your current financial plan of payment.)</p>
+
+				<div class="payment-options">
+					<button type="button" class="payment-option-btn" data-payment="Military TA">
+						<span class="payment-indicator"></span>
+						<span class="payment-label">Military TA</span>
+					</button>
+					<button type="button" class="payment-option-btn" data-payment="Employer Benefits">
+						<span class="payment-indicator"></span>
+						<span class="payment-label">Employer Benefits</span>
+					</button>
+					<button type="button" class="payment-option-btn" data-payment="Federal Student Aid">
+						<span class="payment-indicator"></span>
+						<span class="payment-label">Federal Student Aid</span>
+					</button>
+					<button type="button" class="payment-option-btn" data-payment="GI Bill® Benefits">
+						<span class="payment-indicator"></span>
+						<span class="payment-label">GI Bill® Benefits</span>
+					</button>
+					<button type="button" class="payment-option-btn" data-payment="Self-Payment">
+						<span class="payment-indicator"></span>
+						<span class="payment-label">Self-Payment</span>
+					</button>
+					<button type="button" class="payment-option-btn" data-payment="VR&E">
+						<span class="payment-indicator"></span>
+						<span class="payment-label">VR&E</span>
+					</button>
+					<button type="button" class="payment-option-btn" data-payment="MyCAA">
+						<span class="payment-indicator"></span>
+						<span class="payment-label">MyCAA</span>
+					</button>
+					<button type="button" class="payment-option-btn" data-payment="Scholarship">
+						<span class="payment-indicator"></span>
+						<span class="payment-label">Scholarship</span>
+					</button>
+					<button type="button" class="payment-option-btn" data-payment="Private Loan">
+						<span class="payment-indicator"></span>
+						<span class="payment-label">Private Loan</span>
+					</button>
+					<button type="button" class="payment-option-btn" data-payment="ArmyIgnitED Guide">
+						<span class="payment-indicator"></span>
+						<span class="payment-label">ArmyIgnitED Guide</span>
+					</button>
+					<button type="button" class="payment-option-btn" data-payment="I am unsure at this time">
+						<span class="payment-indicator"></span>
+						<span class="payment-label">I am unsure at this time</span>
+					</button>
+				</div>
+
+				<!-- Save Button (hidden until selection) -->
+				<div class="text-center mt-4">
+					<button type="button" class="btn-main btn-large" id="savePaymentWizardBtn" style="display: none;">
+						Save and Continue
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="mb-5">
+		<!-- Student Program/Major -->
+		<div class="white-box mb-4">
+			<div class="d-flex align-items-center gap-2 mb-2">
+				<p class="small-title mb-3">Your Program</p>
+			</div>
+			<h4 class="mb-1">Master of Arts in History</h4>
+			<p class="small-text mb-3" style="color: #666;">School of Arts & Humanities</p>
+			<a href="#" class="arrow-link arrow-link-sm" data-bs-toggle="modal" data-bs-target="#academicPlanModal">See Program Details</a>
+		</div>
+
+		<!-- Student Status -->
+		<div class="actions white-box mb-4">
+			{% include "partials/ui/student-status.njk" %}
+		</div>
+
+		<!-- Calendar -->
+		<div class="actions white-box">
+			{% include "partials/layout/calendar.njk" %}
+		</div>
+	</div>
+</div>
+</div>
