@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectionWidget = document.getElementById('paymentSelectionWidget');
     const confirmationWidget = document.getElementById('paymentConfirmationWidget');
     const selectedPaymentTypeEl = document.getElementById('selectedPaymentType');
+    const selectedPaymentDescriptionEl = document.getElementById('selectedPaymentDescription');
 
     if (selectionWidget && confirmationWidget && selectedPaymentTypeEl) {
       // Hide selection widget
@@ -136,12 +137,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Show confirmation widget with selected payment
       selectedPaymentTypeEl.textContent = paymentType;
+
+      // Get and display payment description
+      const description = getPaymentDescription(paymentType);
+      if (selectedPaymentDescriptionEl) {
+        selectedPaymentDescriptionEl.innerHTML = description;
+      }
+
       confirmationWidget.style.display = 'block';
 
       // Mark stage as completed
       markStageAsCompleted(3);
       checkAllTabsCompleted();
     }
+  }
+
+  function getPaymentDescription(paymentType) {
+    const descriptions = {
+      'Military TA': 'Military Tuition Assistance is a branch-managed education benefit for eligible service members. You will need to follow your branch\'s TA process and request TA through the appropriate military education portal.',
+      'Federal Student Aid': 'Federal Student Aid may help eligible students pay for school through federal grants and loans. Grants usually do not need to be repaid, while loans must be repaid with interest. To apply, complete the FAFSA each award year and include the APUS school code 038193-00.',
+      'GI Bill® Benefits': 'GI Bill® benefits may help eligible Veterans, service members, and family members pay for education. Eligibility, benefit type, and coverage amounts are determined by the U.S. Department of Veterans Affairs.',
+      'Self-Payment': 'Self-Payment means you plan to pay tuition and fees out of pocket. Tuition and fees are due at the time of course registration unless you use an eligible payment schedule.<br><br><strong>Payment types offered:</strong><ul><li>Credit Cards: MasterCard®, Visa®, and Discover®</li><li>Digital Payments: Apple Pay®, Google Pay™, and PayPal®</li><li>E-Checks: Online payment from a U.S.-based bank account using a routing and checking account number</li><li>Automatic Debit Plan: Scheduled credit card payments over time for eligible credit-bearing courses</li></ul>',
+      'Employer Benefits': 'Employer Benefits may include tuition grants, reimbursement, direct billing, or other education assistance from your employer or professional organization. Confirm eligibility and payment requirements with your employer before registration.',
+      'VR&E': 'Veteran Readiness and Employment, also known as VR&E or Chapter 31, may help eligible Veterans cover tuition, fees, and related education expenses connected to career goals. Eligibility is determined by the VA, and an assigned VR&E counselor.',
+      'MyCAA': 'MyCAA is a scholarship program that provides tuition assistance for eligible military spouses pursuing approved education or training. Funding must be approved through the MyCAA process before it can be used for courses.',
+      'Scholarship': 'Scholarships are gift funds that generally do not need to be repaid and may help pay for tuition and fees. APUs does not directly offer university scholarships, but students can search for private scholarships or use the APUS Scholarship Portal.',
+      'Private Loan': 'Private loans are credit-based, non-federal education loans offered by private lenders. Students should review all other funding options, including Federal Student Aid, scholarships, and other funding options before considering a private loan.'
+    };
+
+    return descriptions[paymentType] || '';
   }
 
   function showPaymentSelection() {

@@ -1408,48 +1408,54 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- Payment Type Selection (shown initially) -->
             <div class="payment-widget white-box-border-noshad mb-5" id="paymentSelectionWidget">
               <h4 class="mt-0 mb-3">Could you provide the payment type that you intend to use for your educational journey?</h4>
-              <p class="disclaimer gray-dk">(This can be adjusted as you rpogress through your enrollment process. Select the option that best fits your current financial plan of payment.)</p>
+              <p class="disclaimer gray-dk">(This can be adjusted as you progress through your enrollment process.) Select the option that best fits your current financial plan of payment. If you would like to see more complete information regarding each choice, <a href="#" target="_blank">visit our payment resource library</a>.</p>
               <div class="payment-options">
                 <button type="button" class="payment-option-btn" data-payment="Military TA">
                   <span class="payment-indicator"></span>
                   <span class="payment-label">Military TA</span>
+                  <a href="#" class="arrow-link arrow-link-sm" data-bs-toggle="modal" data-bs-target="#militaryTAModal" onclick="event.stopPropagation();">More Info</a>
                 </button>
                 <button type="button" class="payment-option-btn" data-payment="Employer Benefits">
                   <span class="payment-indicator"></span>
                   <span class="payment-label">Employer Benefits</span>
+                  <a href="#" class="arrow-link arrow-link-sm" data-bs-toggle="modal" data-bs-target="#employerBenefitsModal" onclick="event.stopPropagation();">More Info</a>
                 </button>
                 <button type="button" class="payment-option-btn" data-payment="Federal Student Aid">
                   <span class="payment-indicator"></span>
                   <span class="payment-label">Federal Student Aid</span>
+                  <a href="#" class="arrow-link arrow-link-sm" data-bs-toggle="modal" data-bs-target="#federalStudentAidModal" onclick="event.stopPropagation();">More Info</a>
                 </button>
                 <button type="button" class="payment-option-btn" data-payment="GI Bill® Benefits">
                   <span class="payment-indicator"></span>
                   <span class="payment-label">GI Bill® Benefits</span>
+                  <a href="#" class="arrow-link arrow-link-sm" data-bs-toggle="modal" data-bs-target="#giBillModal" onclick="event.stopPropagation();">More Info</a>
                 </button>
                 <button type="button" class="payment-option-btn" data-payment="Self-Payment">
                   <span class="payment-indicator"></span>
                   <span class="payment-label">Self-Payment</span>
+                  <a href="#" class="arrow-link arrow-link-sm" data-bs-toggle="modal" data-bs-target="#selfPaymentModal" onclick="event.stopPropagation();">More Info</a>
                 </button>
                 <button type="button" class="payment-option-btn" data-payment="VR&E">
                   <span class="payment-indicator"></span>
                   <span class="payment-label">VR&E</span>
+                  <a href="#" class="arrow-link arrow-link-sm" data-bs-toggle="modal" data-bs-target="#vreModal" onclick="event.stopPropagation();">More Info</a>
                 </button>
                <button type="button" class="payment-option-btn" data-payment="MyCAA">
                   <span class="payment-indicator"></span>
                   <span class="payment-label">MyCAA</span>
+                  <a href="#" class="arrow-link arrow-link-sm" data-bs-toggle="modal" data-bs-target="#mycaaModal" onclick="event.stopPropagation();">More Info</a>
                 </button>
                 <button type="button" class="payment-option-btn" data-payment="Scholarship">
                   <span class="payment-indicator"></span>
                   <span class="payment-label">Scholarship</span>
+                  <a href="#" class="arrow-link arrow-link-sm" data-bs-toggle="modal" data-bs-target="#scholarshipModal" onclick="event.stopPropagation();">More Info</a>
                 </button>
                 <button type="button" class="payment-option-btn" data-payment="Private Loan">
                   <span class="payment-indicator"></span>
                   <span class="payment-label">Private Loan</span>
+                  <a href="#" class="arrow-link arrow-link-sm" data-bs-toggle="modal" data-bs-target="#privateLoanModal" onclick="event.stopPropagation();">More Info</a>
                 </button>
-                <button type="button" class="payment-option-btn" data-payment="ArmyIgnitED Guide">
-                  <span class="payment-indicator"></span>
-                  <span class="payment-label">ArmyIgnitED Guide</span>
-                </button>
+                
                 <button type="button" class="payment-option-btn" data-payment="I am unsure at this time">
                   <span class="payment-indicator"></span>
                   <span class="payment-label">I am unsure at this time</span>
@@ -1467,7 +1473,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- Payment Confirmation (hidden initially) -->
             <div class="payment-widget white-box-border-noshad mb-5" id="paymentConfirmationWidget" style="display: none;">
               <h4 class="mt-0 mb-3">Your selected Payment type:</h4>
-              <p class="lead mb-4" id="selectedPaymentType" style="font-weight: 600; color: #0581C0;"></p>
+              <p class="lead mb-3" id="selectedPaymentType" style="font-weight: 600; color: #0581C0;"></p>
+              <p id="selectedPaymentDescription" class="mb-4"></p>
               <a href="#" class="arrow-link" id="editPaymentBtn">Edit Payment Type</a>
             </div>
           </div>
@@ -1486,6 +1493,177 @@ document.addEventListener('DOMContentLoaded', function() {
         </button>
       </div>
     </div>
+
+<!-- Payment Option Info Modals -->
+
+<!-- Military TA Modal -->
+<div class="modal fade" id="militaryTAModal" tabindex="-1" aria-labelledby="militaryTAModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+        <h3 class="modal-title h3" id="militaryTAModalLabel">Military Tuition Assistance</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="padding: 2rem 2.5rem;">
+        <p class="mb-0">Military Tuition Assistance is a branch-managed education benefit for eligible service members. You will need to follow your branch's TA process and request TA through the appropriate military education portal.</p>
+      </div>
+      <div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Federal Student Aid Modal -->
+<div class="modal fade" id="federalStudentAidModal" tabindex="-1" aria-labelledby="federalStudentAidModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+        <h3 class="modal-title h3" id="federalStudentAidModalLabel">Federal Student Aid</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="padding: 2rem 2.5rem;">
+        <p class="mb-0">Federal Student Aid may help eligible students pay for school through federal grants and loans. Grants usually do not need to be repaid, while loans must be repaid with interest. To apply, complete the FAFSA each award year and include the APUS school code 038193-00.</p>
+      </div>
+      <div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GI Bill Modal -->
+<div class="modal fade" id="giBillModal" tabindex="-1" aria-labelledby="giBillModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+        <h3 class="modal-title h3" id="giBillModalLabel">GI Bill® Benefits</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="padding: 2rem 2.5rem;">
+        <p class="mb-0">GI Bill® benefits may help eligible Veterans, service members, and family members pay for education. Eligibility, benefit type, and coverage amounts are determined by the U.S. Department of Veterans Affairs.</p>
+      </div>
+      <div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Self-Payment Modal -->
+<div class="modal fade" id="selfPaymentModal" tabindex="-1" aria-labelledby="selfPaymentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+        <h3 class="modal-title h3" id="selfPaymentModalLabel">Self-Payment</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="padding: 2rem 2.5rem;">
+        <p class="mb-3">Self-Payment means you plan to pay tuition and fees out of pocket. Tuition and fees are due at the time of course registration unless you use an eligible payment schedule.</p>
+        <p class="mb-2"><strong>Payment types offered:</strong></p>
+        <ul class="mb-0">
+          <li>Credit Cards: MasterCard®, Visa®, and Discover®</li>
+          <li>Digital Payments: Apple Pay®, Google Pay™, and PayPal®</li>
+          <li>E-Checks: Online payment from a U.S.-based bank account using a routing and checking account number</li>
+          <li>Automatic Debit Plan: Scheduled credit card payments over time for eligible credit-bearing courses</li>
+        </ul>
+      </div>
+      <div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Employer Benefits Modal -->
+<div class="modal fade" id="employerBenefitsModal" tabindex="-1" aria-labelledby="employerBenefitsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+        <h3 class="modal-title h3" id="employerBenefitsModalLabel">Employer Benefits</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="padding: 2rem 2.5rem;">
+        <p class="mb-0">Employer Benefits may include tuition grants, reimbursement, direct billing, or other education assistance from your employer or professional organization. Confirm eligibility and payment requirements with your employer before registration.</p>
+      </div>
+      <div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VR&E Modal -->
+<div class="modal fade" id="vreModal" tabindex="-1" aria-labelledby="vreModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+        <h3 class="modal-title h3" id="vreModalLabel">Veteran Readiness and Employment (VR&E)</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="padding: 2rem 2.5rem;">
+        <p class="mb-0">Veteran Readiness and Employment, also known as VR&E or Chapter 31, may help eligible Veterans cover tuition, fees, and related education expenses connected to career goals. Eligibility is determined by the VA, and an assigned VR&E counselor.</p>
+      </div>
+      <div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MyCAA Modal -->
+<div class="modal fade" id="mycaaModal" tabindex="-1" aria-labelledby="mycaaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+        <h3 class="modal-title h3" id="mycaaModalLabel">MyCAA</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="padding: 2rem 2.5rem;">
+        <p class="mb-0">MyCAA is a scholarship program that provides tuition assistance for eligible military spouses pursuing approved education or training. Funding must be approved through the MyCAA process before it can be used for courses.</p>
+      </div>
+      <div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scholarship Modal -->
+<div class="modal fade" id="scholarshipModal" tabindex="-1" aria-labelledby="scholarshipModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+        <h3 class="modal-title h3" id="scholarshipModalLabel">Scholarship</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="padding: 2rem 2.5rem;">
+        <p class="mb-0">Scholarships are gift funds that generally do not need to be repaid and may help pay for tuition and fees. APUs does not directly offer university scholarships, but students can search for private scholarships or use the APUS Scholarship Portal.</p>
+      </div>
+      <div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Private Loan Modal -->
+<div class="modal fade" id="privateLoanModal" tabindex="-1" aria-labelledby="privateLoanModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 1px solid #d9d9d9; padding: 2rem 2.5rem 1.5rem;">
+        <h3 class="modal-title h3" id="privateLoanModalLabel">Private Loan</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="padding: 2rem 2.5rem;">
+        <p class="mb-0">Private loans are credit-based, non-federal education loans offered by private lenders. Students should review all other funding options, including Federal Student Aid, scholarships, and other funding options before considering a private loan.</p>
+      </div>
+      <div class="modal-footer" style="border-top: 1px solid #d9d9d9; padding: 1.5rem 2.5rem 2rem;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script src="/js/confetti-util.js"></script>
